@@ -1,12 +1,12 @@
 #ifndef AGHOL_H
 #define AGHOL_H
 
+#include "Habitat.h"
 
-class Aghol
-{
+class Aghol :public Habitat {
 public:
-    Aghol();
-    void Upgrade();
+	Aghol();
+	void Upgrade();
 	void Feed();
 	void Collect();
 	void Wool_shaving();
