@@ -1,11 +1,13 @@
 #ifndef LIVESTOCK_H
 #define LIVESTOCK_H
 
+#include "habitat.h"
 
-class Livestock
-{
+class Livestock :public Habitat {
 public:
-    Livestock();
+	void Upgrade();
+	void Feed();
+	void Collect();
 };
 
 #endif // LIVESTOCK_H
