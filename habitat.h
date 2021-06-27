@@ -1,7 +1,7 @@
 #ifndef HABITAT_H
 #define HABITAT_H
 #include "Building.h"
-class Habitat {
+class Habitat: public Building {
 protected:
 	int status;
 	int time;
