@@ -5,7 +5,6 @@ class Habitat: public Building {
 protected:
 	int status;
 	int time;
-	int level;//
 public:
     Habitat();
 	virtual void Feed();
