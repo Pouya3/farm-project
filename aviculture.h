@@ -1,7 +1,7 @@
 #ifndef AVICULTURE_H
 #define AVICULTURE_H
 
-#include "Habitat.h"
+#include "habitat.h"
 
 class Aviculture :public Habitat {
 public:
