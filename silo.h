@@ -12,8 +12,8 @@ private:
 public:
     Silo(User* _user, Store* _store);
     void Upgrade();
-    void Add(int, int);
-    void Delete(int, int);
+    bool Add(int, int);
+    bool Delete(int, int);
     int Get_wheat();
 };
 

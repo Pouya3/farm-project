@@ -12,8 +12,8 @@ protected:
 public:
     Building();
     virtual void Upgrade() = 0;
-    virtual void Add(int , int ) = 0;
-    virtual void Delete(int ,int ) = 0;
+    virtual bool Add(int , int ) = 0;
+    virtual bool Delete(int ,int ) = 0;
 };
 
 #endif // BUILDING_H

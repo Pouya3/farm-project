@@ -9,7 +9,7 @@ class Store : public Building
 {
     int shovel;
     int nail;
-    int alfalfal;
+    int alfalfa;
     int egg;
     int milk;
     int wool;
@@ -19,8 +19,8 @@ class Store : public Building
 public:
     Store(User*);
     void Upgrade();
-    void Add(int ,int );
-    void Delete(int ,int);
+    bool Add(int ,int );
+    bool Delete(int ,int);
     int Get_object(int );
 };
 
