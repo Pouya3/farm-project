@@ -7,7 +7,7 @@ Habitat::Habitat() {
 }
 bool Habitat::Is_full() {
 
-    if(used_sorage==total_storage)
+    if(used_storage==total_storage)
         return true;
     return false;
 }
