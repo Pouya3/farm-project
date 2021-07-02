@@ -32,21 +32,23 @@ void Silo::Upgrade(){
     }
 }
 
-void Silo::Add(int alaki, int number){
+bool Silo::Add(int alaki, int number){
     if(this->total_storage - used_storage < number){ // not enough space
-
+        return false;
     }
     else{ // enough space
         used_storage+=number;
+        return true;
     }
 }
 
-void Silo::Delete(int alaki , int number){
+bool Silo::Delete(int alaki , int number){
     if(number>used_storage){ // not enogh wheat
-
+           return false;
     }
     else{ // enogh wheat
         used_storage-=number;
+        return true;
     }
 }
 
