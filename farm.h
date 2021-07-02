@@ -18,6 +18,8 @@ private:
     Aghol aghol;
     Livestock livestock;
 
+public:
+    Farm();
 };
 
 #endif // FARM_H
