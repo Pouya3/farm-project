@@ -1,11 +1,18 @@
 #ifndef WHEAT_LAND_H
 #define WHEAT_LAND_H
+#include "land.h"
+#include "user.h"
+#include "store.h"
 
+class Wheat_land : public Land {
 
-class Wheat_land
-{
+private:
+    User* user;
+    Store* store;
+
 public:
-    Wheat_land();
+    Wheat_land(User* _user, Store* _store);
+    void Upgrade();
 };
 
 #endif // WHEAT_LAND_H
