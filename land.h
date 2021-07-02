@@ -2,9 +2,8 @@
 #define LAND_H
 
 
-class Land
-{
-private:
+class Land {
+protected:
     int time;
     int level;
     int space;
