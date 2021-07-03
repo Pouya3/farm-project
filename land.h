@@ -12,8 +12,6 @@ protected:
     int status;
     int cultivable; //tedad zamin haii ke chiz dar anha kashtim
     bool is_active;
-    User* user;
-    Store* store;
 
 public:
     Land();
@@ -23,6 +21,8 @@ public:
     virtual void Harvesting(int)=0;
     int Get_time();
     void Set_time(int);
+    User* user;
+    Store* store;
 };
 
 #endif // LAND_H
