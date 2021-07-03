@@ -8,15 +8,14 @@
 class Wheat_land : public Land 
 {
 
-private:
-    Silo* silo; 
-
 public:
-    Wheat_land(User* _user, Store* _store,Silo* _silo);
+    Wheat_land();
 
     void Upgrade();
     void Cultivation(int);
     void Harvesting(int);
+
+    Silo* silo;
 };
 
 #endif // WHEAT_LAND_H
