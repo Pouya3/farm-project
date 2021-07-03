@@ -10,6 +10,7 @@ public:
     Alfalfa_land(User* _user, Store* _store);
     void Upgrade();
     void Plow(int);
+    void Cultivation(int);
 };
 
 #endif // ALFALFA_LAND_H
