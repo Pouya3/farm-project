@@ -64,6 +64,7 @@ void Alfalfa_land::Cultivation(int tedad) {
             status=3;
             plowable-=tedad;
             user->Set_experience(user->Get_experience()+tedad*2);
+            store->Delete(3,tedad);
             // Qtimer
 
             // after Qtimer finished :
