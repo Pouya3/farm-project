@@ -65,7 +65,7 @@ bool Aviculture::Delete(int type, int amount) {
     return false;
 }
 
-bool Aghol::Collect() {
+bool Aviculture::Collect() {
     if(store_ptr->Add(4,used_storage)){
         user_ptr->Set_experience(user_ptr->Get_experience()+2);
         return true;
