@@ -35,13 +35,34 @@ void Alfalfa_land::Upgrade()
 void Alfalfa_land::Plow(int tedad) 
 {
     if(status==0) { // zamin bikar
-        if(user->Get_coin()>=5*tedad && user->Get_level()>=3){
-            user->Set_coin(user->Get_coin()-5);
+        if(user->Get_coin()>=5*tedad && space>=tedad && user->Get_level()>=3){
+            user->Set_coin(user->Get_coin()-(5*tedad));
             status=1;
             // Qtimer
 
             // after Qtimer finished :
             status=2;
+            user->Set_experience(user->Get_experience()+tedad);
+        }
+        else { // not enough resources for upgrading
+            if (user->Get_coin()<5*tedad) { } // coin needed
+            else if(space<tedad) { } // We do not have enough space
+            else { } // level needed
+        }
+    }
+    else { // zamin ra nemi shavad shokm zad
+
+    }
+}
+
+void Alfalfa_land::Cultivation(int tedad) {
+    if(status==2) { // zamin shokm zade shode va amade zerat ast
+        if(store->Get_object(3)>=tedad && space>=tedad &&user->Get_level()>=3){
+            status=3;
+            // Qtimer
+
+            // after Qtimer finished :
+            status=4;
             user->Set_experience(user->Get_experience()+tedad);
         }
         else { // not enough resources for upgrading
@@ -52,4 +73,5 @@ void Alfalfa_land::Plow(int tedad)
     else { // zamin ra nemi shavad shokm zad
 
     }
+
 }
