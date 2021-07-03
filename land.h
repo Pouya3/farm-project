@@ -10,6 +10,7 @@ protected:
     int level;
     int space;
     int status;
+    int cultivable; //tedad zamin haii ke chiz dar anha kashtim
     bool is_active;
     User* user;
     Store* store;
