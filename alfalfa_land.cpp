@@ -1,13 +1,13 @@
 #include "alfalfa_land.h"
 
-Alfalfa_land::Alfalfa_land(User* _user, Store* _store) 
+Alfalfa_land::Alfalfa_land()
 {
-    store = _store;
-    user = _user;
-    if(user->Get_level()>=3)
+    /*if(user->Get_level()>=3)
         is_active=true;
     else
-        is_active=false;
+        is_active=false;*/
+    // aya mishe in kar ro bokonam???
+
     space=4;
     plowable=0;
     cultivable=0;
