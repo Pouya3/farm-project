@@ -18,7 +18,7 @@ public:
     Land();
 
     virtual void Upgrade()=0;
-    void Cultivation();
+    virtual void Cultivation(int)=0;
     int Get_time();
     void Set_time(int);
 };
