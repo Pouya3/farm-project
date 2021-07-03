@@ -10,7 +10,7 @@ private:
     int plowable;
 
 public:
-    Alfalfa_land(User* _user, Store* _store);
+    Alfalfa_land();
     void Upgrade();
     void Plow(int);
     void Cultivation(int);
