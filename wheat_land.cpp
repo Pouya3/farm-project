@@ -16,6 +16,8 @@ void Wheat_land::Upgrade()
 
         // Qtimer
 
+        // time
+
         // after Qtimer finished :
 
         user->Set_experience(user->Get_experience()+3);
