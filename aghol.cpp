@@ -42,6 +42,22 @@ int Aghol::Wool_shaving() {
     }
     return -2;// to send not enough coin
 }
+bool Aghol::Add(int type, int amount) {
+
+    if(used_storage+amount<=total_storage){
+        used_storage+=amount;
+        return true;
+    }
+    return false;
+}
+bool Aghol::Delete(int type, int amount) {
+
+    if(used_storage-amount>=0){
+        used_storage-=amount;
+        return true;
+    }
+    return false;
+}
 /*bool Aghol::Collect() {
 
 }*/
