@@ -7,8 +7,23 @@ Aghol::Aghol(Store* _store_ptr){
     return;
 }
 void Aghol::Upgrade() {
-	level++;
-	total_storage *= 2;
+    if(user_ptr->Get_level()>=7){
+        if(user_ptr->Get_coin()>=50){
+            if(store_ptr->Get_object(2)>=3){
+                if(store_ptr->Get_object(1)>=1){
+                    user_ptr->Set_coin(user_ptr->Get_coin()-50);
+                    store_ptr->Delete(2,3);
+                    store_ptr->Delete(1,1);
+                    level++;
+                    total_storage *= 2;
+                }
+                //qt
+            }
+            //qt
+        }
+        //qt
+    }
+    //qt
 }
 bool Aghol::Feed() {
     if(store_ptr->Delete(3, used_storage)){
@@ -23,9 +38,9 @@ int Aghol::Wool_shaving() {
             store_ptr->Add(6,used_storage);
             return 1;// to send wool added
         }
-        return -1;// to send not enogh space in store
+        return -1;// to send not enough space in store
     }
-    return -2;// to send not enogh coin
+    return -2;// to send not enough coin
 }
 /*bool Aghol::Collect() {
 
