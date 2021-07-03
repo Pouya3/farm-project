@@ -9,6 +9,8 @@ Alfalfa_land::Alfalfa_land(User* _user, Store* _store)
     else
         is_active=false;
     space=4;
+    plowable=0;
+    cultivable=0;
 }
 
 void Alfalfa_land::Upgrade() 
@@ -42,6 +44,7 @@ void Alfalfa_land::Plow(int tedad)
 
             // after Qtimer finished :
             status=2;
+            plowable=tedad;
             user->Set_experience(user->Get_experience()+tedad);
         }
         else { // not enough resources for upgrading
@@ -57,21 +60,41 @@ void Alfalfa_land::Plow(int tedad)
 
 void Alfalfa_land::Cultivation(int tedad) {
     if(status==2) { // zamin shokm zade shode va amade zerat ast
-        if(store->Get_object(3)>=tedad && space>=tedad &&user->Get_level()>=3){
+        if(store->Get_object(3)>=tedad && plowable>=tedad &&user->Get_level()>=3){
             status=3;
+            plowable-=tedad;
+            user->Set_experience(user->Get_experience()+tedad*2);
             // Qtimer
 
             // after Qtimer finished :
             status=4;
-            user->Set_experience(user->Get_experience()+tedad);
+            cultivable=tedad;
         }
         else { // not enough resources for upgrading
-            if (user->Get_coin()<5*tedad) { } // coin needed
-            else { } // level needed
+            if (user->Get_coin()<5*tedad) { } 
+            else if(plowable<tedad) { } 
+            else { } 
         }
     }
-    else { // zamin ra nemi shavad shokm zad
+    else { // zamin dar vaziat digari ast
 
     }
+}
 
+void Alfalfa_land::Harvesting(int tedad){
+    if(status==4){
+        if(((store->total_storage)-(store->used_storage))>=tedad*2 && cultivable>=tedad){
+            user->Set_experience(user->Get_experience()+tedad*2);
+            cultivable-=tedad;
+            store->Add(3,tedad*2);
+        }
+        else{
+            if (((store->total_storage)-(store->used_storage))<tedad*2) { } // kambod ja
+            else { } // meghdar vared shde sahih nist
+        }
+        if(cultivable==0) status=0;
+    }
+    else { // zamin dar vaziat digari ast
+
+    }
 }
