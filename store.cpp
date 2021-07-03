@@ -7,14 +7,18 @@ Store::Store(User* _user)
 }
 
 void Store::Upgrade(){
-    if(
-            nail >= level
-            && shovel >= level - 1
-            && user->Get_coin() >= pow(this->level,3) * 10
-      ) // enough resources
-    {
+    if(nail < level){ // not enough nails
+        // QmessageBox for "not enough nails
+    }
+    else if(shovel < level - 1){ // not enough shovels
+        // QmessageBox for not enough shovels
+    }
+    else if(user->Get_coin() >= pow(this->level,3) * 10){ // not enough coins
+        // QmessageBox for not enough coins
+    }
+    else{ // enough resources
         if(user->Get_level() <= this->level){ // user's level will be lower than store's level after upgarde store
-
+            // QmessageBox for "level limitation"
         }
         else{ // no problem for upgrading
             this->Delete(2, this->level);
@@ -27,10 +31,6 @@ void Store::Upgrade(){
             this->total_storage = round(this->total_storage*1.5);
             user->Set_experience(user->Get_experience()+this->level*3);
         }
-
-    }
-    else{ // not enough resources
-
     }
 }
 
