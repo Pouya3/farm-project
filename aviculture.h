@@ -10,6 +10,7 @@ class Aviculture :public Habitat {
     Store* store_ptr;
 public:
     Aviculture(Silo* _silo_ptr,Store* _store_ptr);
+    bool Build();
     void Upgrade();
     bool Feed();
     bool Collect();
