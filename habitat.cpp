@@ -4,11 +4,11 @@ Habitat::Habitat() {
 
     status=0;
     time=0;
-    _feed = false;
+    //_feed = false;
 }
 bool Habitat::Is_full() {
 
-    if(used_sorage==total_storage)
+    if(used_storage==total_storage)
         return true;
     return false;
 }
