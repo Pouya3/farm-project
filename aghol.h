@@ -12,6 +12,8 @@ public:
 	bool Feed();
 	//bool Collect();
 	int Wool_shaving();
+	bool Add(int type, int amount);//
+    bool Delete(int type, int amount);//
 };
 
 #endif // AGHOL_H
