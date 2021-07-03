@@ -6,6 +6,25 @@ Aghol::Aghol(Store* _store_ptr){
     used_storage=0;
     return;
 }
+bool Aghol::Build(){
+    if(user_ptr->Get_level()>=6){
+        if(user_ptr->Get_coin()>=50){
+            if(store_ptr->Get_object(2)>=4){
+                if(store_ptr->Get_object(1)>=2){
+                    user_ptr->Set_coin(user_ptr->Get_coin()-50);
+                    store_ptr->Delete(2,4);
+                    store_ptr->Delete(2,2);
+                    level++;
+                    total_storage = 2;
+                    user_ptr->Set_experience(user_ptr->Get_experience()+20);
+                }
+            }
+            //qt
+        }
+        //qt
+    }
+    //qt
+}
 void Aghol::Upgrade() {
     if(user_ptr->Get_level()>=7){
         if(user_ptr->Get_coin()>=50){
