@@ -14,7 +14,7 @@ public:
     void Upgrade();
     void Plow(int);
     void Cultivation(int);
-    void Harvesting();
+    void Harvesting(int);
 };
 
 #endif // ALFALFA_LAND_H
