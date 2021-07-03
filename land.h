@@ -20,6 +20,7 @@ public:
 
     virtual void Upgrade()=0;
     virtual void Cultivation(int)=0;
+    virtual void Harvesting(int)=0;
     int Get_time();
     void Set_time(int);
 };
