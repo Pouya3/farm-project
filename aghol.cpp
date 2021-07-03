@@ -16,6 +16,7 @@ void Aghol::Upgrade() {
                     store_ptr->Delete(1,1);
                     level++;
                     total_storage *= 2;
+                    user_ptr->Set_experience(user_ptr->Get_experience()+15);
                 }
                 //qt
             }
