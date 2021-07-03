@@ -28,7 +28,8 @@ void Aghol::Upgrade() {
 }
 bool Aghol::Feed() {
     if(store_ptr->Delete(3, used_storage)){
-    return true;
+        user_ptr->Set_experience(user_ptr->Get_experience()+(7*used_storage));
+        return true;
     }
     return false;
 }
@@ -37,6 +38,7 @@ int Aghol::Wool_shaving() {
         if(store_ptr->Get_total_storage()-store_ptr->Get_used_storage()>=used_storage){
             //user_ptr->Delete_coin(used_storage);
             store_ptr->Add(6,used_storage);
+            user_ptr->Set_experience(user_ptr->Get_experience()+(9*used_storage));
             return 1;// to send wool added
         }
         return -1;// to send not enough space in store
