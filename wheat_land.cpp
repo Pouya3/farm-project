@@ -1,13 +1,10 @@
 #include "wheat_land.h"
 
-Wheat_land::Wheat_land(User* _user, Store* _store,Silo* _silo) 
+Wheat_land::Wheat_land()
 {
-    store = _store;
-    user = _user;
     is_active=true;
     space=5;
     cultivable=0;
-    silo=_silo;
 }
 
 void Wheat_land::Upgrade() 
