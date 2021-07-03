@@ -54,20 +54,20 @@ void Wheat_land::Cultivation(int tedad) {
 }
 
 void Wheat_land::Harvesting(int tedad){
-        if(status==2){
-            if(((silo->total_storage)-(silo->used_storage))>=tedad*2 && cultivable>=tedad){
-                user->Set_experience(user->Get_experience()+tedad);
-                cultivable-=tedad;
-                silo->Add(1,2*tedad);
-            }
+    if(status==2){
+        if(((silo->total_storage)-(silo->used_storage))>=tedad*2 && cultivable>=tedad){
+              user->Set_experience(user->Get_experience()+tedad);
+              cultivable-=tedad;
+              silo->Add(1,2*tedad);
         }
-        else{
-            if (((silo->total_storage)-(silo->used_storage))<tedad*2) { } // kambod ja
-            else { } // meghdar vared shde sahih nist
-        }
-        if(cultivable==0) status=0;
-    }
-    else { // zamin dar vaziat digari ast
 
-    }
+      else {
+          if (((silo->total_storage)-(silo->used_storage))<tedad*2) { } // kambod ja
+          else { } // meghdar vared shde sahih nist
+      }
+      if(cultivable==0) status=0;
+   }
+  else { // zamin dar vaziat digari ast
+
+  }
 }
