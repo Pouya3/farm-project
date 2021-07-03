@@ -84,13 +84,12 @@ void Alfalfa_land::Cultivation(int tedad) {
 
 void Alfalfa_land::Harvesting(int tedad){
     if(status==4){
-        if(((store->total_storage)-(store->used_storage))>=tedad*2 && cultivable>=tedad){
+        if(store->Add(3,tedad*2)==true && cultivable>=tedad){
             user->Set_experience(user->Get_experience()+tedad*2);
             cultivable-=tedad;
-            store->Add(3,tedad*2);
         }
         else{
-            if (((store->total_storage)-(store->used_storage))<tedad*2) { } // kambod ja
+            if (store->Add(3,tedad*2)==false) { } // kambod ja
             else { } // meghdar vared shde sahih nist
         }
         if(cultivable==0) status=0;
