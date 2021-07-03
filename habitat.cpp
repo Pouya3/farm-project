@@ -4,14 +4,15 @@ Habitat::Habitat() {
 
     status=0;
     time=0;
+    _feed = false;
 }
 bool Habitat::Is_full() {
 
-    if(used_storage==total_storage)
+    if(used_sorage==total_storage)
         return true;
     return false;
 }
-bool Habitat::Add(int type, int amount) {
+/*bool Habitat::Add(int type, int amount) {
 
     if(used_storage+amount<=total_storage){
         used_storage+=amount;
@@ -26,13 +27,13 @@ bool Habitat::Delete(int type, int amount) {
         return true;
     }
     return false;
-}
+}*/
 int  Habitat::Get_time() {
 
-	return time;
+    return time;
 }
 void Habitat::Set_time(int _time) {
-	
-	time += _time;
+    
+    time = _time;
 }
 
