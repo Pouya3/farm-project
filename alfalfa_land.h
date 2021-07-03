@@ -6,11 +6,15 @@
 // ... 3 zamin dar hale kesht mahsole asli ... 4 kesht zamin tamam shode va montazere jamavari
 class Alfalfa_land :public Land
 {
+private:
+    int plowable;
+
 public:
     Alfalfa_land(User* _user, Store* _store);
     void Upgrade();
     void Plow(int);
     void Cultivation(int);
+    void Harvesting();
 };
 
 #endif // ALFALFA_LAND_H
