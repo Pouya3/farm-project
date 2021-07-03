@@ -13,7 +13,7 @@ void Store::Upgrade(){
     else if(shovel < level - 1){ // not enough shovels
         // QmessageBox for not enough shovels
     }
-    else if(user->Get_coin() >= pow(this->level,3) * 10){ // not enough coins
+    else if(user->Get_coin() < pow(this->level,3) * 10){ // not enough coins
         // QmessageBox for not enough coins
     }
     else{ // enough resources
