@@ -1,6 +1,7 @@
 #ifndef HABITAT_H
 #define HABITAT_H
 #include "building.h"
+#include "store.h"
 class Habitat: public Building {
 protected:
 	int status;
