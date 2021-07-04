@@ -8,7 +8,7 @@ protected:
 	//bool _feed;//
 public:
 	Store* store_ptr;
-    Habitat();
+	Habitat();
 	virtual bool Feed();
 	virtual bool Collect();
 	bool Is_full();
