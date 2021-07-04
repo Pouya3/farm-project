@@ -1,41 +1,47 @@
 #include "aghol.h"
 
-Aghol::Aghol(/*Store* _store_ptr*/){
+Aghol::Aghol(){
    // store_ptr=_store_ptr;
     total_storage=2;
     used_storage=0;
     return;
 }
 bool Aghol::Build(){
-    if(user_ptr->Get_level()>=6){
-        if(user_ptr->Get_coin()>=50){
-            if(store_ptr->Get_object(2)>=4){
-                if(store_ptr->Get_object(1)>=2){
-                    user_ptr->Set_coin(user_ptr->Get_coin()-50);
-                    store_ptr->Delete(2,4);
-                    store_ptr->Delete(2,2);
+    if(user->Get_level()>=6){
+        if(user->Get_coin()>=50){
+            if(store->Get_object(2)>=4){
+                if(store->Get_object(1)>=2){
+                    user->Set_coin(user->Get_coin()-50);
+                    store->Delete(2,4);
+                    store->Delete(2,2);
                     level++;
                     total_storage = 2;
-                    user_ptr->Set_experience(user_ptr->Get_experience()+20);
+                    user->Set_experience(user->Get_experience()+20);
+
+                    return true;
                 }
+                return false;
             }
+            return false;
             //qt
         }
+        return false;
         //qt
     }
+    return false;
     //qt
 }
 void Aghol::Upgrade() {
-    if(user_ptr->Get_level()>=7){
-        if(user_ptr->Get_coin()>=50){
-            if(store_ptr->Get_object(2)>=3){
-                if(store_ptr->Get_object(1)>=1){
-                    user_ptr->Set_coin(user_ptr->Get_coin()-50);
-                    store_ptr->Delete(2,3);
-                    store_ptr->Delete(1,1);
+    if(user->Get_level()>=7){
+        if(user->Get_coin()>=50){
+            if(store->Get_object(2)>=3){
+                if(store->Get_object(1)>=1){
+                    user->Set_coin(user->Get_coin()-50);
+                    store->Delete(2,3);
+                    store->Delete(1,1);
                     level++;
                     total_storage *= 2;
-                    user_ptr->Set_experience(user_ptr->Get_experience()+15);
+                    user->Set_experience(user->Get_experience()+15);
                 }
                 //qt
             }
@@ -46,18 +52,18 @@ void Aghol::Upgrade() {
     //qt
 }
 bool Aghol::Feed() {
-    if(store_ptr->Delete(3, used_storage)){
-        user_ptr->Set_experience(user_ptr->Get_experience()+(7*used_storage));
+    if(store->Delete(3, used_storage)){
+        user->Set_experience(user->Get_experience()+(7*used_storage));
         return true;
     }
     return false;
 }
 int Aghol::Wool_shaving() {
-    if(user_ptr->Get_coin()>=used_storage){
-        if(store_ptr->Get_total_storage()-store_ptr->Get_used_storage()>=used_storage){
-            //user_ptr->Delete_coin(used_storage);
-            store_ptr->Add(6,used_storage);
-            user_ptr->Set_experience(user_ptr->Get_experience()+(9*used_storage));
+    if(user->Get_coin()>=used_storage){
+        if(store->Get_total_storage()-store->Get_used_storage()>=used_storage){
+            //user->Delete_coin(used_storage);
+            store->Add(6,used_storage);
+            user->Set_experience(user->Get_experience()+(9*used_storage));
             return 1;// to send wool added
         }
         return -1;// to send not enough space in store

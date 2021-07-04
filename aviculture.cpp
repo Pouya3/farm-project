@@ -8,31 +8,36 @@ Aviculture::Aviculture(/*Silo* _silo_ptr,Store* _store_ptr*/){
     return;
 }
 bool Aviculture::Build(){
-    if(user_ptr->Get_level()>=6){
-        if(user_ptr->Get_coin()>=10){
-            if(store_ptr->Get_object(2)>=2){
-                user_ptr->Set_coin(user_ptr->Get_coin()-10);
-                store_ptr->Delete(2,2);
+    if(user->Get_level()>=6){
+        if(user->Get_coin()>=10){
+            if(store->Get_object(2)>=2){
+                user->Set_coin(user->Get_coin()-10);
+                store->Delete(2,2);
                 level++;
                 total_storage = 2;
-                user_ptr->Set_experience(user_ptr->Get_experience()+5);
+                user->Set_experience(user->Get_experience()+5);
+
+                return true;
             }
+            return false;
             //qt
         }
+        return false;
         //qt
     }
+    return false;
     //qt
 }
 void Aviculture::Upgrade() {
-    if(user_ptr->Get_level()>=3){
-        if(user_ptr->Get_coin()>=10){
-            if(store_ptr->Get_object(2)>=1){
-                user_ptr->Set_coin(user_ptr->Get_coin()-10);
-                store_ptr->Delete(2,3);
-                store_ptr->Delete(1,1);
+    if(user->Get_level()>=3){
+        if(user->Get_coin()>=10){
+            if(store->Get_object(2)>=1){
+                user->Set_coin(user->Get_coin()-10);
+                store->Delete(2,3);
+                store->Delete(1,1);
                 level++;
                 total_storage *= 2;
-                user_ptr->Set_experience(user_ptr->Get_experience()+5);
+                user->Set_experience(user->Get_experience()+5);
             }
             //qt
         }
@@ -41,8 +46,8 @@ void Aviculture::Upgrade() {
     //qt
 }
 bool Aviculture::Feed() {
-    if(silo_ptr->Delete(0, used_storage)){
-        user_ptr->Set_experience(user_ptr->Get_experience()+(1*used_storage));
+    if(silo->Delete(0, used_storage)){
+        user->Set_experience(user->Get_experience()+(1*used_storage));
         return true;
     }
     return false;
@@ -66,8 +71,8 @@ bool Aviculture::Delete(int type, int amount) {
 }
 
 bool Aviculture::Collect() {
-    if(store_ptr->Add(4,used_storage)){
-        user_ptr->Set_experience(user_ptr->Get_experience()+2);
+    if(store->Add(4,used_storage)){
+        user->Set_experience(user->Get_experience()+2);
         return true;
     }
     return false;
