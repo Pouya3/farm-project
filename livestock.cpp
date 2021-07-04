@@ -1,7 +1,7 @@
 #include "livestock.h"
 
-Livestock::Livestock(Store* _store_ptr){
-    store_ptr=_store_ptr;
+Livestock::Livestock(/*Store* _store_ptr*/){
+    //store_ptr=_store_ptr;
     total_storage=0;
     used_storage=0;
     return;
