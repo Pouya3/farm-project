@@ -1,7 +1,7 @@
 #include "aghol.h"
 
-Aghol::Aghol(Store* _store_ptr){
-    store_ptr=_store_ptr;
+Aghol::Aghol(/*Store* _store_ptr*/){
+   // store_ptr=_store_ptr;
     total_storage=2;
     used_storage=0;
     return;
