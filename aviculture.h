@@ -3,7 +3,7 @@
 
 #include "habitat.h"
 #include "silo.h"
-#include "store.h"
+//#include "store.h"
 
 class Aviculture :public Habitat {
     //Silo* silo_ptr;
