@@ -6,10 +6,12 @@
 #include "store.h"
 
 class Aviculture :public Habitat {
+    //Silo* silo_ptr;
+    //Store* store_ptr;
+public:
     Silo* silo_ptr;
     Store* store_ptr;
-public:
-    Aviculture(Silo* _silo_ptr,Store* _store_ptr);
+    Aviculture(/*Silo* _silo_ptr,Store* _store_ptr*/);
     bool Build();
     void Upgrade();
     bool Feed();
