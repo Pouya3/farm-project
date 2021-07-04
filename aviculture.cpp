@@ -1,8 +1,8 @@
 #include "aviculture.h"
 
-Aviculture::Aviculture(Silo* _silo_ptr,Store* _store_ptr){
-    store_ptr=_store_ptr;
-    silo_ptr=_silo_ptr;
+Aviculture::Aviculture(/*Silo* _silo_ptr,Store* _store_ptr*/){
+   // store_ptr=_store_ptr;
+   // silo_ptr=_silo_ptr;
     total_storage=2;
     used_storage=0;
     return;
