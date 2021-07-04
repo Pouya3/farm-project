@@ -2,7 +2,7 @@
 #define AGHOL_H
 
 #include "habitat.h"
-#include "store.h"
+//#include "store.h"
 
 class Aghol :public Habitat {
     //Store* store_ptr;
