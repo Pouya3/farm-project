@@ -10,7 +10,7 @@ class Aviculture :public Habitat {
     //Store* store_ptr;
 public:
     Silo* silo_ptr;
-    Store* store_ptr;
+    //Store* store_ptr;
     Aviculture(/*Silo* _silo_ptr,Store* _store_ptr*/);
     bool Build();
     void Upgrade();

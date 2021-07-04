@@ -7,6 +7,7 @@ protected:
 	int time;
 	//bool _feed;//
 public:
+	Store* store_ptr;
     Habitat();
 	virtual bool Feed();
 	virtual bool Collect();

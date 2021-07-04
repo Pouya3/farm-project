@@ -7,7 +7,7 @@
 class Livestock :public Habitat {
     //Store* store_ptr;
 public:
-    Store* store_ptr;
+    //Store* store_ptr;
     Livestock(Store* _store_ptr);
     bool Build();
     void Upgrade();
