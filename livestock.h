@@ -2,7 +2,7 @@
 #define LIVESTOCK_H
 
 #include "habitat.h"
-#include "store.h"
+//#include "store.h"
 
 class Livestock :public Habitat {
     //Store* store_ptr;
