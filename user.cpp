@@ -1,22 +1,42 @@
+#include "user.h"
 #include "aghol.h"
 #include "alfalfa_land.h"
 #include "aviculture.h"
-#include "building.h"
-#include "farm.h"
-#include "habitat.h"
-#include "land.h"
 #include "livestock.h"
 #include "silo.h"
 #include "store.h"
 #include "wheat_land.h"
-#include "user.h"
 
-User::User() : store(NULL) {
-        store = new Store;
-        store->parent_user = this;
-        silo = new Silo;
-        silo->parent_user = this;
-        silo->store = this->store;
+User::User() : aghol(NULL), alfalfa_land(NULL), aviculture(NULL), livestock(NULL), silo(NULL), store(NULL), wheat_land(NULL) {
+
+    store = new Store;
+    store->user = this;
+
+    silo = new Silo;
+    silo->user = this;
+    silo->store = this->store;
+
+    aghol = new Aghol;
+    aghol->user = this;
+    aghol->store = this->store;
+
+    alfalfa_land = new Alfalfa_land;
+    alfalfa_land->user = this;
+    alfalfa_land->store = this->store;
+
+    livestock = new Livestock;
+    livestock->user = this;
+    livestock->store = this->store;
+
+    wheat_land = new Wheat_land;
+    wheat_land->user = this;
+    wheat_land->store = this->store;
+    wheat_land->silo = this->silo;
+
+    aviculture = new Aviculture;
+    aviculture->user = this;
+    aviculture->store = this->store;
+    aviculture->silo = this->silo;
 }
 
 void User::Check_experience()
