@@ -1,9 +1,15 @@
 #include "store.h"
+#include "aghol.h"
+#include "alfalfa_land.h"
+#include "aviculture.h"
+#include "livestock.h"
+#include "silo.h"
+#include "wheat_land.h"
 #include <math.h>
 
-Store::Store(User* _user)
+Store::Store() : aghol(NULL), alfalfa_land(NULL), aviculture(NULL), livestock(NULL), silo(NULL), wheat_land(NULL)
 {
-    user = _user;
+
 }
 
 void Store::Upgrade(){
@@ -133,3 +139,4 @@ int Store::Get_object(int type){
     case 6: return wool; break;
     }
 }
+
