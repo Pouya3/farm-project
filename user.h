@@ -1,14 +1,9 @@
 #ifndef USER_H
 #define USER_H
 #include <QString>
-//#include "farm.h"
 class Aghol;
-class Alfaalfa_land;
+class Alfalfa_land;
 class Aviculture;
-class Building;
-class Farm;
-class Habitat;
-class Land;
 class Livestock;
 class Silo;
 class Store;
@@ -28,20 +23,15 @@ class User
     //Farm farm;
 
 public:
-    User();
-    Aghol* aghol;
-    Alfaalfa_land* alfaalfa_land;
-    Aviculture* aviculture;
-    Building* building;
-    Farm* farm;
-    Habitat* habitat;
-    Land* land;
-    Livestock* livestock;
-    Silo* silo;
-    Store* store;
-    User* user;
-    Wheat_land* wheat_land;
+    Aghol* aghol; // aghol -> user
+    Alfalfa_land* alfalfa_land; // alfalfa_land -> this
+    Aviculture* aviculture; // aviculture -> this
+    Livestock* livestock; // livestock -> this
+    Silo* silo; // silo -> this
+    Store* store; // store -> this
+    Wheat_land* wheat_land; // wheat_land -> this
 
+    User();
     int Get_level();
     int Get_experience();
     long long int Get_coin();
