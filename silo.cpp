@@ -1,10 +1,9 @@
 #include "silo.h"
 #include "store.h"
 
-Silo::Silo(User* _user, Store* _store)
+Silo::Silo() : wheat_land(NULL) , aviculture(NULL)
 {
-    store = _store;
-    user = _user;
+
 }
 
 void Silo::Upgrade(){
