@@ -98,3 +98,27 @@ void Alfalfa_land::Harvesting(int tedad){
 
     }
 }
+
+void Alfalfa_land::Making(){
+    if(user->Get_level()>=3){
+        if(user->Get_coin()>=15){
+            if(store->Get_object(1)>=1){
+                if(store->Get_object(2)>=1){
+                    user->Set_coin(user->Get_coin()-15);
+                    store->Delete(1,1);
+                    store->Delete(2,1);
+                    // Qtimer
+
+                    //
+                    user->Set_experience(user->Get_experience()+6);
+                    is_active=true;
+                }
+                else {}
+            }
+            else{}
+        }
+        else{}
+    }
+    else {}
+
+}
