@@ -1,11 +1,24 @@
+#include "aghol.h"
+#include "alfalfa_land.h"
+#include "aviculture.h"
+#include "building.h"
+#include "farm.h"
+#include "habitat.h"
+#include "land.h"
+#include "livestock.h"
+#include "silo.h"
+#include "store.h"
+#include "wheat_land.h"
 #include "user.h"
 
-User::User()
-{
-    level=1;
-    experience=0;
-    max_experience=10;
+User::User() : store(NULL) {
+        store = new Store;
+        store->parent_user = this;
+        silo = new Silo;
+        silo->parent_user = this;
+        silo->store = this->store;
 }
+
 void User::Check_experience()
 {
     if(experience==max_experience)
