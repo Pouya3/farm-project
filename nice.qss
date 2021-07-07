@@ -1,0 +1,45 @@
+QPushButton{
+
+	border-radius:10px;
+	background-color:#d1a732;
+	color:#57420a;
+
+}
+	
+QPushButton:hover{
+	background-color:#57420a;	
+	color:#d1a732;
+}
+
+#MainWindow{
+
+	background-image:url(../farm-project/back.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+	
+}
+#frame{
+	background-color:rgba(117,78,0,0.4);
+	border-radius:12px;
+}
+#toolButton{
+	background-image:url(../farm-project/logo.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:85%;
+
+}
+
+#toolButton_2{
+	
+	background-color:rgba(117,78,0,0);
+	background-image:url(../farm-project/text.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:22px;
+
+}

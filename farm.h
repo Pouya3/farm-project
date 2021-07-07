@@ -15,7 +15,7 @@ private:
     Store store;
     Silo silo;
     Aviculture aviculture;
-    Aghol aghol;
+    //Aghol aghol;
     Livestock livestock;
 
 public:
