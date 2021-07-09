@@ -16,3 +16,11 @@ int Building::Get_total_storage(){
 int Building::Get_used_storage(){
     return used_storage;
 }
+
+void Building::Set_level(int _level){
+    level = _level;
+}
+
+int Building::Get_level(){
+    return level;
+}

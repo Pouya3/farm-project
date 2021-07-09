@@ -19,6 +19,8 @@ public:
     void Set_total_storage(int);
     int Get_total_storage();
     int Get_used_storage();
+    void Set_level(int);
+    int Get_level();
 };
 
 #endif // BUILDING_H
