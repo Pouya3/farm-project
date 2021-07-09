@@ -47,19 +47,16 @@ HEADERS += \
     silo.h \
     store.h \
     user.h \
-    wheat_land.h
+    wheat_land.h \
 
 FORMS += \
-<<<<<<< HEAD
     loginpage.ui \
     mainpage.ui \
     mainwindow.ui \
-    signuppage.ui
-=======
+    signuppage.ui \
     StoreWindow.ui \
     Wheat_landWindow.ui \
-    mainwindow.ui
->>>>>>> 0ea3c2ce39f24219f3b90810e4c55661286b96da
+    mainwindow.ui \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
