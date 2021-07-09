@@ -1,5 +1,6 @@
 #include "silo.h"
 #include "store.h"
+#include <math.h>
 
 Silo::Silo() : wheat_land(NULL) , aviculture(NULL)
 {

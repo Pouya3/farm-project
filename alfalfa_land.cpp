@@ -2,18 +2,9 @@
 
 Alfalfa_land::Alfalfa_land()
 {
-    /*if(user->Get_level()>=3)
-        is_active=true;
-    else
-        is_active=false;*/
-    // aya mishe in kar ro bokonam???
-
-    space=4;
-    plowable=0;
-    cultivable=0;
 }
 
-void Alfalfa_land::Upgrade() 
+void Alfalfa_land::Upgrade()
 {
     if (store->Get_object(1)>=2 && user->Get_coin()>=5 && user->Get_level()>=4) {
         store->Delete(1, 2);         
@@ -69,7 +60,7 @@ void Alfalfa_land::Cultivation(int tedad) {
 
             // after Qtimer finished :
             status=4;
-            cultivable=tedad;
+            cultivated=tedad;
         }
         else { // not enough resources for upgrading
             if (user->Get_coin()<5*tedad) { } 
@@ -84,15 +75,15 @@ void Alfalfa_land::Cultivation(int tedad) {
 
 void Alfalfa_land::Harvesting(int tedad){
     if(status==4){
-        if(store->Add(3,tedad*2)==true && cultivable>=tedad){
+        if(store->Add(3,tedad*2)==true && cultivated>=tedad){
             user->Set_experience(user->Get_experience()+tedad*2);
-            cultivable-=tedad;
+            cultivated-=tedad;
         }
         else{
             if (store->Add(3,tedad*2)==false) { } // kambod ja
             else { } // meghdar vared shde sahih nist
         }
-        if(cultivable==0) status=0;
+        if(cultivated==0) status=0;
     }
     else { // zamin dar vaziat digari ast
 

@@ -10,7 +10,7 @@ protected:
     int level;
     int space;
     int status;
-    int cultivable; //tedad zamin haii ke chiz dar anha kashtim
+    int cultivated; //tedad zamin haii ke chiz dar anha kashtim
     bool is_active;
 
 public:
@@ -22,7 +22,10 @@ public:
     int Get_time();
     void Set_time(int);
     void Set_level(int);
-    int get_level();
+    int Get_level();
+    int Get_cultivated();
+    int Get_space();
+    int Get_status();
     User* user;
     Store* store;
 };
