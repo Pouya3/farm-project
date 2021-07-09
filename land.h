@@ -21,6 +21,8 @@ public:
     virtual void Harvesting(int)=0;
     int Get_time();
     void Set_time(int);
+    void Set_level(int);
+    int get_level();
     User* user;
     Store* store;
 };
