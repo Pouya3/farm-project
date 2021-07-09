@@ -62,7 +62,7 @@ int Aghol::Wool_shaving() {
     if(user->Get_coin()>=used_storage){
         if(store->Get_total_storage()-store->Get_used_storage()>=used_storage){
             //user->Delete_coin(used_storage);
-            store->Add(6,used_storage);
+            Collect();
             user->Set_experience(user->Get_experience()+(9*used_storage));
             return 1;// to send wool added
         }
@@ -86,6 +86,10 @@ bool Aghol::Delete(int type, int amount) {
     }
     return false;
 }
-/*bool Aghol::Collect() {
-
-}*/
+bool Aghol::Collect() {
+     if(store->Get_total_storage()-store->Get_used_storage()>=used_storage){
+        store->Add(6,used_storage);
+        return true;
+     }
+   return false;
+}
