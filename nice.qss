@@ -24,8 +24,8 @@ QPushButton:hover{
 	background-color:rgba(117,78,0,0.4);
 	border-radius:12px;
 }
-#toolButton{
-	background-image:url(../farm-project/logo.jpg);
+#toolButton_3{
+	background-image:url(../farm-project/logo1.jpg);
 	background-position: center; /* Center the image */
  	background-repeat: no-repeat; /* Do not repeat the image */
   	background-size: cover;
@@ -36,10 +36,12 @@ QPushButton:hover{
 #toolButton_2{
 	
 	background-color:rgba(117,78,0,0);
-	background-image:url(../farm-project/text.jpg);
-	background-position: center; /* Center the image */
- 	background-repeat: no-repeat; /* Do not repeat the image */
-  	background-size: cover;
 	border-radius:22px;
+	color:#e79cff;
 
+}
+#toolButton{
+	
+	background-color:#e79cff;
+	border-radius:95%;
 }

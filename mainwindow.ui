@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>894</width>
+    <width>873</width>
     <height>622</height>
    </rect>
   </property>
@@ -24,8 +24,8 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>30</y>
+      <x>210</x>
+      <y>20</y>
       <width>461</width>
       <height>571</height>
      </rect>
@@ -81,10 +81,10 @@
     <widget class="QToolButton" name="toolButton">
      <property name="geometry">
       <rect>
-       <x>140</x>
+       <x>130</x>
        <y>10</y>
-       <width>171</width>
-       <height>171</height>
+       <width>191</width>
+       <height>191</height>
       </rect>
      </property>
      <property name="text">
@@ -94,19 +94,37 @@
     <widget class="QToolButton" name="toolButton_2">
      <property name="geometry">
       <rect>
-       <x>100</x>
-       <y>190</y>
-       <width>251</width>
+       <x>90</x>
+       <y>200</y>
+       <width>271</width>
        <height>81</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>2  Mehr</family>
-       <pointsize>23</pointsize>
+       <family>Comic Sans MS</family>
+       <pointsize>32</pointsize>
        <weight>75</weight>
        <bold>true</bold>
+       <underline>false</underline>
+       <strikeout>false</strikeout>
       </font>
+     </property>
+     <property name="mouseTracking">
+      <bool>false</bool>
+     </property>
+     <property name="text">
+      <string>Hay  Night</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButton_3">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>20</y>
+       <width>171</width>
+       <height>171</height>
+      </rect>
      </property>
      <property name="text">
       <string/>
