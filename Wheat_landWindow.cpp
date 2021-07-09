@@ -15,9 +15,6 @@ Wheat_landWindow::Wheat_landWindow(Wheat_land* _wheat_land, QWidget *parent) :
     QPixmap background(WHEAT_LAND);
     ui->background_label->setPixmap(background.scaled(650,450, Qt::KeepAspectRatio));
 
-    QPixmap logo(LOGO);
-    ui->logo_label->setPixmap(logo.scaled(50, 50));
-
     wheat_land = _wheat_land;
 
     if(wheat_land->Get_status() == 0){
