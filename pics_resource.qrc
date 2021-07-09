@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>img/alfalfa.png</file>
+        <file>img/alfalfa_land.jpg</file>
+        <file>img/egg.png</file>
+        <file>img/milk.png</file>
+        <file>img/nail.png</file>
+        <file>img/shovel.png</file>
+        <file>img/silo.jpg</file>
+        <file>img/wheat land.jpg</file>
+        <file>img/wheat.png</file>
+        <file>img/wool.png</file>
+        <file>img/store.jpg</file>
+    </qresource>
+</RCC>
