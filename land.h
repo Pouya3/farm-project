@@ -32,11 +32,14 @@ public:
 
     void Set_level(int);
     int Get_level();
+    void Set_total_area(int);
     int Get_total_area();
+    void Set_cultivated_area(int);
     int Get_cultivated_area();
+    void Set_cultivation_status(int);
     int Get_cultivation_status();
-    void Set_ripe_timer(int);
-    int Get_ripe_timer();
+    void Set_ripening_timer(int);
+    int Get_ripening_timer();
 
     User* user;
     Store* store;
