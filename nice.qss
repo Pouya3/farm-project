@@ -103,3 +103,28 @@ QPushButton:hover{
 
 	color:#fce295;
 }
+#MainPage{
+	background-image:url(../farm-project/final2.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
+#pushButton_a,#pushButton_a_2,#pushButton_a_3,#pushButton_a_4,#pushButton_a_5,#pushButton_a_6,#pushButton_a_7,#pushButton_a_8{
+
+	background-color:rgba(117,78,0,0);
+
+	color:rgba(117,78,0,0);
+
+}
+#pushButton_a:hover,#pushButton_a_5:hover{
+	color:#ffffff;
+
+}
+
+#pushButton_a_8:hover{
+	color:#050505;
+}
+#pushButton_a_2:hover,#pushButton_a_4:hover,#pushButton_a_6:hover,#pushButton_a_7:hover,#pushButton_a_3:hover{
+	color:#6a006e;
+
+}

@@ -19,6 +19,7 @@ SOURCES += \
     livestock.cpp \
     loginpage.cpp \
     main.cpp \
+    mainpage.cpp \
     mainwindow.cpp \
     signuppage.cpp \
     silo.cpp \
@@ -36,6 +37,7 @@ HEADERS += \
     land.h \
     livestock.h \
     loginpage.h \
+    mainpage.h \
     mainwindow.h \
     signuppage.h \
     silo.h \
@@ -45,6 +47,7 @@ HEADERS += \
 
 FORMS += \
     loginpage.ui \
+    mainpage.ui \
     mainwindow.ui \
     signuppage.ui
 
