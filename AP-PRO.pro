@@ -12,8 +12,10 @@ SOURCES += \
     StoreWindow.cpp \
     Wheat_landWindow.cpp \
     aghol.cpp \
+    agholpage.cpp \
     alfalfa_land.cpp \
     aviculture.cpp \
+    aviculturepage.cpp \
     building.cpp \
     farm.cpp \
     habitat.cpp \
@@ -34,8 +36,10 @@ HEADERS += \
     StoreWindow.h \
     Wheat_landWindow.h \
     aghol.h \
+    agholpage.h \
     alfalfa_land.h \
     aviculture.h \
+    aviculturepage.h \
     building.h \
     farm.h \
     habitat.h \
@@ -52,6 +56,8 @@ HEADERS += \
     wheat_land.h \
 
 FORMS += \
+    agholpage.ui \
+    aviculturepage.ui \
     livestockpage.ui \
     loginpage.ui \
     mainpage.ui \
