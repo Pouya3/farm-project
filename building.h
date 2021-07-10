@@ -20,7 +20,10 @@ public:
     int Get_level();
     void Set_total_storage(int);
     int Get_total_storage();
+    void Set_used_storage(int);
     int Get_used_storage();
+    void Set_upgrade_timer(int);
+    int Get_upgrade_timer();
 };
 
 #endif // BUILDING_H

@@ -30,5 +30,17 @@ public:
     virtual int Build() = 0;
     bool Add(int type, int amount);
     bool Delete(int type, int amount);
+
+    void Set_building_status(int);
+    int Get_building_status();
+    void Set_feeding_status(int);
+    int Get_feeding_status();
+    void Set_feeding_timer(int);
+    int Get_feeding_timer();
+    void Set_building_timer(int);
+    int Get_building_timer();
+    void Set_upgrade_timer(int);
+    int Get_upgrade_timer();
+
 };
 #endif // HABITAT_H
