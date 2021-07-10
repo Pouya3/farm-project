@@ -36,7 +36,10 @@ public:
     int Upgrade();
     bool Add(int ,int );
     bool Delete(int ,int);
-    int Get_object(int );
+    void Set_object(int, int);
+    int Get_object(int);
+    void Set_milk_info(vector<pair<int, int>> _milk_info);
+    vector<pair<int, int>> Get_milk_info();
 };
 
 #endif // STORE_H

@@ -134,6 +134,17 @@ bool Store::Delete(int object_type, int number){
     }
 }
 
+void Store::Set_object(int type, int number){
+    switch(type){
+    case 1: shovel = number; break;
+    case 2: nail = number; break;
+    case 3: alfalfa = number; break;
+    case 4: egg = number; break;
+    case 5: milk = number; break;
+    case 6: wool = number; break;
+    }
+}
+
 int Store::Get_object(int type){
     switch(type){
     case 1: return shovel; break;
@@ -145,3 +156,10 @@ int Store::Get_object(int type){
     }
 }
 
+void Store::Set_milk_info(vector<pair<int, int>> _milk_info){
+    milk_info = _milk_info;
+}
+
+vector<pair<int, int>> Store::Get_milk_info(){
+    return milk_info;
+}
