@@ -20,8 +20,23 @@ QPushButton:hover{
 	background-color:red;
 	
 }
-#frame{
-	background-color:rgba(117,78,0,0.4);
+#LoginPage{
+	background-image:url(../farm-project/2028.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+
+}
+#frame_s{
+	background-color:rgba(99,47,2,0.4);
+	border-radius:12px;
+}
+#frame_m{
+	background-color:rgba(99,47,2,0.4);
+	border-radius:12px;
+}
+#frame_l{
+	background-color:rgba(99,47,2,0.4);
 	border-radius:12px;
 }
 #toolButton_3{
@@ -44,4 +59,47 @@ QPushButton:hover{
 	
 	background-color:#e79cff;
 	border-radius:95%;
+}
+#signupPage{
+	background-image:url(../farm-project/2028.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
+
+#lineEdit_s,#lineEdit_s_2,#lineEdit_s_3,#lineEdit_s_4,#lineEdit_s_5,#lineEdit_l,#lineEdit_l_2{
+	border-radius:6px;
+	background-color:#f2cf66;
+	color:#6e3b0e;
+	font-size:16px;
+
+}
+#toolButton_s{
+	background-image:url(../farm-project/account-logo.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:65%;
+
+}
+#toolButton_l{
+	background-image:url(../farm-project/account-logo.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:70%;
+
+}
+#toolButton_l{
+	background-image:url(../farm-project/account-logo.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:70%;
+
+}
+
+#label_s,#label_s_2,#label_s_3,#label_s_4,#label_s_5,#label_l,#label_l_2{
+
+	color:#fce295;
 }

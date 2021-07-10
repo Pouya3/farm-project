@@ -17,8 +17,10 @@ SOURCES += \
     habitat.cpp \
     land.cpp \
     livestock.cpp \
+    loginpage.cpp \
     main.cpp \
     mainwindow.cpp \
+    signuppage.cpp \
     silo.cpp \
     store.cpp \
     user.cpp \
@@ -33,14 +35,18 @@ HEADERS += \
     habitat.h \
     land.h \
     livestock.h \
+    loginpage.h \
     mainwindow.h \
+    signuppage.h \
     silo.h \
     store.h \
     user.h \
     wheat_land.h
 
 FORMS += \
-    mainwindow.ui
+    loginpage.ui \
+    mainwindow.ui \
+    signuppage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

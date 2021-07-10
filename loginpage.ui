@@ -1,33 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>LoginPage</class>
+ <widget class="QMainWindow" name="LoginPage">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>873</width>
-    <height>622</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
-  </property>
-  <property name="font">
-   <font>
-    <family>2  Mehr</family>
-    <weight>75</weight>
-    <bold>true</bold>
-   </font>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QFrame" name="frame_m">
+   <widget class="QFrame" name="frame_l">
     <property name="geometry">
      <rect>
-      <x>200</x>
+      <x>230</x>
       <y>20</y>
-      <width>461</width>
-      <height>571</height>
+      <width>401</width>
+      <height>501</height>
      </rect>
     </property>
     <property name="frameShape">
@@ -36,40 +29,79 @@
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QLabel" name="label_l">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>450</y>
-       <width>111</width>
-       <height>41</height>
+       <x>70</x>
+       <y>250</y>
+       <width>101</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <family>ONE DAY</family>
-       <pointsize>9</pointsize>
+       <pointsize>11</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
      </property>
      <property name="text">
-      <string>Sign up</string>
+      <string>Username:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QLabel" name="label_l_2">
      <property name="geometry">
       <rect>
-       <x>170</x>
-       <y>500</y>
+       <x>70</x>
+       <y>310</y>
        <width>111</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>11</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Password:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_l">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>250</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_l_2">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>310</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_l">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>410</y>
+       <width>201</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
        <family>ONE DAY</family>
-       <pointsize>9</pointsize>
+       <pointsize>10</pointsize>
        <weight>75</weight>
        <bold>true</bold>
       </font>
@@ -78,52 +110,13 @@
       <string>Login</string>
      </property>
     </widget>
-    <widget class="QToolButton" name="toolButton">
+    <widget class="QToolButton" name="toolButton_l">
      <property name="geometry">
       <rect>
-       <x>130</x>
-       <y>10</y>
-       <width>191</width>
-       <height>191</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QToolButton" name="toolButton_2">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>200</y>
-       <width>271</width>
-       <height>81</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <family>Comic Sans MS</family>
-       <pointsize>32</pointsize>
-       <weight>75</weight>
-       <bold>true</bold>
-       <underline>false</underline>
-       <strikeout>false</strikeout>
-      </font>
-     </property>
-     <property name="mouseTracking">
-      <bool>false</bool>
-     </property>
-     <property name="text">
-      <string>Hay  Night</string>
-     </property>
-    </widget>
-    <widget class="QToolButton" name="toolButton_3">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>20</y>
-       <width>171</width>
-       <height>171</height>
+       <x>120</x>
+       <y>30</y>
+       <width>161</width>
+       <height>141</height>
       </rect>
      </property>
      <property name="text">
