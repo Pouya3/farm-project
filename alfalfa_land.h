@@ -3,22 +3,28 @@
 #include "land.h"
 #include "store.h"
 
-// status: 0 zamin bikar(shokm nazade) ... 1 zamin darhale shokm ... 2 shokm be payan reside
-// ... 3 zamin dar hale kesht mahsole asli ... 4 kesht zamin tamam shode va montazere jamavari
 class Alfalfa_land :public Land
 {
 private:
-    int plowable;
+    // building_status :
+    // 0 == locked
+    // 1 == locked but not built
+    // 2 == built
+
+    int plowed_area;
+    int building_status;
+    int building_timer;
+    int plowing_timer;;
 
 public:
     Store* store; // this -> store
 
     Alfalfa_land();
-    void Upgrade();
-    void Plow(int);
-    void Cultivation(int);
-    void Harvesting(int);
-    void Making();
+    int Upgrade();
+    int Cultivate(int);
+    int Harvest();
+    int Plow(int);
+    int Build();
 };
 
 #endif // ALFALFA_LAND_H

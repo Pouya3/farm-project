@@ -17,13 +17,13 @@ Wheat_landWindow::Wheat_landWindow(Wheat_land* _wheat_land, QWidget *parent) :
 
     wheat_land = _wheat_land;
 
-    if(wheat_land->Get_status() == 0){
+    if(wheat_land->Get_cultivation_status() == 0){
         ui->status_number_label->setText("Not Cultivated");
         ui->DAYS_TO_WAIT_label->hide();
         ui->days_t_wait_number_label->hide();
         ui->harvest_button->hide();
     }
-    else if(wheat_land->Get_status() == 1){
+    else if(wheat_land->Get_cultivation_status() == 1){
         ui->status_number_label->setText("Waiting for wheats to get ripe");
         ui->DAYS_TO_WAIT_label->show();
         ui->days_t_wait_number_label->show();
@@ -36,9 +36,9 @@ Wheat_landWindow::Wheat_landWindow(Wheat_land* _wheat_land, QWidget *parent) :
         ui->days_t_wait_number_label->hide();
         ui->harvest_button->show();
     }
-    ui->area_number_label->setText(QString::number(wheat_land->Get_cultivated()));
+    ui->area_number_label->setText(QString::number(wheat_land->Get_cultivated_area()));
     ui->level_number_label->setText(QString::number(wheat_land->Get_level()));
-    ui->cultivated_area_number_label->setText(QString::number(wheat_land->Get_cultivated()));
+    ui->cultivated_area_number_label->setText(QString::number(wheat_land->Get_cultivated_area()));
 
     ////////////////////////////
 
@@ -56,5 +56,5 @@ void Wheat_landWindow::Upgrade(){
 }
 
 void Wheat_landWindow::Harvest(){
-    wheat_land->Harvesting(wheat_land->Get_cultivated());
+    wheat_land->Harvest();
 }

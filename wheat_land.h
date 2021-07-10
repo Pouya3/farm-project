@@ -4,8 +4,6 @@
 #include "store.h"
 #include "silo.h"
 
-// status: 0 zamin bikar ... 1 zamin dar hale kesht ... 2 kesht zamin tamam shode va montazere jamavari
-
 class Wheat_land : public Land 
 {
 
@@ -14,9 +12,9 @@ public:
     Store* store; // this -> store
 
     Wheat_land();
-    void Upgrade();
-    void Cultivation(int);
-    void Harvesting(int);
+    int Upgrade();
+    int Cultivate(int);
+    int Harvest();
 };
 
 #endif // WHEAT_LAND_H

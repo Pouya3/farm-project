@@ -20,7 +20,6 @@ class User
     int max_experience;
     int time;
     long long int coin;
-    //Farm farm;
 
 public:
     Aghol* aghol; // aghol -> user

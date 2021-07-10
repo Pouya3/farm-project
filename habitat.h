@@ -5,18 +5,30 @@
 
 class Habitat: public Building {
 protected:
-	int status;
-	int time;
-	//bool _feed;//
+    // building_status :
+    // 0 == locked
+    // 1 == unlocked but not built
+    // 2 == built
+
+    // feeding_status :
+    // 0 == not fed and no product to collect
+    // 1 == fed but no product to collect
+    // 2 == product ready to collect
+
+    int building_status;
+    int feeding_status;
+    int feeding_timer;
+    int building_timer;
+    int upgrade_timer;
+
 public:
     Store* store;
+
 	Habitat();
-    virtual bool Feed() = 0;
-    virtual bool Collect() = 0;
-	bool Is_full();
-    //bool Add(int type, int amount);//
-    //bool Delete(int type, int amount);//
-	int Get_time();
-	void Set_time(int _time);
+    virtual int Feed() = 0;
+    virtual int Collect() = 0;
+    virtual int Build() = 0;
+    bool Add(int type, int amount);
+    bool Delete(int type, int amount);
 };
 #endif // HABITAT_H

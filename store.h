@@ -33,7 +33,7 @@ public:
     Wheat_land* wheat_land; // wheat_land -> this
 
     Store();
-    void Upgrade();
+    int Upgrade();
     bool Add(int ,int );
     bool Delete(int ,int);
     int Get_object(int );

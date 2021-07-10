@@ -12,30 +12,35 @@ Store::Store() : aghol(NULL), alfalfa_land(NULL), aviculture(NULL), livestock(NU
 
 }
 
-void Store::Upgrade(){
+int Store::Upgrade(){
+    // return values :
+    // 1 == not enough nails
+    // 2 == not enough shovels
+    // 3 == not enough coins
+    // 4 == limit for upgrading duo to user's level
+    // 5 == timer set for upgrade (successful upgrade)
+
     if(nail < level){ // not enough nails
-        // QmessageBox for "not enough nails
+        return 1;
     }
     else if(shovel < level - 1){ // not enough shovels
-        // QmessageBox for not enough shovels
+        return 2;
     }
     else if(user->Get_coin() < pow(this->level,3) * 10){ // not enough coins
-        // QmessageBox for not enough coins
+        return 3;
     }
     else{ // enough resources
         if(user->Get_level() <= this->level){ // user's level will be lower than store's level after upgarde store
-            // QmessageBox for "level limitation"
+            return 4;
         }
         else{ // no problem for upgrading
             this->Delete(2, this->level);
             this->Delete(1, this->level-1);
             user->Set_coin(user->Get_coin()-pow(this->level,3) * 10);
-            // Qtimer
 
-            // after Qtimer finished :
-            this->level++;
-            this->total_storage = round(this->total_storage*1.5);
-            user->Set_experience(user->Get_experience()+this->level*3);
+            //std::thread t(Check_for_upgrade_timer);
+
+            return 5;
         }
     }
 }
