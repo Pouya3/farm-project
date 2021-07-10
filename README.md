@@ -1,6 +1,6 @@
 # farm-project
 
-a game whith cpp and qt like had day game!
+a game with cpp and qt like had day game!
 
 this is "Hay Night"
 
