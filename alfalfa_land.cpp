@@ -137,3 +137,36 @@ int Alfalfa_land::Build(){
     }
     return 1;
 }
+
+void Alfalfa_land::set_plowed_area(int _plowed_area){
+    plowed_area = _plowed_area;
+}
+
+int Alfalfa_land::Get_plowed_area(){
+    return plowed_area;
+}
+
+void Alfalfa_land::Set_building_status(int _building_status){
+    building_status = _building_status;
+}
+
+int Alfalfa_land::Get_building_status(){
+    return building_status;
+}
+
+void Alfalfa_land::Set_building_timer(int _building_timer){
+    building_timer = _building_timer;
+}
+
+int Alfalfa_land::Get_building_timer(){
+    return building_timer;
+}
+
+void Alfalfa_land::Set_plowig_timer(int _plowing_timer){
+    plowing_timer = _plowing_timer;
+}
+
+int Alfalfa_land::get_plowing_timer(){
+    return plowing_timer;
+}
+
