@@ -16,7 +16,7 @@ MainPage::MainPage(QWidget *parent) :
     this->setFixedSize(1265,540);
     timer=new QTimer (this);
     connect(timer,SIGNAL(timeout()),this,SLOT(Time_function()));
-    timer->start(15000);
+    timer->start(300000);
 }
 
 MainPage:: ~MainPage()
@@ -79,9 +79,5 @@ void MainPage:: on_pushButton_mm_2_clicked()
     m->show();
 }
 void MainPage:: Time_function(){
-    Time time;
-    time=user->Get_time();
-    time.Set_hour(user->Get_time().Get_hour()+1);
-    user->Set_time(time);
-
+    user->Set_time(user->Get_time()+1);
 }
