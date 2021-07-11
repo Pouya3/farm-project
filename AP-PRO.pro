@@ -9,6 +9,8 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    StoreWindow.cpp \
+    Wheat_landWindow.cpp \
     aghol.cpp \
     alfalfa_land.cpp \
     aviculture.cpp \
@@ -28,6 +30,8 @@ SOURCES += \
     wheat_land.cpp
 
 HEADERS += \
+    StoreWindow.h \
+    Wheat_landWindow.h \
     aghol.h \
     alfalfa_land.h \
     aviculture.h \
@@ -46,12 +50,21 @@ HEADERS += \
     wheat_land.h
 
 FORMS += \
+<<<<<<< HEAD
     loginpage.ui \
     mainpage.ui \
     mainwindow.ui \
     signuppage.ui
+=======
+    StoreWindow.ui \
+    Wheat_landWindow.ui \
+    mainwindow.ui
+>>>>>>> 0ea3c2ce39f24219f3b90810e4c55661286b96da
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    pics_resource.qrc

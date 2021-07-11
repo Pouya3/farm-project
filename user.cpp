@@ -16,9 +16,9 @@ User::User() : aghol(NULL), alfalfa_land(NULL), aviculture(NULL), livestock(NULL
     silo->user = this;
     silo->store = this->store;
 
-    //aghol = new Aghol;
-    aghol->user = this;
-    aghol->store = this->store;
+//    aghol = new Aghol;
+//    aghol->user = this;
+//    aghol->store = this->store;
 
     alfalfa_land = new Alfalfa_land;
     alfalfa_land->user = this;
