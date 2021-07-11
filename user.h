@@ -1,7 +1,7 @@
 #ifndef USER_H
 #define USER_H
 #include <QString>
-#include "_time.h"
+//#include "_time.h"
 class Aghol;
 class Alfalfa_land;
 class Aviculture;
@@ -20,7 +20,7 @@ class User
     int level;
     int experience;
     int max_experience;
-    Time time;
+    int time;
     long long int coin;
 
 public:
@@ -48,8 +48,8 @@ public:
     int Get_experience();
     void Set_max_experience(int);//
     int Get_max_experience(); //
-    void Set_time(Time);
-    Time Get_time();
+    void Set_time(int);
+    int Get_time();
     void Set_coin(long long int);
     long long int Get_coin();
     void Check_experience();
