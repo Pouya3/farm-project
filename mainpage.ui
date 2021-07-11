@@ -25,14 +25,14 @@
     </property>
     <property name="font">
      <font>
-      <family>ONE DAY</family>
+      <family>Tahoma</family>
       <pointsize>15</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Store</string>
+     <string>STORE</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_a_2">
@@ -46,14 +46,14 @@
     </property>
     <property name="font">
      <font>
-      <family>ONE DAY</family>
+      <family>Tahoma</family>
       <pointsize>15</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Market</string>
+     <string>MARKET</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_a_3">
@@ -67,14 +67,14 @@
     </property>
     <property name="font">
      <font>
-      <family>ONE DAY</family>
+      <family>Tahoma</family>
       <pointsize>15</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Aghol</string>
+     <string>AGHOL</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_a_4">
@@ -88,14 +88,14 @@
     </property>
     <property name="font">
      <font>
-      <family>ONE DAY</family>
+      <family>Tahoma</family>
       <pointsize>15</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Aviculture</string>
+     <string>AVICULTURE</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_a_5">
@@ -109,14 +109,14 @@
     </property>
     <property name="font">
      <font>
-      <family>ONE DAY</family>
+      <family>Tahoma</family>
       <pointsize>15</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Alfalfa Land</string>
+     <string>ALFALFA  LAND</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_a_6">
@@ -130,14 +130,14 @@
     </property>
     <property name="font">
      <font>
-      <family>ONE DAY</family>
+      <family>Tahoma</family>
       <pointsize>15</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Wheat Land</string>
+     <string>WHEAT LAND</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_a_7">
@@ -151,14 +151,14 @@
     </property>
     <property name="font">
      <font>
-      <family>ONE DAY</family>
+      <family>Tahoma</family>
       <pointsize>15</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Silo</string>
+     <string>SILO</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_a_8">
@@ -172,14 +172,14 @@
     </property>
     <property name="font">
      <font>
-      <family>ONE DAY</family>
+      <family>Tahoma</family>
       <pointsize>13</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
     </property>
     <property name="text">
-     <string>Livestock</string>
+     <string>LIVESTOCK</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pushButton_m_1">
