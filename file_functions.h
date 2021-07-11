@@ -12,17 +12,17 @@
 #include <vector>
 #include <map>
 
-#include "E:/visual studio projects/farm-project/aghol.h"
-#include "E:/visual studio projects/farm-project/alfalfa_land.h"
-#include "E:/visual studio projects/farm-project/aviculture.h"
-#include "E:/visual studio projects/farm-project/building.h"
-#include "E:/visual studio projects/farm-project/habitat.h"
-#include "E:/visual studio projects/farm-project/land.h"
-#include "E:/visual studio projects/farm-project/livestock.h"
-#include "E:/visual studio projects/farm-project/silo.h"
-#include "E:/visual studio projects/farm-project/store.h"
-#include "E:/visual studio projects/farm-project/user.h"
-#include "E:/visual studio projects/farm-project/Wheat_land.h"
+#include "aghol.h"
+#include "alfalfa_land.h"
+#include "aviculture.h"
+#include "building.h"
+#include "habitat.h"
+#include "land.h"
+#include "livestock.h"
+#include "silo.h"
+#include "store.h"
+#include "user.h"
+#include "Wheat_land.h"
 
 
 bool Create_new_user_files(QString username, QString name, QString password, QString email);
