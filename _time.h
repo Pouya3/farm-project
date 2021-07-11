@@ -6,6 +6,6 @@ public:
   void Set_hour(int);
   //void Set_day(int);
   int Get_hour();
-  void Get_day(int); 
+  int Get_day(); 
   
 };
