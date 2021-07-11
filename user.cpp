@@ -68,9 +68,6 @@ void User::Check_experience()
         //peygham bede be karbar ke level bala rafte va namayeshe emkanate jadid
     }
 }
-  void User:: Set_time(Time _time){time=_time;}
-  Time User:: Get_time(){return time;}
-
 
 
 
