@@ -32,6 +32,7 @@ User::User() : aghol(NULL), alfalfa_land(NULL), aviculture(NULL), livestock(NULL
     wheat_land->user = this;
     wheat_land->store = this->store;
     wheat_land->silo = this->silo;
+    
 
     aviculture = new Aviculture;
     aviculture->user = this;
@@ -67,7 +68,8 @@ void User::Check_experience()
         //peygham bede be karbar ke level bala rafte va namayeshe emkanate jadid
     }
 }
-
+  void User:: Set_time(Time _time){time=_time;}
+  Time User:: Get_time(){return time;}
 
 
 
