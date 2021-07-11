@@ -8,6 +8,7 @@ class Livestock;
 class Silo;
 class Store;
 class Wheat_land;
+class MainPage;
 
 class User
 {
@@ -18,7 +19,7 @@ class User
     int level;
     int experience;
     int max_experience;
-    int time;
+    Time time;
     long long int coin;
 
 public:
@@ -29,6 +30,7 @@ public:
     Silo* silo; // silo -> this
     Store* store; // store -> this
     Wheat_land* wheat_land; // wheat_land -> this
+    MainPage* mainPage;// mainPage-> this
 
     User();
     void Set_name(QString);//
@@ -45,8 +47,8 @@ public:
     int Get_experience();
     void Set_max_experience(int);//
     int Get_max_experience(); //
-    void Set_time(int);
-    int Get_time();
+    void Set_time(Time);
+    Time Get_time();
     void Set_coin(long long int);
     long long int Get_coin();
     void Check_experience();
