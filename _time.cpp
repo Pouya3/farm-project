@@ -1,4 +1,4 @@
-#include "time.h"
+#include "_time.h"
 
 void Time :: Set_hour(int _hour){
   hour=_hour;
