@@ -19,6 +19,7 @@ SOURCES += \
     habitat.cpp \
     land.cpp \
     livestock.cpp \
+    livestockpage.cpp \
     loginpage.cpp \
     main.cpp \
     mainpage.cpp \
@@ -40,6 +41,7 @@ HEADERS += \
     habitat.h \
     land.h \
     livestock.h \
+    livestockpage.h \
     loginpage.h \
     mainpage.h \
     mainwindow.h \
@@ -50,6 +52,7 @@ HEADERS += \
     wheat_land.h \
 
 FORMS += \
+    livestockpage.ui \
     loginpage.ui \
     mainpage.ui \
     mainwindow.ui \

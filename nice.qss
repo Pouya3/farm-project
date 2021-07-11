@@ -20,6 +20,14 @@ QPushButton:hover{
 	background-color:red;
 	
 }
+#LivestockPage{
+	background-image:url(../farm-project/livestock.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+	
+}
 #LoginPage{
 	background-image:url(../farm-project/2028.jpg);
 	background-position: center; /* Center the image */
@@ -128,3 +136,5 @@ QPushButton:hover{
 	color:#6a006e;
 
 }
+
+
