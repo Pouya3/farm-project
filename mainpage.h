@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include "User.h"
 
 namespace Ui {
 class MainPage;
@@ -37,6 +38,7 @@ private slots:
 private:
     Ui::MainPage *ui;
     QTimer *timer;
+    User * user;
 };
 
 #endif // MAINPAGE_H
