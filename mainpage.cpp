@@ -79,6 +79,9 @@ void MainPage:: on_pushButton_mm_2_clicked()
     m->show();
 }
 void MainPage:: Time_function(){
-    user->Get_time().Set_hour(user->Get_time().Get_hour()+1);
+    Time time;
+    time=user->Get_time();
+    time.Set_hour(user->Get_time().Get_hour()+1);
+    user->Set_time(time);
 
 }
