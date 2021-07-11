@@ -2,6 +2,7 @@
 #define MAINPAGE_H
 
 #include <QMainWindow>
+#include <QTimer>
 
 namespace Ui {
 class MainPage;
@@ -14,7 +15,8 @@ class MainPage : public QMainWindow
 public:
     explicit MainPage(QWidget *parent = nullptr);
     ~MainPage();
-
+public slots:
+    void Time_function();
 private slots:
     void on_pushButton_a_clicked();
 
@@ -34,6 +36,7 @@ private slots:
 
 private:
     Ui::MainPage *ui;
+    QTimer *timer;
 };
 
 #endif // MAINPAGE_H
