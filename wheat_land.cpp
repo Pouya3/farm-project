@@ -2,9 +2,6 @@
 
 Wheat_land::Wheat_land()
 {
-    is_active=true;
-    space=5;
-    cultivable=0;
 }
 
 void Wheat_land::Upgrade() 
@@ -38,7 +35,7 @@ void Wheat_land::Cultivation(int tedad) {
 
             // after Qtimer finished :
             status=2;
-            cultivable=tedad;
+            cultivated=tedad;
         }
         else {
             if (silo->Get_wheat()<tedad) { }
@@ -52,16 +49,16 @@ void Wheat_land::Cultivation(int tedad) {
 
 void Wheat_land::Harvesting(int tedad){
     if(status==2){
-        if(cultivable>=tedad && silo->Add(1,2*tedad)==true){
+        if(cultivated>=tedad && silo->Add(1,2*tedad)==true){
               user->Set_experience(user->Get_experience()+tedad);
-              cultivable-=tedad;
+              cultivated-=tedad;
         }
 
       else {
           if (silo->Add(1,2*tedad)==false) { } // kambod ja
           else { } // meghdar vared shde sahih nist
       }
-      if(cultivable==0) status=0;
+      if(cultivated==0) status=0;
    }
   else { // zamin dar vaziat digari ast
 

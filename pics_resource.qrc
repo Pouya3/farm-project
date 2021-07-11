@@ -11,5 +11,6 @@
         <file>img/wheat.png</file>
         <file>img/wool.png</file>
         <file>img/store.jpg</file>
+        <file>img/logo.jpg</file>
     </qresource>
 </RCC>
