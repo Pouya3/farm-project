@@ -11,7 +11,6 @@
 #define EGG ":/new/prefix1/img/egg.png"
 #define MILK ":/new/prefix1/img/milk.png"
 #define WOOL ":/new/prefix1/img/wool.png"
-#define LOGO ":/new/prefix1/img/logo.jpg"
 
 namespace Ui {
 class StoreWindow;

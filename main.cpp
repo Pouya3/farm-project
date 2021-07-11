@@ -6,11 +6,7 @@
 #include <QApplication>
 #include <QFile>
 
-////
-#include "Wheat_landWindow.h"
 #include "user.h"
-#include "StoreWindow.h"
-////
 
 int main(int argc, char *argv[])
 
@@ -23,6 +19,7 @@ int main(int argc, char *argv[])
     a.setStyleSheet(styleSheet);
     w.show();
 
+<<<<<<< HEAD
     ///////////////////////////////
     //User user;
 
@@ -33,5 +30,7 @@ int main(int argc, char *argv[])
     //s.show();
     ///////////////////////////////
 
+=======
+>>>>>>> e8398d7db82411fb385f592bb28ff6b7cdd73f27
     return a.exec();
 }

@@ -1,56 +1,62 @@
 #include "aviculture.h"
 
-Aviculture::Aviculture(/*Silo* _silo_ptr,Store* _store_ptr*/){
-   // store_ptr=_store_ptr;
-   // silo_ptr=_silo_ptr;
-    total_storage=2;
-    used_storage=0;
-    return;
+Aviculture::Aviculture(){
 }
-bool Aviculture::Build(){
-    if(user->Get_level()>=6){
-        if(user->Get_coin()>=10){
-            if(store->Get_object(2)>=2){
-                user->Set_coin(user->Get_coin()-10);
-                store->Delete(2,2);
-                level++;
-                total_storage = 2;
-                user->Set_experience(user->Get_experience()+5);
+int Aviculture::Build(){
+    // return values:
+    // 1 == locked
+    // 2 == not enough coins
+    // 3 == not enough nails
+    // 4 == timer set for building
+    if(building_status == 1){ // unlocked
+        if(user->Get_coin()>=10){ // enough coins
+            if(store->Get_object(2)>=2){ // enough nails
+                 // timer
 
-                return true;
+                return 4;
             }
-            return false;
-            //qt
+            return 3;
         }
-        return false;
-        //qt
+        return 2;
     }
-    return false;
-    //qt
+    return 1;
 }
-void Aviculture::Upgrade() {
-    if(user->Get_level()>=3){
-        if(user->Get_coin()>=10){
-            if(store->Get_object(2)>=1){
-                user->Set_coin(user->Get_coin()-10);
-                store->Delete(2,3);
-                store->Delete(1,1);
-                level++;
-                total_storage *= 2;
-                user->Set_experience(user->Get_experience()+5);
+int Aviculture::Upgrade() {
+    // return values :
+    // 1 == limit for building duo to user's level
+    // 2 == not enough coins
+    // 3 == not enough nails
+    // 4 == timer set for upgrade
+
+    if(user->Get_level()>=3){ // no limit for building duo to user's level
+        if(user->Get_coin()>=10){ // enough coins
+            if(store->Get_object(2)>=1){ // enough nails
+                // timer
+
+                return 4;
             }
-            //qt
+            return 3;
         }
-        //qt
+        return 2;
     }
-    //qt
+    return 1;
 }
-bool Aviculture::Feed() {
-    if(silo->Delete(0, used_storage)){
-        user->Set_experience(user->Get_experience()+(1*used_storage));
-        return true;
+int Aviculture::Feed() {
+    // return values :
+    // 1 == empty aviculture
+    // 2 == not enough wheat to feed
+    // 3 == timer set for product
+    if(used_storage == 0){ // aviculture is empty
+        return 1;
     }
-    return false;
+    else{
+        if(silo->Delete(0, used_storage)){ // enough wheat
+            user->Set_experience(user->Get_experience()+(1*used_storage));
+            // timer
+            return 3;
+        }
+    return 2;
+    }
 }
 
 bool Aviculture::Add(int type, int amount) {
@@ -70,10 +76,19 @@ bool Aviculture::Delete(int type, int amount) {
     return false;
 }
 
-bool Aviculture::Collect() {
-    if(store->Add(4,used_storage)){
-        user->Set_experience(user->Get_experience()+2);
-        return true;
+int Aviculture::Collect() {
+    // return values :
+    // 1 == no product to collect
+    // 2 == not enough storage in store
+    // 3 == collected successfully
+    if(feeding_status != 2){ // no product to collect
+        return 1;
     }
-    return false;
+    else{
+        if(store->Add(4,used_storage)){ // enough storage in store
+            user->Set_experience(user->Get_experience()+2);
+            return 3;
+        }
+        return 2;
+    }
 }

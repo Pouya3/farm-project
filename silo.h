@@ -14,7 +14,7 @@ public:
     Aviculture* aviculture; // aviculture -> this
 
     Silo();
-    void Upgrade();
+    int Upgrade();
     bool Add(int, int);
     bool Delete(int, int);
     int Get_wheat();

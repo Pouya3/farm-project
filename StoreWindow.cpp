@@ -34,9 +34,6 @@ StoreWindow::StoreWindow(Store* _store, QWidget *parent) :
     QPixmap wool(WOOL);
     ui->wool_label->setPixmap(wool.scaled(60,60,Qt::KeepAspectRatio));
 
-    QPixmap logo(LOGO);
-    ui->logo_label->setPixmap(logo.scaled(50,50));
-
     store = _store;
 
     ui->level_number_label->setText(QString::number(store->Get_level()));

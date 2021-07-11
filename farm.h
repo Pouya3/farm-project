@@ -14,9 +14,9 @@ private:
     Alfalfa_land alfalfa_land;
     Store store;
     Silo silo;
-    Aviculture aviculture;
+    //Aviculture aviculture;
     //Aghol aghol;
-    Livestock livestock;
+    //Livestock livestock;
 
 public:
     Farm();

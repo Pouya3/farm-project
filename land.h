@@ -6,26 +6,38 @@
 
 class Land {
 protected:
-    int time;
+    // cultivation_status (for wheat_land) :
+    // 0 == not cultivated
+    // 1 == cultivated but not ripe
+    // 2 == ripe
+
+    // cultivation_status (for alfalfa_land) :
+    // 0 == not cultivated
+    // 1 == plowed but not cultivated
+    // 2 == cultivated but not ripe
+    // 3 == ripe
+
     int level;
-    int space;
-    int status;
-    int cultivated; //tedad zamin haii ke chiz dar anha kashtim
-    bool is_active;
+    int total_area;
+    int cultivated_area;
+    int cultivation_status;
+    int ripening_timer;
 
 public:
     Land();
 
-    virtual void Upgrade()=0;
-    virtual void Cultivation(int)=0;
-    virtual void Harvesting(int)=0;
-    int Get_time();
-    void Set_time(int);
+    virtual int Upgrade()=0;
+    virtual int Cultivate(int)=0;
+    virtual int Harvest()=0;
+
     void Set_level(int);
     int Get_level();
-    int Get_cultivated();
-    int Get_space();
-    int Get_status();
+    int Get_total_area();
+    int Get_cultivated_area();
+    int Get_cultivation_status();
+    void Set_ripe_timer(int);
+    int Get_ripe_timer();
+
     User* user;
     Store* store;
 };

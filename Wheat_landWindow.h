@@ -5,7 +5,6 @@
 #include "wheat_land.h"
 
 #define WHEAT_LAND ":/new/prefix1/img/wheat land.jpg"
-#define LOGO ":/new/prefix1/img/logo.jpg"
 
 namespace Ui {
 class Wheat_landWindow;

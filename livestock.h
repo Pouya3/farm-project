@@ -9,10 +9,10 @@ public:
     Store* store; // this -> store
 
     Livestock();
-    bool Build();
-    void Upgrade();
-    bool Feed();
-    bool Collect();
+    int Build();
+    int Upgrade();
+    int Feed();
+    int Collect();
     bool Add(int type, int amount);//
     bool Delete(int type, int amount);//
 

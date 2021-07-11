@@ -4,112 +4,136 @@ Alfalfa_land::Alfalfa_land()
 {
 }
 
-void Alfalfa_land::Upgrade()
+int Alfalfa_land::Upgrade()
 {
-    if (store->Get_object(1)>=2 && user->Get_coin()>=5 && user->Get_level()>=4) {
-        store->Delete(1, 2);         
-        user->Set_coin(user->Get_coin()-5);
+    // return values :
+    // 1 == not enough shovels
+    // 2 == not enough coins
+    // 3 == limit for upgrading duo to user's level
+    // 4 == timer set for upgrading
 
-        // Qtimer
+    if(store->Get_object(1)>=2){ // enough shovels
+        if(user->Get_coin()>=5){ // enough coins
+            if(user->Get_level()>=4){ // not limit for upgrading duo to user's level
+                store->Delete(1, 2);
+                user->Set_coin(user->Get_coin()-5);
 
-        // after Qtimer finished :
+                // timer;
 
-        user->Set_experience(user->Get_experience()+3);
-        space*=2;
+                return 4;
+            }
+            return 3;
+        }
+        return 2;
     }
-    else { // not enough resources for upgrading
-
-        if(store->Get_object(1)<2) {  } // shovel needed
-        else if (user->Get_coin()<5) { } // coin needed
-        else { } // level needed
-    }
+    return 1;
 }
 
-void Alfalfa_land::Plow(int tedad) 
+int Alfalfa_land::Plow(int area_to_plow)
 {
-    if(status==0) { // zamin bikar
-        if(user->Get_coin()>=5*tedad && space>=tedad && user->Get_level()>=3){
-            user->Set_coin(user->Get_coin()-(5*tedad));
-            status=1;
-            // Qtimer
+    // return values :
+    // 1 == already plowed
+    // 2 == field is cultivated. you cannot plow
+    // 3 == not enough coins
+    // 4 == area selected to plow is greater than total area
+    // 5 == limit to plow duo to user's level
+    // 6 == timer set for plowing
+    if(cultivation_status == 0) { // ready to plow
+        if(user->Get_coin()>=5*area_to_plow){ // enough coins
+            if(plowed_area >= area_to_plow){ // area selected to plow is smaller than total area
+                if(user->Get_level()>=3){ // no limit to plow duo to user's level
+                    user->Set_coin(user->Get_coin()-(5*area_to_plow));
 
-            // after Qtimer finished :
-            status=2;
-            plowable=tedad;
-            user->Set_experience(user->Get_experience()+tedad);
+                    // timer
+
+                    return 6;
+                }
+                return 5;
+            }
+            return 4;
         }
-        else { // not enough resources for upgrading
-            if (user->Get_coin()<5*tedad) { } // coin needed
-            else if(space<tedad) { } // We do not have enough space
-            else { } // level needed
-        }
+        return 5;
     }
-    else { // zamin ra nemi shavad shokm zad
-
+    else { // not ready to plow
+        if(cultivation_status == 1){ // already plowed
+            return 1;
+        }
+        else { // field is cultivated. you cannot plow
+            return 2;
+        }
     }
 }
 
-void Alfalfa_land::Cultivation(int tedad) {
-    if(status==2) { // zamin shokm zade shode va amade zerat ast
-        if(store->Get_object(3)>=tedad && plowable>=tedad &&user->Get_level()>=3){
-            status=3;
-            plowable-=tedad;
-            user->Set_experience(user->Get_experience()+tedad*2);
-            store->Delete(3,tedad);
-            // Qtimer
+int Alfalfa_land::Cultivate(int area_to_cultivate) {
+    // return values :
+    // 1 == not plowed
+    // 2 == not enough alfalfa
+    // 3 == selected area to cultivate is greater that plowed area
+    // 4 == limit for cultivation duo to user's level
+    // 5 == timer set for ripening
+    if(cultivation_status == 1) { // plowed but not cultivated
+        if(store->Get_object(3) >= area_to_cultivate){ // enough alfalfa
+            if(plowed_area >= area_to_cultivate){ // selected area to cultivate is smaller that plowed area
+                if(user->Get_level()>=3){ // no limit for cultivation duo to user's level
+                    cultivation_status = 2;
+                    plowed_area = 0;
+                    user->Set_experience(user->Get_experience()+area_to_cultivate*2);
+                    store->Delete(3,area_to_cultivate);
+                    // timer
 
-            // after Qtimer finished :
-            status=4;
-            cultivated=tedad;
+                    return 5;
+                }
+                return 4;
+            }
+            return 3;
         }
-        else { // not enough resources for upgrading
-            if (user->Get_coin()<5*tedad) { } 
-            else if(plowable<tedad) { } 
-            else { } 
-        }
+        return 2;
     }
-    else { // zamin dar vaziat digari ast
-
-    }
+    return 1;
 }
 
-void Alfalfa_land::Harvesting(int tedad){
-    if(status==4){
-        if(store->Add(3,tedad*2)==true && cultivated>=tedad){
-            user->Set_experience(user->Get_experience()+tedad*2);
-            cultivated-=tedad;
-        }
-        else{
-            if (store->Add(3,tedad*2)==false) { } // kambod ja
-            else { } // meghdar vared shde sahih nist
-        }
-        if(cultivated==0) status=0;
-    }
-    else { // zamin dar vaziat digari ast
+int Alfalfa_land::Harvest(){
+    // return values :
+    // 1 == nothing to harvest
+    // 2 == not enough space in store
+    // 3 == harvested successfully
+    if(cultivation_status == 3){ // ready to harvest
+        if(store->Get_total_storage() - store->Get_used_storage() >= cultivated_area*2){ // enough space in store
+            user->Set_experience(user->Get_experience()+cultivated_area*2);
+            store->Add(3, cultivated_area*2);
+            cultivated_area = 0;
+            cultivation_status = 0;
 
+            return 3;
+        }
+        return 2;
     }
+    return 1;
 }
 
-void Alfalfa_land::Making(){
-    if(user->Get_level()>=3){
-        if(user->Get_coin()>=15){
-            if(store->Get_object(1)>=1){
-                if(store->Get_object(2)>=1){
+int Alfalfa_land::Build(){
+    // return values :
+    // 1 == locked
+    // 2 == not enough coins
+    // 3 == not enough shovels
+    // 4 == not enough nails
+    // 5 == timer set for building
+    if(building_status == 1){ // unlocked
+        if(user->Get_coin()>=15){ // enough coins
+            if(store->Get_object(1)>=1){ // enough shovels
+                if(store->Get_object(2)>=1){ // enough nails
                     user->Set_coin(user->Get_coin()-15);
                     store->Delete(1,1);
                     store->Delete(2,1);
-                    // Qtimer
+                    // timer
 
-                    //
-                    user->Set_experience(user->Get_experience()+6);
-                    is_active=true;
+                    return 5;
                 }
-                else {}
+                return 4;
             }
-            else{}
+            return 3;
         }
-        else{}
+        return 2;
     }
-    else {}
-
+    return 1;
 }

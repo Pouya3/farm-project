@@ -11,12 +11,12 @@ public:
     Store* store; // this -> store
 
     Aviculture();
-    bool Build();
-    void Upgrade();
-    bool Feed();
-    bool Collect();
-    bool Add(int type, int amount);//
-    bool Delete(int type, int amount);//
+    int Build();
+    int Upgrade();
+    int Feed();
+    int Collect();
+    bool Add(int type, int amount);
+    bool Delete(int type, int amount);
 
 
 };
