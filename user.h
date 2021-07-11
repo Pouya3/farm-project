@@ -1,6 +1,7 @@
 #ifndef USER_H
 #define USER_H
 #include <QString>
+#include "_time.h"
 class Aghol;
 class Alfalfa_land;
 class Aviculture;
