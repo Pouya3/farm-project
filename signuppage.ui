@@ -118,7 +118,7 @@
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>Repit Password:</string>
+      <string>Repeat Password:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_s_5">
@@ -173,6 +173,9 @@
        <height>31</height>
       </rect>
      </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
+     </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_s_4">
      <property name="geometry">
@@ -182,6 +185,9 @@
        <width>141</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="echoMode">
+      <enum>QLineEdit::Password</enum>
      </property>
     </widget>
     <widget class="QLineEdit" name="lineEdit_s_5">

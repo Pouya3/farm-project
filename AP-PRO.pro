@@ -17,6 +17,7 @@ SOURCES += \
     aviculturepage.cpp \
     building.cpp \
     farm.cpp \
+    file_functions.cpp \
     habitat.cpp \
     land.cpp \
     livestock.cpp \
@@ -44,6 +45,7 @@ HEADERS += \
     aviculturepage.h \
     building.h \
     farm.h \
+    file_functions.h \
     habitat.h \
     land.h \
     livestock.h \

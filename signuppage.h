@@ -2,6 +2,7 @@
 #define SIGNUPPAGE_H
 
 #include <QMainWindow>
+#include "file_functions.h"
 
 namespace Ui {
 class signupPage;
@@ -14,6 +15,9 @@ class signupPage : public QMainWindow
 public:
     explicit signupPage(QWidget *parent = nullptr);
     ~signupPage();
+
+private slots:
+    void on_pushButton_s_clicked();
 
 private:
     Ui::signupPage *ui;

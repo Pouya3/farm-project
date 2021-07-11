@@ -18,6 +18,22 @@
 int main(int argc, char *argv[])
 
 {
+    if(fopen("all users.json", "r") == NULL){ // "all users.json does not exist  //
+        QJsonObject all_user_obj;                                                //
+        QJsonArray users_array;                                                  //
+                                                                                 //
+        all_user_obj["users"] = users_array;                                     //
+                                                                                 // do not modify this part
+        QFile all_users_file("all users.json");                                  //
+        all_users_file.open(QIODevice::WriteOnly);                               //
+                                                                                 //
+        QJsonDocument all_users_doc(all_user_obj);                               //
+        all_users_file.write(all_users_doc.toJson());                            //
+
+        all_users_file.close();
+    }
+
+
     QApplication a(argc, argv);
     MainWindow w;
     QFile styleSheetFile("../farm-project/nice.qss");
