@@ -18,19 +18,5 @@ int main(int argc, char *argv[])
     QString styleSheet=QLatin1String(styleSheetFile.readAll());
     a.setStyleSheet(styleSheet);
     w.show();
-
-<<<<<<< HEAD
-    ///////////////////////////////
-    //User user;
-
-   // Wheat_landWindow ww(user.wheat_land);
-    //ww.show();
-
-    //StoreWindow s(user.store);
-    //s.show();
-    ///////////////////////////////
-
-=======
->>>>>>> e8398d7db82411fb385f592bb28ff6b7cdd73f27
     return a.exec();
 }

@@ -10,19 +10,15 @@ public:
     Store* store; // this -> store
 
     Aghol();
-<<<<<<< HEAD
-    bool Build();
-    void Upgrade();
-	bool Feed();
-    bool Collect();
-	int Wool_shaving();
-=======
+
+
+    int Wool_shaving();
     int Build();
     int Upgrade();
     int Feed();
     int Collect();
->>>>>>> e8398d7db82411fb385f592bb28ff6b7cdd73f27
-	bool Add(int type, int amount);//
+
+    bool Add(int type, int amount);//
     bool Delete(int type, int amount);//
 
 };
