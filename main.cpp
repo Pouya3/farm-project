@@ -12,6 +12,7 @@
 ////
 
 int main(int argc, char *argv[])
+
 {
     QApplication a(argc, argv);
     MainPage w;
@@ -22,13 +23,13 @@ int main(int argc, char *argv[])
     w.show();
 
     ///////////////////////////////
-    User user;
+    //User user;
 
-    Wheat_landWindow ww(user.wheat_land);
-    ww.show();
+   // Wheat_landWindow ww(user.wheat_land);
+    //ww.show();
 
-    StoreWindow s(user.store);
-    s.show();
+    //StoreWindow s(user.store);
+    //s.show();
     ///////////////////////////////
 
     return a.exec();
