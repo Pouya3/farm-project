@@ -40,6 +40,8 @@ SOURCES += \
     signuppage.cpp \
     silo.cpp \
     silopage.cpp \
+    spacepage.cpp \
+    spacepage_2.cpp \
     store.cpp \
     storepage.cpp \
     user.cpp \
@@ -79,6 +81,8 @@ HEADERS += \
     signuppage.h \
     silo.h \
     silopage.h \
+    spacepage.h \
+    spacepage_2.h \
     store.h \
     storepage.h \
     user.h \
@@ -109,6 +113,8 @@ FORMS += \
     signuppage.ui \
     mainwindow.ui \
     silopage.ui \
+    spacepage.ui \
+    spacepage_2.ui \
     storepage.ui \
     wheat_landpage.ui \
     wheatmarket.ui \

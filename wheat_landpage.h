@@ -15,6 +15,9 @@ public:
     explicit Wheat_landPage(QWidget *parent = nullptr);
     ~Wheat_landPage();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::Wheat_landPage *ui;
 };

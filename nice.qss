@@ -41,6 +41,20 @@ QPushButton:hover{
  	background-repeat: no-repeat; /* Do not repeat the image */
   	background-size: cover;
 }
+#SpacePage{
+
+	background-image:url(../farm-project/dialog.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
+#SpacePage_2{
+
+	background-image:url(../farm-project/dialog.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
 #WoolMarket{
 
 	background-image:url(../farm-project/wool_market.jpg);

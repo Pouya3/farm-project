@@ -19,6 +19,8 @@ public:
 private slots:
     void on_pushButton_s_clicked();
 
+    void on_pushButton_s_2_clicked();
+
 private:
     Ui::signupPage *ui;
 };
