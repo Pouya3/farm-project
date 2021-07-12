@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
 
 
     QApplication a(argc, argv);
-    signupPage w;
+    Alfalfa_landPage w;
     QFile styleSheetFile("../farm-project/nice.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet=QLatin1String(styleSheetFile.readAll());

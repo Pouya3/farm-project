@@ -2,6 +2,7 @@
 #define ALFALFA_LANDPAGE_H
 
 #include <QMainWindow>
+#include <alfalfa_land.h>
 
 namespace Ui {
 class Alfalfa_landPage;
@@ -16,10 +17,19 @@ public:
     ~Alfalfa_landPage();
 
 private slots:
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
+
+    void on_pushButton_3_clicked();
+
     void on_pushButton_4_clicked();
+
+    void on_pushButton_5_clicked();
 
 private:
     Ui::Alfalfa_landPage *ui;
+    Alfalfa_land* alfalfa_land;
 };
 
 #endif // ALFALFA_LANDPAGE_H

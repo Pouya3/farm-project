@@ -2,6 +2,7 @@
 #define SPACEPAGE_H
 
 #include <QMainWindow>
+#include "alfalfa_land.h"
 
 namespace Ui {
 class SpacePage;
@@ -15,8 +16,12 @@ public:
     explicit SpacePage(QWidget *parent = nullptr);
     ~SpacePage();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::SpacePage *ui;
+    Alfalfa_land* alfalfa_land;
 };
 
 #endif // SPACEPAGE_H

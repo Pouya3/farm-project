@@ -23,7 +23,7 @@ public:
     int Upgrade();
     int Cultivate(int);
     int Harvest();
-    int Plow(int);
+    int Plow();
     int Build();
 
     void Set_plowed_area(int);
