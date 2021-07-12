@@ -22,6 +22,7 @@ protected:
     int cultivated_area;
     int cultivation_status;
     int ripening_timer;
+    int upgrade_timer;
 
 public:
     Land();
@@ -40,6 +41,8 @@ public:
     int Get_cultivation_status();
     void Set_ripening_timer(int);
     int Get_ripening_timer();
+    void Set_upgrade_timer(int);
+    int Get_upgrade_timer();
 
     User* user;
     Store* store;

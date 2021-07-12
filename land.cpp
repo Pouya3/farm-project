@@ -14,3 +14,5 @@ int Land::Get_cultivation_status() { return cultivation_status; }
 void Land::Set_cultivation_status(int _cultivation_status) { cultivation_status = _cultivation_status; }
 void Land::Set_ripening_timer(int _ripening_timer) { ripening_timer = _ripening_timer; }
 int Land::Get_ripening_timer() { return ripening_timer; }
+void Land::Set_upgrade_timer(int _upgrade_timer) { upgrade_timer = _upgrade_timer; }
+int Land::Get_upgrade_timer() { return upgrade_timer; }
