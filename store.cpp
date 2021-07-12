@@ -38,7 +38,7 @@ int Store::Upgrade(){
             this->Delete(1, this->level-1);
             user->Set_coin(user->Get_coin()-pow(this->level,3) * 10);
 
-            //std::thread t(Check_for_upgrade_timer);
+            upgrade_timer = 5;
 
             return 5;
         }
@@ -58,7 +58,7 @@ bool Store::Add(int object_type, int number){
           case 6: this->wool+=number; break;
           case 5:
                 milk+=number;
-                milk_info.push_back(std::pair<int,int>(number, 1)); // 1 = temp value for time
+                milk_info.push_back(std::pair<int,int>(number, 10)); // 1 = temp value for time
                 break;
         }
        return true;

@@ -40,17 +40,26 @@ void AviculturePage::on_pushButton_clicked()
 
 void AviculturePage::on_pushButton_2_clicked()
 {
+    // return values :
+    // 1 == is not built yet
+    // 2 == limit for building duo to user's level
+    // 3 == not enough coins
+    // 4 == not enough nails
+    // 5 == timer set for upgrade
     switch(aviculture->Upgrade()){
     case 1:
-        //qmessagebox --> "you cannot upgrade aviculture until user reaches level 3"
+        //qmessagebox --> "aviculture is not built yet"
         break;
     case 2:
-        //qmessagebox --> "not enough coins for upgrading"
+        //qmessagebox --> "you cannot upgrade aviculture until user reaches level 3"
         break;
     case 3:
-        //qmessagebox --> "not enough nails for upgrading"
+        //qmessagebox --> "not enough coins for upgrading"
         break;
     case 4:
+        //qmessagebox --> "not enough nails for upgrading"
+        break;
+    case 5:
         //qmessagebox --> "timer set for upgrading"
         //set upgrading timer;
         break;

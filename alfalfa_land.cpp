@@ -7,19 +7,27 @@ Alfalfa_land::Alfalfa_land()
 int Alfalfa_land::Upgrade()
 {
     // return values :
-    // 1 == not enough shovels
-    // 2 == not enough coins
-    // 3 == limit for upgrading duo to user's level
-    // 4 == timer set for upgrading
+    // 1 == wheat land is not built yet
+    // 2 == you cannot upgrade until alfalfs ripen and get harvested
+    // 3 == not enough shovels
+    // 4 == not enough coins
+    // 5 == limit for upgrading duo to user's level
+    // 6 == timer set for upgrading
 
-    if(store->Get_object(1)>=2){ // enough shovels
-        if(user->Get_coin()>=5){ // enough coins
-            if(user->Get_level()>=4){ // not limit for upgrading duo to user's level
-                store->Delete(1, 2);
-                user->Set_coin(user->Get_coin()-5);
+    if(building_status == 2){ // alfalfa land is built
+        if(cultivation_status == 0){ // zamin bikar
+            if(store->Get_object(1)>=2){ // enough shovels
+                if(user->Get_coin()>=5){ // enough coins
+                    if(user->Get_level()>=4){ // not limit for upgrading duo to user's level
+                        store->Delete(1, 2);
+                        user->Set_coin(user->Get_coin()-5);
 
-                // timer;
+                        upgrade_timer = 3;
 
+                        return 6;
+                    }
+                    return 5;
+                }
                 return 4;
             }
             return 3;
@@ -38,13 +46,15 @@ int Alfalfa_land::Plow(int area_to_plow)
     // 4 == area selected to plow is greater than total area
     // 5 == limit to plow duo to user's level
     // 6 == timer set for plowing
+    // 7 == alfalfa land is not built yet
     if(cultivation_status == 0) { // ready to plow
         if(user->Get_coin()>=5*area_to_plow){ // enough coins
             if(plowed_area >= area_to_plow){ // area selected to plow is smaller than total area
                 if(user->Get_level()>=3){ // no limit to plow duo to user's level
                     user->Set_coin(user->Get_coin()-(5*area_to_plow));
 
-                    // timer
+                    cultivation_status = 1;
+                    plowing_timer = 1;
 
                     return 6;
                 }
@@ -52,35 +62,45 @@ int Alfalfa_land::Plow(int area_to_plow)
             }
             return 4;
         }
-        return 5;
+        return 3;
     }
     else { // not ready to plow
-        if(cultivation_status == 1){ // already plowed
-            return 1;
+        if(building_status != 2){
+            return 7;
         }
-        else { // field is cultivated. you cannot plow
-            return 2;
+        else{
+            if(cultivation_status == 1){ // already plowed
+                return 1;
+            }
+            else { // field is cultivated. you cannot plow
+                return 2;
+            }
         }
     }
 }
 
 int Alfalfa_land::Cultivate(int area_to_cultivate) {
     // return values :
-    // 1 == not plowed
-    // 2 == not enough alfalfa
-    // 3 == selected area to cultivate is greater that plowed area
-    // 4 == limit for cultivation duo to user's level
-    // 5 == timer set for ripening
-    if(cultivation_status == 1) { // plowed but not cultivated
-        if(store->Get_object(3) >= area_to_cultivate){ // enough alfalfa
-            if(plowed_area >= area_to_cultivate){ // selected area to cultivate is smaller that plowed area
-                if(user->Get_level()>=3){ // no limit for cultivation duo to user's level
-                    cultivation_status = 2;
-                    plowed_area = 0;
-                    user->Set_experience(user->Get_experience()+area_to_cultivate*2);
-                    store->Delete(3,area_to_cultivate);
-                    // timer
+    // 1 == alfalfland is not built yet
+    // 2 == not plowed
+    // 3 == not enough alfalfa
+    // 4 == selected area to cultivate is greater that plowed area
+    // 5 == limit for cultivation duo to user's level
+    // 6 == timer set for ripening
+    if(building_status == 2){ // already built
+        if(cultivation_status == 1) { // plowed but not cultivated
+            if(store->Get_object(3) >= area_to_cultivate){ // enough alfalfa
+                if(plowed_area >= area_to_cultivate){ // selected area to cultivate is smaller that plowed area
+                    if(user->Get_level()>=3){ // no limit for cultivation duo to user's level
+                        cultivation_status = 2;
+                        plowed_area = 0;
+                        user->Set_experience(user->Get_experience()+area_to_cultivate*2);
+                        store->Delete(3,area_to_cultivate);
 
+                        ripening_timer = 4;
+
+                        return 6;
+                    }
                     return 5;
                 }
                 return 4;
@@ -125,7 +145,8 @@ int Alfalfa_land::Build(){
                     user->Set_coin(user->Get_coin()-15);
                     store->Delete(1,1);
                     store->Delete(2,1);
-                    // timer
+
+                    building_timer = 3;
 
                     return 5;
                 }
@@ -138,7 +159,7 @@ int Alfalfa_land::Build(){
     return 1;
 }
 
-void Alfalfa_land::set_plowed_area(int _plowed_area){
+void Alfalfa_land::Set_plowed_area(int _plowed_area){
     plowed_area = _plowed_area;
 }
 
@@ -166,7 +187,7 @@ void Alfalfa_land::Set_plowig_timer(int _plowing_timer){
     plowing_timer = _plowing_timer;
 }
 
-int Alfalfa_land::get_plowing_timer(){
+int Alfalfa_land::Get_plowing_timer(){
     return plowing_timer;
 }
 

@@ -7,24 +7,27 @@ Wheat_land::Wheat_land()
 int Wheat_land::Upgrade()
 {
     // return values :
-    // 1 == not enough shovels
-    // 2 == not enough coins
-    // 3 == limit for upgrade duo to user's level
-    // 4 == timer set for upgrade
+    // 1 == you have to wait unlit wheats ripen and collect them to upgrade
+    // 2 == not enough shovels
+    // 3 == not enough coins
+    // 4 == limit for upgrade duo to user's level
+    // 5 == timer set for upgrade
 
-    if(store->Get_object(1)>=1){ // enough shovels
-        if(user->Get_coin()>=5){ // enough coins
-            if(user->Get_level()>=2){ // no limit for upgrade duo to user's level
-                store->Delete(1, 1);
-                user->Set_coin(user->Get_coin()-5);
+    if(cultivation_status == 0){ // zamin bikar
+        if(store->Get_object(1)>=1){ // enough shovels
+            if(user->Get_coin()>=5){ // enough coins
+                if(user->Get_level()>=2){ // no limit for upgrade duo to user's level
+                    store->Delete(1, 1);
+                    user->Set_coin(user->Get_coin()-5);
 
-                // timer;
+                    upgrade_timer = 2;
 
-                return 4;
+                    return 4;
+                }
+                return 3;
             }
-            return 3;
+            return 2;
         }
-        return 2;
     }
     return 1;
 }
@@ -42,7 +45,8 @@ int Wheat_land::Cultivate(int area_to_cultivate) {
                 user->Set_experience(user->Get_experience()+area_to_cultivate);
                 silo->Delete(1,area_to_cultivate);
 
-                // timer
+                cultivation_status = 1;
+                ripening_timer = 2;
 
                 return 4;
             }

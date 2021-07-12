@@ -114,7 +114,7 @@ void MainPage:: Time_function(){
     if(user->silo->Get_upgrade_timer()>0){
         user->silo->Set_upgrade_timer(user->silo->Get_upgrade_timer()-1);
     }
-    if(user->wheat_land->Get_ripening_timer()>0){
+/*    if(user->wheat_land->Get_ripening_timer()>0){
         user->wheat_land->Set_ripening_timer(user->wheat_land->Get_ripening_timer()-1);
     }
     if(user->alfalfa_land->Get_ripening_timer()>0){
@@ -132,6 +132,7 @@ void MainPage:: Time_function(){
     if(user->alfalfa_land->get_plowing_timer()>0){
         user->alfalfa_land->Set_plowing_timer(user->alfalfa_land->get_plowing_timer()-1);
     }
+*/
 }
 
 void MainPage::on_pushButton_a_2_clicked()

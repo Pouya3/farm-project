@@ -29,7 +29,7 @@ int Silo::Upgrade(){
             store->Delete(2, this->level*2);
             user->Set_coin(user->Get_coin()-pow(this->level*2, 2)*100);
 
-            //std::thread t(Check_for_upgrade_timer);
+            upgrade_timer = 4;
 
 
             return 4;

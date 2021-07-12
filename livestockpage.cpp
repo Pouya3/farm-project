@@ -43,17 +43,24 @@ void LivestockPage::on_pushButton_clicked()
 
 void LivestockPage::on_pushButton_2_clicked()
 {
+
     switch(livestock->Upgrade()){
     case 1:
-        //qmessagebox --> "you cannot upgrade livestock until user reaches level 3"
+        //qmessagebox --> "livestock is not built yet"
         break;
     case 2:
-        //qmessagebox --> "not enough coins for upgrading"
+        //qmessagebox --> "to upgrade you have to wait until feeding timer finishes and milks get collected"
         break;
     case 3:
-        //qmessagebox --> "not enough nails for upgrading"
+        //qmessagebox --> "you cannot upgrade livestock until user reaches level 3"
         break;
     case 4:
+        //qmessagebox --> "not enough coins for upgrading"
+        break;
+    case 5:
+        //qmessagebox --> "not enough nails for upgrading"
+        break;
+    case 6:
         //qmessagebox --> "timer set for upgrading"
         //set upgrading timer;
         break;
@@ -80,6 +87,9 @@ void LivestockPage::on_pushButton_3_clicked()
         //qmessagbox --> "timer set for milk"
         //set feeding timer;
         break;
+    case 6:
+        //qmessagebox  --> "livestock is not built yet"
+        break;
     }
 }
 
@@ -95,6 +105,9 @@ void LivestockPage::on_pushButton_4_clicked()
         break;
     case 3:
         //qmessagebox --> "milks collected successfully"
+        break;
+    case 4:
+        //qmessagebox --> "livestock is not built yet"
         break;
     }
 }
