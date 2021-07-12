@@ -81,6 +81,9 @@ void MainPage:: on_pushButton_mm_2_clicked()
 }
 void MainPage:: Time_function(){
     user->Set_time(user->Get_time()+1);
+    if(user->Aghol->Get_feeding_timer()>0){
+        user->Aghol->Set_feeding_timer(Get_feeding_timer()-1);
+    }
 }
 
 void MainPage::on_pushButton_a_2_clicked()
