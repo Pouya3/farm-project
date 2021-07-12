@@ -3,6 +3,7 @@
 #include "mainpage.h"
 #include "loginpage.h"
 #include "agholpage.h"
+#include "storepage.h"
 #include "aviculturepage.h"
 #include "livestockpage.h"
 #include "menupage.h"
@@ -18,7 +19,7 @@ int main(int argc, char *argv[])
 
 {
     QApplication a(argc, argv);
-    Alfalfa_landPage w;
+    StorePage w;
     QFile styleSheetFile("../farm-project/nice.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet=QLatin1String(styleSheetFile.readAll());

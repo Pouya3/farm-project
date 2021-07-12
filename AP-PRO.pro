@@ -9,7 +9,6 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    StoreWindow.cpp \
     aghol.cpp \
     agholpage.cpp \
     alfalfa_land.cpp \
@@ -31,12 +30,12 @@ SOURCES += \
     silo.cpp \
     silopage.cpp \
     store.cpp \
+    storepage.cpp \
     user.cpp \
     wheat_land.cpp \
     wheat_landpage.cpp
 
 HEADERS += \
-    StoreWindow.h \
     aghol.h \
     agholpage.h \
     alfalfa_land.h \
@@ -57,6 +56,7 @@ HEADERS += \
     silo.h \
     silopage.h \
     store.h \
+    storepage.h \
     user.h \
     wheat_land.h \
     wheat_landpage.h
@@ -71,9 +71,9 @@ FORMS += \
     mainwindow.ui \
     menupage.ui \
     signuppage.ui \
-    StoreWindow.ui \
     mainwindow.ui \
     silopage.ui \
+    storepage.ui \
     wheat_landpage.ui
 
 # Default rules for deployment.

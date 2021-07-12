@@ -40,6 +40,13 @@ QPushButton:hover{
 	background-color:red;
 	
 }
+#StorePage{
+	background-image:url(../farm-project/store.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+}
 #LivestockPage{
 	background-image:url(../farm-project/livestock.jpg);
 	background-position: center; /* Center the image */
