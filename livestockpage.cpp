@@ -35,8 +35,6 @@ void LivestockPage::on_pushButton_clicked()
         break;
     case 5:
         //qmessagebox --> "timer set for building"
-        // set buildning timer
-        livestock->Set_building_timer(5);
         break;
     }
 }
@@ -63,8 +61,6 @@ void LivestockPage::on_pushButton_2_clicked()
         break;
     case 6:
         //qmessagebox --> "timer set for upgrading"
-        //set upgrading timer;
-        livestock->Set_upgrade_timer(5);
         break;
     }
 }
@@ -87,8 +83,6 @@ void LivestockPage::on_pushButton_3_clicked()
         break;
     case 5:
         //qmessagbox --> "timer set for milk"
-        //set feeding timer;
-        livestock->Set_feeding_timer(3);
         break;
     case 6:
         //qmessagebox  --> "livestock is not built yet"

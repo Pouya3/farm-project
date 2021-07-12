@@ -36,8 +36,6 @@ void AgholPage::on_pushButton_clicked()
         break;
     case 5:
         //qmessagebox --> "timer set for building"
-        // set buildning timer
-        aghol->Set_building_timer(10);
         break;
     }
 }
@@ -66,8 +64,6 @@ void AgholPage::on_pushButton_2_clicked()
         break;
     case 7:
         //qmessagebox --> "timer set for upgrading"
-        // set upgrading timer"
-        aghol->Set_upgrade_timer(9);
         break;
     }
 }
@@ -90,8 +86,6 @@ void AgholPage::on_pushButton_3_clicked()
         break;
     case 5:
         //qmessagebox --> "timer set for product"
-        // set feeding timer
-        aghol->Set_feeding_timer(10);
         break;
     }
 }
