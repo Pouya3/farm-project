@@ -20,7 +20,6 @@ int Aghol::Build(){
                     building_timer = 10;
 
 
-
                     return 5;
                 }
                 return 4;
@@ -49,9 +48,9 @@ int Aghol::Upgrade() {
                             user->Set_coin(user->Get_coin()-50);
                             store->Delete(2,3);
                             store->Delete(1,1);
-                            level++;
+                            /*level++;
                             total_storage *= 2;
-                            user->Set_experience(user->Get_experience()+15);
+                            user->Set_experience(user->Get_experience()+15);*/
 
                             upgrade_timer = 9;
 

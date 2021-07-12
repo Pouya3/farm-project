@@ -16,9 +16,9 @@ int Livestock::Build(){
                     user->Set_coin(user->Get_coin()-20);
                     store->Delete(2,3);
                     store->Delete(2,1);
-                    level++;
+                    /*level++;
                     total_storage = 2;
-                    user->Set_experience(user->Get_experience()+10);
+                    user->Set_experience(user->Get_experience()+10);*/
 
                     building_timer = 5;
 
@@ -48,9 +48,9 @@ int Livestock::Upgrade() {
                     if(store->Get_object(2)>=2){ // enough nails
                         user->Set_coin(user->Get_coin()-15);
                         store->Delete(2,2);
-                        level++;
+                        /*level++;
                         total_storage *= 2;
-                        user->Set_experience(user->Get_experience()+6);
+                        user->Set_experience(user->Get_experience()+6);*/
 
                         upgrade_timer = 5;
 

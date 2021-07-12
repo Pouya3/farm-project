@@ -9,6 +9,9 @@
 #include "silopage.h"
 #include "menupage.h"
 #include "aviculturepage.h"
+
+#include <cmath>
+
 MainPage::MainPage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainPage)
@@ -81,38 +84,88 @@ void MainPage:: on_pushButton_mm_2_clicked()
 }
 void MainPage:: Time_function(){
     user->Set_time(user->Get_time()+1);
+     user->Set_experience(user->Get_experience()+1);
     if(user->aghol->Get_feeding_timer()>0){
         user->aghol->Set_feeding_timer(user->aghol->Get_feeding_timer()-1);
+        if(user->aghol->Get_feeding_timer()==0)
+            user->aghol->Set_feeding_status(2);
     }
     if(user->aviculture->Get_feeding_timer()>0){
         user->aviculture->Set_feeding_timer(user->aviculture->Get_feeding_timer()-1);
+        if(user->aviculture->Get_feeding_timer()==0)
+            user->aviculture->Set_feeding_status(2);
     }
     if(user->livestock->Get_feeding_timer()>0){
         user->livestock->Set_feeding_timer(user->livestock->Get_feeding_timer()-1);
+        if(user->livestock->Get_feeding_timer()==0)
+            user->livestock->Set_feeding_status(2);
     }
     if(user->aghol->Get_building_timer()>0){
         user->aghol->Set_building_timer(user->aghol->Get_building_timer()-1);
+        if(user->aghol->Get_building_timer()==0){
+            user->aghol->Set_building_status(2);
+            user->aghol->Set_level(1);
+            user->aghol->Set_total_storage(2);
+            user->Set_experience(user->Get_experience()+20);
+        }
     }
     if(user->aviculture->Get_building_timer()>0){
         user->aviculture->Set_building_timer(user->aviculture->Get_building_timer()-1);
+        if(user->aviculture->Get_building_timer()==0){
+            user->aviculture->Set_building_status(2);
+            user->aviculture->Set_level(1);
+            user->aviculture->Set_total_storage(2);
+            user->Set_experience(user->Get_experience()+5);
+        }
     }
     if(user->livestock->Get_building_timer()>0){
         user->livestock->Set_building_timer(user->livestock->Get_building_timer()-1);
+        if(user->livestock->Get_building_timer()==0){
+            user->livestock->Set_building_status(2);
+            user->livestock->Set_level(1);
+            user->livestock->Set_total_storage(2);
+            user->Set_experience(user->Get_experience()+10);
+        }
     }
     if(user->aghol->Get_upgrade_timer()>0){
         user->aghol->Set_upgrade_timer(user->aghol->Get_upgrade_timer()-1);
+        if(user->aghol->Get_upgrade_timer()==0){
+        user->aghol->Set_level(user->aghol->Get_level()+1);
+        user->aghol->Set_total_storage(user->aghol->Get_total_storage()*2);
+        user->Set_experience(user->Get_experience()+15);
+        }
     }
     if(user->aviculture->Get_upgrade_timer()>0){
         user->aviculture->Set_upgrade_timer(user->aviculture->Get_upgrade_timer()-1);
+        if(user->aviculture->Get_upgrade_timer()==0){
+        user->aviculture->Set_level(user->aviculture->Get_level()+1);
+        user->aviculture->Set_total_storage(user->aviculture->Get_total_storage()*2);
+        user->Set_experience(user->Get_experience()+5);
+        }
     }
     if(user->livestock->Get_upgrade_timer()>0){
         user->livestock->Set_upgrade_timer(user->livestock->Get_upgrade_timer()-1);
+        if(user->livestock->Get_upgrade_timer()==0){
+        user->livestock->Set_level(user->livestock->Get_level()+1);
+        user->livestock->Set_total_storage(user->livestock->Get_total_storage()*2);
+        user->Set_experience(user->Get_experience()+6);
+        }
     }
     if(user->store->Get_upgrade_timer()>0){
         user->store->Set_upgrade_timer(user->store->Get_upgrade_timer()-1);
+        if(user->store->Get_upgrade_timer()==0){
+            user->Set_experience(user->Get_experience()+(user->store->Get_level()*3));
+            user->store->Set_level(user->store->Get_level()+1);
+            user->store->Set_total_storage(ceil(user->store->Get_total_storage()*1.5));
+        }
     }
     if(user->silo->Get_upgrade_timer()>0){
         user->silo->Set_upgrade_timer(user->silo->Get_upgrade_timer()-1);
+        if(user->silo->Get_upgrade_timer()==0){
+            user->Set_experience(user->Get_experience()+(user->silo->Get_level()*2));
+            user->silo->Set_level(user->silo->Get_level()+1);
+            user->silo->Set_total_storage(user->silo->Get_total_storage()*2);
+        }
     }
 /*    if(user->wheat_land->Get_ripening_timer()>0){
         user->wheat_land->Set_ripening_timer(user->wheat_land->Get_ripening_timer()-1);
