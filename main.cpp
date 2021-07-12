@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
 
 
     QApplication a(argc, argv);
-    SpacePage_2 w;
+    Wheat_landPage w;
     QFile styleSheetFile("../farm-project/nice.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet=QLatin1String(styleSheetFile.readAll());

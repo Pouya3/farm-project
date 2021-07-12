@@ -2,6 +2,7 @@
 #define WHEAT_LANDPAGE_H
 
 #include <QMainWindow>
+#include "wheat_land.h"
 
 namespace Ui {
 class Wheat_landPage;
@@ -18,8 +19,13 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void on_pushButton_3_clicked();
+
+    void on_pushButton_2_clicked();
+
 private:
     Ui::Wheat_landPage *ui;
+    Wheat_land* wheat_land;
 };
 
 #endif // WHEAT_LANDPAGE_H
