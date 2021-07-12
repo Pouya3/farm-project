@@ -9,7 +9,7 @@ LivestockPage::LivestockPage(QWidget *parent) :
     this->setFixedSize(900,600);
 
     ui->label->setText(QString::number(livestock->Get_level()));
-    ui->label_2->setText(QString::number(livestock->Get_total_storage()));
+    ui->label_2->setText(QString::number(livestock->Get_used_storage()) + "/" + QString::number(livestock->Get_total_storage()));
     ui->label_3->setText(QString::number(livestock->Get_feeding_timer()));
 }
 

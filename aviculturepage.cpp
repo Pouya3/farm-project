@@ -9,7 +9,7 @@ AviculturePage::AviculturePage(QWidget *parent) :
     this->setFixedSize(900,600);
 
     ui->label->setText(QString::number(aviculture->Get_level()));
-    ui->label_2->setText(QString::number(aviculture->Get_total_storage()));
+    ui->label_2->setText(QString::number(aviculture->Get_used_storage()) + "/" + QString::number(aviculture->Get_total_storage()));
     ui->label_3->setText(QString::number(aviculture->Get_feeding_timer()));
 }
 

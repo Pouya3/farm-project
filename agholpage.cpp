@@ -9,7 +9,7 @@ AgholPage::AgholPage(QWidget *parent) :
     this->setFixedSize(900,600);
 
     ui->label->setText(QString::number(aghol->Get_level()));
-    ui->label_2->setText(QString::number(aghol->Get_level()));
+    ui->label_2->setText(QString::number(aghol->Get_used_storage()) + "/" + QString::number(aghol->Get_total_storage()));
     ui->label_3->setText(QString::number(aghol->Get_feeding_timer()));
 
 }

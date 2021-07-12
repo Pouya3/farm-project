@@ -9,7 +9,7 @@ SiloPage::SiloPage(QWidget *parent) :
     this->setFixedSize(1000,660);
 
     ui->label->setText(QString::number(silo->Get_level()));
-    ui->label_2->setText(QString::number(silo->Get_total_storage()));
+    ui->label_2->setText(QString::number(silo->Get_used_storage()) + "/" + QString::number(silo->Get_total_storage()));
 }
 
 SiloPage::~SiloPage()
