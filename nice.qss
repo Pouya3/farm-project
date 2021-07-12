@@ -52,6 +52,13 @@ QPushButton:hover{
 	background-color:red;
 	
 }
+#Wheat_landPage{
+	background-image:url(../farm-project/wheat_land.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+}
 #LoginPage{
 	background-image:url(../farm-project/2028.jpg);
 	background-position: center; /* Center the image */

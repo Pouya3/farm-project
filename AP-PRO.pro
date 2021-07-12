@@ -10,7 +10,6 @@ CONFIG += c++11
 
 SOURCES += \
     StoreWindow.cpp \
-    Wheat_landWindow.cpp \
     aghol.cpp \
     agholpage.cpp \
     alfalfa_land.cpp \
@@ -31,11 +30,11 @@ SOURCES += \
     silopage.cpp \
     store.cpp \
     user.cpp \
-    wheat_land.cpp
+    wheat_land.cpp \
+    wheat_landpage.cpp
 
 HEADERS += \
     StoreWindow.h \
-    Wheat_landWindow.h \
     aghol.h \
     agholpage.h \
     alfalfa_land.h \
@@ -56,6 +55,7 @@ HEADERS += \
     store.h \
     user.h \
     wheat_land.h \
+    wheat_landpage.h
 
 FORMS += \
     agholpage.ui \
@@ -66,9 +66,9 @@ FORMS += \
     mainwindow.ui \
     signuppage.ui \
     StoreWindow.ui \
-    Wheat_landWindow.ui \
     mainwindow.ui \
-    silopage.ui
+    silopage.ui \
+    wheat_landpage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
