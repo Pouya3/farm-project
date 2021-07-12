@@ -28,6 +28,22 @@ QPushButton:hover{
 	background-color:red;
 	
 }
+#AgholPage{
+	background-image:url(../farm-project/Aghol.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+	
+}
+#AviculturePage{
+	background-image:url(../farm-project/Aviculture.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+	
+}
 #LoginPage{
 	background-image:url(../farm-project/2028.jpg);
 	background-position: center; /* Center the image */
