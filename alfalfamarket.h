@@ -2,6 +2,8 @@
 #define ALFALFAMARKET_H
 
 #include <QMainWindow>
+#include "user.h"
+#include "store.h"
 
 namespace Ui {
 class AlfalfaMarket;
@@ -15,8 +17,13 @@ public:
     explicit AlfalfaMarket(QWidget *parent = nullptr);
     ~AlfalfaMarket();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::AlfalfaMarket *ui;
+    User* user;
+    Store* store;
 };
 
 #endif // ALFALFAMARKET_H
