@@ -99,6 +99,21 @@ void MainPage:: Time_function(){
     if(user->livestock->Get_building_timer()>0){
         user->livestock->Set_building_timer(user->livestock->Get_building_timer()-1);
     }
+    if(user->aghol->Get_upgrade_timer()>0){
+        user->aghol->Set_upgrade_timer(user->aghol->Get_upgrade_timer()-1);
+    }
+    if(user->aviculture->Get_upgrade_timer()>0){
+        user->aviculture->Set_upgrade_timer(user->aviculture->Get_upgrade_timer()-1);
+    }
+    if(user->livestock->Get_upgrade_timer()>0){
+        user->livestock->Set_upgrade_timer(user->livestock->Get_upgrade_timer()-1);
+    }
+    if(user->store->Get_upgrade_timer()>0){
+        user->store->Set_upgrade_timer(user->store->Get_upgrade_timer()-1);
+    }
+    if(user->silo->Get_upgrade_timer()>0){
+        user->silo->Set_upgrade_timer(user->silo->Get_upgrade_timer()-1);
+    }
 }
 
 void MainPage::on_pushButton_a_2_clicked()
