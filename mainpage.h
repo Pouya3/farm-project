@@ -17,7 +17,7 @@ public:
     explicit MainPage(QWidget *parent = nullptr);
     ~MainPage();
 public slots:
-    static void Time_function();
+    void Time_function();
 private slots:
     void on_pushButton_a_clicked();
 
