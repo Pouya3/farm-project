@@ -84,6 +84,21 @@ void MainPage:: Time_function(){
     if(user->aghol->Get_feeding_timer()>0){
         user->aghol->Set_feeding_timer(user->aghol->Get_feeding_timer()-1);
     }
+    if(user->aviculture->Get_feeding_timer()>0){
+        user->aviculture->Set_feeding_timer(user->aviculture->Get_feeding_timer()-1);
+    }
+    if(user->livestock->Get_feeding_timer()>0){
+        user->livestock->Set_feeding_timer(user->livestock->Get_feeding_timer()-1);
+    }
+    if(user->aghol->Get_building_timer()>0){
+        user->aghol->Set_building_timer(user->aghol->Get_building_timer()-1);
+    }
+    if(user->aviculture->Get_building_timer()>0){
+        user->aviculture->Set_building_timer(user->aviculture->Get_building_timer()-1);
+    }
+    if(user->livestock->Get_building_timer()>0){
+        user->livestock->Set_building_timer(user->livestock->Get_building_timer()-1);
+    }
 }
 
 void MainPage::on_pushButton_a_2_clicked()
