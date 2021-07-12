@@ -28,6 +28,7 @@ SOURCES += \
     mainwindow.cpp \
     signuppage.cpp \
     silo.cpp \
+    silopage.cpp \
     store.cpp \
     user.cpp \
     wheat_land.cpp
@@ -51,6 +52,7 @@ HEADERS += \
     mainwindow.h \
     signuppage.h \
     silo.h \
+    silopage.h \
     store.h \
     user.h \
     wheat_land.h \
@@ -66,6 +68,7 @@ FORMS += \
     StoreWindow.ui \
     Wheat_landWindow.ui \
     mainwindow.ui \
+    silopage.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

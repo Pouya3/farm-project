@@ -28,6 +28,14 @@ QPushButton:hover{
 	background-color:red;
 	
 }
+#SiloPage{
+	background-image:url(../farm-project/silo.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+	
+}
 #AgholPage{
 	background-image:url(../farm-project/Aghol.jpg);
 	background-position: center; /* Center the image */
