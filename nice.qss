@@ -11,6 +11,26 @@ QPushButton:hover{
 	color:#d1a732;
 }
 
+#pushButton_m_1{
+
+	background-image:url(../farm-project/key.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:12px;
+
+}
+
+#pushButton_mm_2{
+
+	background-color:rgba(99,47,2,0);;
+}
+
+#pushButton_mm_2:hover{
+
+	background-color:rgba(255,154,46,0.3);
+}
+
 #MainWindow{
 
 	background-image:url(../farm-project/back.jpg);
@@ -52,6 +72,14 @@ QPushButton:hover{
 	background-color:red;
 	
 }
+#MenuPage{
+	
+	background-image:url(../farm-project/menu.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+}
 #Wheat_landPage{
 	background-image:url(../farm-project/wheat_land.jpg);
 	background-position: center; /* Center the image */
@@ -70,6 +98,7 @@ QPushButton:hover{
 	background-color:rgba(99,47,2,0.4);
 	border-radius:12px;
 }
+
 #frame_m{
 	background-color:rgba(99,47,2,0.4);
 	border-radius:12px;
@@ -155,6 +184,7 @@ QPushButton:hover{
 	color:rgba(117,78,0,0);
 
 }
+
 #pushButton_a:hover,#pushButton_a_5:hover{
 	color:#ffffff;
 

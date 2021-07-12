@@ -25,6 +25,7 @@ SOURCES += \
     main.cpp \
     mainpage.cpp \
     mainwindow.cpp \
+    menupage.cpp \
     signuppage.cpp \
     silo.cpp \
     silopage.cpp \
@@ -49,6 +50,7 @@ HEADERS += \
     loginpage.h \
     mainpage.h \
     mainwindow.h \
+    menupage.h \
     signuppage.h \
     silo.h \
     silopage.h \
@@ -64,6 +66,7 @@ FORMS += \
     loginpage.ui \
     mainpage.ui \
     mainwindow.ui \
+    menupage.ui \
     signuppage.ui \
     StoreWindow.ui \
     mainwindow.ui \
