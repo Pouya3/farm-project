@@ -81,8 +81,38 @@ void MainPage:: on_pushButton_mm_2_clicked()
 }
 void MainPage:: Time_function(){
     user->Set_time(user->Get_time()+1);
-    if(user->Aghol->Get_feeding_timer()>0){
-        user->Aghol->Set_feeding_timer(user->Aghol->Get_feeding_timer()-1);
+    if(user->aghol->Get_feeding_timer()>0){
+        user->aghol->Set_feeding_timer(user->aghol->Get_feeding_timer()-1);
+    }
+    if(user->aviculture->Get_feeding_timer()>0){
+        user->aviculture->Set_feeding_timer(user->aviculture->Get_feeding_timer()-1);
+    }
+    if(user->livestock->Get_feeding_timer()>0){
+        user->livestock->Set_feeding_timer(user->livestock->Get_feeding_timer()-1);
+    }
+    if(user->aghol->Get_building_timer()>0){
+        user->aghol->Set_building_timer(user->aghol->Get_building_timer()-1);
+    }
+    if(user->aviculture->Get_building_timer()>0){
+        user->aviculture->Set_building_timer(user->aviculture->Get_building_timer()-1);
+    }
+    if(user->livestock->Get_building_timer()>0){
+        user->livestock->Set_building_timer(user->livestock->Get_building_timer()-1);
+    }
+    if(user->aghol->Get_upgrade_timer()>0){
+        user->aghol->Set_upgrade_timer(user->aghol->Get_upgrade_timer()-1);
+    }
+    if(user->aviculture->Get_upgrade_timer()>0){
+        user->aviculture->Set_upgrade_timer(user->aviculture->Get_upgrade_timer()-1);
+    }
+    if(user->livestock->Get_upgrade_timer()>0){
+        user->livestock->Set_upgrade_timer(user->livestock->Get_upgrade_timer()-1);
+    }
+    if(user->store->Get_upgrade_timer()>0){
+        user->store->Set_upgrade_timer(user->store->Get_upgrade_timer()-1);
+    }
+    if(user->silo->Get_upgrade_timer()>0){
+        user->silo->Set_upgrade_timer(user->silo->Get_upgrade_timer()-1);
     }
 }
 
