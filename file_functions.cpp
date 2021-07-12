@@ -286,7 +286,7 @@ int Login_user(QString username, QString password, User* user){
             user->alfalfa_land->Set_plowed_area(alfalfa_land_obj.value("plowed_area").toInt());
             user->alfalfa_land->Set_building_status(alfalfa_land_obj.value("building_status").toInt());
             user->alfalfa_land->Set_building_timer(alfalfa_land_obj.value("building_timer").toInt());
-            user->alfalfa_land->Set_plowig_timer(alfalfa_land_obj.value("plowing_timer").toInt());
+            user->alfalfa_land->Set_plowing_timer(alfalfa_land_obj.value("plowing_timer").toInt());
             alfalfa_land_file.close();
 
             user->aviculture->Set_level(aviculture_obj.value("level").toInt());

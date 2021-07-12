@@ -168,7 +168,7 @@ int Alfalfa_land::Get_building_timer(){
     return building_timer;
 }
 
-void Alfalfa_land::Set_plowig_timer(int _plowing_timer){
+void Alfalfa_land::Set_plowing_timer(int _plowing_timer){
     plowing_timer = _plowing_timer;
 }
 

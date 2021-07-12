@@ -32,7 +32,7 @@ public:
     int Get_building_status();
     void Set_building_timer(int);
     int Get_building_timer();
-    void Set_plowig_timer(int);
+    void Set_plowing_timer(int);
     int Get_plowing_timer();
 };
 
