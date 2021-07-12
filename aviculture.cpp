@@ -11,6 +11,8 @@ int Aviculture::Build(){
     if(building_status == 1){ // unlocked
         if(user->Get_coin()>=10){ // enough coins
             if(store->Get_object(2)>=2){ // enough nails
+                user->Set_coin(user->Get_coin()-10);
+                store->Delete(2,2);
 
                 building_timer = 3;
 
@@ -34,6 +36,8 @@ int Aviculture::Upgrade() {
         if(user->Get_level()>=3){ // no limit for building duo to user's level
             if(user->Get_coin()>=10){ // enough coins
                 if(store->Get_object(2)>=1){ // enough nails
+                    user->Set_coin(user->Get_coin()-10);
+                    store->Delete(2,1);
 
                     upgrade_timer = 3;
 
