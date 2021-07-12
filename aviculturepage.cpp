@@ -33,6 +33,7 @@ void AviculturePage::on_pushButton_clicked()
     case 4:
         //qmessageboc --> "timer set for building"
         //set building timer
+        aviculture->Set_building_timer(3);
         break;
     }
 }
@@ -62,6 +63,7 @@ void AviculturePage::on_pushButton_2_clicked()
     case 5:
         //qmessagebox --> "timer set for upgrading"
         //set upgrading timer;
+        aviculture->Set_upgrade_timer(3);
         break;
     }
 }
@@ -80,6 +82,7 @@ void AviculturePage::on_pushButton_3_clicked()
     case 4:
         //qmessagebox --> "timer set for eggs"
         // set feeding timer;
+        aviculture->Set_feeding_timer(2);
         break;
     }
 }
