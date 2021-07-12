@@ -2,6 +2,8 @@
 #define EGGMARKET_H
 
 #include <QMainWindow>
+#include "store.h"
+#include "user.h"
 
 namespace Ui {
 class eggMarket;
@@ -15,8 +17,13 @@ public:
     explicit eggMarket(QWidget *parent = nullptr);
     ~eggMarket();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::eggMarket *ui;
+    Store* store;
+    User* user;
 };
 
 #endif // EGGMARKET_H

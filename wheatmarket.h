@@ -2,6 +2,8 @@
 #define WHEATMARKET_H
 
 #include <QMainWindow>
+#include "user.h"
+#include "silo.h"
 
 namespace Ui {
 class WheatMarket;
@@ -15,8 +17,13 @@ public:
     explicit WheatMarket(QWidget *parent = nullptr);
     ~WheatMarket();
 
+private slots:
+    void on_pushButton_clicked();
+
 private:
     Ui::WheatMarket *ui;
+    User* user;
+    Silo* silo;
 };
 
 #endif // WHEATMARKET_H

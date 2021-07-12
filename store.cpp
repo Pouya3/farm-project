@@ -61,6 +61,7 @@ bool Store::Add(int object_type, int number){
                 milk_info.push_back(std::pair<int,int>(number, 10)); // 1 = temp value for time
                 break;
         }
+       used_storage += number;
        return true;
     }
 }
@@ -75,6 +76,7 @@ bool Store::Delete(int object_type, int number){
         }
         else{ // enough shovels
             this->shovel-=number;
+            used_storage -= number;
             return true;
         }
 
@@ -84,6 +86,7 @@ bool Store::Delete(int object_type, int number){
         }
         else{ // enough nails
             this->nail-=number;
+            used_storage -= number;
             return true;
         }
     case 3:
@@ -92,6 +95,7 @@ bool Store::Delete(int object_type, int number){
         }
         else{ // enough alfalfa
             this->alfalfa-=number;
+            used_storage -= number;
             return true;
         }
     case 4:
@@ -100,6 +104,7 @@ bool Store::Delete(int object_type, int number){
         }
         else{ // enough egg
             this->egg-=number;
+            used_storage -= number;
             return true;
         }
     case 6:
@@ -108,6 +113,7 @@ bool Store::Delete(int object_type, int number){
         }
         else{ // enough wool
             this->wool-=number;
+            used_storage -= number;
             return true;
         }
     case 5:
@@ -129,12 +135,15 @@ bool Store::Delete(int object_type, int number){
                     number=0;
                 }
             }
+            used_storage -= number;
             return true;
         }
     }
 }
 
 void Store::Set_object(int type, int number){
+    used_storage = used_storage - this->Get_object(type) + number;
+
     switch(type){
     case 1: shovel = number; break;
     case 2: nail = number; break;
@@ -143,6 +152,8 @@ void Store::Set_object(int type, int number){
     case 5: milk = number; break;
     case 6: wool = number; break;
     }
+
+
 }
 
 int Store::Get_object(int type){
