@@ -24,7 +24,10 @@ protected:
     int ripening_timer;
     int upgrade_timer;
 
-public:
+public:  
+    User* user;
+    Store* store;
+    
     Land();
 
     virtual int Upgrade()=0;
@@ -44,8 +47,6 @@ public:
     void Set_upgrade_timer(int);
     int Get_upgrade_timer();
 
-    User* user;
-    Store* store;
 };
 
 #endif // LAND_H
