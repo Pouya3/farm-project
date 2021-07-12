@@ -13,6 +13,7 @@ SOURCES += \
     aghol.cpp \
     agholpage.cpp \
     alfalfa_land.cpp \
+    alfalfa_landpage.cpp \
     aviculture.cpp \
     aviculturepage.cpp \
     building.cpp \
@@ -39,6 +40,7 @@ HEADERS += \
     aghol.h \
     agholpage.h \
     alfalfa_land.h \
+    alfalfa_landpage.h \
     aviculture.h \
     aviculturepage.h \
     building.h \
@@ -61,6 +63,7 @@ HEADERS += \
 
 FORMS += \
     agholpage.ui \
+    alfalfa_landpage.ui \
     aviculturepage.ui \
     livestockpage.ui \
     loginpage.ui \

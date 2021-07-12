@@ -48,6 +48,14 @@ QPushButton:hover{
 	background-color:red;
 	
 }
+Alfalfa_landPage{
+	background-image:url(../farm-project/alfalfa_land.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+	
+}
 #SiloPage{
 	background-image:url(../farm-project/silo.jpg);
 	background-position: center; /* Center the image */
