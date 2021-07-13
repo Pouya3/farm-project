@@ -1,5 +1,6 @@
 #include "spacepage.h"
 #include "ui_spacepage.h"
+#include <QMessageBox>
 
 SpacePage::SpacePage(QWidget *parent) :
     QMainWindow(parent),
@@ -17,15 +18,18 @@ SpacePage::~SpacePage()
 void SpacePage::on_pushButton_clicked()
 {
     if(ui->spinBox->text().toInt() == 0){
-        //qmessagebox --> "selected area to cultivate is 0"
+        //qmessagebox --> "area selected to cultivate is 0"
+        QMessageBox::critical(this,"0 VALUE","area selected to cultivate is 0");
     }
     else {
         switch(alfalfa_land->Cultivate(ui->spinBox->text().toInt())){
         case 3:
             //qmessagebox --> "not enough alfalfa"
+            QMessageBox::critical(this,"NOT ENOUGH ALFALFA","not enough alfalfa to cultivate");
             break;
         case 4:
-            //qmessagebox --> "timer set for cultivation"
+            //qmessagebox --> "timer set for ripening"
+            QMessageBox::information(this,"START","timer set for ripening");
             this->close();
             break;
         }

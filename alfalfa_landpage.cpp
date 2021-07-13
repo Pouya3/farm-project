@@ -1,6 +1,7 @@
 #include "alfalfa_landpage.h"
 #include "ui_alfalfa_landpage.h"
 #include "spacepage.h"
+#include <QMessageBox>
 
 Alfalfa_landPage::Alfalfa_landPage(QWidget *parent) :
     QMainWindow(parent),
@@ -41,19 +42,24 @@ void Alfalfa_landPage::on_pushButton_clicked()
 
     switch(alfalfa_land->Build()){
     case 1:
-        //qmessagebox --> "you cannot build alfalfa land until youreach level 3"
+        //qmessagebox --> "you cannot build alfalfa land until you reach level 3"
+        QMessageBox::critical(this,"LEVEL","you cannot build alfalfa land until you reach level 3");
         break;
     case 2:
-        //qmessagebox --> "not enough coins to build alfalfa land"
+        //qmessagebox --> "not enough coins for building alfalfa land"
+        QMessageBox::critical(this,"COINS","not enough coins for building alfalfa land");
         break;
     case 3:
-        //qmessagebox --> "not enough shovels to build alfalfa land"
+        //qmessagebox --> "not enough shovels for building alfalfa land"
+        QMessageBox::critical(this,"SHOVELS","not enough shovels for building alfalfa land");
         break;
     case 4:
-        //qmessagebox --> "not enough nails to build alfalfa land"
+        //qmessagebox --> "not enough nails for building alfalfa land"
+        QMessageBox::critical(this,"NAILS","not enough nails for building alfalfa land");
         break;
     case 5:
         //qmessagebox --> "timer set for building alfalfa land"
+        QMessageBox::information(this,"START","timer set for building alfalfa land");
         break;
     }
 }
@@ -64,20 +70,28 @@ void Alfalfa_landPage::on_pushButton_2_clicked()
     switch (alfalfa_land->Upgrade()) {
     case 1:
         //qmessagebox --> "alfalfa land is not built yet"
+        QMessageBox::critical(this,"NOT BUILT","alfalfa land is not built yet");
         break;
     case 2:
         //qmessagebox --> "you cannot upgrade until alfalfs ripen and get harvested"
+        QMessageBox::critical(this,"NOT RIPE AND NOT HARVESTED","you cannot upgrade until alfalfs ripen and get harvested");
         break;
     case 3:
         //qmessagebox --> "not enough shovels for upgrading"
+        QMessageBox::critical(this,"SHOVELS","not enough shovels for upgrading");
         break;
     case 4:
         //qmessagebox --> "not enough coins for upgrading"
+        QMessageBox::critical(this,"COINS","not enough coins for upgrading");
         break;
     case 5:
         //qmessagebox --> "you cannot upgrade alfalfa land until you reach level 4"
+        QMessageBox::critical(this,"LEVEL","you cannot upgrade alfalfa land until you reach level 4");
         break;
-
+    case 6:
+        //qmessagebox --> "timer set for upgrading"
+        QMessageBox::information(this,"START","timer set for upgrading");
+        break;
     }
 }
 
@@ -86,19 +100,24 @@ void Alfalfa_landPage::on_pushButton_3_clicked()
 {
     switch (alfalfa_land->Plow()) {
     case 1:
-        //qmessagebox --> "you have to wait until alfalfa ripens and gets collected"
+        //qmessagebox --> "you have to wait until alfalfas ripen and harvest them to plow"
+        QMessageBox::critical(this,"NOT RIPE AND NOT HARVESTED","you have to wait until alfalfas ripen and collect them to plow");
         break;
     case 2:
         //qmessagebox --> "field is cultivated. you cannot plow"
+        QMessageBox::critical(this,"CULTIVATED","field is cultivated. you cannot plow");
         break;
     case 3:
         //qmessagebox --> "not enough coins for plowing"
+        QMessageBox::critical(this,"COINS","not enough coins for plowing");
         break;
     case 4:
         //qmessagebox --> "timer set for plowing"
+        QMessageBox::information(this,"START","timer set for plowing");
         break;
     case 5:
         //qmessagebox --> "alfalfa land is not built yet"
+        QMessageBox::critical(this,"NOT BUILT","alfalfa land is not built yet");
         break;
     }
 }
@@ -107,12 +126,15 @@ void Alfalfa_landPage::on_pushButton_4_clicked()
 {
     if(alfalfa_land->Get_building_status() != 2){
         //qmessagebox --> "alfalfa land is not built yet
+        QMessageBox::critical(this,"NOT BUILT","alfalfa land is not built yet");
     }
     else if(alfalfa_land->Get_cultivation_status() == 1){
-        //qmessagbox --> "alfalfa land is already plowed"
+        //qmessagbox --> "alfalfa land is not plowed"
+        QMessageBox::critical(this,"NOT PLOWED","alfalfa land is not plowed");
     }
     else if ((alfalfa_land->Get_cultivation_status() == 2)||(alfalfa_land->Get_cultivation_status() == 3)){
         //qmessagebox --> "alfalfa land is cultivated"
+        QMessageBox::critical(this,"CULTIVATED","alfalfa land is cultivated");
     }
     else{
         SpacePage* s=new SpacePage;
