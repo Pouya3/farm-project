@@ -33,7 +33,7 @@ int Aghol::Build(){
 int Aghol::Upgrade() {
     // return values :
     // 1 == limit for upgrade duo to user;s level
-    // 2 not enough coins
+    // 2 == not enough coins
     // 3 == not enough nails
     // 4 == not enough shovels
     // 5 == timer set for upgrading
@@ -63,17 +63,21 @@ int Aghol::Upgrade() {
 int Aghol::Feed() {
     // return values :
     // 1 == empty aghol
-    // 2 == not enough alfalfa
-    // 3 == timer set for products
+    // 2 == already fed or product ready to collect
+    // 3 == not enough alfalfa
+    // 4 == timer set for products
     if(used_storage == 0){ // empty aghol
         return 1;
     }
     else{
-        if(store->Delete(3, used_storage)){ // enough alfalfa
-            user->Set_experience(user->Get_experience()+(7*used_storage));
+        if(feeding_status == 0){ // not fed and no product to collect
+            if(store->Delete(3, used_storage)){ // enough alfalfa
+                user->Set_experience(user->Get_experience()+(7*used_storage));
 
-            // timer
+                // timer
 
+                return 4;
+            }
             return 3;
         }
         return 2;
@@ -100,6 +104,7 @@ int Aghol::Collect() {
     // 1 == no product to collect
     // 2 == not enough coins
     // 3 == not enough storage in store
+    // 4 == product collected successfully
 
     if(feeding_status != 2){ // no product to collect
          return 1;
@@ -112,7 +117,7 @@ int Aghol::Collect() {
                 user->Set_coin(user->Get_coin() - used_storage);
                 user->Set_experience(user->Get_experience()+(9*used_storage));
 
-                return true;
+                return 4;
             }
             return 3;
         }

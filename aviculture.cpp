@@ -44,18 +44,22 @@ int Aviculture::Upgrade() {
 int Aviculture::Feed() {
     // return values :
     // 1 == empty aviculture
-    // 2 == not enough wheat to feed
-    // 3 == timer set for product
+    // 2 == already fed or eggs ready to collect
+    // 3 == not enough wheat to feed
+    // 4 == timer set for product
     if(used_storage == 0){ // aviculture is empty
         return 1;
     }
     else{
-        if(silo->Delete(0, used_storage)){ // enough wheat
-            user->Set_experience(user->Get_experience()+(1*used_storage));
-            // timer
+        if(feeding_status != 0){ // not fed and no egg to collect
+            if(silo->Delete(0, used_storage)){ // enough wheat
+                user->Set_experience(user->Get_experience()+(1*used_storage));
+                // timer
+                return 4;
+            }
             return 3;
         }
-    return 2;
+        return 2;
     }
 }
 
