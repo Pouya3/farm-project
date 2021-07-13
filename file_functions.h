@@ -10,7 +10,7 @@
 #include <direct.h>
 #include <QDir>
 #include <vector>
-#include <map>
+#include <QMultiMap>
 
 #include "aghol.h"
 #include "alfalfa_land.h"
@@ -40,7 +40,7 @@ int Login_user(QString username, QString password, User* user);
 // 2 == user exists and correct password (succesfull login)
 
 
-map<QString, int> Get_users_for_ranking();
+QMultiMap<int,QString> Get_users_for_ranking();
 void Save_user(User* user);
 
 #endif // FILE_FUNCTIONS_H

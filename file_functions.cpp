@@ -352,7 +352,7 @@ int Login_user(QString username, QString password, User* user){
     }
 }
 
-map<QString, int> Get_users_for_ranking(){
+QMultiMap<int, QString> Get_users_for_ranking(){
     QFile all_users_file("all users.json");                                       //
     all_users_file.open(QIODevice::ReadOnly);                                     //
                                                                                   //
@@ -368,7 +368,7 @@ map<QString, int> Get_users_for_ranking(){
 
 /////////////////////////////////////////////////////////
 
-    map<QString, int> users_map;
+    QMultiMap<int, QString> users_map;
     for(int i=0; i<users_array.size(); i++){
         QFile user_file(users_array[i].toString() + "//user.json");
         user_file.open(QIODevice::ReadOnly);
@@ -379,7 +379,7 @@ map<QString, int> Get_users_for_ranking(){
 
         QJsonObject user_obj = user_doc.object();
 
-        users_map.insert(make_pair(user_obj["username"].toString(), user_obj["experience"].toInt()));
+        users_map.insert(user_obj["experience"].toInt(), user_obj["username"].toString());
 
         user_file.close();
     }
