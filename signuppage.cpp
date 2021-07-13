@@ -1,7 +1,7 @@
 #include "signuppage.h"
 #include "ui_signuppage.h"
 #include "mainwindow.h"
-
+#include "loginpage.h"
 signupPage::signupPage(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::signupPage)
@@ -25,7 +25,11 @@ void signupPage::on_pushButton_s_clicked()
                         if(!ui->lineEdit_s_5->text().isEmpty()){ // email field is filled (successful signup)
                             if(Create_new_user_files(ui->lineEdit_s_2->text(), ui->lineEdit_s->text(), ui->lineEdit_s_3->text(), ui->lineEdit_s_5->text())){
                                 // qmessagebox for account created successfully
+                                QMessageBox::information(this,"SIGN UP","Account created successfully");
                                 // goto first window or anything
+                                LoginPage *lo=new LoginPage;
+                                lo->show();
+                                this->close();
                             }
                             else{
                                 ui->lineEdit_s_2->clear();
