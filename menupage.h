@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "user.h"
 #include "mainpage.h"
+#include <QMultiMap>
 
 namespace Ui {
 class MenuPage;
@@ -28,6 +29,7 @@ private:
     Ui::MenuPage *ui;
     User* user;
     MainPage* mainpage;
+    QMultiMap<int,QString> users_for_ranking;
 };
 
 #endif // MENUPAGE_H

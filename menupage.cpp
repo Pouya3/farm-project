@@ -15,6 +15,19 @@ MenuPage::MenuPage(QWidget *parent) :
     ui->label_3->setText(QString::number(user->Get_coin()));
     ui->label_4->setText(QString::number(user->Get_experience()));
     ui->label_2->setText(QString::number(user->Get_time()));
+
+    QMultiMap<int, QString>::iterator user_iter;
+    user_iter = users_for_ranking.begin();
+    int i;
+    for(i = 0; i<users_for_ranking.size(); i++){
+        if(user_iter.value() == user->Get_username()){
+            break;
+        }
+
+        user_iter++;
+    }
+    ui->pushButton_3->setText(QString::number(i));
+
 }
 
 MenuPage::~MenuPage()

@@ -2,6 +2,8 @@
 #define RANKINGPAGE_H
 
 #include <QMainWindow>
+#include <QMultiMap>
+#include "user.h"
 
 namespace Ui {
 class RankingPage;
@@ -17,6 +19,8 @@ public:
 
 private:
     Ui::RankingPage *ui;
+    QMultiMap<int, QString> users_for_ranking;
+    User* user;
 };
 
 #endif // RANKINGPAGE_H
