@@ -21,12 +21,14 @@ void WheatMarket::on_pushButton_clicked() // 1 --> buy              2 --> sell
 {
     if((ui->spinBox->text().toInt() == 0)&&(ui->spinBox_2->text().toInt() == 0)){
         // qmessagebox --> "number of buying and selling items is 0"
+        QMessageBox::critical(this,"ZERO","Number of buying and selling items is 0");
         return;
     }
 
     if(ui->spinBox->text().toInt() != 0){                                          //
         if(silo->Get_used_storage() < ui->spinBox->text().toInt()){                //
             //qmessagbox --> "not enough wheats to sell"                           //
+        QMessageBox::critical(this,"LESS","Not enough wheats to sell");            //
         }                                                                          //
         else{                                                                      // sell
             silo->Delete(1, ui->spinBox->text().toInt());                          //
@@ -37,6 +39,7 @@ void WheatMarket::on_pushButton_clicked() // 1 --> buy              2 --> sell
     if(ui->spinBox_2->text().toInt() != 0){ // buy                                                 //
         if(silo->Get_total_storage() - silo->Get_used_storage() < ui->spinBox_2->text().toInt()){  //
             //qmessagebox --> "not enough wheats"                                                  //
+        QMessageBox::critical(this,"LESS","Not enough wheats");                                    //
         }                                                                                          //
         else{                                                                                      //
             silo->Add(1, ui->spinBox_2->text().toInt());                                           // buy
