@@ -70,7 +70,10 @@ void Wheat_landPage::on_pushButton_3_clicked()
         //qmessagebox --> "you cannot upgrade wheat land until you reach level 2"
         QMessageBox::critical(this,"LEVEL","You cannot upgrade wheat land until you reach level 2");
         break;
-    case 5:
+    case 7:
+        QMessageBox::critical(this,"UPGEADING","Wheat land is already in upgrading situation");
+        break;
+    case 6:
         //qmessagebox --> "timer set for upgrading"
         QMessageBox::information(this,"START","Timer set for upgrading");
         break;
