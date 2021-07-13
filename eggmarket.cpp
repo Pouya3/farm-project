@@ -21,14 +21,17 @@ void eggMarket::on_pushButton_clicked()
 {
     if(user->Get_level() < 2){
         //qmessagebox --> "you must reach level 2 to buy or sell egg"
+        QMessageBox::critical(this,"LEVEL","you must reach level 2 to buy or sell egg");
     }
     else{
         if(ui->spinBox->text().toInt() != 0){
             //qmessagebox --> "number of selling items is 0"
+            QMessageBox::critical(this,"0 VALUE","number of selling items is 0");
         }
         else{
             if(store->Get_object(4) < ui->spinBox->text().toUInt()){
                 //qmessagebox --> "not enough eggs to sell"
+                QMessageBox::critical(this,"NOT ENOUGH EGGS","not enough eggs to sell");
             }
             else{
                 store->Delete(4, ui->spinBox->text().toInt());
