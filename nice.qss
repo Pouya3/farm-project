@@ -34,12 +34,41 @@ QPushButton:hover{
  	background-repeat: no-repeat; /* Do not repeat the image */
   	background-size: cover;
 }
+#CowMarket{
+
+	background-image:url(../farm-project/cow_market.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
+#AlfalfaMarket{
+
+	background-image:url(../farm-project/alfalfa_market.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
+#ChickenMarket{
+
+	background-image:url(../farm-project/chicken_market.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
+
 #SheepMarket{
 	background-image:url(../farm-project/sheep_market.jpg);
 	background-position: center; /* Center the image */
  	background-repeat: no-repeat; /* Do not repeat the image */
   	background-size: cover;
 
+}
+#WheatMarket{
+	background-image:url(../farm-project/wheat_market.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	
 }
 QSpinBox{
 

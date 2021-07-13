@@ -13,9 +13,12 @@ SOURCES += \
     agholpage.cpp \
     alfalfa_land.cpp \
     alfalfa_landpage.cpp \
+    alfalfamarket.cpp \
     aviculture.cpp \
     aviculturepage.cpp \
     building.cpp \
+    chickenmarket.cpp \
+    cowmarket.cpp \
     farm.cpp \
     file_functions.cpp \
     habitat.cpp \
@@ -39,16 +42,20 @@ SOURCES += \
     storepage.cpp \
     user.cpp \
     wheat_land.cpp \
-    wheat_landpage.cpp
+    wheat_landpage.cpp \
+    wheatmarket.cpp
 
 HEADERS += \
     aghol.h \
     agholpage.h \
     alfalfa_land.h \
     alfalfa_landpage.h \
+    alfalfamarket.h \
     aviculture.h \
     aviculturepage.h \
     building.h \
+    chickenmarket.h \
+    cowmarket.h \
     farm.h \
     file_functions.h \
     habitat.h \
@@ -71,12 +78,16 @@ HEADERS += \
     storepage.h \
     user.h \
     wheat_land.h \
-    wheat_landpage.h
+    wheat_landpage.h \
+    wheatmarket.h
 
 FORMS += \
     agholpage.ui \
     alfalfa_landpage.ui \
+    alfalfamarket.ui \
     aviculturepage.ui \
+    chickenmarket.ui \
+    cowmarket.ui \
     livestockpage.ui \
     loadingpage.ui \
     loginpage.ui \
@@ -91,7 +102,8 @@ FORMS += \
     mainwindow.ui \
     silopage.ui \
     storepage.ui \
-    wheat_landpage.ui
+    wheat_landpage.ui \
+    wheatmarket.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
