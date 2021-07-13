@@ -19,11 +19,13 @@ int Alfalfa_land::Upgrade()
             if(store->Get_object(1)>=2){ // enough shovels
                 if(user->Get_coin()>=5){ // enough coins
                     if(user->Get_level()>=4){ // not limit for upgrading duo to user's level
-                        store->Delete(1, 2);
-                        user->Set_coin(user->Get_coin()-5);
+                        if(upgrade_timer==0){
+                            store->Delete(1, 2);
+                            user->Set_coin(user->Get_coin()-5);
 
-                        upgrade_timer = 3;
-
+                            upgrade_timer = 3;
+                            return 7;
+                        }
                         return 6;
                     }
                     return 5;
@@ -45,29 +47,32 @@ int Alfalfa_land::Plow()
     // 3 == not enough coins
     // 4 == timer set for plowing
     // 5 == alfalfa land is not built yet
-    if(cultivation_status == 0) { // ready to plow
-        if(user->Get_coin()>=5*total_area){ // enough coins
-              user->Set_coin(user->Get_coin()-(5*total_area));
+    if(upgrade_timer==0){
+        if(cultivation_status == 0) { // ready to plow
+            if(user->Get_coin()>=5*total_area){ // enough coins
+                  user->Set_coin(user->Get_coin()-(5*total_area));
 
-              plowing_timer = 1;
+                  plowing_timer = 1;
 
-              return 4;
-        }
-        return 3;
-    }
-    else { // not ready to plow
-        if(building_status != 2){
-            return 5;
-        }
-        else{
-            if(cultivation_status == 1){ // already plowed
-                return 1;
+                  return 4;
             }
-            else { // field is cultivated. you cannot plow
-                return 2;
+            return 3;
+        }
+        else { // not ready to plow
+            if(building_status != 2){
+                return 5;
+            }
+            else{
+                if(cultivation_status == 1){ // already plowed
+                    return 1;
+                }
+                else { // field is cultivated. you cannot plow
+                    return 2;
+                }
             }
         }
     }
+    return 6;
 }
 
 int Alfalfa_land::Cultivate(int area_to_cultivate) {

@@ -89,6 +89,9 @@ void Alfalfa_landPage::on_pushButton_2_clicked()
         QMessageBox::critical(this,"LEVEL","you cannot upgrade alfalfa land until you reach level 4");
         break;
     case 6:
+        QMessageBox::critical(this,"UPGEADING","alfalfa land is already in upgrading situation");
+        break;
+    case 7:
         //qmessagebox --> "timer set for upgrading"
         QMessageBox::information(this,"START","timer set for upgrading");
         break;
@@ -118,6 +121,9 @@ void Alfalfa_landPage::on_pushButton_3_clicked()
     case 5:
         //qmessagebox --> "alfalfa land is not built yet"
         QMessageBox::critical(this,"NOT BUILT","alfalfa land is not built yet");
+        break;
+    case 6:
+        QMessageBox::critical(this,"UPGRADIN","After alfalfa land updated you can plow");
         break;
     }
 }
