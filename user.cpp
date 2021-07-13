@@ -7,6 +7,14 @@
 #include "store.h"
 #include "wheat_land.h"
 
+#include "levelup12.h"
+#include "levelup23.h"
+#include "levelup34.h"
+#include "levelup45.h"
+#include "levelup56.h"
+#include "levelup67.h"
+
+
 User::User() : aghol(NULL), alfalfa_land(NULL), aviculture(NULL), livestock(NULL), silo(NULL), store(NULL), wheat_land(NULL) {
 
     store = new Store;
@@ -56,21 +64,66 @@ void User::Set_max_experience(int _experience) { experience = _experience; }
 int User::Get_max_experience() { return experience; }
 void User::Set_time(int _time){time=_time;}
 int User::Get_time(){return time;}
-void User::Set_experience(int _experience){experience=_experience;}
 long long int User::Get_coin(){return coin;}
+void User::Set_experience(int _experience){
+    experience=_experience;
 
-void User::Check_experience()
-{
-    if(experience==max_experience)
-    {
+    if(experience >= max_experience){
         level++;
-        max_experience=max_experience*2+10;
-        //peygham bede be karbar ke level bala rafte va namayeshe emkanate jadid
+
+        switch (level) {
+        case 2:
+            LevelUp12 * levelUp12;
+            levelUp12 = new LevelUp12;
+            levelUp12->show();
+
+            aviculture->Set_building_status(1);
+
+            break;
+
+        case 3:
+            LevelUp23 * levelUp23;
+            levelUp23 = new LevelUp23;
+            levelUp23->show();
+
+            alfalfa_land->Set_building_status(1);
+
+            break;
+
+        case 4:
+            LevelUp34 * levelUp34;
+            levelUp34 = new LevelUp34;
+            levelUp34->show();
+
+            livestock->Set_building_status(1);
+
+            break;
+
+        case 5:
+            LevelUp45 * levelUp45;
+            levelUp45 = new LevelUp45;
+            levelUp45->show();
+
+            break;
+
+        case 6:
+            LevelUp56 * levelUp56;
+            levelUp56 = new LevelUp56;
+            levelUp56->show();
+
+            aghol->Set_building_status(1);
+
+            break;
+
+        case 7:
+            LevelUp67 * levelUp67;
+            levelUp67 = new LevelUp67;
+            levelUp67->show();
+        }
+
+        max_experience = max_experience * 2 + 10;
     }
 }
-
-
-
 
 
 

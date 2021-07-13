@@ -53,7 +53,6 @@ public:
     int Get_time();
     void Set_coin(long long int);
     long long int Get_coin();
-    void Check_experience();
 };
 
 #endif // USER_H
