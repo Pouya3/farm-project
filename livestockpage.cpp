@@ -71,7 +71,7 @@ void LivestockPage::on_pushButton_2_clicked()
         break;
     case 6:
         //qmessagebox --> "timer set for upgrading"
-        QMessageBox::informaStion(this,"START","timer set for upgrading");
+        QMessageBox::information(this,"START","timer set for upgrading");
         break;
     }
 }
@@ -125,7 +125,7 @@ void LivestockPage::on_pushButton_4_clicked()
         break;
     case 4:
         //qmessagebox --> "livestock is not built yet"
-        QMessageBox::information(this,"NOT BUILT","livestock is not built yet");
+        QMessageBox::critical(this,"NOT BUILT","livestock is not built yet");
         break;
     }
 }
