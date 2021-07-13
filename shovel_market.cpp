@@ -21,22 +21,25 @@ void Shovel_market::on_pushButton_clicked()// 1 --> sell              2 --> buy
 {
     if((ui->spinBox->text().toInt() == 0)&&(ui->spinBox_2->text().toInt() == 0)){
         // qmessagebox --> "number of buying and selling items is 0"
+        QMessageBox::critical(this,"0 VALUE","number of buying and selling items is 0");
         return;
     }
 
-    if(ui->spinBox->text().toInt() != 0){                                            //
-        if(store->Get_object(1) < ui->spinBox->text().toInt()){                      //
-            //qmessagbox --> "not enough shovels to sell"                            //
-        }                                                                            // sell
-        else{                                                                        //
-            store->Delete(1, ui->spinBox->text().toInt());                           //
-            user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*30);       //
-        }                                                                            //
-    }                                                                                //
+    if(ui->spinBox->text().toInt() != 0){                                                   //
+        if(store->Get_object(1) < ui->spinBox->text().toInt()){                             //
+            //qmessagbox --> "not enough shovels to sell"                                   //
+            QMessageBox::critical(this,"NOT ENOUGH SHOVELS","not enough shovels to sell");  //
+        }                                                                                   // sell
+        else{                                                                               //
+            store->Delete(1, ui->spinBox->text().toInt());                                  //
+            user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*30);              //
+        }                                                                                   //
+    }                                                                                       //
 
     if(ui->spinBox_2->text().toInt() != 0){ // buy                                                   //
         if(store->Get_total_storage() - store->Get_used_storage() < ui->spinBox_2->text().toInt()){  //
-            //qmessagebox --> "not enough shovels"                                                   //
+            //qmessagebox --> "not enough space in store"                                            //
+            QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in store");              //
         }                                                                                            //
         else{                                                                                        //
             store->Add(1, ui->spinBox_2->text().toInt());                                            // buy
