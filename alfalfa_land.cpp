@@ -49,7 +49,6 @@ int Alfalfa_land::Plow()
         if(user->Get_coin()>=5*total_area){ // enough coins
               user->Set_coin(user->Get_coin()-(5*total_area));
 
-              cultivation_status = 1;
               plowing_timer = 1;
 
               return 4;
