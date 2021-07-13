@@ -36,6 +36,7 @@ void MilkMarket::on_pushButton_clicked()
             else{
                 store->Delete(5, ui->spinBox->text().toInt());
                 user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*12);
+                user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*6);
             }
         }
     }

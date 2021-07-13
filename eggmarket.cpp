@@ -19,9 +19,9 @@ eggMarket::~eggMarket()
 
 void eggMarket::on_pushButton_clicked()
 {
-    if(user->Get_level() < 2){
-        //qmessagebox --> "you must reach level 2 to buy or sell egg"
-        QMessageBox::critical(this,"LEVEL","you must reach level 2 to buy or sell egg");
+    if(user->Get_level() < 3){
+        //qmessagebox --> "you must reach level 3 to sell egg"
+        QMessageBox::critical(this,"LEVEL","you must reach level 3 to sell egg");
     }
     else{
         if(ui->spinBox->text().toInt() != 0){
@@ -36,6 +36,7 @@ void eggMarket::on_pushButton_clicked()
             else{
                 store->Delete(4, ui->spinBox->text().toInt());
                 user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*8);
+                user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*6);
             }
         }
     }

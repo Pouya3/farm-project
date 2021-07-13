@@ -38,6 +38,7 @@ void CowMarket::on_pushButton_clicked() // buy -> 1             sell -> 2
             else{                                                                                                   // sell
                 livestock->Delete(1, ui->spinBox_2->text().toInt());                                                //
                 user->Set_coin(user->Get_coin() + ui->spinBox_2->text().toInt()*50);                                //
+                user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*6);                       //
             }                                                                                                       //
         }
 
@@ -49,7 +50,7 @@ void CowMarket::on_pushButton_clicked() // buy -> 1             sell -> 2
             else{                                                                                                   // buy
                 livestock->Add(1, ui->spinBox->text().toInt());                                                     //
                 user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*70);                                  //
-                user->Set_experience(user->Get_experience() + 10);                                                  //
+                user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);                      //
             }                                                                                                       //
         }                                                                                                           //
     }

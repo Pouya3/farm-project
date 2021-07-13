@@ -39,6 +39,7 @@ void AlfalfaMarket::on_pushButton_clicked()
             else{                                                                                 //
                 store->Delete(3, ui->spinBox->text().toInt());                                    //
                 user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*4);                 //
+                user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*6);   //
             }                                                                                     //
         }                                                                                         //
 
