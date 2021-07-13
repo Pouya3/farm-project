@@ -28,6 +28,9 @@ void SpacePage::on_pushButton_clicked()
             QMessageBox::critical(this,"NOT ENOUGH ALFALFA","not enough alfalfa to cultivate");
             break;
         case 4:
+            QMessageBox::critical(this,"UPGRADIN","After alfalfa land updated you can ripen");
+            break;
+        case 5:
             //qmessagebox --> "timer set for ripening"
             QMessageBox::information(this,"START","timer set for ripening");
             this->close();
