@@ -1,10 +1,7 @@
 #include "menupage.h"
 #include "ui_menupage.h"
-<<<<<<< HEAD
 #include "rankingpage.h"
-=======
 #include "file_functions.h"
->>>>>>> 8c6eb99a17f2a0eae3dd5f19c98a840d82d207aa
 
 MenuPage::MenuPage(QWidget *parent) :
     QMainWindow(parent),
@@ -25,13 +22,11 @@ MenuPage::~MenuPage()
     delete ui;
 }
 
-<<<<<<< HEAD
 void MenuPage::on_pushButton_3_clicked()
 {
     RankingPage* r=new RankingPage;
     r->show();
-
-=======
+}
 void MenuPage::on_pushButton_2_clicked()
 {
     mainpage->Time_function();
@@ -42,6 +37,5 @@ void MenuPage::on_pushButton_clicked()
     Save_user(user);
     this->close();
     mainpage->close();
->>>>>>> 8c6eb99a17f2a0eae3dd5f19c98a840d82d207aa
 }
 
