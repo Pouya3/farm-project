@@ -29,6 +29,7 @@ SOURCES += \
     mainwindow.cpp \
     marketpage.cpp \
     menupage.cpp \
+    nailmarket.cpp \
     sheepmarket.cpp \
     shovel_market.cpp \
     signuppage.cpp \
@@ -60,6 +61,7 @@ HEADERS += \
     mainwindow.h \
     marketpage.h \
     menupage.h \
+    nailmarket.h \
     sheepmarket.h \
     shovel_market.h \
     signuppage.h \
@@ -82,6 +84,7 @@ FORMS += \
     mainwindow.ui \
     marketpage.ui \
     menupage.ui \
+    nailmarket.ui \
     sheepmarket.ui \
     shovel_market.ui \
     signuppage.ui \
