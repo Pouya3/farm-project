@@ -142,6 +142,10 @@ void Alfalfa_landPage::on_pushButton_4_clicked()
         //qmessagebox --> "alfalfa land is cultivated"
         QMessageBox::critical(this,"CULTIVATED","alfalfa land is cultivated");
     }
+    else if(alfalfa_land->Get_upgrade_timer()!=0){
+        QMessageBox::critical(this,"UPGRADIN","After alfalfa land updated you can plow");
+
+    }
     else{
         SpacePage* s=new SpacePage;
         s->show();
