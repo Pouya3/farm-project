@@ -34,6 +34,27 @@ QPushButton:hover{
  	background-repeat: no-repeat; /* Do not repeat the image */
   	background-size: cover;
 }
+#eggMarket{
+
+	background-image:url(../farm-project/egg_market.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
+#WoolMarket{
+
+	background-image:url(../farm-project/wool_market.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
+#MilkMarket{
+
+	background-image:url(../farm-project/milk_market.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
 #CowMarket{
 
 	background-image:url(../farm-project/cow_market.jpg);

@@ -20,6 +20,9 @@
 #include "wheat_landpage.h"
 #include "loadingpage.h"
 #include "wheatmarket.h"
+#include "milkmarket.h"
+#include "eggmarket.h"
+#include "woolmarket.h"
 #include <QApplication>
 #include <QFile>
 
@@ -45,7 +48,7 @@ int main(int argc, char *argv[])
 
 
     QApplication a(argc, argv);
-    AlfalfaMarket w;
+    MilkMarket w;
     QFile styleSheetFile("../farm-project/nice.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet=QLatin1String(styleSheetFile.readAll());

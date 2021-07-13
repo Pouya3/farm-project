@@ -19,6 +19,7 @@ SOURCES += \
     building.cpp \
     chickenmarket.cpp \
     cowmarket.cpp \
+    eggmarket.cpp \
     farm.cpp \
     file_functions.cpp \
     habitat.cpp \
@@ -32,6 +33,7 @@ SOURCES += \
     mainwindow.cpp \
     marketpage.cpp \
     menupage.cpp \
+    milkmarket.cpp \
     nailmarket.cpp \
     sheepmarket.cpp \
     shovel_market.cpp \
@@ -43,7 +45,8 @@ SOURCES += \
     user.cpp \
     wheat_land.cpp \
     wheat_landpage.cpp \
-    wheatmarket.cpp
+    wheatmarket.cpp \
+    woolmarket.cpp
 
 HEADERS += \
     aghol.h \
@@ -56,6 +59,7 @@ HEADERS += \
     building.h \
     chickenmarket.h \
     cowmarket.h \
+    eggmarket.h \
     farm.h \
     file_functions.h \
     habitat.h \
@@ -68,6 +72,7 @@ HEADERS += \
     mainwindow.h \
     marketpage.h \
     menupage.h \
+    milkmarket.h \
     nailmarket.h \
     sheepmarket.h \
     shovel_market.h \
@@ -79,7 +84,8 @@ HEADERS += \
     user.h \
     wheat_land.h \
     wheat_landpage.h \
-    wheatmarket.h
+    wheatmarket.h \
+    woolmarket.h
 
 FORMS += \
     agholpage.ui \
@@ -88,6 +94,7 @@ FORMS += \
     aviculturepage.ui \
     chickenmarket.ui \
     cowmarket.ui \
+    eggmarket.ui \
     livestockpage.ui \
     loadingpage.ui \
     loginpage.ui \
@@ -95,6 +102,7 @@ FORMS += \
     mainwindow.ui \
     marketpage.ui \
     menupage.ui \
+    milkmarket.ui \
     nailmarket.ui \
     sheepmarket.ui \
     shovel_market.ui \
@@ -103,7 +111,8 @@ FORMS += \
     silopage.ui \
     storepage.ui \
     wheat_landpage.ui \
-    wheatmarket.ui
+    wheatmarket.ui \
+    woolmarket.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
