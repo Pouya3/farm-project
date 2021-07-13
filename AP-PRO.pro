@@ -22,10 +22,12 @@ SOURCES += \
     land.cpp \
     livestock.cpp \
     livestockpage.cpp \
+    loadingpage.cpp \
     loginpage.cpp \
     main.cpp \
     mainpage.cpp \
     mainwindow.cpp \
+    marketpage.cpp \
     menupage.cpp \
     signuppage.cpp \
     silo.cpp \
@@ -50,9 +52,11 @@ HEADERS += \
     land.h \
     livestock.h \
     livestockpage.h \
+    loadingpage.h \
     loginpage.h \
     mainpage.h \
     mainwindow.h \
+    marketpage.h \
     menupage.h \
     signuppage.h \
     silo.h \
@@ -68,9 +72,11 @@ FORMS += \
     alfalfa_landpage.ui \
     aviculturepage.ui \
     livestockpage.ui \
+    loadingpage.ui \
     loginpage.ui \
     mainpage.ui \
     mainwindow.ui \
+    marketpage.ui \
     menupage.ui \
     signuppage.ui \
     mainwindow.ui \

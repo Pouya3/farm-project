@@ -3,6 +3,7 @@
 #include "mainpage.h"
 #include "loginpage.h"
 #include "agholpage.h"
+#include "marketpage.h"
 #include "storepage.h"
 #include "aviculturepage.h"
 #include "livestockpage.h"
@@ -10,6 +11,7 @@
 #include "silopage.h"
 #include "alfalfa_landpage.h"
 #include "wheat_landpage.h"
+#include "loadingpage.h"
 #include <QApplication>
 #include <QFile>
 

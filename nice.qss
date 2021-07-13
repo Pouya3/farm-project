@@ -39,7 +39,26 @@ QPushButton:hover{
   	background-size: cover;
 	background-color:red;
 	
+
 }
+#LoadingPage{
+
+	background-image:url(../farm-project/loading.jpeg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+	
+}
+
+#MarketPage{
+	background-image:url(../farm-project/market.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	background-color:red;
+}
+
 #StorePage{
 	background-image:url(../farm-project/store.jpg);
 	background-position: center; /* Center the image */

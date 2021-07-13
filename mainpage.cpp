@@ -5,6 +5,7 @@
 #include "alfalfa_landpage.h"
 #include "wheat_landpage.h"
 #include "agholpage.h"
+#include "marketpage.h"
 #include "silopage.h"
 #include "menupage.h"
 #include "aviculturepage.h"
@@ -81,3 +82,10 @@ void MainPage:: on_pushButton_mm_2_clicked()
 void MainPage:: Time_function(){
     user->Set_time(user->Get_time()+1);
 }
+
+void MainPage::on_pushButton_a_2_clicked()
+{
+    MarketPage* m=new MarketPage;
+    m->show();
+}
+

@@ -35,6 +35,8 @@ private slots:
 
     void on_pushButton_mm_2_clicked();
 
+    void on_pushButton_a_2_clicked();
+
 private:
     Ui::MainPage *ui;
     QTimer *timer;

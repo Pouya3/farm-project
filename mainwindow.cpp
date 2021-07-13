@@ -2,6 +2,9 @@
 #include "ui_mainwindow.h"
 #include "signuppage.h"
 #include "loginpage.h"
+#include <QThread>
+
+#include "loadingpage.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
