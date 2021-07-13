@@ -21,14 +21,17 @@ void WoolMarket::on_pushButton_clicked()
 {
     if(user->Get_level() < 6){
         //qmessagebox --> "you must reach level 6 to buy or sell wool"
+        QMessageBox::critical(this,"LEVEL","You must reach level 6 to buy or sell wool");
     }
     else{
         if(ui->spinBox->text().toInt() != 0){
             //qmessagebox --> "number of selling items is 0"
+            QMessageBox::critical(this,"ZERO","Number of selling items is 0");
         }
         else{
-            if(store->Get_object(6) < ui->spinBox->text().toUInt()){
+            if(store->Get_object(6) < ui->spinBox->text().toInt()){
                 //qmessagebox --> "not enough milks to sell"
+                QMessageBox::critical(this,"LESS","Not enough milks to sell");
             }
             else{
                 store->Delete(6, ui->spinBox->text().toInt());
