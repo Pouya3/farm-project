@@ -1,5 +1,6 @@
 #include "aviculturepage.h"
 #include "ui_aviculturepage.h"
+#include <QMessageBox>
 
 AviculturePage::AviculturePage(QWidget *parent) :
     QMainWindow(parent),
@@ -23,15 +24,19 @@ void AviculturePage::on_pushButton_clicked()
     switch(aviculture->Build()){
     case 1:
         //qmessagebox --> "aviculture is locked";
+        QMessageBox::critical(this,"LOCKED","aviculture is locked");
         break;
     case 2:
         //qmessagebox --> "not enough coins for building"
+        QMessageBox::critical(this,"COINS","not enough coins for building");
         break;
     case 3:
         //qmessagebox --> "not enough nails for building"
+        QMessageBox::critical(this,"NAILS","not enough nails for building");
         break;
     case 4:
         //qmessageboc --> "timer set for building"
+        QMessageBox::information(this,"START","timer set for building");
         break;
     }
 }
@@ -48,18 +53,23 @@ void AviculturePage::on_pushButton_2_clicked()
     switch(aviculture->Upgrade()){
     case 1:
         //qmessagebox --> "aviculture is not built yet"
+        QMessageBox::critical(this,"NOT BUILT","aviculture is not built yet");
         break;
     case 2:
-        //qmessagebox --> "you cannot upgrade aviculture until user reaches level 3"
+        //qmessagebox --> "you cannot upgrade aviculture until you reach level 3"
+        QMessageBox::critical(this,"LEVEL","you cannot upgrade aviculture until you reach level 3");
         break;
     case 3:
         //qmessagebox --> "not enough coins for upgrading"
+        QMessageBox::critical(this,"COINS","not enough coins for upgrading");
         break;
     case 4:
         //qmessagebox --> "not enough nails for upgrading"
+        QMessageBox::critical(this,"NAILS","not enough nails for upgrading");
         break;
     case 5:
         //qmessagebox --> "timer set for upgrading"
+        QMessageBox::information(this,"START","timer set for upgrading");
         break;
     }
 }
@@ -68,15 +78,19 @@ void AviculturePage::on_pushButton_3_clicked()
     switch(aviculture->Feed()){
     case 1:
         //qmessagebox --> "aviculture is empty"
+        QMessageBox::critical(this,"EMPTY","aviculture is empty");
         break;
     case 2:
         //qmessagebox --> "you have to wait for timer to finish and collect egg to feed chickens"
+        QMessageBox::critical(this,"NOT READY AND NOT COLLECTED PRODUCT","you have to wait for timer to finish and collect egg to feed chickens");
         break;
     case 3:
         //qmessagebox --> "not enough wheat for feeding"
+        QMessageBox::critical(this,"NOT ENOUGH WHEAT","not enough wheat for feeding");
         break;
     case 4:
         //qmessagebox --> "timer set for eggs"
+        QMessageBox::information(this,"START","timer set for eggs");
         break;
     }
 }
@@ -87,12 +101,15 @@ void AviculturePage::on_pushButton_4_clicked()
     switch (aviculture->Collect()) {
     case 1:
         //qmessagebox --> "no egg to collect"
+        QMessageBox::critical(this,"NO EGG","no egg to collect");
         break;
     case 2:
         //qmessagebox --> "not enough space in store for eggs"
+        QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in store for eggs");
         break;
     case 3:
         //qmessagebox --> "eggs collected successfully"
+        QMessageBox::critical(this,"SUCCESS","eggs collected successfully");
         break;
     }
 }
