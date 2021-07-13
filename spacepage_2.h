@@ -13,7 +13,7 @@ class SpacePage_2 : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit SpacePage_2(QWidget *parent = nullptr);
+    explicit SpacePage_2(Wheat_land*, QWidget *parent = nullptr);
     ~SpacePage_2();
 
 private slots:

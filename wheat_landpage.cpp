@@ -2,12 +2,14 @@
 #include "spacepage_2.h"
 #include "ui_wheat_landpage.h"
 
-Wheat_landPage::Wheat_landPage(QWidget *parent) :
+Wheat_landPage::Wheat_landPage(Wheat_land* _wheat_land, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Wheat_landPage)
 {
     ui->setupUi(this);
     this->setFixedSize(1250,550);
+
+    wheat_land = _wheat_land;
 
     ui->label->setText(QString::number(wheat_land->Get_level()));
     ui->label_2->setText(QString::number(wheat_land->Get_cultivated_area()) + "/" + QString::number(wheat_land->Get_total_area()));
@@ -37,7 +39,7 @@ void Wheat_landPage::on_pushButton_clicked()
         QMessageBox::critical(this,"WAIT","You have to wait for wheats to ripen and harvest them to cultivate");
     }
     else{
-        SpacePage_2* s=new SpacePage_2;
+        SpacePage_2* s=new SpacePage_2(wheat_land);
         s->show();
         this->close();
     }

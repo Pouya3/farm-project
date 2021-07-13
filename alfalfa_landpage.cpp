@@ -3,12 +3,14 @@
 #include "spacepage.h"
 #include <QMessageBox>
 
-Alfalfa_landPage::Alfalfa_landPage(QWidget *parent) :
+Alfalfa_landPage::Alfalfa_landPage(Alfalfa_land* _alfalfa_land, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Alfalfa_landPage)
 {
     ui->setupUi(this);
     this->setFixedSize(1200,530);
+
+    alfalfa_land = _alfalfa_land;
 
     ui->label->setText(QString::number(alfalfa_land->Get_level()));
     ui->label_2->setText(QString::number(alfalfa_land->Get_cultivated_area()) + "/" + QString::number(alfalfa_land->Get_total_area()));
@@ -147,7 +149,7 @@ void Alfalfa_landPage::on_pushButton_4_clicked()
 
     }
     else{
-        SpacePage* s=new SpacePage;
+        SpacePage* s=new SpacePage(alfalfa_land);
         s->show();
         this->close();
     }

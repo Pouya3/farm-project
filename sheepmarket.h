@@ -14,7 +14,7 @@ class SheepMarket : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit SheepMarket(QWidget *parent = nullptr);
+    explicit SheepMarket(User*, Aghol*, QWidget *parent = nullptr);
     ~SheepMarket();
 
 private slots:

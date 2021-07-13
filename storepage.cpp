@@ -2,12 +2,14 @@
 #include "ui_storepage.h"
 #include <vector>
 
-StorePage::StorePage(QWidget *parent) :
+StorePage::StorePage(Store* _store, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::StorePage)
 {
     ui->setupUi(this);
     this->setFixedSize(1200,600);
+
+    store = _store;
 
     vector<pair<int, int>> milk_info_vect;
     vector<pair<int, int>>::iterator milk_info_iter;

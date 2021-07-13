@@ -14,7 +14,7 @@ class Shovel_market : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Shovel_market(QWidget *parent = nullptr);
+    explicit Shovel_market(User*, Store*, QWidget *parent = nullptr);
     ~Shovel_market();
 
 private slots:

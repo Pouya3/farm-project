@@ -14,7 +14,7 @@ class NailMarket : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit NailMarket(QWidget *parent = nullptr);
+    explicit NailMarket(User*, Store*, QWidget *parent = nullptr);
     ~NailMarket();
 
 private slots:

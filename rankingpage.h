@@ -14,7 +14,7 @@ class RankingPage : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit RankingPage(QWidget *parent = nullptr);
+    explicit RankingPage(User*, QMultiMap<int, QString>, QWidget *parent = nullptr);
     ~RankingPage();
 
 private:

@@ -2,7 +2,7 @@
 #define ALFALFA_LANDPAGE_H
 
 #include <QMainWindow>
-#include <alfalfa_land.h>
+#include "alfalfa_land.h"
 
 namespace Ui {
 class Alfalfa_landPage;
@@ -13,7 +13,7 @@ class Alfalfa_landPage : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Alfalfa_landPage(QWidget *parent = nullptr);
+    explicit Alfalfa_landPage(Alfalfa_land*, QWidget *parent = nullptr);
     ~Alfalfa_landPage();
 
 private slots:

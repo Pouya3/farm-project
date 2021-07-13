@@ -15,7 +15,7 @@ private:
     Livestock* livestock;
 
 public:
-    explicit LivestockPage(QWidget *parent = nullptr);
+    explicit LivestockPage(Livestock*, QWidget *parent = nullptr);
     ~LivestockPage();
 
 private slots:

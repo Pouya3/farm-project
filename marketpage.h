@@ -2,6 +2,12 @@
 #define MARKETPAGE_H
 
 #include <QMainWindow>
+#include "user.h"
+#include "store.h"
+#include "aghol.h"
+#include "livestock.h"
+#include "aviculture.h"
+#include "silo.h"
 
 namespace Ui {
 class MarketPage;
@@ -12,7 +18,7 @@ class MarketPage : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MarketPage(QWidget *parent = nullptr);
+    explicit MarketPage(User*, Store*, Aghol*, Livestock*, Aviculture*, Silo*, QWidget *parent = nullptr);
     ~MarketPage();
 
 private slots:
@@ -38,6 +44,13 @@ private slots:
 
 private:
     Ui::MarketPage *ui;
+
+    User* user;
+    Store* store;
+    Aghol* aghol;
+    Livestock* livestock;
+    Aviculture* aviculture;
+    Silo* silo;
 };
 
 #endif // MARKETPAGE_H

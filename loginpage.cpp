@@ -1,6 +1,7 @@
 #include "loginpage.h"
 #include "mainwindow.h"
 #include "ui_loginpage.h"
+#include "loadingpage.h"
 #include "user.h"
 
 LoginPage::LoginPage(QWidget *parent) :
@@ -34,8 +35,9 @@ void LoginPage::on_pushButton_l_clicked()
             }
             else{
                 // login successfully
-                // goto game window
-                // NOTE : pass user to game window
+                LoadingPage* p = new LoadingPage(user);
+                p->show();
+                this->close();
             }
         }
         else{

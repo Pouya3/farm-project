@@ -14,7 +14,7 @@ class WheatMarket : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit WheatMarket(QWidget *parent = nullptr);
+    explicit WheatMarket(User*, Silo*, QWidget *parent = nullptr);
     ~WheatMarket();
 
 private slots:

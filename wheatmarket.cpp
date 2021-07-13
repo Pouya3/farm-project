@@ -1,12 +1,15 @@
 #include "wheatmarket.h"
 #include "ui_wheatmarket.h"
 
-WheatMarket::WheatMarket(QWidget *parent) :
+WheatMarket::WheatMarket(User* _user, Silo* _silo, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::WheatMarket)
 {
     ui->setupUi(this);
     setFixedSize(1000,570);
+
+    user = _user;
+    silo = _silo;
 
     ui->label->setText(QString::number(silo->Get_used_storage()));
     ui->label->setText(QString::number(silo->Get_total_storage() - silo->Get_used_storage()));

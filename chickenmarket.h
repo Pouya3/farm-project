@@ -15,7 +15,7 @@ class ChickenMarket : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit ChickenMarket(QWidget *parent = nullptr);
+    explicit ChickenMarket(User*, Aviculture*, QWidget *parent = nullptr);
     ~ChickenMarket();
 
 private slots:

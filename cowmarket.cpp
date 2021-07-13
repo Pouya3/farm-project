@@ -1,12 +1,15 @@
 #include "cowmarket.h"
 #include "ui_cowmarket.h"
 
-CowMarket::CowMarket(QWidget *parent) :
+CowMarket::CowMarket(User* _user, Livestock* _livestock, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::CowMarket)
 {
     ui->setupUi(this);
     this->setFixedSize(1000,570);
+
+    user = _user;
+    livestock = _livestock;
 
     ui->label->setText(QString::number(livestock->Get_used_storage()));
     ui->label_2->setText(QString::number(livestock->Get_total_storage()- livestock->Get_used_storage()));

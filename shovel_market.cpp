@@ -1,12 +1,15 @@
 #include "shovel_market.h"
 #include "ui_shovel_market.h"
 
-Shovel_market::Shovel_market(QWidget *parent) :
+Shovel_market::Shovel_market(User* _user, Store* _store, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::Shovel_market)
 {
     ui->setupUi(this);
     this->setFixedSize(1000,570);
+
+    user = _user;
+    store = _store;
 
     ui->label->setText(QString::number(store->Get_object(1)));
     ui->label_2->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));

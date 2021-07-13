@@ -11,11 +11,8 @@ class StorePage;
 class StorePage : public QMainWindow
 {
     Q_OBJECT
-private:
-    Store* store;
-
 public:
-    explicit StorePage(QWidget *parent = nullptr);
+    explicit StorePage(Store*, QWidget *parent = nullptr);
     ~StorePage();
 
 private slots:
@@ -23,6 +20,7 @@ private slots:
 
 private:
     Ui::StorePage *ui;
+    Store* store;
 };
 
 #endif // STOREPAGE_H

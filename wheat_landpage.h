@@ -13,7 +13,7 @@ class Wheat_landPage : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit Wheat_landPage(QWidget *parent = nullptr);
+    explicit Wheat_landPage(Wheat_land*, QWidget *parent = nullptr);
     ~Wheat_landPage();
 
 private slots:

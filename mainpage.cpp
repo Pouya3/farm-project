@@ -12,12 +12,15 @@
 
 #include <cmath>
 
-MainPage::MainPage(QWidget *parent) :
+MainPage::MainPage(User* _user, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainPage)
 {
     ui->setupUi(this);
     this->setFixedSize(1265,540);
+
+    user = _user;
+
     timer=new QTimer (this);
     connect(timer,SIGNAL(timeout()),this,SLOT(Time_function()));
     timer->start(300000);
@@ -30,56 +33,56 @@ MainPage:: ~MainPage()
 
 void MainPage:: on_pushButton_a_clicked()
 {
-    StorePage* s=new StorePage;
+    StorePage* s=new StorePage(user->store);
     s->show();
 }
 
 
 void MainPage:: on_pushButton_a_8_clicked()
 {
-    LivestockPage* l=new LivestockPage;
+    LivestockPage* l=new LivestockPage(user->livestock);
     l->show();
 }
 
 
 void MainPage:: on_pushButton_a_5_clicked()
 {
-    Alfalfa_landPage* a=new Alfalfa_landPage;
+    Alfalfa_landPage* a=new Alfalfa_landPage(user->alfalfa_land);
     a->show();
 }
 
 
 void MainPage:: on_pushButton_a_6_clicked()
 {
-    Wheat_landPage* w=new Wheat_landPage;
+    Wheat_landPage* w=new Wheat_landPage(user->wheat_land);
     w->show();
 }
 
 
 void MainPage:: on_pushButton_a_7_clicked()
 {
-    SiloPage* s=new SiloPage;
+    SiloPage* s=new SiloPage(user->silo);
     s->show();
 }
 
 
 void MainPage::on_pushButton_a_4_clicked()
 {
-    AviculturePage* a=new AviculturePage;
+    AviculturePage* a=new AviculturePage(user->aviculture);
     a->show();
 }
 
 
 void MainPage:: on_pushButton_a_3_clicked()
 {
-    AgholPage* a=new AgholPage;
+    AgholPage* a=new AgholPage(user->aghol);
     a->show();
 }
 
 
 void MainPage:: on_pushButton_mm_2_clicked()
 {
-    MenuPage* m=new MenuPage;
+    MenuPage* m=new MenuPage(user);
     m->show();
 }
 void MainPage:: Time_function(){
@@ -210,7 +213,7 @@ void MainPage:: Time_function(){
 
 void MainPage::on_pushButton_a_2_clicked()
 {
-    MarketPage* m=new MarketPage;
+    MarketPage* m=new MarketPage(user, user->store, user->aghol, user->livestock, user->aviculture, user->silo);
     m->show();
 }
 

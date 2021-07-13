@@ -3,12 +3,14 @@
 #include "rankingpage.h"
 #include "file_functions.h"
 
-MenuPage::MenuPage(QWidget *parent) :
+MenuPage::MenuPage(User* _user, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MenuPage)
 {
     ui->setupUi(this);
     this->setFixedSize(830,550);
+
+    user = _user;
 
     ui->label->setText(user->Get_username());
     ui->label_5->setText(QString::number(user->Get_level()));
@@ -37,7 +39,7 @@ MenuPage::~MenuPage()
 
 void MenuPage::on_pushButton_3_clicked()
 {
-    RankingPage* r=new RankingPage;
+    RankingPage* r=new RankingPage(user, users_for_ranking);
     r->show();
 }
 void MenuPage::on_pushButton_2_clicked()

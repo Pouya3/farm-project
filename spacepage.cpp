@@ -2,12 +2,14 @@
 #include "ui_spacepage.h"
 #include <QMessageBox>
 
-SpacePage::SpacePage(QWidget *parent) :
+SpacePage::SpacePage(Alfalfa_land* _alfalfa_land, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SpacePage)
 {
     ui->setupUi(this);
     this->setFixedSize(900,600);
+
+    alfalfa_land = _alfalfa_land;
 }
 
 SpacePage::~SpacePage()

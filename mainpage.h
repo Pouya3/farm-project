@@ -15,7 +15,7 @@ class MainPage : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainPage(QWidget *parent = nullptr);
+    explicit MainPage(User* user, QWidget *parent = nullptr);
     ~MainPage();
 public slots:
     void Time_function();

@@ -2,12 +2,14 @@
 #include "ui_aviculturepage.h"
 #include <QMessageBox>
 
-AviculturePage::AviculturePage(QWidget *parent) :
+AviculturePage::AviculturePage(Aviculture* _aviculture, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AviculturePage)
 {
     ui->setupUi(this);
     this->setFixedSize(900,600);
+
+    aviculture = _aviculture;
 
     ui->label->setText(QString::number(aviculture->Get_level()));
     ui->label_2->setText(QString::number(aviculture->Get_used_storage()) + "/" + QString::number(aviculture->Get_total_storage()));

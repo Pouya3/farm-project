@@ -1,12 +1,15 @@
 #include "nailmarket.h"
 #include "ui_nailmarket.h"
 
-NailMarket::NailMarket(QWidget *parent) :
+NailMarket::NailMarket(User* _user, Store* _store, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::NailMarket)
 {
     ui->setupUi(this);
     setFixedSize(1000,570);
+
+    user = _user;
+    store = _store;
 
     ui->label_2->setText(QString::number(store->Get_object(2)));
     ui->label->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));

@@ -24,6 +24,8 @@
 #include "user.h"
 #include "Wheat_land.h"
 
+using namespace std;
+
 
 bool Create_new_user_files(QString username, QString name, QString password, QString email);
 //      | | | | |

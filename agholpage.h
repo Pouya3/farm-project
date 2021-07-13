@@ -15,7 +15,7 @@ private:
     Aghol* aghol;
 
 public:
-    explicit AgholPage(QWidget *parent = nullptr);
+    explicit AgholPage( Aghol*, QWidget *parent = nullptr);
     ~AgholPage();
 
 private slots:

@@ -14,7 +14,7 @@ class WoolMarket : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit WoolMarket(QWidget *parent = nullptr);
+    explicit WoolMarket(User*, Store*, QWidget *parent = nullptr);
     ~WoolMarket();
 
 private slots:

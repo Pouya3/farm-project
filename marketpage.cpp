@@ -11,12 +11,19 @@
 #include "shovel_market.h"
 #include "ui_marketpage.h"
 
-MarketPage::MarketPage(QWidget *parent) :
+MarketPage::MarketPage(User* _user, Store* _store, Aghol* _aghol, Livestock* _livestock, Aviculture* _aviculture, Silo* _silo, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MarketPage)
 {
     ui->setupUi(this);
     this->setFixedSize(970,685);
+
+    user = _user;
+    store = _store;
+    aghol = _aghol;
+    livestock = _livestock;
+    aviculture = _aviculture;
+    silo = _silo;
 }
 
 MarketPage::~MarketPage()
@@ -26,7 +33,7 @@ MarketPage::~MarketPage()
 
 void MarketPage::on_pushButton_clicked()
 {
-    NailMarket* n=new NailMarket;
+    NailMarket* n=new NailMarket(user, store);
     n->show();
     this->close();
 }
@@ -34,7 +41,7 @@ void MarketPage::on_pushButton_clicked()
 
 void MarketPage::on_pushButton_2_clicked()
 {
-    Shovel_market* s=new Shovel_market;
+    Shovel_market* s=new Shovel_market(user, store);
     s->show();
     this->close();
 }
@@ -42,7 +49,7 @@ void MarketPage::on_pushButton_2_clicked()
 
 void MarketPage::on_pushButton_3_clicked()
 {
-    SheepMarket* s=new SheepMarket;
+    SheepMarket* s=new SheepMarket(user, aghol);
     s->show();
     this->close();
 }
@@ -50,7 +57,7 @@ void MarketPage::on_pushButton_3_clicked()
 
 void MarketPage::on_pushButton_4_clicked()
 {
-    CowMarket* c=new CowMarket;
+    CowMarket* c=new CowMarket(user, livestock);
     c->show();
     this->close();
 }
@@ -58,7 +65,7 @@ void MarketPage::on_pushButton_4_clicked()
 
 void MarketPage::on_pushButton_5_clicked()
 {
-    ChickenMarket* c=new ChickenMarket;
+    ChickenMarket* c=new ChickenMarket(user, aviculture);
     c->show();
     this->close();
 }
@@ -66,7 +73,7 @@ void MarketPage::on_pushButton_5_clicked()
 
 void MarketPage::on_pushButton_6_clicked()
 {
-    AlfalfaMarket* a=new AlfalfaMarket;
+    AlfalfaMarket* a=new AlfalfaMarket(user, store);
     a->show();
     this->close();
 }
@@ -74,7 +81,7 @@ void MarketPage::on_pushButton_6_clicked()
 
 void MarketPage::on_pushButton_7_clicked()
 {
-    WheatMarket* w=new WheatMarket;
+    WheatMarket* w=new WheatMarket(user, silo);
     w->show();
     this->close();
 }
@@ -82,7 +89,7 @@ void MarketPage::on_pushButton_7_clicked()
 
 void MarketPage::on_pushButton_8_clicked()
 {
-    eggMarket* e=new eggMarket;
+    eggMarket* e=new eggMarket(user, store);
     e->show();
     this->close();
 }
@@ -90,7 +97,7 @@ void MarketPage::on_pushButton_8_clicked()
 
 void MarketPage::on_pushButton_9_clicked()
 {
-    MilkMarket* m=new MilkMarket;
+    MilkMarket* m=new MilkMarket(user, store);
     m->show();
     this->close();
 }
@@ -98,7 +105,7 @@ void MarketPage::on_pushButton_9_clicked()
 
 void MarketPage::on_pushButton_10_clicked()
 {
-    WoolMarket* w=new WoolMarket;
+    WoolMarket* w=new WoolMarket(user, store);
     w->show();
     this->close();
 }

@@ -1,12 +1,15 @@
 #include "chickenmarket.h"
 #include "ui_chickenmarket.h"
 
-ChickenMarket::ChickenMarket(QWidget *parent) :
+ChickenMarket::ChickenMarket(User* _user, Aviculture* _aviculture, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::ChickenMarket)
 {
     ui->setupUi(this);
     setFixedSize(1000,570);
+
+    user = _user;
+    aviculture = _aviculture;
 
     ui->label_2->setText(QString::number(aviculture->Get_used_storage()));
     ui->label->setText(QString::number(aviculture->Get_total_storage() - aviculture->Get_used_storage()));

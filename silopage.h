@@ -15,7 +15,7 @@ private:
     Silo* silo;
 
 public:
-    explicit SiloPage(QWidget *parent = nullptr);
+    explicit SiloPage(Silo*, QWidget *parent = nullptr);
     ~SiloPage();
 
 private slots:

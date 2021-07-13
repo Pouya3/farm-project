@@ -1,12 +1,14 @@
 #include "agholpage.h"
 #include "ui_agholpage.h"
 #include <QMessageBox>
-AgholPage::AgholPage(QWidget *parent) :
+AgholPage::AgholPage( Aghol* _aghol, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::AgholPage)
 {
     ui->setupUi(this);
     this->setFixedSize(900,600);
+
+    aghol = _aghol;
 
     ui->label->setText(QString::number(aghol->Get_level()));
     ui->label_2->setText(QString::number(aghol->Get_used_storage()) + "/" + QString::number(aghol->Get_total_storage()));

@@ -1,6 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "loadingpage.h"
 #include "signuppage.h"
 #include "loginpage.h"
 #include <QThread>
@@ -31,7 +30,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    LoadingPage* g=new LoadingPage;
+    LoginPage* g = new LoginPage;
     g->show();
     this->close();
 }

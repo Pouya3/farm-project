@@ -1,12 +1,14 @@
 #include "spacepage_2.h"
 #include "ui_spacepage_2.h"
 
-SpacePage_2::SpacePage_2(QWidget *parent) :
+SpacePage_2::SpacePage_2(Wheat_land* _wheat_land, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SpacePage_2)
 {
     ui->setupUi(this);
     this->setFixedSize(900,600);
+
+    wheat_land = _wheat_land;
 }
 
 SpacePage_2::~SpacePage_2()

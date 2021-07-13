@@ -1,12 +1,16 @@
 #include "rankingpage.h"
 #include "ui_rankingpage.h"
 
-RankingPage::RankingPage(QWidget *parent) :
+RankingPage::RankingPage(User* _user, QMultiMap<int, QString> _users_fot_ranking, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::RankingPage)
 {
     ui->setupUi(this);
     this->setFixedSize(490,640);
+
+    users_for_ranking = _users_fot_ranking;
+    user = _user;
+
     ui->tableWidget->setHorizontalHeaderItem(0,new QTableWidgetItem("Rank"));
     ui->tableWidget->setHorizontalHeaderItem(1,new QTableWidgetItem("Username"));
     ui->tableWidget->setHorizontalHeaderItem(2,new QTableWidgetItem("Experience"));

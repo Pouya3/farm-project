@@ -14,7 +14,7 @@ class eggMarket : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit eggMarket(QWidget *parent = nullptr);
+    explicit eggMarket(User*, Store*, QWidget *parent = nullptr);
     ~eggMarket();
 
 private slots:

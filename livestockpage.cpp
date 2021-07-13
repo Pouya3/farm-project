@@ -1,12 +1,14 @@
 #include "livestockpage.h"
 #include "ui_livestockpage.h"
 
-LivestockPage::LivestockPage(QWidget *parent) :
+LivestockPage::LivestockPage(Livestock* _livestock, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LivestockPage)
 {
     ui->setupUi(this);
     this->setFixedSize(900,600);
+
+    livestock = _livestock;
 
     ui->label->setText(QString::number(livestock->Get_level()));
     ui->label_2->setText(QString::number(livestock->Get_used_storage()) + "/" + QString::number(livestock->Get_total_storage()));

@@ -2,6 +2,7 @@
 #define LOADINGPAGE_H
 
 #include <QMainWindow>
+#include "user.h"
 
 namespace Ui {
 class LoadingPage;
@@ -13,11 +14,12 @@ class LoadingPage : public QMainWindow
 
 public:
     void changing();
-    explicit LoadingPage(QWidget *parent = nullptr);
+    explicit LoadingPage(User*, QWidget *parent = nullptr);
     ~LoadingPage();
 
 private:
     Ui::LoadingPage *ui;
+    User* user;
 };
 
 #endif // LOADINGPAGE_H

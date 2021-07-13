@@ -14,7 +14,7 @@ class MilkMarket : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MilkMarket(QWidget *parent = nullptr);
+    explicit MilkMarket(User*, Store*, QWidget *parent = nullptr);
     ~MilkMarket();
 
 private slots:

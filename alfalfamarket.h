@@ -14,7 +14,7 @@ class AlfalfaMarket : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit AlfalfaMarket(QWidget *parent = nullptr);
+    explicit AlfalfaMarket(User*, Store*, QWidget *parent = nullptr);
     ~AlfalfaMarket();
 
 private slots:

@@ -1,12 +1,15 @@
 #include "sheepmarket.h"
 #include "ui_sheepmarket.h"
 
-SheepMarket::SheepMarket(QWidget *parent) :
+SheepMarket::SheepMarket(User* _user, Aghol* _aghol, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::SheepMarket)
 {
     ui->setupUi(this);
     this->setFixedSize(1000,570);
+
+    user = _user;
+    aghol = _aghol;
 
     ui->label->setText(QString::number(aghol->Get_used_storage()));
     ui->label_2->setText(QString::number(aghol->Get_total_storage() - aghol->Get_used_storage()));

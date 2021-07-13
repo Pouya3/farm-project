@@ -14,7 +14,7 @@ class AviculturePage : public QMainWindow
 private:
     Aviculture* aviculture;
 public:
-    explicit AviculturePage(QWidget *parent = nullptr);
+    explicit AviculturePage(Aviculture*, QWidget *parent = nullptr);
     ~AviculturePage();
 
 private slots:

@@ -1,12 +1,15 @@
 #include "milkmarket.h"
 #include "ui_milkmarket.h"
 
-MilkMarket::MilkMarket(QWidget *parent) :
+MilkMarket::MilkMarket(User* _user, Store* _store, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MilkMarket)
 {
     ui->setupUi(this);
     this->setFixedSize(1000,460);
+
+    user = _user;
+    store = _store;
 
     ui->label->setText(QString::number(store->Get_object(5)));
     ui->label->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));

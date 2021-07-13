@@ -14,7 +14,7 @@ class CowMarket : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit CowMarket(QWidget *parent = nullptr);
+    explicit CowMarket(User*, Livestock*, QWidget *parent = nullptr);
     ~CowMarket();
 
 private slots:
