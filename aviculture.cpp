@@ -36,11 +36,13 @@ int Aviculture::Upgrade() {
         if(user->Get_level()>=3){ // no limit for building duo to user's level
             if(user->Get_coin()>=10){ // enough coins
                 if(store->Get_object(2)>=1){ // enough nails
-                    user->Set_coin(user->Get_coin()-10);
-                    store->Delete(2,1);
+                    if(upgrade_timer==0){
+                        user->Set_coin(user->Get_coin()-10);
+                        store->Delete(2,1);
 
-                    upgrade_timer = 3;
-
+                        upgrade_timer = 3;
+                        return 6;
+                    }
                     return 5;
                 }
                 return 4;
@@ -58,26 +60,28 @@ int Aviculture::Feed() {
     // 3 == already fed or eggs ready to collect
     // 4 == not enough wheat to feed
     // 5 == timer set for product
-    if(used_storage == 0){ // aviculture is empty
-        return 1;
-    }
-    else{
+
         if(building_status == 2){ // already built
-            if(feeding_status != 0){ // not fed and no egg to collect
-                if(silo->Delete(0, used_storage)){ // enough wheat
-                    user->Set_experience(user->Get_experience()+(1*used_storage));
+            if(used_storage != 0){ // aviculture is empty
+                if(feeding_status != 0){ // not fed and no egg to collect
+                    if(upgrade_timer==0){
+                        if(silo->Delete(0, used_storage)){ // enough wheat
+                            user->Set_experience(user->Get_experience()+(1*used_storage));
 
-                    feeding_status = 1;
-                    feeding_timer = 2;
+                            feeding_status = 1;
+                            feeding_timer = 2;
+                            return 6;
+                        }
 
-                    return 5;
+                        return 5;
+                    }
+                    return 4;
                 }
-                return 4;
+                return 3;
             }
-            return 3;
+            return 2;
         }
-        return 2;
-    }
+        return 1;
 }
 
 bool Aviculture::Add(int type, int amount) {

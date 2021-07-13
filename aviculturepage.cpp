@@ -49,7 +49,7 @@ void AviculturePage::on_pushButton_2_clicked()
     // 2 == limit for building duo to user's level
     // 3 == not enough coins
     // 4 == not enough nails
-    // 5 == timer set for upgrade
+    // 6 == timer set for upgrade
     switch(aviculture->Upgrade()){
     case 1:
         //qmessagebox --> "aviculture is not built yet"
@@ -68,6 +68,9 @@ void AviculturePage::on_pushButton_2_clicked()
         QMessageBox::critical(this,"NAILS","not enough nails for upgrading");
         break;
     case 5:
+        QMessageBox::critical(this,"UPGEADING","aviculture is already in upgrading situation");
+        break;
+    case 6:
         //qmessagebox --> "timer set for upgrading"
         QMessageBox::information(this,"START","timer set for upgrading");
         break;
@@ -77,18 +80,25 @@ void AviculturePage::on_pushButton_3_clicked()
 {
     switch(aviculture->Feed()){
     case 1:
+        //qmessagebox --> "aviculture is not built yet"
+        QMessageBox::critical(this,"NOT BUILT","aviculture is not built yet");
+        break;
+    case 2:
         //qmessagebox --> "aviculture is empty"
         QMessageBox::critical(this,"EMPTY","aviculture is empty");
         break;
-    case 2:
+    case 3:
         //qmessagebox --> "you have to wait for timer to finish and collect egg to feed chickens"
         QMessageBox::critical(this,"NOT READY AND NOT COLLECTED PRODUCT","you have to wait for timer to finish and collect egg to feed chickens");
         break;
-    case 3:
+    case 4:
+        QMessageBox::critical(this,"UPGEADING","After Aghol upgraded you can feed them");
+        break;
+    case 5:
         //qmessagebox --> "not enough wheat for feeding"
         QMessageBox::critical(this,"NOT ENOUGH WHEAT","not enough wheat for feeding");
         break;
-    case 4:
+    case 6:
         //qmessagebox --> "timer set for eggs"
         QMessageBox::information(this,"START","timer set for eggs");
         break;
