@@ -3,7 +3,8 @@
 
 #include <QMainWindow>
 #include <QTimer>
-#include "User.h"
+#include "user.h"
+#include <QMessageBox>
 
 namespace Ui {
 class MainPage;
@@ -41,6 +42,7 @@ private:
     Ui::MainPage *ui;
     QTimer *timer;
     User * user;
+
 };
 
 #endif // MAINPAGE_H
