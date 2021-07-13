@@ -21,16 +21,19 @@ void CowMarket::on_pushButton_clicked() // buy -> 1             sell -> 2
 {
     if(livestock->Get_building_status() != 2){
         //qmessagebox --> "you must build livestock to buy or sell cow"
+        QMessageBox::critical(this,"LIVESTOCK NOT BUILT","you must build livestock to buy or sell cow");
     }
     else{
         if((ui->spinBox->text().toInt() == 0)&&(ui->spinBox_2->text().toInt() == 0)){
             //qmessagebox --> "number of buying and selling items is 0"
+            QMessageBox::critical(this,"0 VALUE","number of buying and selling items is 0");
             return;
         }
 
         if(ui->spinBox_2->text().toInt() != 0){                                                                     //
             if(livestock->Get_used_storage() < ui->spinBox_2->text().toInt()){                                      //
                 //qmessagebox --> "not enough cows to sell"                                                         //
+                QMessageBox::critical(this,"NOT ENOUGH COWS","not enough cows to sell");                            //
             }                                                                                                       //
             else{                                                                                                   // sell
                 livestock->Delete(1, ui->spinBox_2->text().toInt());                                                //
@@ -41,6 +44,7 @@ void CowMarket::on_pushButton_clicked() // buy -> 1             sell -> 2
         if(ui->spinBox->text().toInt() != 0){                                                                       //
             if(livestock->Get_total_storage() - livestock->Get_used_storage() < ui->spinBox->text().toInt()){       //
                 //qmessagebox --> "not enough space in livestock"                                                   //
+                QMessageBox::critical(this,"NOT ENOUGH SAPCE","not enough space in livestock");                     //
             }                                                                                                       //
             else{                                                                                                   // buy
                 livestock->Add(1, ui->spinBox->text().toInt());                                                     //
