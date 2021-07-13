@@ -86,8 +86,9 @@ int Aghol::Feed() {
         }
         else{
             if(feeding_status == 0){ // not fed and no product to collect
-                if(store->Delete(3, used_storage)){ // enough alfalfa
-                    if(upgrade_timer==0){
+                if(upgrade_timer==0){
+                    if(store->Delete(3, used_storage)){ // enough alfalfa
+
                         user->Set_experience(user->Get_experience()+(7*used_storage));
 
                         feeding_status = 1;

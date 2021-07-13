@@ -59,7 +59,7 @@ void LivestockPage::on_pushButton_2_clicked()
         break;
     case 3:
         //qmessagebox --> "you cannot upgrade livestock until you reach level 5"
-        QMessageBox::critical(this,"LEVEL","livestock is not built yet");
+        QMessageBox::critical(this,"LEVEL","you cannot upgrade livestock until you reach level 5");
         break;
     case 4:
         //qmessagebox --> "not enough coins for upgrading"
@@ -70,6 +70,9 @@ void LivestockPage::on_pushButton_2_clicked()
         QMessageBox::critical(this,"NAILS","not enough nails for upgrading");
         break;
     case 6:
+        QMessageBox::critical(this,"UPGEADING","livestock is already in upgrading situation");
+        break;
+    case 7:
         //qmessagebox --> "timer set for upgrading"
         QMessageBox::information(this,"START","timer set for upgrading");
         break;
@@ -103,6 +106,9 @@ void LivestockPage::on_pushButton_3_clicked()
     case 6:
         //qmessagebox  --> "livestock is not built yet"
         QMessageBox::critical(this,"NOT BUILT","livestock is not built yet");
+        break;
+    case 7:
+        QMessageBox::critical(this,"UPGEADING","After livestock upgraded you can feed them");
         break;
     }
 }

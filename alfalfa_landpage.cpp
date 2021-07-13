@@ -123,7 +123,7 @@ void Alfalfa_landPage::on_pushButton_3_clicked()
         QMessageBox::critical(this,"NOT BUILT","alfalfa land is not built yet");
         break;
     case 6:
-        QMessageBox::critical(this,"UPGRADIN","After alfalfa land updated you can plow");
+        QMessageBox::critical(this,"UPGRADIN","After alfalfa land upgrade you can plow");
         break;
     }
 }
@@ -141,6 +141,10 @@ void Alfalfa_landPage::on_pushButton_4_clicked()
     else if ((alfalfa_land->Get_cultivation_status() == 2)||(alfalfa_land->Get_cultivation_status() == 3)){
         //qmessagebox --> "alfalfa land is cultivated"
         QMessageBox::critical(this,"CULTIVATED","alfalfa land is cultivated");
+    }
+    else if(alfalfa_land->Get_upgrade_timer()!=0){
+        QMessageBox::critical(this,"UPGRADIN","After alfalfa land upgraded you can plow");
+
     }
     else{
         SpacePage* s=new SpacePage;

@@ -85,12 +85,15 @@ int Alfalfa_land::Cultivate(int area_to_cultivate) {
     if(building_status == 2){ // already built
         if(cultivation_status == 1) { // plowed but not cultivated
             if(store->Get_object(3) >= area_to_cultivate){ // enough alfalfa
-                 cultivation_status = 2;
-                 plowed_area = 0;
-                 user->Set_experience(user->Get_experience()+area_to_cultivate*2);
-                 store->Delete(3,area_to_cultivate);
+                if(upgrade_timer==0){
+                     cultivation_status = 2;
+                     plowed_area = 0;
+                     user->Set_experience(user->Get_experience()+area_to_cultivate*2);
+                     store->Delete(3,area_to_cultivate);
 
-                 ripening_timer = 4;
+                     ripening_timer = 4;
+                     return 5;
+                }
 
                  return 4;
             }

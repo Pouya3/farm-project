@@ -46,14 +46,17 @@ int Livestock::Upgrade() {
             if(user->Get_level()>=5){ // not limit for upgrade dou to user's level
                 if(user->Get_coin()>=15){ // enough coins
                     if(store->Get_object(2)>=2){ // enough nails
-                        user->Set_coin(user->Get_coin()-15);
-                        store->Delete(2,2);
-                        /*level++;
-                        total_storage *= 2;
-                        user->Set_experience(user->Get_experience()+6);*/
+                        if(upgrade_timer==0){
+                            user->Set_coin(user->Get_coin()-15);
+                            store->Delete(2,2);
+                            /*level++;
+                            total_storage *= 2;
+                            user->Set_experience(user->Get_experience()+6);*/
 
-                        upgrade_timer = 5;
+                            upgrade_timer = 5;
 
+                            return 7;
+                        }
                         return 6;
                     }
                     return 5;
@@ -78,7 +81,10 @@ int Livestock::Feed() {
         return 6;
     }
     else{
-        if(used_storage == 0){ // empty livestock
+        if(upgrade_timer!=0){
+            return 7;
+        }
+        else if(used_storage == 0){ // empty livestock
             return 1;
         }
         else if(feeding_status == 1){ // already fed

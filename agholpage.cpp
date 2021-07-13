@@ -101,12 +101,12 @@ void AgholPage::on_pushButton_3_clicked()
         //qmessagebox --> "after timer finished and sheep are shaved youn can feed them"
         QMessageBox::critical(this,"TIMER","After timer finished and sheep are shaved you can feed them");
         break;
-    case 4:
-        //qmessagebox --> "not enough alfalfa for feeding"
-        QMessageBox::critical(this,"ALFALFA","Not enough alfalfa for feeding");
+    case 4:       
+        QMessageBox::critical(this,"UPGEADING","After Aghol upgraded you can feed them");
         break;
     case 5:
-        QMessageBox::critical(this,"UPGEADING","After Aghol updated you can feed them");
+        //qmessagebox --> "not enough alfalfa for feeding"
+        QMessageBox::critical(this,"ALFALFA","Not enough alfalfa for feeding");
         break;
     case 6:
         //qmessagebox --> "timer set for product"
