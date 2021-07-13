@@ -29,6 +29,7 @@ SOURCES += \
     mainwindow.cpp \
     marketpage.cpp \
     menupage.cpp \
+    sheepmarket.cpp \
     signuppage.cpp \
     silo.cpp \
     silopage.cpp \
@@ -58,6 +59,7 @@ HEADERS += \
     mainwindow.h \
     marketpage.h \
     menupage.h \
+    sheepmarket.h \
     signuppage.h \
     silo.h \
     silopage.h \
@@ -78,6 +80,7 @@ FORMS += \
     mainwindow.ui \
     marketpage.ui \
     menupage.ui \
+    sheepmarket.ui \
     signuppage.ui \
     mainwindow.ui \
     silopage.ui \

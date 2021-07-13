@@ -20,7 +20,31 @@ QPushButton:hover{
 	border-radius:12px;
 
 }
+#SheepMarket{
+	background-image:url(../farm-project/sheep_market.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
 
+}
+QSpinBox{
+
+	border-radius:7px;
+	border-width: 3;
+	background-color:#80500e;
+	
+	color:#f7c281;
+
+}
+QSpinBox:hover{
+
+	border-radius:7px;
+	border-width: 3;
+	background-color:#9e6c26;
+	
+	color:#f7c281;
+
+}
 #pushButton_mm_2{
 
 	background-color:rgba(99,47,2,0);;
