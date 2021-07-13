@@ -148,12 +148,15 @@ void Alfalfa_landPage::on_pushButton_5_clicked()
     switch (alfalfa_land->Harvest()) {
     case 1:
         //qmessagebox --> "no alfalfa to harvest"
+        QMessageBox::critical(this,"NO ALFALFA","no alfalfa to harvest");
         break;
     case 2:
         //qmessagebox --> "not enough space in store"
+        QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in store");
         break;
     case 3:
         //qmessagebox --> "harvested successfully"
+        QMessageBox::information(this,"SUCCESS","harvested successfully");
         break;
     }
 }
