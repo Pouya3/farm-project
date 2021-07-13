@@ -169,21 +169,41 @@ void MainPage:: Time_function(){
     }
     if(user->wheat_land->Get_ripening_timer()>0){
         user->wheat_land->Set_ripening_timer(user->wheat_land->Get_ripening_timer()-1);
+        if(user->wheat_land->Get_ripening_timer()==0){
+           user->wheat_land->Set_cultivation_status(2);
+        }
     }
     if(user->alfalfa_land->Get_ripening_timer()>0){
         user->alfalfa_land->Set_ripening_timer(user->alfalfa_land->Get_ripening_timer()-1);
+        if(user->alfalfa_land->Get_ripening_timer()==0){
+            user->alfalfa_land->Set_cultivation_status(3);
+          }
     }
     if(user->alfalfa_land->Get_upgrade_timer()>0){
         user->alfalfa_land->Set_upgrade_timer(user->alfalfa_land->Get_upgrade_timer()-1);
+        if(user->alfalfa_land->Get_upgrade_timer()==0){
+            user->Set_experience(user->Get_experience()+3);
+        }
     }
     if(user->wheat_land->Get_upgrade_timer()>0){
         user->wheat_land->Set_upgrade_timer(user->wheat_land->Get_upgrade_timer()-1);
+        if(user->wheat_land->Get_upgrade_timer()==0){
+            user->Set_experience(user->Get_experience()+3);
+        }
     }
     if(user->alfalfa_land->Get_building_timer()>0){
         user->alfalfa_land->Set_building_timer(user->alfalfa_land->Get_building_timer()-1);
+        if(user->alfalfa_land->Get_building_timer()==0){
+            user->alfalfa_land->Set_building_status(2);
+            user->Set_experience(user->Get_experience()+6);
+        }
     }
     if(user->alfalfa_land->Get_plowing_timer()>0){
         user->alfalfa_land->Set_plowing_timer(user->alfalfa_land->Get_plowing_timer()-1);
+        if(user->alfalfa_land->Get_plowing_timer()==0){
+            user->alfalfa_land->Set_cultivation_status(1);
+            user->Set_experience(user->Get_experience()+user->alfalfa_land->Get_plowed_area());
+        }
     }
 
 }

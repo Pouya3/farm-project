@@ -45,15 +45,17 @@ int Aghol::Upgrade() {
                 if(user->Get_coin()>=50){ // enough coins
                     if(store->Get_object(2)>=3){ // enuogh nails
                         if(store->Get_object(1)>=1){ // enough shovels
-                            user->Set_coin(user->Get_coin()-50);
-                            store->Delete(2,3);
-                            store->Delete(1,1);
-                            /*level++;
-                            total_storage *= 2;
-                            user->Set_experience(user->Get_experience()+15);*/
+                            if(upgrade_timer==0){
+                                user->Set_coin(user->Get_coin()-50);
+                                store->Delete(2,3);
+                                store->Delete(1,1);
+                                /*level++;
+                                total_storage *= 2;
+                                user->Set_experience(user->Get_experience()+15);*/
 
-                            upgrade_timer = 9;
-
+                                upgrade_timer = 9;
+                                return 8;
+                            }
                             return 7;
                         }
                         return 6;
@@ -85,10 +87,13 @@ int Aghol::Feed() {
         else{
             if(feeding_status == 0){ // not fed and no product to collect
                 if(store->Delete(3, used_storage)){ // enough alfalfa
-                    user->Set_experience(user->Get_experience()+(7*used_storage));
+                    if(upgrade_timer==0){
+                        user->Set_experience(user->Get_experience()+(7*used_storage));
 
-                    feeding_status = 1;
-                    feeding_timer = 10;
+                        feeding_status = 1;
+                        feeding_timer = 10;
+                        return 6;
+                    }
 
                     return 5;
                 }

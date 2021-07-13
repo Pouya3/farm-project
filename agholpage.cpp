@@ -76,6 +76,9 @@ void AgholPage::on_pushButton_2_clicked()
         QMessageBox::critical(this,"SHOVEL","Not enough shovels for upgrading");
         break;
     case 7:
+        QMessageBox::critical(this,"UPGEADING","Aghol is already in upgrading situation");
+        break;
+    case 8:
         //qmessagebox --> "timer set for upgrading"
         QMessageBox::information(this,"START","Timer set for upgrading");
         break;
@@ -96,13 +99,16 @@ void AgholPage::on_pushButton_3_clicked()
         break;
     case 3:
         //qmessagebox --> "after timer finished and sheep are shaved youn can feed them"
-        QMessageBox::critical(this,"TIMER","After timer finished and sheep are shaved youn can feed them");
+        QMessageBox::critical(this,"TIMER","After timer finished and sheep are shaved you can feed them");
         break;
     case 4:
         //qmessagebox --> "not enough alfalfa for feeding"
         QMessageBox::critical(this,"ALFALFA","Not enough alfalfa for feeding");
         break;
     case 5:
+        QMessageBox::critical(this,"UPGEADING","After Aghol updated you can feed them");
+        break;
+    case 6:
         //qmessagebox --> "timer set for product"
         QMessageBox::information(this,"START","Timer set for product");
         break;
