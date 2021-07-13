@@ -109,7 +109,7 @@ void AviculturePage::on_pushButton_4_clicked()
         break;
     case 3:
         //qmessagebox --> "eggs collected successfully"
-        QMessageBox::critical(this,"SUCCESS","eggs collected successfully");
+        QMessageBox::information(this,"SUCCESS","eggs collected successfully");
         break;
     }
 }
