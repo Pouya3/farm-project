@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>SheepMarket</class>
- <widget class="QMainWindow" name="SheepMarket">
+ <class>Shovel_market</class>
+ <widget class="QMainWindow" name="Shovel_market">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1063</width>
+    <width>953</width>
     <height>600</height>
    </rect>
   </property>
@@ -31,13 +31,26 @@ QLabel{
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="pushButton">
+    <property name="geometry">
+     <rect>
+      <x>760</x>
+      <y>380</y>
+      <width>171</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
    <widget class="QSpinBox" name="spinBox">
     <property name="geometry">
      <rect>
       <x>530</x>
-      <y>250</y>
+      <y>400</y>
       <width>111</width>
-      <height>51</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
@@ -50,28 +63,15 @@ QLabel{
     <property name="geometry">
      <rect>
       <x>530</x>
-      <y>410</y>
+      <y>250</y>
       <width>111</width>
-      <height>51</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <pointsize>24</pointsize>
      </font>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>760</x>
-      <y>380</y>
-      <width>171</width>
-      <height>91</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="label">
@@ -85,7 +85,7 @@ QLabel{
     </property>
     <property name="font">
      <font>
-      <pointsize>25</pointsize>
+      <pointsize>24</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -100,10 +100,10 @@ QLabel{
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>850</x>
-      <y>90</y>
-      <width>71</width>
-      <height>31</height>
+      <x>830</x>
+      <y>80</y>
+      <width>121</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="font">
@@ -114,7 +114,7 @@ QLabel{
      </font>
     </property>
     <property name="text">
-     <string>4</string>
+     <string>24</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

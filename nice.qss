@@ -20,6 +20,13 @@ QPushButton:hover{
 	border-radius:12px;
 
 }
+#Shovel_market{
+
+	background-image:url(../farm-project/shovel_market.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+}
 #SheepMarket{
 	background-image:url(../farm-project/sheep_market.jpg);
 	background-position: center; /* Center the image */

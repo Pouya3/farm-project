@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "signuppage.h"
+#include "shovel_market.h"
 #include "mainpage.h"
 #include "loginpage.h"
 #include "agholpage.h"
@@ -38,7 +39,7 @@ int main(int argc, char *argv[])
 
 
     QApplication a(argc, argv);
-    SheepMarket w;
+    Shovel_market w;
     QFile styleSheetFile("../farm-project/nice.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet=QLatin1String(styleSheetFile.readAll());

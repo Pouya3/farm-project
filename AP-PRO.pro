@@ -30,6 +30,7 @@ SOURCES += \
     marketpage.cpp \
     menupage.cpp \
     sheepmarket.cpp \
+    shovel_market.cpp \
     signuppage.cpp \
     silo.cpp \
     silopage.cpp \
@@ -60,6 +61,7 @@ HEADERS += \
     marketpage.h \
     menupage.h \
     sheepmarket.h \
+    shovel_market.h \
     signuppage.h \
     silo.h \
     silopage.h \
@@ -81,6 +83,7 @@ FORMS += \
     marketpage.ui \
     menupage.ui \
     sheepmarket.ui \
+    shovel_market.ui \
     signuppage.ui \
     mainwindow.ui \
     silopage.ui \
