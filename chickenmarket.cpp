@@ -24,7 +24,7 @@ void ChickenMarket::on_pushButton_clicked()
 {
     if(aviculture->Get_building_status() != 2){
         //messagebox --> "to buy chickens you must build aviculture first"
-        QMessageBox::critical(this,"AVICULTURE NOT BUILT","to buy chickens you must build aviculture first");
+        QMessageBox::critical(this,"AVICULTURE NOT BUILT","to buy or sell chickens you must build aviculture first");
     }
     else{
         if((ui->spinBox->text().toInt() == 0)&&(ui->spinBox_2->text().toInt() != 0)){
