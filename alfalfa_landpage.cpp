@@ -12,26 +12,9 @@ Alfalfa_landPage::Alfalfa_landPage(Alfalfa_land* _alfalfa_land, QWidget *parent)
 
     alfalfa_land = _alfalfa_land;
 
-    ui->label->setText(QString::number(alfalfa_land->Get_level()));
-    ui->label_2->setText(QString::number(alfalfa_land->Get_cultivated_area()) + "/" + QString::number(alfalfa_land->Get_total_area()));
-    if(alfalfa_land->Get_upgrade_timer() > 0){
-        ui->label_3->setText(QString::number(alfalfa_land->Get_upgrade_timer()));
-    }
-    else if((alfalfa_land->Get_cultivation_status() == 0)&&(alfalfa_land->Get_plowing_timer() == 0)){
-        ui->label_3->setText("--");
-    }
-    else if((alfalfa_land->Get_cultivation_status() == 0)&&(alfalfa_land->Get_plowing_timer() > 0)){
-        ui->label_3->setText(QString::number(alfalfa_land->Get_plowing_timer()));
-    }
-    else if(alfalfa_land->Get_cultivation_status() == 1){
-        ui->label_3->setText("0");
-    }
-    else if((alfalfa_land->Get_cultivation_status() == 2)&&(alfalfa_land->Get_ripening_timer() > 0)){
-        ui->label_3->setText(QString::number(alfalfa_land->Get_ripening_timer()));
-    }
-    else if((alfalfa_land->Get_cultivation_status() == 2)&&(alfalfa_land->Get_ripening_timer() == 0)){
-        ui->label_3->setText("0");
-    }
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 Alfalfa_landPage::~Alfalfa_landPage()
@@ -173,4 +156,25 @@ void Alfalfa_landPage::on_pushButton_5_clicked()
     }
 }
 
-
+void Alfalfa_landPage::Set_values(){
+    ui->label->setText(QString::number(alfalfa_land->Get_level()));
+    ui->label_2->setText(QString::number(alfalfa_land->Get_cultivated_area()) + "/" + QString::number(alfalfa_land->Get_total_area()));
+    if(alfalfa_land->Get_upgrade_timer() > 0){
+        ui->label_3->setText(QString::number(alfalfa_land->Get_upgrade_timer()));
+    }
+    else if((alfalfa_land->Get_cultivation_status() == 0)&&(alfalfa_land->Get_plowing_timer() == 0)){
+        ui->label_3->setText("--");
+    }
+    else if((alfalfa_land->Get_cultivation_status() == 0)&&(alfalfa_land->Get_plowing_timer() > 0)){
+        ui->label_3->setText(QString::number(alfalfa_land->Get_plowing_timer()));
+    }
+    else if(alfalfa_land->Get_cultivation_status() == 1){
+        ui->label_3->setText("0");
+    }
+    else if((alfalfa_land->Get_cultivation_status() == 2)&&(alfalfa_land->Get_ripening_timer() > 0)){
+        ui->label_3->setText(QString::number(alfalfa_land->Get_ripening_timer()));
+    }
+    else if((alfalfa_land->Get_cultivation_status() == 2)&&(alfalfa_land->Get_ripening_timer() == 0)){
+        ui->label_3->setText("0");
+    }
+}

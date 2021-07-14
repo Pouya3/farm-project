@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "silo.h"
+#include <QTimer>
 
 namespace Ui {
 class SiloPage;
@@ -21,8 +22,11 @@ public:
 private slots:
     void on_pushButton_3_clicked();
 
+    void Set_values();
+
 private:
     Ui::SiloPage *ui;
+    QTimer* refresh_timer;
 };
 
 #endif // SILOPAGE_H

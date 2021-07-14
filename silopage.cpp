@@ -10,8 +10,9 @@ SiloPage::SiloPage(Silo* _silo, QWidget *parent) :
 
     silo = _silo;
 
-    ui->label->setText(QString::number(silo->Get_level()));
-    ui->label_2->setText(QString::number(silo->Get_used_storage()) + "/" + QString::number(silo->Get_total_storage()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 SiloPage::~SiloPage()
@@ -41,3 +42,7 @@ void SiloPage::on_pushButton_3_clicked()
     }
 }
 
+void SiloPage::Set_values(){
+    ui->label->setText(QString::number(silo->Get_level()));
+    ui->label_2->setText(QString::number(silo->Get_used_storage()) + "/" + QString::number(silo->Get_total_storage()));
+}

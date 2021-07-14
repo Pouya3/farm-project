@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "alfalfa_land.h"
+#include <QTimer>
 
 namespace Ui {
 class Alfalfa_landPage;
@@ -27,10 +28,13 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void Set_values();
+
 
 private:
     Ui::Alfalfa_landPage *ui;
     Alfalfa_land* alfalfa_land;
+    QTimer* refresh_timer;
 };
 
 #endif // ALFALFA_LANDPAGE_H

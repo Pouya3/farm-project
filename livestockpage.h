@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "livestock.h"
+#include <QTimer>
 
 namespace Ui {
 class LivestockPage;
@@ -27,8 +28,11 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void Set_values();
+
 private:
     Ui::LivestockPage *ui;
+    QTimer* refresh_timer;
 };
 
 #endif // LIVESTOCKPAGE_H

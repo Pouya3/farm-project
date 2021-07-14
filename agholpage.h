@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "aghol.h"
+#include <QTimer>
 
 namespace Ui {
 class AgholPage;
@@ -27,8 +28,11 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void Set_values();
+
 private:
     Ui::AgholPage *ui;
+    QTimer* refresh_timer;
 };
 
 #endif // AGHOLPAGE_H

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "wheat_land.h"
+#include <QTimer>
 
 namespace Ui {
 class Wheat_landPage;
@@ -23,9 +24,13 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void Set_values();
+
 private:
     Ui::Wheat_landPage *ui;
     Wheat_land* wheat_land;
+
+    QTimer* refresh_timer;
 };
 
 #endif // WHEAT_LANDPAGE_H

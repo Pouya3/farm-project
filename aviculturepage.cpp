@@ -11,9 +11,9 @@ AviculturePage::AviculturePage(Aviculture* _aviculture, QWidget *parent) :
 
     aviculture = _aviculture;
 
-    ui->label->setText(QString::number(aviculture->Get_level()));
-    ui->label_2->setText(QString::number(aviculture->Get_used_storage()) + "/" + QString::number(aviculture->Get_total_storage()));
-    ui->label_3->setText(QString::number(aviculture->Get_feeding_timer()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 AviculturePage::~AviculturePage()
@@ -126,3 +126,8 @@ void AviculturePage::on_pushButton_4_clicked()
     }
 }
 
+void AviculturePage::Set_values(){
+    ui->label->setText(QString::number(aviculture->Get_level()));
+    ui->label_2->setText(QString::number(aviculture->Get_used_storage()) + "/" + QString::number(aviculture->Get_total_storage()));
+    ui->label_3->setText(QString::number(aviculture->Get_feeding_timer()));
+}

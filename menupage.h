@@ -5,6 +5,7 @@
 #include "user.h"
 #include "mainpage.h"
 #include <QMultiMap>
+#include <QTimer>
 
 namespace Ui {
 class MenuPage;
@@ -25,11 +26,14 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void Set_values();
+
 private:
     Ui::MenuPage *ui;
     User* user;
     MainPage* mainpage;
     QMultiMap<int,QString> users_for_ranking;
+    QTimer* refresh_timer;
 };
 
 #endif // MENUPAGE_H

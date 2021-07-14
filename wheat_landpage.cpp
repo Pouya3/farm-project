@@ -11,20 +11,9 @@ Wheat_landPage::Wheat_landPage(Wheat_land* _wheat_land, QWidget *parent) :
 
     wheat_land = _wheat_land;
 
-    ui->label->setText(QString::number(wheat_land->Get_level()));
-    ui->label_2->setText(QString::number(wheat_land->Get_cultivated_area()) + "/" + QString::number(wheat_land->Get_total_area()));
-    if((wheat_land->Get_upgrade_timer() == 0)&&(wheat_land->Get_cultivation_status() == 0)){
-        ui->label_3->setText("--");
-    }
-    else if(wheat_land->Get_upgrade_timer() > 0){
-        ui->label_3->setText(QString::number(wheat_land->Get_upgrade_timer()));
-    }
-    else if((wheat_land->Get_cultivation_status() == 1)&&(wheat_land->Get_ripening_timer() > 0)){
-        ui->label_3->setText(QString::number(wheat_land->Get_ripening_timer()));
-    }
-    else{
-        ui->label_3->setText("0");
-    }
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 Wheat_landPage::~Wheat_landPage()
@@ -101,3 +90,19 @@ void Wheat_landPage::on_pushButton_2_clicked()
     }
 }
 
+void Wheat_landPage::Set_values(){
+    ui->label->setText(QString::number(wheat_land->Get_level()));
+    ui->label_2->setText(QString::number(wheat_land->Get_cultivated_area()) + "/" + QString::number(wheat_land->Get_total_area()));
+    if((wheat_land->Get_upgrade_timer() == 0)&&(wheat_land->Get_cultivation_status() == 0)){
+        ui->label_3->setText("--");
+    }
+    else if(wheat_land->Get_upgrade_timer() > 0){
+        ui->label_3->setText(QString::number(wheat_land->Get_upgrade_timer()));
+    }
+    else if((wheat_land->Get_cultivation_status() == 1)&&(wheat_land->Get_ripening_timer() > 0)){
+        ui->label_3->setText(QString::number(wheat_land->Get_ripening_timer()));
+    }
+    else{
+        ui->label_3->setText("0");
+    }
+}

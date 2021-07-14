@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "aviculture.h"
+#include <QTimer>
 
 namespace Ui {
 class AviculturePage;
@@ -26,8 +27,11 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void Set_values();
+
 private:
     Ui::AviculturePage *ui;
+    QTimer* refresh_timer;
 };
 
 #endif // AVICULTUREPAGE_H

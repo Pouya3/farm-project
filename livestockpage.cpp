@@ -10,9 +10,9 @@ LivestockPage::LivestockPage(Livestock* _livestock, QWidget *parent) :
 
     livestock = _livestock;
 
-    ui->label->setText(QString::number(livestock->Get_level()));
-    ui->label_2->setText(QString::number(livestock->Get_used_storage()) + "/" + QString::number(livestock->Get_total_storage()));
-    ui->label_3->setText(QString::number(livestock->Get_feeding_timer()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 LivestockPage::~LivestockPage()
@@ -138,3 +138,8 @@ void LivestockPage::on_pushButton_4_clicked()
     }
 }
 
+void LivestockPage::Set_values(){
+    ui->label->setText(QString::number(livestock->Get_level()));
+    ui->label_2->setText(QString::number(livestock->Get_used_storage()) + "/" + QString::number(livestock->Get_total_storage()));
+    ui->label_3->setText(QString::number(livestock->Get_feeding_timer()));
+}

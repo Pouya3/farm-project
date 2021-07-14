@@ -13,25 +13,11 @@ MenuPage::MenuPage(User* _user, MainPage* _mainpage, QWidget *parent) :
     user = _user;
     mainpage = _mainpage;
 
-    ui->label->setText(user->Get_username());
-    ui->label_5->setText(QString::number(user->Get_level()));
-    ui->label_3->setText(QString::number(user->Get_coin()));
-    ui->label_4->setText(QString::number(user->Get_experience()));
-    ui->label_2->setText(QString::number(user->Get_time()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 
-    users_for_ranking = Get_users_for_ranking();
 
-    QMultiMap<int, QString>::iterator user_iter;
-    user_iter = users_for_ranking.begin();
-    int i;
-    for(i = 0; i<users_for_ranking.size(); i++){
-        if(user_iter.value() == user->Get_username()){
-            break;
-        }
-
-        user_iter++;
-    }
-    ui->pushButton_3->setText(QString::number(i+1));
 
 }
 
@@ -56,3 +42,24 @@ void MenuPage::on_pushButton_clicked()
     mainpage->close();
 }
 
+void MenuPage::Set_values(){
+    ui->label->setText(user->Get_username());
+    ui->label_5->setText(QString::number(user->Get_level()));
+    ui->label_3->setText(QString::number(user->Get_coin()));
+    ui->label_4->setText(QString::number(user->Get_experience()));
+    ui->label_2->setText(QString::number(user->Get_time()));
+
+    users_for_ranking = Get_users_for_ranking();
+
+    QMultiMap<int, QString>::iterator user_iter;
+    user_iter = users_for_ranking.begin();
+    int i;
+    for(i = 0; i<users_for_ranking.size(); i++){
+        if(user_iter.value() == user->Get_username()){
+            break;
+        }
+
+        user_iter++;
+    }
+    ui->pushButton_3->setText(QString::number(i+1));
+}

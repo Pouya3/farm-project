@@ -10,10 +10,9 @@ AgholPage::AgholPage( Aghol* _aghol, QWidget *parent) :
 
     aghol = _aghol;
 
-    ui->label->setText(QString::number(aghol->Get_level()));
-    ui->label_2->setText(QString::number(aghol->Get_used_storage()) + "/" + QString::number(aghol->Get_total_storage()));
-    ui->label_3->setText(QString::number(aghol->Get_feeding_timer()));
-
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 AgholPage::~AgholPage()
@@ -142,5 +141,11 @@ void AgholPage::on_pushButton_4_clicked()
         QMessageBox::information(this,"SHAVED","Wool shaved successfully");
         break;
     }
+}
+
+void AgholPage::Set_values(){
+    ui->label->setText(QString::number(aghol->Get_level()));
+    ui->label_2->setText(QString::number(aghol->Get_used_storage()) + "/" + QString::number(aghol->Get_total_storage()));
+    ui->label_3->setText(QString::number(aghol->Get_feeding_timer()));
 }
 
