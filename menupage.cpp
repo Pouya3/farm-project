@@ -52,7 +52,6 @@ void MenuPage::on_pushButton_2_clicked()
 
 void MenuPage::on_pushButton_clicked()
 {
-    Save_user(user);
     this->close();
     mainpage->close();
 }

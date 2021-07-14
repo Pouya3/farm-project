@@ -9,6 +9,7 @@
 #include "silopage.h"
 #include "menupage.h"
 #include "aviculturepage.h"
+#include "file_functions.h"
 
 #include <cmath>
 
@@ -28,6 +29,7 @@ MainPage::MainPage(User* _user, QWidget *parent) :
 
 MainPage:: ~MainPage()
 {
+    Save_user(user);
     delete ui;
 }
 
