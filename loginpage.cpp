@@ -1,4 +1,5 @@
 #include "loginpage.h"
+#include "mainwindow.h"
 #include "ui_loginpage.h"
 #include "user.h"
 
@@ -44,5 +45,13 @@ void LoginPage::on_pushButton_l_clicked()
     else{
         ui->lineEdit_l->setPlaceholderText("*fill this filed*");
     }
+}
+
+
+void LoginPage::on_pushButton_l_2_clicked()
+{
+    MainWindow* w=new MainWindow;
+    w->show();
+    this->close();
 }
 

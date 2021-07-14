@@ -19,6 +19,8 @@ public:
 private slots:
     void on_pushButton_l_clicked();
 
+    void on_pushButton_l_2_clicked();
+
 private:
     Ui::LoginPage *ui;
 };

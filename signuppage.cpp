@@ -1,5 +1,6 @@
 #include "signuppage.h"
 #include "ui_signuppage.h"
+#include "mainwindow.h"
 
 signupPage::signupPage(QWidget *parent) :
     QMainWindow(parent),
@@ -55,5 +56,13 @@ void signupPage::on_pushButton_s_clicked()
     else{
         ui->lineEdit_s->setPlaceholderText("*fill this field*");
     }
+}
+
+
+void signupPage::on_pushButton_s_2_clicked()
+{
+    MainWindow* w=new MainWindow;
+    w->show();
+    this->close();
 }
 

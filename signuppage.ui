@@ -204,7 +204,7 @@
      <property name="geometry">
       <rect>
        <x>160</x>
-       <y>500</y>
+       <y>470</y>
        <width>121</width>
        <height>41</height>
       </rect>
@@ -232,6 +232,27 @@
      </property>
      <property name="text">
       <string/>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_s_2">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>520</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>ONE DAY</family>
+       <pointsize>10</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Back</string>
      </property>
     </widget>
    </widget>
