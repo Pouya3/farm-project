@@ -26,7 +26,7 @@ void AgholPage::on_pushButton_clicked()
     switch (aghol->Build()){
     case 1:{
         //qmessagebox --> "aghol is still locked"
-        QMessageBox::critical(this,"LOCK","Aghol is still locked");
+        QMessageBox::critical(this,"LEVEL","you cannot build Aghol until you reach level 6");
     }
         break;
     case 2:

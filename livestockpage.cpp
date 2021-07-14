@@ -25,7 +25,7 @@ void LivestockPage::on_pushButton_clicked()
     switch (livestock->Build()){
     case 1:
         //qmessagebox --> "livestock is locked"
-        QMessageBox::critical(this,"LOCKED","livestock is still locked");
+        QMessageBox::critical(this,"LEVEL","you cannot build livestock until you reach level 4");
         break;
     case 2:
         //qmessagebox --> "not enough coins for building livestock"

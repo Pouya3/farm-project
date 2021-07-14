@@ -26,7 +26,7 @@ void AviculturePage::on_pushButton_clicked()
     switch(aviculture->Build()){
     case 1:
         //qmessagebox --> "aviculture is locked";
-        QMessageBox::critical(this,"LOCKED","aviculture is locked");
+        QMessageBox::critical(this,"LEVEL","you cannot build aviculture until you reach level 2");
         break;
     case 2:
         //qmessagebox --> "not enough coins for building"
