@@ -139,15 +139,15 @@ background-color:red;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>1050</x>
-      <y>350</y>
-      <width>121</width>
-      <height>51</height>
+      <x>1040</x>
+      <y>340</y>
+      <width>141</width>
+      <height>71</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>33</pointsize>
+      <pointsize>15</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>

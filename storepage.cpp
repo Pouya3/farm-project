@@ -11,21 +11,9 @@ StorePage::StorePage(Store* _store, QWidget *parent) :
 
     store = _store;
 
-    vector<pair<int, int>> milk_info_vect;
-    vector<pair<int, int>>::iterator milk_info_iter;
-    milk_info_vect = store->Get_milk_info();
-    milk_info_iter = milk_info_vect.begin();
-
-    ui->label->setText(QString::number(store->Get_level()));
-    ui->label_2->setText(QString::number(store->Get_used_storage()) + "/" + QString::number(store->Get_total_storage()));
-    if(milk_info_iter != milk_info_vect.end())
-        ui->label_11->setText(QString::number(milk_info_iter->second));
-    ui->label_3->setText(QString::number(store->Get_object(1)));
-    ui->label_4->setText(QString::number(store->Get_object(2)));
-    ui->label_5->setText(QString::number(store->Get_object(3)));
-    ui->label_7->setText(QString::number(store->Get_object(4)));
-    ui->label_6->setText(QString::number(store->Get_object(5)));
-    ui->label_8->setText(QString::number(store->Get_object(6)));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 StorePage::~StorePage()
@@ -59,3 +47,29 @@ void StorePage::on_pushButton_clicked()
     }
 }
 
+void StorePage::Set_values(){
+    vector<pair<int, int>> milk_info_vect;
+    vector<pair<int, int>>::iterator milk_info_iter;
+    milk_info_vect = store->Get_milk_info();
+    milk_info_iter = milk_info_vect.begin();
+
+    ui->label->setText(QString::number(store->Get_level()));
+    ui->label_2->setText(QString::number(store->Get_used_storage()) + "/" + QString::number(store->Get_total_storage()));
+    if(milk_info_iter != milk_info_vect.end())
+        ui->label_11->setText(QString::number(milk_info_iter->second));
+    else
+        ui->label_11->setText("0");
+    ui->label_3->setText(QString::number(store->Get_object(1)));
+    ui->label_4->setText(QString::number(store->Get_object(2)));
+    ui->label_5->setText(QString::number(store->Get_object(3)));
+    ui->label_7->setText(QString::number(store->Get_object(4)));
+    ui->label_6->setText(QString::number(store->Get_object(5)));
+    ui->label_8->setText(QString::number(store->Get_object(6)));
+
+    if(store->Get_upgrade_timer() == 0){
+        ui->toolButton->setText("--");
+    }
+    else {
+        ui->toolButton->setText("Upgrading..." + QString::number(store->Get_upgrade_timer()));
+    }
+}

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "store.h"
+#include <QTimer>
 
 namespace Ui {
 class StorePage;
@@ -21,6 +22,11 @@ private slots:
 private:
     Ui::StorePage *ui;
     Store* store;
+
+    QTimer* refresh_timer;
+
+private slots:
+    void Set_values();
 };
 
 #endif // STOREPAGE_H

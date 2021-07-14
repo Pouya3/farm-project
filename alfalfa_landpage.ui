@@ -173,7 +173,7 @@ background-color:red;
     </property>
     <property name="font">
      <font>
-      <pointsize>27</pointsize>
+      <pointsize>17</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>

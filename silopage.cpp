@@ -45,4 +45,11 @@ void SiloPage::on_pushButton_3_clicked()
 void SiloPage::Set_values(){
     ui->label->setText(QString::number(silo->Get_level()));
     ui->label_2->setText(QString::number(silo->Get_used_storage()) + "/" + QString::number(silo->Get_total_storage()));
+
+    if(silo->Get_upgrade_timer() == 0){
+        ui->toolButton->setText("--");
+    }
+    else{
+        ui->toolButton->setText("Upgrading..." + QString::number(silo->Get_upgrade_timer()));
+    }
 }

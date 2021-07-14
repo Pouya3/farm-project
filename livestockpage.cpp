@@ -141,5 +141,26 @@ void LivestockPage::on_pushButton_4_clicked()
 void LivestockPage::Set_values(){
     ui->label->setText(QString::number(livestock->Get_level()));
     ui->label_2->setText(QString::number(livestock->Get_used_storage()) + "/" + QString::number(livestock->Get_total_storage()));
-    ui->label_3->setText(QString::number(livestock->Get_feeding_timer()));
+
+    if(livestock->Get_building_status() == 0){
+        ui->label_3->setText("Locked");
+    }
+    else if((livestock->Get_building_status() == 0)&&(livestock->Get_building_timer() > 0)){
+        ui->label_3->setText("Not built");
+    }
+    else if((livestock->Get_building_status() == 0)&&(livestock->Get_building_timer() > 0)){
+        ui->label_3->setText("Building..." + QString::number(livestock->Get_building_timer()));
+    }
+    else if(livestock->Get_upgrade_timer() > 0){
+        ui->label_3->setText("Upgrading..." + QString::number(livestock->Get_upgrade_timer()));
+    }
+    else if(livestock->Get_feeding_status() == 0){
+        ui->label_3->setText("Ready to feed");
+    }
+    else if(livestock->Get_feeding_status() == 1){
+        ui->label_3->setText("milk ready in " + QString::number(livestock->Get_feeding_timer()));
+    }
+    else {
+        ui->label_3->setText("milk ready");
+    }
 }

@@ -159,22 +159,43 @@ void Alfalfa_landPage::on_pushButton_5_clicked()
 void Alfalfa_landPage::Set_values(){
     ui->label->setText(QString::number(alfalfa_land->Get_level()));
     ui->label_2->setText(QString::number(alfalfa_land->Get_cultivated_area()) + "/" + QString::number(alfalfa_land->Get_total_area()));
-    if(alfalfa_land->Get_upgrade_timer() > 0){
-        ui->label_3->setText(QString::number(alfalfa_land->Get_upgrade_timer()));
+
+    // building_status :
+    // 0 == locked
+    // 1 == locked but not built
+    // 2 == built
+
+    // cultivation_status (for alfalfa_land) :
+    // 0 == not cultivated
+    // 1 == plowed but not cultivated
+    // 2 == cultivated but not ripe
+    // 3 == ripe
+
+    if(alfalfa_land->Get_building_status() == 0){
+        ui->label_3->setText("locked");
     }
-    else if((alfalfa_land->Get_cultivation_status() == 0)&&(alfalfa_land->Get_plowing_timer() == 0)){
-        ui->label_3->setText("--");
+    else if((alfalfa_land->Get_building_status() == 1)&&(alfalfa_land->Get_building_timer() == 0)){
+        ui->label_3->setText("Not built");
+    }
+    else if((alfalfa_land->Get_building_status() == 1)&&(alfalfa_land->Get_building_timer() > 0)){
+        ui->label_3->setText("Building..." + QString::number(alfalfa_land->Get_building_timer()));
+    }
+    else if(alfalfa_land->Get_upgrade_timer() > 0){
+        ui->label_3->setText("Upgrading..." + QString::number(alfalfa_land->Get_upgrade_timer()));
+    }
+    else if((alfalfa_land->Get_cultivation_status() == 0) && (alfalfa_land->Get_plowing_timer() == 0)){
+        ui->label_3->setText("Ready ro plow");
     }
     else if((alfalfa_land->Get_cultivation_status() == 0)&&(alfalfa_land->Get_plowing_timer() > 0)){
-        ui->label_3->setText(QString::number(alfalfa_land->Get_plowing_timer()));
+        ui->label_3->setText("Plowing..." + QString::number(alfalfa_land->Get_plowing_timer()));
     }
     else if(alfalfa_land->Get_cultivation_status() == 1){
-        ui->label_3->setText("0");
+        ui->label_3->setText("Plowed");
     }
-    else if((alfalfa_land->Get_cultivation_status() == 2)&&(alfalfa_land->Get_ripening_timer() > 0)){
-        ui->label_3->setText(QString::number(alfalfa_land->Get_ripening_timer()));
+    else if(alfalfa_land->Get_cultivation_status() == 2){
+        ui->label_3->setText("Ripening..." + QString::number(alfalfa_land->Get_ripening_timer()));
     }
-    else if((alfalfa_land->Get_cultivation_status() == 2)&&(alfalfa_land->Get_ripening_timer() == 0)){
-        ui->label_3->setText("0");
+    else{
+        ui->label_3->setText("Ripe");
     }
 }

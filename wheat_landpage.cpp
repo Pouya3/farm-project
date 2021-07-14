@@ -93,16 +93,17 @@ void Wheat_landPage::on_pushButton_2_clicked()
 void Wheat_landPage::Set_values(){
     ui->label->setText(QString::number(wheat_land->Get_level()));
     ui->label_2->setText(QString::number(wheat_land->Get_cultivated_area()) + "/" + QString::number(wheat_land->Get_total_area()));
-    if((wheat_land->Get_upgrade_timer() == 0)&&(wheat_land->Get_cultivation_status() == 0)){
-        ui->label_3->setText("--");
+
+    if(wheat_land->Get_upgrade_timer() > 0){
+        ui->label_3->setText("Upgrading..." + QString::number(wheat_land->Get_upgrade_timer()));
     }
-    else if(wheat_land->Get_upgrade_timer() > 0){
-        ui->label_3->setText(QString::number(wheat_land->Get_upgrade_timer()));
+    else if(wheat_land->Get_cultivation_status() == 0){
+        ui->label_3->setText("Ready to\n cultivate");
     }
-    else if((wheat_land->Get_cultivation_status() == 1)&&(wheat_land->Get_ripening_timer() > 0)){
-        ui->label_3->setText(QString::number(wheat_land->Get_ripening_timer()));
+    else if(wheat_land->Get_cultivation_status() == 1){
+        ui->label_3->setText("Ripening..." + QString::number(wheat_land->Get_ripening_timer()));
     }
     else{
-        ui->label_3->setText("0");
+        ui->label_3->setText("Ripe");
     }
 }

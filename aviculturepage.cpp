@@ -129,5 +129,26 @@ void AviculturePage::on_pushButton_4_clicked()
 void AviculturePage::Set_values(){
     ui->label->setText(QString::number(aviculture->Get_level()));
     ui->label_2->setText(QString::number(aviculture->Get_used_storage()) + "/" + QString::number(aviculture->Get_total_storage()));
-    ui->label_3->setText(QString::number(aviculture->Get_feeding_timer()));
+
+    if(aviculture->Get_building_status() == 0){
+        ui->label_3->setText("Locked");
+    }
+    else if((aviculture->Get_building_status() == 0)&&(aviculture->Get_building_timer() > 0)){
+        ui->label_3->setText("Not built");
+    }
+    else if((aviculture->Get_building_status() == 0)&&(aviculture->Get_building_timer() > 0)){
+        ui->label_3->setText("Building..." + QString::number(aviculture->Get_building_timer()));
+    }
+    else if(aviculture->Get_upgrade_timer() > 0){
+        ui->label_3->setText("Upgrading" + QString::number(aviculture->Get_upgrade_timer()));
+    }
+    else if(aviculture->Get_feeding_status() == 0){
+        ui->label_3->setText("Ready to feed");
+    }
+    else if(aviculture->Get_feeding_status() == 1){
+        ui->label_3->setText("Eggs ready in " + QString::number(aviculture->Get_feeding_timer()));
+    }
+    else {
+        ui->label_3->setText("Eggs ready");
+    }
 }

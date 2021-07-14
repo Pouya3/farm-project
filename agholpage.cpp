@@ -146,6 +146,24 @@ void AgholPage::on_pushButton_4_clicked()
 void AgholPage::Set_values(){
     ui->label->setText(QString::number(aghol->Get_level()));
     ui->label_2->setText(QString::number(aghol->Get_used_storage()) + "/" + QString::number(aghol->Get_total_storage()));
-    ui->label_3->setText(QString::number(aghol->Get_feeding_timer()));
+
+    if((aghol->Get_building_status() == 0)||(aghol->Get_building_status() == 1)){
+        ui->label_3->setText("Not built");
+    }
+    else if((aghol->Get_building_status() == 0)&&(aghol->Get_building_timer() > 0)){
+        ui->label_3->setText("Building... " + QString::number(aghol->Get_building_timer()));
+    }
+    else if((aghol->Get_feeding_status() == 0)&&(aghol->Get_upgrade_timer() == 0)){
+        ui->label_3->setText("Ready to feed");
+    }
+    else if((aghol->Get_feeding_status() == 1)&&(aghol->Get_upgrade_timer() == 0)){
+        ui->label_3->setText("Wool ready in " + QString::number(aghol->Get_feeding_timer()));
+    }
+    else if((aghol->Get_feeding_status() == 2)&&(aghol->Get_upgrade_timer() == 0)){
+        ui->label_3->setText("Wool is ready");
+    }
+    else if(aghol->Get_upgrade_timer() > 0){
+        ui->label_3->setText("Upgrading..." + QString::number(aghol->Get_upgrade_timer()));
+    }
 }
 
