@@ -15,7 +15,7 @@ class MenuPage : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MenuPage(User*, QWidget *parent = nullptr);
+    explicit MenuPage(User*, MainPage*, QWidget *parent = nullptr);
     ~MenuPage();
 
 private slots:
