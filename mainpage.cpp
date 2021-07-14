@@ -25,6 +25,10 @@ MainPage::MainPage(User* _user, QWidget *parent) :
     timer=new QTimer (this);
     connect(timer,SIGNAL(timeout()),this,SLOT(Time_function()));
     timer->start(300000);
+
+    saving_tiemer = new QTimer(this);
+    saving_tiemer->start(50);
+    connect(saving_tiemer, SIGNAL(timeout()), this, SLOT(Save_this_user()));
 }
 
 MainPage:: ~MainPage()
@@ -219,3 +223,6 @@ void MainPage::on_pushButton_a_2_clicked()
     m->show();
 }
 
+void MainPage::Save_this_user(){
+    Save_user(user);
+}

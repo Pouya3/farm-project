@@ -38,9 +38,12 @@ private slots:
 
     void on_pushButton_a_2_clicked();
 
+    void Save_this_user();
+
 private:
     Ui::MainPage *ui;
     QTimer *timer;
+    QTimer *saving_tiemer;
     User * user;
 
 };
