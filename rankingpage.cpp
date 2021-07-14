@@ -72,6 +72,8 @@ RankingPage::RankingPage(User* _user, QMultiMap<int, QString> _users_fot_ranking
             ui->tableWidget->item(i,2)->setBackground(QBrush(QColor(250,187,61)));//color background my row
             ui->tableWidget->item(i,3)->setBackground(QBrush(QColor(250,187,61)));//color background my row
         }
+
+        user_iter++;
     }
 }
 
