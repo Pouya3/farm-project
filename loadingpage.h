@@ -20,6 +20,10 @@ public:
 private:
     Ui::LoadingPage *ui;
     User* user;
+    QTimer* timer;
+
+private slots:
+    void close_this();
 };
 
 #endif // LOADINGPAGE_H

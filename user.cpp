@@ -60,13 +60,13 @@ void User::Set_level(int _level){level=_level;}
 int User::Get_level(){return level;}
 void User::Set_coin(long long int _coin){coin=_coin;}
 int User::Get_experience(){return experience;}
-void User::Set_max_experience(int _experience) { experience = _experience; }
-int User::Get_max_experience() { return experience; }
+void User::Set_max_experience(int _max_experience) { max_experience = _max_experience; }
+int User::Get_max_experience() { return max_experience; }
 void User::Set_time(int _time){time=_time;}
 int User::Get_time(){return time;}
 long long int User::Get_coin(){return coin;}
 void User::Set_experience(int _experience){
-    experience=_experience;
+    experience = _experience;
 
     if(experience >= max_experience){
         level++;

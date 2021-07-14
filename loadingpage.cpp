@@ -21,10 +21,9 @@ LoadingPage::LoadingPage(User* _user, QWidget *parent) :
 
     user = _user;
 
-    _sleep(1000);
-    MainPage* m = new MainPage(user);
-    m->show();
-    this->close();
+    timer = new QTimer (this);
+    connect(timer,SIGNAL(timeout()),this,SLOT(close_this()));
+    timer->start(1000);
 }
 
 void LoadingPage::changing()
@@ -35,4 +34,12 @@ void LoadingPage::changing()
 LoadingPage::~LoadingPage()
 {
     delete ui;
+}
+
+void LoadingPage::close_this(){
+    MainPage* m = new MainPage(user);
+    m->show();
+
+    timer->stop();
+    this->close();
 }

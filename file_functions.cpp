@@ -201,8 +201,8 @@ int Login_user(QString username, QString password, User* user){
             user->Set_password(user_obj.value("password").toString());
             user->Set_email(user_obj.value("email").toString());
             user->Set_level(user_obj.value("level").toInt());
-            user->Set_experience(user_obj.value("experience").toInt());
             user->Set_max_experience(user_obj.value("max_experience").toInt());
+            user->Set_experience(user_obj.value("experience").toInt());
             user->Set_time(user_obj.value("time").toInt());
             user->Set_coin(user_obj.value("coin").toInt());
             user_file.close();
