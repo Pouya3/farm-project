@@ -11,6 +11,8 @@
 #include "marketpage.h"
 #include "sheepmarket.h"
 #include "storepage.h"
+#include "levelup12.h"
+#include "levelupkoli.h"
 #include "aviculturepage.h"
 #include "livestockpage.h"
 #include "menupage.h"
@@ -51,7 +53,7 @@ int main(int argc, char *argv[])
 
 
     QApplication a(argc, argv);
-    Wheat_landPage w;
+    LevelUpKoli w;
     QFile styleSheetFile("../farm-project/nice.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet=QLatin1String(styleSheetFile.readAll());

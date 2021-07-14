@@ -20,6 +20,69 @@ QPushButton:hover{
 	border-radius:12px;
 
 }
+#LevelUp12{
+
+	background-image:url(../farm-project/level up12.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:12px;
+
+}
+#LevelUp23{
+
+	background-image:url(../farm-project/level up23.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:12px;
+
+}
+#LevelUp34{
+
+	background-image:url(../farm-project/level up34.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:12px;
+
+}
+#LevelUp45{
+
+	background-image:url(../farm-project/level up45.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:12px;
+
+}
+#LevelUp56{
+
+	background-image:url(../farm-project/level up56.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:12px;
+
+}
+#LevelUp67{
+
+	background-image:url(../farm-project/level up67.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:12px;
+
+}
+#LevelUpKoli{
+
+	background-image:url(../farm-project/level upkoli.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:12px;
+
+}
 #Shovel_market{
 
 	background-image:url(../farm-project/shovel_market.jpg);

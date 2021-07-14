@@ -24,6 +24,13 @@ SOURCES += \
     file_functions.cpp \
     habitat.cpp \
     land.cpp \
+    levelup12.cpp \
+    levelup23.cpp \
+    levelup34.cpp \
+    levelup45.cpp \
+    levelup56.cpp \
+    levelup67.cpp \
+    levelupkoli.cpp \
     livestock.cpp \
     livestockpage.cpp \
     loadingpage.cpp \
@@ -66,6 +73,13 @@ HEADERS += \
     file_functions.h \
     habitat.h \
     land.h \
+    levelup12.h \
+    levelup23.h \
+    levelup34.h \
+    levelup45.h \
+    levelup56.h \
+    levelup67.h \
+    levelupkoli.h \
     livestock.h \
     livestockpage.h \
     loadingpage.h \
@@ -99,6 +113,13 @@ FORMS += \
     chickenmarket.ui \
     cowmarket.ui \
     eggmarket.ui \
+    levelup12.ui \
+    levelup23.ui \
+    levelup34.ui \
+    levelup45.ui \
+    levelup56.ui \
+    levelup67.ui \
+    levelupkoli.ui \
     livestockpage.ui \
     loadingpage.ui \
     loginpage.ui \
