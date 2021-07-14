@@ -18,7 +18,8 @@ StorePage::StorePage(Store* _store, QWidget *parent) :
 
     ui->label->setText(QString::number(store->Get_level()));
     ui->label_2->setText(QString::number(store->Get_used_storage()) + "/" + QString::number(store->Get_total_storage()));
-    ui->label_11->setText(QString::number(milk_info_iter->second));
+    if(milk_info_iter != milk_info_vect.end())
+        ui->label_11->setText(QString::number(milk_info_iter->second));
     ui->label_3->setText(QString::number(store->Get_object(1)));
     ui->label_4->setText(QString::number(store->Get_object(2)));
     ui->label_5->setText(QString::number(store->Get_object(3)));
