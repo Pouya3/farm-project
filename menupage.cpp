@@ -55,12 +55,25 @@ void MenuPage::Set_values(){
     user_iter = users_for_ranking.end();
     user_iter--;
     int i;
+    int rank = 1;
+    int number_of_same_rankers = 0;
     for(i = 0; i<users_for_ranking.size(); i++){
+
+        if((user_iter + 1) != users_for_ranking.end()){
+            if(user_iter.key() < (user_iter + 1).key()){
+                rank += number_of_same_rankers;
+                number_of_same_rankers = 0;
+            }
+        }
+
         if(user_iter.value() == user->Get_username()){
             break;
         }
 
+
+
         user_iter--;
+        number_of_same_rankers++;
     }
-    ui->pushButton_3->setText(QString::number(i+1));
+    ui->pushButton_3->setText(QString::number(rank));
 }
