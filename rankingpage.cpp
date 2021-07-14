@@ -60,6 +60,8 @@ void RankingPage::Set_values(){
     int level;
     int exp;
     int i;
+    int rank = 1;
+    int number_of_same_rankers = 0;
 
     ui->tableWidget->verticalHeader()->hide();//hide left headers!
     for(i = 0; i<users_for_ranking.size(); i++){
@@ -73,11 +75,17 @@ void RankingPage::Set_values(){
             level++;
         }
 
+        if((user_iter + 1) != users_for_ranking.end()){
+            if(user_iter.key() < (user_iter + 1).key()){
+                rank += number_of_same_rankers;
+                number_of_same_rankers = 0;
+            }
+        }
 
-       ui->tableWidget->setItem(i, 0, new QTableWidgetItem(QString::number(i+1)));
-       ui->tableWidget->setItem(i, 1, new QTableWidgetItem(user_iter.value()));
-       ui->tableWidget->setItem(i, 2, new QTableWidgetItem(QString::number(user_iter.key())));
-       ui->tableWidget->setItem(i, 3, new QTableWidgetItem(QString::number(level)));
+        ui->tableWidget->setItem(i, 0, new QTableWidgetItem(QString::number(rank)));
+        ui->tableWidget->setItem(i, 1, new QTableWidgetItem(user_iter.value()));
+        ui->tableWidget->setItem(i, 2, new QTableWidgetItem(QString::number(user_iter.key())));
+        ui->tableWidget->setItem(i, 3, new QTableWidgetItem(QString::number(level)));
 
 
         if(user_iter.value() == user->Get_username()){
@@ -89,5 +97,6 @@ void RankingPage::Set_values(){
         }
 
         user_iter--;
+        number_of_same_rankers++;
     }
 }
