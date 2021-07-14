@@ -28,6 +28,12 @@ void Shovel_market::on_pushButton_clicked()// 1 --> sell              2 --> buy
         return;
     }
 
+    if((ui->spinBox->text().toInt() != 0)&&(ui->spinBox_2->text().toInt() != 0)){
+        // qmessagebox --> "you cannot buy and sell at the same time"
+        QMessageBox::critical(this,"BUY AND SELL","you cannot buy and sell at the same time");
+        return;
+    }
+
     if(ui->spinBox->text().toInt() != 0){                                                         //
         if(user->Get_level() >= 3){                                                               //
             if(store->Get_object(1) < ui->spinBox->text().toInt()){                               //

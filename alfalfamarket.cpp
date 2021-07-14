@@ -34,6 +34,12 @@ void AlfalfaMarket::on_pushButton_clicked()
             return;
         }
 
+        if((ui->spinBox->text().toInt() != 0)&&(ui->spinBox_2->text().toInt() != 0)){
+            // qmessagebox --> "you cannot buy and sell at the same time"
+            QMessageBox::critical(this,"BUY AND SELL","you cannot buy and sell at the same time");
+            return;
+        }
+
         if(ui->spinBox->text().toInt() != 0){                                                     //
             if(store->Get_object(3) < ui->spinBox->text().toInt()){                               //
                 //qmessagbox --> "not enough alfalfa to sell"                                     //

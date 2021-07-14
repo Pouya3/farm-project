@@ -33,6 +33,12 @@ void CowMarket::on_pushButton_clicked() // buy -> 1             sell -> 2
             return;
         }
 
+        if((ui->spinBox->text().toInt() != 0)&&(ui->spinBox_2->text().toInt() != 0)){
+            // qmessagebox --> "you cannot buy and sell at the same time"
+            QMessageBox::critical(this,"BUY AND SELL","you cannot buy and sell at the same time");
+            return;
+        }
+
         if(ui->spinBox_2->text().toInt() != 0){                                                                     //
             if(livestock->Get_used_storage() < ui->spinBox_2->text().toInt()){                                      //
                 //qmessagebox --> "not enough cows to sell"                                                         //

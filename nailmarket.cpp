@@ -29,40 +29,46 @@ void NailMarket::on_pushButton_clicked()
         return;
     }
 
-    if(ui->spinBox_2->text().toInt() != 0){                                                        //
-        if(user->Get_level() >= 3){                                                              //
-            if(store->Get_object(2) < ui->spinBox_2->text().toInt()){                              //
-                //qmessagbox --> "not enough nails to sell"                                      //
-                QMessageBox::critical(this,"NOT ENOUGH NAILS","not enough nails to sell");       //
-            }                                                                                    //
-            else{                                                                                //
-                store->Delete(2, ui->spinBox_2->text().toInt());                                   //
-                user->Set_coin(user->Get_coin() + ui->spinBox_2->text().toInt()*20);               // sell
-                user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*6);    //
-            }                                                                                    //
-        }                                                                                        //
-        else{                                                                                    //
-            //qmessagebox --> "you must reach level 3 to sell stuff"                             //
-            QMessageBox::critical(this,"LEVEL","you must reach level 3 to sell stuff");          //
-        }                                                                                        //
-    }                                                                                            //
+    if((ui->spinBox->text().toInt() != 0)&&(ui->spinBox_2->text().toInt() != 0)){
+        // qmessagebox --> "you cannot buy and sell at the same time"
+        QMessageBox::critical(this,"BUY AND SELL","you cannot buy and sell at the same time");
+        return;
+    }
+
+    if(ui->spinBox_2->text().toInt() != 0){                                                     //
+        if(user->Get_level() >= 3){                                                             //
+            if(store->Get_object(2) < ui->spinBox_2->text().toInt()){                           //
+                //qmessagbox --> "not enough nails to sell"                                     //
+                QMessageBox::critical(this,"NOT ENOUGH NAILS","not enough nails to sell");      //
+            }                                                                                   //
+            else{                                                                               //
+                store->Delete(2, ui->spinBox_2->text().toInt());                                //
+                user->Set_coin(user->Get_coin() + ui->spinBox_2->text().toInt()*20);            // sell
+                user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*6); //
+            }                                                                                   //
+        }                                                                                       //
+        else{                                                                                   //
+            //qmessagebox --> "you must reach level 3 to sell stuff"                            //
+            QMessageBox::critical(this,"LEVEL","you must reach level 3 to sell stuff");         //
+        }                                                                                       //
+    }                                                                                           //
 
     if(ui->spinBox->text().toInt() != 0){ // buy                                                      //
-        if(user->Get_level() >= 2){                                                                     //
+        if(user->Get_level() >= 2){                                                                   //
             if(store->Get_total_storage() - store->Get_used_storage() < ui->spinBox->text().toInt()){ //
-                //qmessagebox --> "not enough space in store"                                           //
-                QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in store");             //
-            }                                                                                           //
-            else{                                                                                       //
-                store->Add(2, ui->spinBox->text().toInt());                                           // buy
+                //qmessagebox --> "not enough space in store"                                         //
+                QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in store");           //
+            }                                                                                         //
+            else{                                                                                     //
+                store->Add(2, ui->spinBox->text().toInt());                                           //
                 user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*30);                    //
-                user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);         //
-            }                                                                                           //
-        }                                                                                               //
-        else{                                                                                           //
-            //qmessagebox --> "you must reach level 2 to buy stuff"                                     //
-            QMessageBox::critical(this,"LEVEL","you must reach level 2 to buy stuff");                  //
-        }                                                                                               //
-    }                                                                                                   //
-}
+                user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);         // buy
+            }                                                                                         //
+        }                                                                                             //
+        else{                                                                                         //
+            //qmessagebox --> "you must reach level 2 to buy stuff"                                   //
+            QMessageBox::critical(this,"LEVEL","you must reach level 2 to buy stuff");                //
+        }                                                                                             //
+    }                                                                                                 //
+}                                                                                                     //
 
