@@ -15,6 +15,8 @@
 #include "livestockpage.h"
 #include "menupage.h"
 #include "spacepage.h"
+#include "spacepage_2.h"
+
 #include "nailmarket.h"
 #include "silopage.h"
 #include "alfalfa_landpage.h"
@@ -49,7 +51,7 @@ int main(int argc, char *argv[])
 
 
     QApplication a(argc, argv);
-    Alfalfa_landPage w;
+    SpacePage_2 w;
     QFile styleSheetFile("../farm-project/nice.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet=QLatin1String(styleSheetFile.readAll());

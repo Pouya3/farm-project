@@ -6,21 +6,38 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>1032</width>
     <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QPushButton{
+
+	background-color:rgba(117,78,0,0);
+	border-radius:25px;
+}
+QPushButton:hover{
+
+background-color:rgba(69,45,3,0.4);
+}
+
+QLabel{
+	
+	color:#381e02;
+
+}</string>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QSpinBox" name="spinBox">
     <property name="geometry">
      <rect>
-      <x>350</x>
+      <x>380</x>
       <y>470</y>
       <width>81</width>
-      <height>71</height>
+      <height>81</height>
      </rect>
     </property>
     <property name="font">
@@ -32,10 +49,10 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>450</y>
-      <width>161</width>
-      <height>91</height>
+      <x>660</x>
+      <y>360</y>
+      <width>221</width>
+      <height>131</height>
      </rect>
     </property>
     <property name="text">
