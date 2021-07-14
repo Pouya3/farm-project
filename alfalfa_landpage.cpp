@@ -137,10 +137,3 @@ void Alfalfa_landPage::on_pushButton_5_clicked()
 }
 
 
-void Alfalfa_landPage::on_pushButton_3_clicked()
-{
-    SpacePage* s=new SpacePage;
-    s->show();
-    this->close();
-}
-
