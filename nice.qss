@@ -5,7 +5,12 @@ QPushButton{
 	color:#57420a;
 
 }
-	
+#b{
+
+	background-color:red;
+	color:green;
+
+}	
 QPushButton:hover{
 	background-color:#57420a;	
 	color:#d1a732;
@@ -20,6 +25,7 @@ QPushButton:hover{
 	border-radius:12px;
 
 }
+
 #LevelUp12{
 
 	background-image:url(../farm-project/level up12.jpg);
@@ -47,6 +53,15 @@ QPushButton:hover{
 	border-radius:12px;
 
 }
+#RankingPage{
+
+	background-image:url(../farm-project/ranking.jpg);
+	background-position: center; /* Center the image */
+ 	background-repeat: no-repeat; /* Do not repeat the image */
+  	background-size: cover;
+	border-radius:12px;
+
+}
 #LevelUp45{
 
 	background-image:url(../farm-project/level up45.jpg);
@@ -56,6 +71,24 @@ QPushButton:hover{
 	border-radius:12px;
 
 }
+QTableWidget{
+	background-color:rgba(105,240,161,0.2);
+	border-radius:12px;
+font-size: 12pt;
+
+}
+
+QHeaderView::section {
+    background-color: #613606;
+    padding: 4px;
+    color:#e39d4f;
+    font-style:bold;
+    font-size: 13pt;
+    border-style: none;
+    border-bottom: 2px solid #e8c307;
+    border-left: 2px solid #e8c307;
+}
+
 #LevelUp56{
 
 	background-image:url(../farm-project/level up56.jpg);
@@ -188,7 +221,7 @@ QSpinBox:hover{
 }
 #pushButton_mm_2{
 
-	background-color:rgba(99,47,2,0);;
+	background-color:rgba(99,47,2,0);
 }
 
 #pushButton_mm_2:hover{

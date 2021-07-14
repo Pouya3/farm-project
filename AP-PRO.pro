@@ -42,6 +42,7 @@ SOURCES += \
     menupage.cpp \
     milkmarket.cpp \
     nailmarket.cpp \
+    rankingpage.cpp \
     sheepmarket.cpp \
     shovel_market.cpp \
     signuppage.cpp \
@@ -90,6 +91,7 @@ HEADERS += \
     menupage.h \
     milkmarket.h \
     nailmarket.h \
+    rankingpage.h \
     sheepmarket.h \
     shovel_market.h \
     signuppage.h \
@@ -129,6 +131,7 @@ FORMS += \
     menupage.ui \
     milkmarket.ui \
     nailmarket.ui \
+    rankingpage.ui \
     sheepmarket.ui \
     shovel_market.ui \
     signuppage.ui \

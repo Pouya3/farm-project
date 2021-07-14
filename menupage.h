@@ -15,6 +15,9 @@ public:
     explicit MenuPage(QWidget *parent = nullptr);
     ~MenuPage();
 
+private slots:
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MenuPage *ui;
 };

@@ -4,6 +4,7 @@
 #include "mainpage.h"
 #include "loginpage.h"
 #include "cowmarket.h"
+#include "rankingpage.h"
 #include "alfalfamarket.h"
 
 #include "chickenmarket.h"
@@ -53,7 +54,7 @@ int main(int argc, char *argv[])
 
 
     QApplication a(argc, argv);
-    LevelUpKoli w;
+    MainPage w;
     QFile styleSheetFile("../farm-project/nice.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet=QLatin1String(styleSheetFile.readAll());

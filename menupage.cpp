@@ -1,5 +1,6 @@
 #include "menupage.h"
 #include "ui_menupage.h"
+#include "rankingpage.h"
 
 MenuPage::MenuPage(QWidget *parent) :
     QMainWindow(parent),
@@ -13,3 +14,11 @@ MenuPage::~MenuPage()
 {
     delete ui;
 }
+
+void MenuPage::on_pushButton_3_clicked()
+{
+    RankingPage* r=new RankingPage;
+    r->show();
+
+}
+
