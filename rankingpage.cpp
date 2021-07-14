@@ -29,14 +29,23 @@ RankingPage::RankingPage(User* _user, QMultiMap<int, QString> _users_fot_ranking
         if(user_iter != users_for_ranking.end()){
             ui->label->setText(user_iter.value());
         }
+        else{
+            ui->label->setText("N/A");
+        }
+    }
+    else{
+        ui->label_3->setText("N/A");
+        ui->label->setText("N/A");
     }
 
-    QTableWidgetItem table_item;
+    ui->tableWidget->setColumnCount(4);
+    ui->tableWidget->setRowCount(users_for_ranking.size());
 
     user_iter = users_for_ranking.begin();
     int level;
     int exp;
-    for(int i=0; i<users_for_ranking.size(); i++){
+    int i;
+    for(i = 0; i<users_for_ranking.size(); i++){
 
         exp = user_iter.key();
         level = 1;
@@ -48,10 +57,11 @@ RankingPage::RankingPage(User* _user, QMultiMap<int, QString> _users_fot_ranking
         }
 
 
-        ui->tableWidget->setItem(i, 0, new QTableWidgetItem(i+1));
+        ui->tableWidget->setItem(i, 0, new QTableWidgetItem(QString::number(i+1)));
         ui->tableWidget->setItem(i, 1, new QTableWidgetItem(user_iter.value()));
-        ui->tableWidget->setItem(i, 2, new QTableWidgetItem(user_iter.key()));
-        ui->tableWidget->setItem(i, 3, new QTableWidgetItem(level));
+        ui->tableWidget->setItem(i, 2, new QTableWidgetItem(QString::number(user_iter.key())));
+        ui->tableWidget->setItem(i, 3, new QTableWidgetItem(QString::number(level)));
+
 
         if(user_iter.value() == user->Get_username()){
             // color the row;
