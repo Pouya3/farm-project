@@ -118,7 +118,7 @@
       <string notr="true"/>
      </property>
      <property name="text">
-      <string>Repeat Password:</string>
+      <string>Confirm Password:</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_s_5">
