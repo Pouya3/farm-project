@@ -25,7 +25,7 @@ void AlfalfaMarket::on_pushButton_clicked()
 {
     if(user->Get_level() < 3){
         //qmessagebox --> "you cannot buy alfalfa until level 3"
-        QMessageBox::critical(this,"LEVEL LIMIT","you cannot buy alfalfa until level 3");
+        QMessageBox::critical(this,"LEVEL LIMIT","you cannot buy or sell alfalfa until level 3");
     }
     else{
         if((ui->spinBox->text().toInt() == 0)&&(ui->spinBox_2->text().toInt() == 0)){
