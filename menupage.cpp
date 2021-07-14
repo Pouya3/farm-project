@@ -3,7 +3,7 @@
 #include "rankingpage.h"
 #include "file_functions.h"
 
-MenuPage::MenuPage(User* _user, QWidget *parent) :
+MenuPage::MenuPage(User* _user, MainPage* _mainpage, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MenuPage)
 {
@@ -11,6 +11,7 @@ MenuPage::MenuPage(User* _user, QWidget *parent) :
     this->setFixedSize(830,550);
 
     user = _user;
+    mainpage = _mainpage;
 
     ui->label->setText(user->Get_username());
     ui->label_5->setText(QString::number(user->Get_level()));

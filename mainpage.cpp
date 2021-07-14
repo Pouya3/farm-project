@@ -82,12 +82,12 @@ void MainPage:: on_pushButton_a_3_clicked()
 
 void MainPage:: on_pushButton_mm_2_clicked()
 {
-    MenuPage* m=new MenuPage(user);
+    MenuPage* m=new MenuPage(user, this);
     m->show();
 }
 void MainPage:: Time_function(){
     user->Set_time(user->Get_time()+1);
-     user->Set_experience(user->Get_experience()+1);
+    user->Set_experience(user->Get_experience()+1);
     if(user->aghol->Get_feeding_timer()>0){
         user->aghol->Set_feeding_timer(user->aghol->Get_feeding_timer()-1);
         if(user->aghol->Get_feeding_timer()==0)
