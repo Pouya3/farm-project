@@ -22,3 +22,11 @@ void Alfalfa_landPage::on_pushButton_4_clicked()
     this->close();
 }
 
+
+void Alfalfa_landPage::on_pushButton_3_clicked()
+{
+    SpacePage* s=new SpacePage;
+    s->show();
+    this->close();
+}
+
