@@ -60,7 +60,7 @@ void Shovel_market::on_pushButton_clicked()// 1 --> sell              2 --> buy
         }                                                                                                //
         else{                                                                                            //
             //qmessagebox --> "you must reach level 2 to buy stuff"                                      //
-            QMessageBox::critical(this,"LEVEL","not enough space in store");                             //
+            QMessageBox::critical(this,"LEVEL","you must reach level 2 to buy stuff");                             //
         }                                                                                                //
     }                                                                                                    //
 }
