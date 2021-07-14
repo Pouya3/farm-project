@@ -79,7 +79,7 @@ QTableWidget QTableCornerButton::section {
 QTableWidget{
 	background-color:rgba(105,240,161,0.2);
 	border-radius:12px;
-font-size: 12pt;
+	font-size: 12pt;
 
 }
 

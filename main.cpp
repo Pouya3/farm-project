@@ -6,7 +6,6 @@
 #include "cowmarket.h"
 #include "rankingpage.h"
 #include "alfalfamarket.h"
-
 #include "chickenmarket.h"
 #include "agholpage.h"
 //#include <QMediaPlayer>
