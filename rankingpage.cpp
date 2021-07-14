@@ -8,25 +8,39 @@ RankingPage::RankingPage(User* _user, QMultiMap<int, QString> _users_fot_ranking
     ui->setupUi(this);
     this->setFixedSize(490,640);
 
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
+
     users_for_ranking = _users_fot_ranking;
     user = _user;
+}
 
+RankingPage::~RankingPage()
+{
+    delete ui;
+}
+
+void RankingPage::Set_values(){
     ui->tableWidget->setHorizontalHeaderItem(0,new QTableWidgetItem("Rank"));
     ui->tableWidget->setHorizontalHeaderItem(1,new QTableWidgetItem("Username"));
     ui->tableWidget->setHorizontalHeaderItem(2,new QTableWidgetItem("Experience"));
     ui->tableWidget->setHorizontalHeaderItem(3,new QTableWidgetItem("Level"));
 
+    ui->tableWidget->clear();
+
     QMultiMap<int, QString>::iterator user_iter;
-    user_iter = users_for_ranking.begin();
+    user_iter = users_for_ranking.end();
+    user_iter--;
 
     ui->label_2->setText(user_iter.value());
 
-    user_iter++;
-    if(user_iter != users_for_ranking.end()){
+    user_iter--;
+    if(user_iter != users_for_ranking.begin() - 1){
         ui->label_3->setText(user_iter.value());
 
-        user_iter++;
-        if(user_iter != users_for_ranking.end()){
+        user_iter--;
+        if(user_iter != users_for_ranking.begin() - 1){
             ui->label->setText(user_iter.value());
         }
         else{
@@ -41,7 +55,8 @@ RankingPage::RankingPage(User* _user, QMultiMap<int, QString> _users_fot_ranking
     ui->tableWidget->setColumnCount(4);
     ui->tableWidget->setRowCount(users_for_ranking.size());
 
-    user_iter = users_for_ranking.begin();
+    user_iter = users_for_ranking.end();
+    user_iter--;
     int level;
     int exp;
     int i;
@@ -73,11 +88,6 @@ RankingPage::RankingPage(User* _user, QMultiMap<int, QString> _users_fot_ranking
             ui->tableWidget->item(i,3)->setBackground(QBrush(QColor(250,187,61)));//color background my row
         }
 
-        user_iter++;
+        user_iter--;
     }
-}
-
-RankingPage::~RankingPage()
-{
-    delete ui;
 }

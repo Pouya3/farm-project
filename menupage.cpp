@@ -52,14 +52,15 @@ void MenuPage::Set_values(){
     users_for_ranking = Get_users_for_ranking();
 
     QMultiMap<int, QString>::iterator user_iter;
-    user_iter = users_for_ranking.begin();
+    user_iter = users_for_ranking.end();
+    user_iter--;
     int i;
     for(i = 0; i<users_for_ranking.size(); i++){
         if(user_iter.value() == user->Get_username()){
             break;
         }
 
-        user_iter++;
+        user_iter--;
     }
     ui->pushButton_3->setText(QString::number(i+1));
 }
