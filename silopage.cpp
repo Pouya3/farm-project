@@ -22,16 +22,19 @@ void SiloPage::on_pushButton_3_clicked()
     switch(silo->Upgrade()){
     case 1:
         //qmessagebox --> "not enough nails for upgrading"
+        QMessageBox::critical(this,"NAILS","not enough nails for upgrading");
         break;
     case 2:
         //qmessagebox --> "not enough coins for upgrading"
+        QMessageBox::critical(this,"COINS","not enough coins for upgrading");
         break;
     case 3:
         //qmessagebox --> "you cannot upgrade silo duo to user's level"
+        QMessageBox::critical(this,"LEVEL","you cannot upgrade silo duo to user's level");
         break;
     case 4:
         //qmessagbox --> "timer set for upgrading"
-        //set upgrading timer;
+        QMessageBox::information(this,"START","timer set for upgrading");
         break;
     }
 }

@@ -34,6 +34,7 @@ void Wheat_landPage::on_pushButton_clicked()
 {
     if(wheat_land->Get_cultivation_status() != 0){
         //qmessagebox --> "you have to wait for wheats to ripen and harvest them to cultivate"
+        QMessageBox::critical(this,"WAIT","You have to wait for wheats to ripen and harvest them to cultivate");
     }
     else{
         SpacePage_2* s=new SpacePage_2;
@@ -55,18 +56,23 @@ void Wheat_landPage::on_pushButton_3_clicked()
     switch(wheat_land->Upgrade()){
     case 1:
         //qmessagebox --> "you have to wait for wheats to ripen and harvest them to upgrade"
+        QMessageBox::critical(this,"WAIT","You have to wait for wheats to ripen and harvest them to upgrade");
         break;
     case 2:
         //qmessagebox --> "not enough shovels for upgrading"
+        QMessageBox::critical(this,"SHOVEL","Not enough shovels for upgrading");
         break;
     case 3:
         //qmessagebox --> "not enough coins for upgrading"
+        QMessageBox::critical(this,"COIN","Not enough coins for upgrading");
         break;
     case 4:
         //qmessagebox --> "you cannot upgrade wheat land until you reach level 2"
+        QMessageBox::critical(this,"LEVEL","You cannot upgrade wheat land until you reach level 2");
         break;
     case 5:
         //qmessagebox --> "timer set for upgrading"
+        QMessageBox::information(this,"START","Timer set for upgrading");
         break;
     }
 }
@@ -77,12 +83,15 @@ void Wheat_landPage::on_pushButton_2_clicked()
     switch (wheat_land->Harvest()) {
     case 1:
         //qmessagebox --> "nothing to harvest"
+        QMessageBox::critical(this,"EMPTY","Nothing to harvest");
         break;
     case 2:
         //qmessagebox --> "not enough space in silo"
+        QMessageBox::critical(this,"SPACE","Not enough space in silo");
         break;
     case 3:
         //messagebox --> "harvested successfully"
+        QMessageBox::information(this,"HARVESTED","Harvested successfully");
         break;
     }
 }

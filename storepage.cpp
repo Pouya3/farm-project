@@ -34,20 +34,24 @@ void StorePage::on_pushButton_clicked()
 {
     switch(store->Upgrade()){
     case 1:
-        //qmessagebox --> "not enoughnails for upgrading"
+        //qmessagebox --> "not enough nails for upgrading"
+        QMessageBox::critical(this,"NAILS","not enough nails for upgrading");
         break;
     case 2:
         //qmessagebox --> "not enough shovels for upgrading"
+        QMessageBox::critical(this,"SHOVELS","not enough shovels for upgrading");
         break;
     case 3:
         //qmessagebox --> "not enough coins for upgrading"
+        QMessageBox::critical(this,"COINS","not enough coins for upgrading");
         break;
     case 4:
         //qmessagebox --> "you cannot upgrade store duo to user's level"
+        QMessageBox::critical(this,"LEVEL","you cannot upgrade store duo to user's level");
         break;
     case 5:
         //qmessagebox --> "timer set for upgrading"
-        //set upgrading timer;
+        QMessageBox::information(this,"LEVEL","timer set for upgrading");
         break;
     }
 }

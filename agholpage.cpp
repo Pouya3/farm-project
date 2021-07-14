@@ -53,7 +53,7 @@ void AgholPage::on_pushButton_2_clicked()
     switch (aghol->Upgrade()){
     case 1:
         //qmessagebox --> "aghol is not built yet"
-        QMessageBox::critical(this,"BUILT","Aghol is not built yet");
+        QMessageBox::critical(this,"NOT BUILT","Aghol is not built yet");
         break;
     case 2:
         //qmessagebox --> "you cannot upgrade until feeding timer finishes and wools get collected"
