@@ -1,4 +1,5 @@
 #include "alfalfa_landpage.h"
+#include "spacepage.h"
 #include "ui_alfalfa_landpage.h"
 
 Alfalfa_landPage::Alfalfa_landPage(QWidget *parent) :
@@ -13,3 +14,11 @@ Alfalfa_landPage::~Alfalfa_landPage()
 {
     delete ui;
 }
+
+void Alfalfa_landPage::on_pushButton_4_clicked()
+{
+    SpacePage* s=new SpacePage;
+    s->show();
+    this->close();
+}
+

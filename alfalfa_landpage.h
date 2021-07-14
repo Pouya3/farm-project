@@ -15,6 +15,9 @@ public:
     explicit Alfalfa_landPage(QWidget *parent = nullptr);
     ~Alfalfa_landPage();
 
+private slots:
+    void on_pushButton_4_clicked();
+
 private:
     Ui::Alfalfa_landPage *ui;
 };
