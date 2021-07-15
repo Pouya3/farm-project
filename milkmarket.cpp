@@ -28,7 +28,7 @@ void MilkMarket::on_pushButton_clicked()
         QMessageBox::critical(this,"LEVEL","you must reach level 4 to sell milk");
     }
     else{
-        if(ui->spinBox->text().toInt() != 0){
+        if(ui->spinBox->text().toInt() == 0){
             //qmessagebox --> "number of selling items is 0"
             QMessageBox::critical(this,"0 VALUE","number of selling items is 0");
         }
