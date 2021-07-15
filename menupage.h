@@ -6,6 +6,8 @@
 #include "mainpage.h"
 #include <QMultiMap>
 #include <QTimer>
+#include <vector>
+using namespace std;
 
 namespace Ui {
 class MenuPage;
@@ -32,7 +34,7 @@ private:
     Ui::MenuPage *ui;
     User* user;
     MainPage* mainpage;
-    QMultiMap<int,QString> users_for_ranking;
+    vector<pair<int, QString>> users_for_ranking;
     QTimer* refresh_timer;
 };
 

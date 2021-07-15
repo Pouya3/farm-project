@@ -22,7 +22,7 @@
 #include "silo.h"
 #include "store.h"
 #include "user.h"
-#include "Wheat_land.h"
+#include "wheat_land.h"
 
 using namespace std;
 
@@ -42,7 +42,7 @@ int Login_user(QString username, QString password, User* user);
 // 2 == user exists and correct password (succesfull login)
 
 
-QMultiMap<int,QString> Get_users_for_ranking();
+vector<pair<int, QString>> Get_users_for_ranking();
 void Save_user(User* user);
 
 #endif // FILE_FUNCTIONS_H

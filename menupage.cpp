@@ -51,7 +51,7 @@ void MenuPage::Set_values(){
 
     users_for_ranking = Get_users_for_ranking();
 
-    QMultiMap<int, QString>::iterator user_iter;
+    vector<pair<int, QString>>::iterator user_iter;
     user_iter = users_for_ranking.end();
     user_iter--;
     int i;
@@ -60,13 +60,13 @@ void MenuPage::Set_values(){
     for(i = 0; i<users_for_ranking.size(); i++){
 
         if((user_iter + 1) != users_for_ranking.end()){
-            if(user_iter.key() < (user_iter + 1).key()){
+            if(user_iter->first < (user_iter + 1)->first){
                 rank += number_of_same_rankers;
                 number_of_same_rankers = 0;
             }
         }
 
-        if(user_iter.value() == user->Get_username()){
+        if(user_iter->second == user->Get_username()){
             break;
         }
 

@@ -352,7 +352,7 @@ int Login_user(QString username, QString password, User* user){
     }
 }
 
-QMultiMap<int, QString> Get_users_for_ranking(){
+vector<pair<int, QString>> Get_users_for_ranking(){
     QFile all_users_file("all users.json");                                       //
     all_users_file.open(QIODevice::ReadOnly);                                     //
                                                                                   //
@@ -368,8 +368,9 @@ QMultiMap<int, QString> Get_users_for_ranking(){
 
 /////////////////////////////////////////////////////////
 
-    QMultiMap<int, QString> users_map;
-    for(int i=0; i<users_array.size(); i++){
+    vector<pair<int, QString>> users_vector;
+    int i;
+    for(i=0; i<users_array.size(); i++){
         QFile user_file(users_array[i].toString() + "//user.json");
         user_file.open(QIODevice::ReadOnly);
 
@@ -379,12 +380,16 @@ QMultiMap<int, QString> Get_users_for_ranking(){
 
         QJsonObject user_obj = user_doc.object();
 
-        users_map.insert(user_obj["experience"].toInt(), user_obj["username"].toString());
+        users_vector.push_back(pair<int, QString>(user_obj["experience"].toInt(), user_obj["username"].toString()));
 
         user_file.close();
     }
 
-    return users_map;
+    std::sort(users_vector.begin(), users_vector.end(), [](auto &left, auto &right) {     //
+        return left.first < right.first;                                                  // sorting
+    });                                                                                   //
+
+    return users_vector;
 }
 
 void Save_user(User* user){
