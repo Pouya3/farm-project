@@ -27,7 +27,7 @@ MainPage::MainPage(User* _user, QWidget *parent) :
     timer->start(300000);
 
     saving_tiemer = new QTimer(this);
-    saving_tiemer->start(50);
+    saving_tiemer->start(10);
     connect(saving_tiemer, SIGNAL(timeout()), this, SLOT(Save_this_user()));
 }
 
