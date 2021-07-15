@@ -25,18 +25,22 @@ void AviculturePage::on_pushButton_clicked()
 {
     switch(aviculture->Build()){
     case 1:
+        //qmessagebox --> "aviculture is already built";
+        QMessageBox::critical(this,"BUILT","aviculture is already built");
+        break;
+    case 2:
         //qmessagebox --> "aviculture is locked";
         QMessageBox::critical(this,"LEVEL","you cannot build aviculture until you reach level 2");
         break;
-    case 2:
+    case 3:
         //qmessagebox --> "not enough coins for building"
         QMessageBox::critical(this,"COINS","not enough coins for building");
         break;
-    case 3:
+    case 4:
         //qmessagebox --> "not enough nails for building"
         QMessageBox::critical(this,"NAILS","not enough nails for building");
         break;
-    case 4:
+    case 5:
         //qmessageboc --> "timer set for building"
         QMessageBox::information(this,"START","timer set for building");
         break;
@@ -46,12 +50,6 @@ void AviculturePage::on_pushButton_clicked()
 
 void AviculturePage::on_pushButton_2_clicked()
 {
-    // return values :
-    // 1 == is not built yet
-    // 2 == limit for building duo to user's level
-    // 3 == not enough coins
-    // 4 == not enough nails
-    // 6 == timer set for upgrade
     switch(aviculture->Upgrade()){
     case 1:
         //qmessagebox --> "aviculture is not built yet"
@@ -123,6 +121,10 @@ void AviculturePage::on_pushButton_4_clicked()
         //qmessagebox --> "eggs collected successfully"
         QMessageBox::information(this,"SUCCESS","eggs collected successfully");
         break;
+    case 4:
+        //qmessagebox --> "aviculture is not built yet"
+        QMessageBox::critical(this,"NOT BUILT","aviculture is not built yet");
+        break;
     }
 }
 
@@ -133,16 +135,16 @@ void AviculturePage::Set_values(){
     if(aviculture->Get_building_status() == 0){
         ui->label_3->setText("Locked");
     }
-    else if((aviculture->Get_building_status() == 0)&&(aviculture->Get_building_timer() > 0)){
+    else if((aviculture->Get_building_status() == 1)&&(aviculture->Get_building_timer() == 0)){
         ui->label_3->setText("Not built");
     }
-    else if((aviculture->Get_building_status() == 0)&&(aviculture->Get_building_timer() > 0)){
+    else if((aviculture->Get_building_status() == 1)&&(aviculture->Get_building_timer() > 0)){
         ui->label_3->setText("Building..." + QString::number(aviculture->Get_building_timer()));
     }
     else if(aviculture->Get_upgrade_timer() > 0){
         ui->label_3->setText("Upgrading" + QString::number(aviculture->Get_upgrade_timer()));
     }
-    else if(aviculture->Get_feeding_status() == 0){
+    else if((aviculture->Get_feeding_status() == 0)&&(aviculture->Get_used_storage() > 0)){
         ui->label_3->setText("Ready to feed");
     }
     else if(aviculture->Get_feeding_status() == 1){
