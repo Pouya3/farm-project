@@ -13,7 +13,7 @@ MilkMarket::MilkMarket(User* _user, Store* _store, QWidget *parent) :
 
     refresh_timer = new QTimer(this);
     refresh_timer->start(50);
-    connect(refresh_timer, SIGNAL(timeput()), this, SLOT(Set_values()));
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 MilkMarket::~MilkMarket()
@@ -48,5 +48,5 @@ void MilkMarket::on_pushButton_clicked()
 
 void MilkMarket::Set_values(){
     ui->label->setText(QString::number(store->Get_object(5)));
-    ui->label->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));
+    ui->label_2->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));
 }
