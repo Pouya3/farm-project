@@ -24,17 +24,19 @@ void SpacePage_2::on_pushButton_clicked()
 
     }
     else{
+        // return values :
+        // 3 == not enough area to cultivate
+        // 4 == not enough wheat
+        // 5 == timer set for ripening timer
+
         switch (wheat_land->Cultivate(ui->spinBox->text().toInt())) {
-        case 2:
+        case 3:
             //qmessagebox --> "area selected for cultivation is greater filed's area"
             QMessageBox::critical(this,"GREATER AREA","area selected for cultivation is greater filed's area");
             break;
-        case 3:
+        case 4:
             //qmessagebox --> " not enough wheat to cultivate"
             QMessageBox::critical(this,"NOT ENOUGH WHEAT","not enough wheat to cultivate");
-            break;
-        case 4:
-            QMessageBox::critical(this,"UPGRADIN","After wheat land upgraded you can ripen");
             break;
         case 5:
             //qmessagebox --> "timer set for ripening"

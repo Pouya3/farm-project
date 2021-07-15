@@ -43,13 +43,13 @@ bool Create_new_user_files(QString username, QString name, QString password, QSt
         aghol_obj["feeding_status"] = 0;
         aghol_obj["feeding_timer"] = 0;
         aghol_obj["building_timer"] = 0;
-        aghol_obj["upgrade_timer"] = 0;
 
         alfalfa_land_obj["level"] = 0;
         alfalfa_land_obj["total_area"] = 0;
         alfalfa_land_obj["cultivated_area"] = 0;
         alfalfa_land_obj["cultivation_status"] = 0;
         alfalfa_land_obj["ripening_timer"] = 0;
+        alfalfa_land_obj["upgrade_timer"] = 0;
         alfalfa_land_obj["plowed_area"] = 0;
         alfalfa_land_obj["building_status"] = 0;
         alfalfa_land_obj["building_timer"] = 0;
@@ -63,7 +63,6 @@ bool Create_new_user_files(QString username, QString name, QString password, QSt
         aviculture_obj["feeding_status"] = 0;
         aviculture_obj["feeding_timer"] = 0;
         aviculture_obj["building_timer"] = 0;
-        aviculture_obj["upgrade_timer"] = 0;
 
         livestock_obj["level"] = 0;
         livestock_obj["total_storage"] = 0;
@@ -73,7 +72,6 @@ bool Create_new_user_files(QString username, QString name, QString password, QSt
         livestock_obj["feeding_status"] = 0;
         livestock_obj["feeding_timer"] = 0;
         livestock_obj["building_timer"] = 0;
-        livestock_obj["upgrade_timer"] = 0;
 
         silo_obj["level"] = 1;
         silo_obj["total_storage"] = 10;
@@ -108,6 +106,7 @@ bool Create_new_user_files(QString username, QString name, QString password, QSt
         wheat_land_obj["cultivated_area"] = 0;
         wheat_land_obj["cultivation_status"] = 0;
         wheat_land_obj["ripening_timer"] = 0;
+        wheat_land_obj["upgrade_timer"] = 0;
 
 
         QDir().mkdir(username);
@@ -276,6 +275,7 @@ int Login_user(QString username, QString password, User* user){
             user->wheat_land->Set_cultivated_area(wheat_land_obj.value("cultivated_area").toInt());
             user->wheat_land->Set_cultivation_status(wheat_land_obj.value("cultivation_status").toInt());
             user->wheat_land->Set_ripening_timer(wheat_land_obj.value("ripening_timer").toInt());
+            user->wheat_land->Set_upgrade_timer(wheat_land_obj.value("upgrade_timer").toInt());
             wheat_land_file.close();
 
             user->alfalfa_land->Set_level(alfalfa_land_obj.value("level").toInt());
@@ -283,6 +283,7 @@ int Login_user(QString username, QString password, User* user){
             user->alfalfa_land->Set_cultivated_area(alfalfa_land_obj.value("cultivated_area").toInt());
             user->alfalfa_land->Set_cultivation_status(alfalfa_land_obj.value("cultivation_status").toInt());
             user->alfalfa_land->Set_ripening_timer(alfalfa_land_obj.value("ripening_timer").toInt());
+            user->alfalfa_land->Set_upgrade_timer(alfalfa_land_obj.value("upgrade_timer").toInt());
             user->alfalfa_land->Set_plowed_area(alfalfa_land_obj.value("plowed_area").toInt());
             user->alfalfa_land->Set_building_status(alfalfa_land_obj.value("building_status").toInt());
             user->alfalfa_land->Set_building_timer(alfalfa_land_obj.value("building_timer").toInt());
@@ -297,7 +298,6 @@ int Login_user(QString username, QString password, User* user){
             user->aviculture->Set_feeding_status(aviculture_obj.value("feeding_status").toInt());
             user->aviculture->Set_feeding_timer(aviculture_obj.value("feeding_timer").toInt());
             user->aviculture->Set_building_timer(aviculture_obj.value("building_timer").toInt());
-
             aviculture_file.close();
 
             user->livestock->Set_level(livestock_obj.value("level").toInt());

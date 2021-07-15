@@ -22,10 +22,14 @@ Wheat_landPage::~Wheat_landPage()
 }
 
 void Wheat_landPage::on_pushButton_clicked()
-{
-    if(wheat_land->Get_cultivation_status() != 0){
+{    
+    if(wheat_land->Get_upgrade_timer() > 0){
+        //qmessagebox --> "wheat land is upgrading"
+        QMessageBox::critical(this,"UPGRADING","wheat land is upgrading");
+    }
+    else if(wheat_land->Get_cultivation_status() != 0){
         //qmessagebox --> "you have to wait for wheats to ripen and harvest them to cultivate"
-        QMessageBox::critical(this,"WAIT","You have to wait for wheats to ripen and harvest them to cultivate");
+        QMessageBox::critical(this,"CULTIVATED","You have to wait for wheats to ripen and harvest them to cultivate");
     }
     else{
         SpacePage_2* s=new SpacePage_2(wheat_land);
@@ -37,32 +41,26 @@ void Wheat_landPage::on_pushButton_clicked()
 
 void Wheat_landPage::on_pushButton_3_clicked()
 {
-    // return values :
-    // 1 == you have to wait unlit wheats ripen and collect them to upgrade
-    // 2 == not enough shovels
-    // 3 == not enough coins
-    // 4 == limit for upgrade duo to user's level
-    // 5 == timer set for upgrade
-
-    switch(wheat_land->Upgrade()){
+    switch (wheat_land->Upgrade()) {
     case 1:
+        //qmessagebox --> "Wheat land is already in upgrading situation"
+        QMessageBox::critical(this,"UPGEADING","Wheat land is already in upgrading situation");
+        break;
+    case 2:
         //qmessagebox --> "you have to wait for wheats to ripen and harvest them to upgrade"
         QMessageBox::critical(this,"WAIT","You have to wait for wheats to ripen and harvest them to upgrade");
         break;
-    case 2:
+    case 3:
         //qmessagebox --> "not enough shovels for upgrading"
         QMessageBox::critical(this,"SHOVEL","Not enough shovels for upgrading");
         break;
-    case 3:
+    case 4:
         //qmessagebox --> "not enough coins for upgrading"
         QMessageBox::critical(this,"COIN","Not enough coins for upgrading");
         break;
-    case 4:
+    case 5:
         //qmessagebox --> "you cannot upgrade wheat land until you reach level 2"
         QMessageBox::critical(this,"LEVEL","You cannot upgrade wheat land until you reach level 2");
-        break;
-    case 7:
-        QMessageBox::critical(this,"UPGEADING","Wheat land is already in upgrading situation");
         break;
     case 6:
         //qmessagebox --> "timer set for upgrading"

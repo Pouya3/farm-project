@@ -7,17 +7,18 @@ Wheat_land::Wheat_land()
 int Wheat_land::Upgrade()
 {
     // return values :
-    // 1 == you have to wait unlit wheats ripen and collect them to upgrade
-    // 2 == not enough shovels
-    // 3 == not enough coins
-    // 4 == limit for upgrade duo to user's level
-    // 5 == timer set for upgrade
+    // 1 == is upgrading
+    // 2 == you have to wait unlit wheats ripen and collect them to upgrade
+    // 3 == not enough shovels
+    // 4 == not enough coins
+    // 5 == limit for upgrade duo to user's level
+    // 6 == timer set for upgrade
 
-    if(cultivation_status == 0){ // zamin bikar
-        if(store->Get_object(1)>=1){ // enough shovels
-            if(user->Get_coin()>=5){ // enough coins
-                if(user->Get_level()>=2){ // no limit for upgrade duo to user's level
-                    if(upgrade_timer==0){
+    if(upgrade_timer == 0){ // not upgrading
+        if(cultivation_status == 0){ // zamin bikar
+            if(store->Get_object(1)>=1){ // enough shovels
+                if(user->Get_coin()>=5){ // enough coins
+                    if(user->Get_level()>=2){ // no limit for upgrade duo to user's level
                         store->Delete(1, 1);
                         user->Set_coin(user->Get_coin()-5);
 
@@ -37,14 +38,15 @@ int Wheat_land::Upgrade()
 
 int Wheat_land::Cultivate(int area_to_cultivate) {
     // return values :
-    // 1 == already cultivated
-    // 2 == not enough area to cultivate
-    // 3 == not enough wheat
-    // 4 == timer set for ripening timer
-    if(cultivation_status == 0){ // not cultivated
-        if(total_area >= area_to_cultivate){ // total_area >= area_to_cultivate
-            if(silo->Get_wheat() >= area_to_cultivate){ // enough wheat
-                if(upgrade_timer==0){
+    // 1 == is upgrading
+    // 2 == already cultivated
+    // 3 == not enough area to cultivate
+    // 4 == not enough wheat
+    // 5 == timer set for ripening timer
+    if(upgrade_timer == 0){ // not upgrading
+        if(cultivation_status == 0){ // not cultivated
+            if(total_area >= area_to_cultivate){ // total_area >= area_to_cultivate
+                if(silo->Get_wheat() >= area_to_cultivate){ // enough wheat
                     cultivation_status = 1;
                     user->Set_experience(user->Get_experience()+area_to_cultivate);
                     silo->Delete(1,area_to_cultivate);
