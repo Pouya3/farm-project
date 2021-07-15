@@ -12,6 +12,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     this->setFixedSize(880,630);
+    setWindowTitle("Hay Night");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 }
 
 MainWindow::~MainWindow()
