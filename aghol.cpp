@@ -146,6 +146,7 @@ int Aghol::Collect() {
 
                     user->Set_coin(user->Get_coin() - used_storage);
                     user->Set_experience(user->Get_experience()+(9*used_storage));
+                    feeding_status=0;
 
                     return 5;
                 }
