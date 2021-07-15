@@ -23,6 +23,8 @@ private slots:
 
 private:
     Ui::LoginPage *ui;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // LOGINPAGE_H
