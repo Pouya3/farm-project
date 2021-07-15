@@ -20,6 +20,9 @@ int Store::Upgrade(){
     // 4 == limit for upgrading duo to user's level
     // 5 == timer set for upgrade (successful upgrade)
 
+    if(upgrade_timer!=0){
+        return 6;
+    }
     if(nail < level){ // not enough nails
         return 1;
     }

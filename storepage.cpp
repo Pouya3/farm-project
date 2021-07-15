@@ -44,6 +44,9 @@ void StorePage::on_pushButton_clicked()
         //qmessagebox --> "timer set for upgrading"
         QMessageBox::information(this,"LEVEL","timer set for upgrading");
         break;
+    case 6:
+        QMessageBox::critical(this,"UPGEADING","Store is already in upgrading situation");
+        break;
     }
 }
 
