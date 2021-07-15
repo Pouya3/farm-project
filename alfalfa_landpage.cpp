@@ -27,22 +27,26 @@ void Alfalfa_landPage::on_pushButton_clicked()
 
     switch(alfalfa_land->Build()){
     case 1:
+        //qmessagebox --> "alflfa land is already built"
+        QMessageBox::critical(this,"BUILT","you cannot build alfalfa land until you reach level 3");
+        break;
+    case 2:
         //qmessagebox --> "you cannot build alfalfa land until you reach level 3"
         QMessageBox::critical(this,"LEVEL","you cannot build alfalfa land until you reach level 3");
         break;
-    case 2:
+    case 3:
         //qmessagebox --> "not enough coins for building alfalfa land"
         QMessageBox::critical(this,"COINS","not enough coins for building alfalfa land");
         break;
-    case 3:
+    case 4:
         //qmessagebox --> "not enough shovels for building alfalfa land"
         QMessageBox::critical(this,"SHOVELS","not enough shovels for building alfalfa land");
         break;
-    case 4:
+    case 5:
         //qmessagebox --> "not enough nails for building alfalfa land"
         QMessageBox::critical(this,"NAILS","not enough nails for building alfalfa land");
         break;
-    case 5:
+    case 6:
         //qmessagebox --> "timer set for building alfalfa land"
         QMessageBox::information(this,"START","timer set for building alfalfa land");
         break;

@@ -35,8 +35,8 @@ bool Create_new_user_files(QString username, QString name, QString password, QSt
         QJsonArray milk_info_number_array;
         QJsonArray milk_info_timer_array;
 
-        aghol_obj["level"] = 1;
-        aghol_obj["total_storage"] = 2;
+        aghol_obj["level"] = 0;
+        aghol_obj["total_storage"] = 0;
         aghol_obj["used_storage"] = 0;
         aghol_obj["upgrade_timer"] = 0;
         aghol_obj["building_status"] = 0;
@@ -45,8 +45,8 @@ bool Create_new_user_files(QString username, QString name, QString password, QSt
         aghol_obj["building_timer"] = 0;
         aghol_obj["upgrade_timer"] = 0;
 
-        alfalfa_land_obj["level"] = 1;
-        alfalfa_land_obj["total_area"] = 4;
+        alfalfa_land_obj["level"] = 0;
+        alfalfa_land_obj["total_area"] = 0;
         alfalfa_land_obj["cultivated_area"] = 0;
         alfalfa_land_obj["cultivation_status"] = 0;
         alfalfa_land_obj["ripening_timer"] = 0;
@@ -55,8 +55,8 @@ bool Create_new_user_files(QString username, QString name, QString password, QSt
         alfalfa_land_obj["building_timer"] = 0;
         alfalfa_land_obj["plowing_timer"] = 0;
 
-        aviculture_obj["level"] = 1;
-        aviculture_obj["total_storage"] = 2;
+        aviculture_obj["level"] = 0;
+        aviculture_obj["total_storage"] = 0;
         aviculture_obj["used_storage"] = 0;
         aviculture_obj["upgrade_timer"] = 0;
         aviculture_obj["building_status"] = 0;
@@ -65,8 +65,8 @@ bool Create_new_user_files(QString username, QString name, QString password, QSt
         aviculture_obj["building_timer"] = 0;
         aviculture_obj["upgrade_timer"] = 0;
 
-        livestock_obj["level"] = 1;
-        livestock_obj["total_storage"] = 2;
+        livestock_obj["level"] = 0;
+        livestock_obj["total_storage"] = 0;
         livestock_obj["used_storage"] = 0;
         livestock_obj["upgrade_timer"] = 0;
         livestock_obj["building_status"] = 0;
@@ -297,7 +297,7 @@ int Login_user(QString username, QString password, User* user){
             user->aviculture->Set_feeding_status(aviculture_obj.value("feeding_status").toInt());
             user->aviculture->Set_feeding_timer(aviculture_obj.value("feeding_timer").toInt());
             user->aviculture->Set_building_timer(aviculture_obj.value("building_timer").toInt());
-            user->aviculture->Set_upgrade_timer(aviculture_obj.value("upgrade_timer").toInt());
+
             aviculture_file.close();
 
             user->livestock->Set_level(livestock_obj.value("level").toInt());
@@ -308,7 +308,6 @@ int Login_user(QString username, QString password, User* user){
             user->livestock->Set_feeding_status(livestock_obj.value("feeding_status").toInt());
             user->livestock->Set_feeding_timer(livestock_obj.value("feeding_timer").toInt());
             user->livestock->Set_building_timer(livestock_obj.value("building_timer").toInt());
-            user->livestock->Set_upgrade_timer(livestock_obj.value("upgrade_timer").toInt());
             livestock_file.close();
 
             user->aghol->Set_level(aghol_obj.value("level").toInt());
@@ -319,7 +318,6 @@ int Login_user(QString username, QString password, User* user){
             user->aghol->Set_feeding_status(aghol_obj.value("feeding_status").toInt());
             user->aghol->Set_feeding_timer(aghol_obj.value("feeding_timer").toInt());
             user->aghol->Set_building_timer(aghol_obj.value("building_timer").toInt());
-            user->aghol->Set_upgrade_timer(aghol_obj.value("upgrade_timer").toInt());
             aghol_file.close();
 
             user->store->Set_level(store_obj.value("level").toInt());

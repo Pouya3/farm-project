@@ -152,9 +152,9 @@ background-color:red;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>30</x>
       <y>430</y>
-      <width>81</width>
+      <width>141</width>
       <height>41</height>
      </rect>
     </property>

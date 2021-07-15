@@ -22,26 +22,35 @@ AgholPage::~AgholPage()
 
 void AgholPage::on_pushButton_clicked()
 {
-
+    // return values :
+    // 1 == already built
+    // 2 == locked
+    // 3 == not enough coins
+    // 4 == not enough nails
+    // 5 == not enough shovels
+    // 6 == timer set for building
     switch (aghol->Build()){
-    case 1:{
-        //qmessagebox --> "aghol is still locked"
-        QMessageBox::critical(this,"LEVEL","you cannot build Aghol until you reach level 6");
-    }
+    case 1:
+        //qmessagebox --> "aghol is already built"
+        QMessageBox::critical(this,"BUILT","aghol is already built");
         break;
     case 2:
+        //qmessagebox --> "aghol is still locked"
+        QMessageBox::critical(this,"LEVEL","you cannot build Aghol until you reach level 6");
+        break;
+    case 3:
         //qmessagebox --> "not enough coins for building aghol"
         QMessageBox::critical(this,"COIN","Not enough coins for building Aghol");
         break;
-    case 3:
+    case 4:
         //qmessagebox --> "not enough nails for building aghol"
         QMessageBox::critical(this,"NAIL","Not enough nails for building Aghol");
         break;
-    case 4:
+    case 5:
         //qmessagebox --> "not enough shovels for building aghol"
         QMessageBox::critical(this,"SHOVEL","Not enough shovels for building Aghol");
         break;
-    case 5:
+    case 6:
         //qmessagebox --> "timer set for building"
         QMessageBox::information(this,"START","Timer set for building");
         break;
@@ -147,13 +156,19 @@ void AgholPage::Set_values(){
     ui->label->setText(QString::number(aghol->Get_level()));
     ui->label_2->setText(QString::number(aghol->Get_used_storage()) + "/" + QString::number(aghol->Get_total_storage()));
 
-    if((aghol->Get_building_status() == 0)||(aghol->Get_building_status() == 1)){
+    if(aghol->Get_building_status() == 0){
+        ui->label_3->setText("Locked");
+    }
+    if((aghol->Get_building_status() == 1)&&(aghol->Get_building_timer() == 0)){
         ui->label_3->setText("Not built");
     }
-    else if((aghol->Get_building_status() == 0)&&(aghol->Get_building_timer() > 0)){
+    else if((aghol->Get_building_status() == 1)&&(aghol->Get_building_timer() > 0)){
         ui->label_3->setText("Building... " + QString::number(aghol->Get_building_timer()));
     }
-    else if((aghol->Get_feeding_status() == 0)&&(aghol->Get_upgrade_timer() == 0)){
+    else if(aghol->Get_upgrade_timer() > 0){
+        ui->label_3->setText("Upgrading..." + QString::number(aghol->Get_upgrade_timer()));
+    }
+    else if((aghol->Get_feeding_status() == 0)&&(aghol->Get_upgrade_timer() == 0)&&(aghol->Get_used_storage() > 0)){
         ui->label_3->setText("Ready to feed");
     }
     else if((aghol->Get_feeding_status() == 1)&&(aghol->Get_upgrade_timer() == 0)){
@@ -161,9 +176,6 @@ void AgholPage::Set_values(){
     }
     else if((aghol->Get_feeding_status() == 2)&&(aghol->Get_upgrade_timer() == 0)){
         ui->label_3->setText("Wool is ready");
-    }
-    else if(aghol->Get_upgrade_timer() > 0){
-        ui->label_3->setText("Upgrading..." + QString::number(aghol->Get_upgrade_timer()));
     }
 }
 

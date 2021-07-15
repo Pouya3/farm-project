@@ -4,18 +4,22 @@ Aviculture::Aviculture(){
 }
 int Aviculture::Build(){
     // return values:
-    // 1 == locked
-    // 2 == not enough coins
-    // 3 == not enough nails
-    // 4 == timer set for building
-    if(building_status == 1){ // unlocked
-        if(user->Get_coin()>=10){ // enough coins
-            if(store->Get_object(2)>=2){ // enough nails
-                user->Set_coin(user->Get_coin()-10);
-                store->Delete(2,2);
+    // 1 == already built
+    // 2 == locked
+    // 3 == not enough coins
+    // 4 == not enough nails
+    // 5 == timer set for building
+    if(building_status != 2){ // not built
+        if(building_status == 1){ // unlocked
+            if(user->Get_coin()>=10){ // enough coins
+                if(store->Get_object(2)>=2){ // enough nails
+                    user->Set_coin(user->Get_coin()-10);
+                    store->Delete(2,2);
 
-                building_timer = 3;
+                    building_timer = 3;
 
+                    return 5;
+                }
                 return 4;
             }
             return 3;
@@ -30,13 +34,14 @@ int Aviculture::Upgrade() {
     // 2 == limit for building duo to user's level
     // 3 == not enough coins
     // 4 == not enough nails
-    // 5 == timer set for upgrade
+    // 5 == is upgrading
+    // 6 == timer set for upgrade
 
     if(building_status == 2){ // already built
         if(user->Get_level()>=3){ // no limit for building duo to user's level
             if(user->Get_coin()>=10){ // enough coins
                 if(store->Get_object(2)>=1){ // enough nails
-                    if(upgrade_timer==0){
+                    if(upgrade_timer==0){ // is upgrading
                         user->Set_coin(user->Get_coin()-10);
                         store->Delete(2,1);
 
@@ -106,14 +111,20 @@ int Aviculture::Collect() {
     // 1 == no product to collect
     // 2 == not enough storage in store
     // 3 == collected successfully
-    if(feeding_status != 2){ // no product to collect
-        return 1;
+    // 4 == aviculture is not built yet
+    if(building_status != 2){
+        return 4;
     }
     else{
-        if(store->Add(4,used_storage)){ // enough storage in store
-            user->Set_experience(user->Get_experience()+2);
-            return 3;
+        if(feeding_status != 2){ // no product to collect
+            return 1;
         }
-        return 2;
+        else{
+            if(store->Add(4,used_storage)){ // enough storage in store
+                user->Set_experience(user->Get_experience()+2);
+                return 3;
+            }
+            return 2;
+        }
     }
 }

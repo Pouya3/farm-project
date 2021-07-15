@@ -24,22 +24,26 @@ void LivestockPage::on_pushButton_clicked()
 {
     switch (livestock->Build()){
     case 1:
+        //qmessagebox --> "livestock is already built"
+        QMessageBox::critical(this,"BUILT","livestock is already built");
+        break;
+    case 2:
         //qmessagebox --> "livestock is locked"
         QMessageBox::critical(this,"LEVEL","you cannot build livestock until you reach level 4");
         break;
-    case 2:
+    case 3:
         //qmessagebox --> "not enough coins for building livestock"
         QMessageBox::critical(this,"COINS","not enough coins for building livestock");
         break;
-    case 3:
+    case 4:
         //qmessagebox --> "not enough nails for building livestock"
         QMessageBox::critical(this,"NAILS","not enough nails for building livestock");
         break;
-    case 4:
+    case 5:
         //qmessagebox --> "not enough shovels for building livestock"
         QMessageBox::critical(this,"SHOVELS","not enough shovels for building livestock");
         break;
-    case 5:
+    case 6:
         //qmessagebox --> "timer set for building"
         QMessageBox::information(this,"START","timer set for building");
         break;
@@ -145,22 +149,22 @@ void LivestockPage::Set_values(){
     if(livestock->Get_building_status() == 0){
         ui->label_3->setText("Locked");
     }
-    else if((livestock->Get_building_status() == 0)&&(livestock->Get_building_timer() > 0)){
+    else if((livestock->Get_building_status() == 1)&&(livestock->Get_building_timer() == 0)){
         ui->label_3->setText("Not built");
     }
-    else if((livestock->Get_building_status() == 0)&&(livestock->Get_building_timer() > 0)){
+    else if((livestock->Get_building_status() == 1)&&(livestock->Get_building_timer() > 0)){
         ui->label_3->setText("Building..." + QString::number(livestock->Get_building_timer()));
     }
     else if(livestock->Get_upgrade_timer() > 0){
         ui->label_3->setText("Upgrading..." + QString::number(livestock->Get_upgrade_timer()));
     }
-    else if(livestock->Get_feeding_status() == 0){
+    else if((livestock->Get_feeding_status() == 0)&&(livestock->Get_used_storage() > 0)){
         ui->label_3->setText("Ready to feed");
     }
     else if(livestock->Get_feeding_status() == 1){
         ui->label_3->setText("milk ready in " + QString::number(livestock->Get_feeding_timer()));
     }
     else {
-        ui->label_3->setText("milk ready");
+        ui->label_3->setText("milk is ready");
     }
 }

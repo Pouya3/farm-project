@@ -125,21 +125,25 @@ int Alfalfa_land::Harvest(){
 
 int Alfalfa_land::Build(){
     // return values :
-    // 1 == locked
-    // 2 == not enough coins
-    // 3 == not enough shovels
-    // 4 == not enough nails
-    // 5 == timer set for building
-    if(building_status == 1){ // unlocked
-        if(user->Get_coin()>=15){ // enough coins
-            if(store->Get_object(1)>=1){ // enough shovels
-                if(store->Get_object(2)>=1){ // enough nails
-                    user->Set_coin(user->Get_coin()-15);
-                    store->Delete(1,1);
-                    store->Delete(2,1);
+    // 1 == already built
+    // 2 == locked
+    // 3 == not enough coins
+    // 4 == not enough shovels
+    // 5 == not enough nails
+    // 6 == timer set for building
+    if(building_status != 2){ // not built
+        if(building_status == 1){ // unlocked
+            if(user->Get_coin()>=15){ // enough coins
+                if(store->Get_object(1)>=1){ // enough shovels
+                    if(store->Get_object(2)>=1){ // enough nails
+                        user->Set_coin(user->Get_coin()-15);
+                        store->Delete(1,1);
+                        store->Delete(2,1);
 
-                    building_timer = 3;
+                        building_timer = 3;
 
+                        return 6;
+                    }
                     return 5;
                 }
                 return 4;

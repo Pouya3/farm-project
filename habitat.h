@@ -19,7 +19,6 @@ protected:
     int feeding_status;
     int feeding_timer;
     int building_timer;
-    int upgrade_timer;
 
 public:
     Store* store;
