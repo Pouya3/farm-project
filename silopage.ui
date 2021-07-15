@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>947</width>
-    <height>600</height>
+    <height>639</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -88,6 +88,31 @@ QLabel{
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QToolButton" name="toolButton">
+    <property name="geometry">
+     <rect>
+      <x>460</x>
+      <y>540</y>
+      <width>81</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:30%;
+color: rgb(16, 57, 2);
+background-color: rgb(255, 112, 76);</string>
+    </property>
+    <property name="text">
+     <string>4</string>
     </property>
    </widget>
   </widget>

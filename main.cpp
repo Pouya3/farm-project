@@ -9,6 +9,7 @@
 
 #include "chickenmarket.h"
 #include "agholpage.h"
+//#include <QMediaPlayer>
 #include "marketpage.h"
 #include "sheepmarket.h"
 #include "storepage.h"
@@ -54,7 +55,7 @@ int main(int argc, char *argv[])
 
 
     QApplication a(argc, argv);
-    MenuPage w;
+    StorePage w;
     QFile styleSheetFile("../farm-project/nice.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet=QLatin1String(styleSheetFile.readAll());

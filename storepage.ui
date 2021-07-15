@@ -257,6 +257,31 @@ QLabel{
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QToolButton" name="toolButton">
+    <property name="geometry">
+     <rect>
+      <x>720</x>
+      <y>420</y>
+      <width>71</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius:30%;
+color: rgb(16, 57, 2);
+background-color: rgb(255, 112, 76);</string>
+    </property>
+    <property name="text">
+     <string>4</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
