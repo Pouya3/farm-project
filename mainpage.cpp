@@ -34,11 +34,11 @@ MainPage::MainPage(User* _user, QWidget *parent) :
     movie4->start();
     user = _user;
 
-    user->Set_coin(50000);
+    //user->Set_coin(50000);
 
     timer=new QTimer (this);
     connect(timer,SIGNAL(timeout()),this,SLOT(Time_function()));
-    timer->start(1000);
+    timer->start(300000);
 
     saving_tiemer = new QTimer(this);
     saving_tiemer->start(10);
