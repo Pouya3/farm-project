@@ -13,6 +13,7 @@
 #include "levelup45.h"
 #include "levelup56.h"
 #include "levelup67.h"
+#include "levelupkoli.h"
 
 
 User::User() : aghol(NULL), alfalfa_land(NULL), aviculture(NULL), livestock(NULL), silo(NULL), store(NULL), wheat_land(NULL) {
@@ -119,6 +120,15 @@ void User::Set_experience(int _experience){
             LevelUp67 * levelUp67;
             levelUp67 = new LevelUp67;
             levelUp67->show();
+
+            break;
+
+        default:
+            LevelUpKoli* levelUpkoli;
+            levelUpkoli = new LevelUpKoli;
+            levelUpkoli->show();
+
+            break;
         }
 
         max_experience = max_experience * 2 + 10;

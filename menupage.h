@@ -30,6 +30,8 @@ private slots:
 
     void Set_values();
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MenuPage *ui;
     User* user;

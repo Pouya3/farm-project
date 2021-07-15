@@ -1,6 +1,7 @@
 #include "menupage.h"
 #include "ui_menupage.h"
 #include "rankingpage.h"
+#include "mainwindow.h"
 #include "file_functions.h"
 
 MenuPage::MenuPage(User* _user, MainPage* _mainpage, QWidget *parent) :
@@ -43,7 +44,7 @@ void MenuPage::on_pushButton_clicked()
 }
 
 void MenuPage::Set_values(){
-    ui->label->setText(user->Get_username());
+    ui->label->setText("Welcome\n" + user->Get_username());
     ui->label_5->setText(QString::number(user->Get_level()));
     ui->label_3->setText(QString::number(user->Get_coin()));
     ui->label_4->setText(QString::number(user->Get_experience()));
@@ -77,3 +78,13 @@ void MenuPage::Set_values(){
     }
     ui->pushButton_3->setText(QString::number(rank));
 }
+
+void MenuPage::on_pushButton_4_clicked()
+{
+    MainWindow *m = new MainWindow;
+    m->show();
+
+    mainpage->close();
+    this->close();
+}
+

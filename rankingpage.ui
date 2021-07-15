@@ -52,6 +52,9 @@ background-color:red;
       <bold>true</bold>
      </font>
     </property>
+    <property name="contextMenuPolicy">
+     <enum>Qt::DefaultContextMenu</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">color: rgb(126, 255, 240);
 color: rgb(22, 117, 220);

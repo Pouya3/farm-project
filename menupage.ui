@@ -70,10 +70,10 @@ background-color:red;
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>110</y>
-      <width>201</width>
-      <height>41</height>
+      <x>90</x>
+      <y>100</y>
+      <width>221</width>
+      <height>121</height>
      </rect>
     </property>
     <property name="font">
@@ -219,6 +219,24 @@ background-color:red;
     </property>
     <property name="text">
      <string>32</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButton_4">
+    <property name="geometry">
+     <rect>
+      <x>25</x>
+      <y>468</y>
+      <width>63</width>
+      <height>63</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">*{
+border-radius : 30px;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>

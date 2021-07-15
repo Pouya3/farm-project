@@ -22,11 +22,6 @@ RankingPage::~RankingPage()
 }
 
 void RankingPage::Set_values(){
-    ui->tableWidget->setHorizontalHeaderItem(0,new QTableWidgetItem("Rank"));
-    ui->tableWidget->setHorizontalHeaderItem(1,new QTableWidgetItem("Username"));
-    ui->tableWidget->setHorizontalHeaderItem(2,new QTableWidgetItem("Experience"));
-    ui->tableWidget->setHorizontalHeaderItem(3,new QTableWidgetItem("Level"));
-
     ui->tableWidget->clear();
 
     vector<pair<int, QString>>::iterator user_iter;
@@ -35,12 +30,12 @@ void RankingPage::Set_values(){
 
     ui->label_2->setText(user_iter->second);
 
-    user_iter--;
-    if(user_iter >= users_for_ranking.begin()){
+    if(users_for_ranking.size() >= 2){
+        user_iter--;
         ui->label_3->setText(user_iter->second);
 
-        user_iter--;
-        if(user_iter >= users_for_ranking.begin()){
+        if(users_for_ranking.size() >= 3){
+            user_iter--;
             ui->label->setText(user_iter->second);
         }
         else{
@@ -54,6 +49,11 @@ void RankingPage::Set_values(){
 
     ui->tableWidget->setColumnCount(4);
     ui->tableWidget->setRowCount(users_for_ranking.size());
+
+    ui->tableWidget->setHorizontalHeaderItem(0,new QTableWidgetItem("Rank"));
+    ui->tableWidget->setHorizontalHeaderItem(1,new QTableWidgetItem("Username"));
+    ui->tableWidget->setHorizontalHeaderItem(2,new QTableWidgetItem("Experience"));
+    ui->tableWidget->setHorizontalHeaderItem(3,new QTableWidgetItem("Level"));
 
     user_iter = users_for_ranking.end();
     user_iter--;
