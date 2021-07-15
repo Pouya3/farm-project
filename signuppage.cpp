@@ -8,7 +8,11 @@ signupPage::signupPage(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(880,600);
+    setWindowTitle("Sign up");
 
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 }
 
 signupPage::~signupPage()
