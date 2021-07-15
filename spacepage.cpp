@@ -25,14 +25,15 @@ void SpacePage::on_pushButton_clicked()
     }
     else {
         switch(alfalfa_land->Cultivate(ui->spinBox->text().toInt())){
-        case 3:
+        case 5:
+            //qmessagebox --> "area selected to cultivate is greater than total area"
+            QMessageBox::critical(this,"AREA","area selected to cultivate is greater than total area");
+            break;
+        case 6:
             //qmessagebox --> "not enough alfalfa"
             QMessageBox::critical(this,"NOT ENOUGH ALFALFA","not enough alfalfa to cultivate");
             break;
-        case 4:
-            QMessageBox::critical(this,"UPGRADIN","After alfalfa land upgraded you can ripen");
-            break;
-        case 5:
+        case 7:
             //qmessagebox --> "timer set for ripening"
             QMessageBox::information(this,"START","timer set for ripening");
             this->close();

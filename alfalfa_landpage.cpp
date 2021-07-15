@@ -90,29 +90,38 @@ void Alfalfa_landPage::on_pushButton_2_clicked()
 
 void Alfalfa_landPage::on_pushButton_3_clicked()
 {
-    switch (alfalfa_land->Plow()) {
+    switch(alfalfa_land->Plow()){
     case 1:
-        //qmessagebox --> "you have to wait until alfalfas ripen and harvest them to plow"
-        QMessageBox::critical(this,"NOT RIPE AND NOT HARVESTED","you have to wait until alfalfas ripen and collect them to plow");
-        break;
-    case 2:
-        //qmessagebox --> "field is cultivated. you cannot plow"
-        QMessageBox::critical(this,"CULTIVATED","field is cultivated. you cannot plow");
-        break;
-    case 3:
-        //qmessagebox --> "not enough coins for plowing"
-        QMessageBox::critical(this,"COINS","not enough coins for plowing");
-        break;
-    case 4:
-        //qmessagebox --> "timer set for plowing"
-        QMessageBox::information(this,"START","timer set for plowing");
-        break;
-    case 5:
         //qmessagebox --> "alfalfa land is not built yet"
         QMessageBox::critical(this,"NOT BUILT","alfalfa land is not built yet");
         break;
+    case 2:
+        //qmessagebox --> "After alfalfa land upgraded you can plow"
+        QMessageBox::critical(this,"UPGRADIN","After alfalfa land upgraded you can plow");
+        break;
+    case 3:
+        //qmessagebox --> "alfalfa land is getting plowed"
+        QMessageBox::critical(this,"GETTING PLOWED","alfalfa land is getting plowed");
+        break;
+    case 4:
+        //qmessagebox --> "alfalfa land is already plowed"
+        QMessageBox::critical(this,"PLOWED","alfalfa land is already plowed");
+        break;
+    case 5:
+        //qmessagebox --> "field is cultivated. you cannot plow"
+        QMessageBox::critical(this,"CULTIVATED","field is cultivated. you cannot plow");
+        break;
     case 6:
-        QMessageBox::critical(this,"UPGRADIN","After alfalfa land upgrade you can plow");
+        //qmessagebox --> "alfalfa is ripe. first you must harvest then plow"
+        QMessageBox::critical(this,"CULTIVATED","alfalfa is ripe. first you must harvest then plow");
+        break;
+    case 7:
+        //qmessagebox --> "not enough coins for plowing"
+        QMessageBox::critical(this,"COINS","not enough coins for plowing");
+        break;
+    case 8:
+        //qmessagebox --> "timer set for plowing"
+        QMessageBox::information(this,"START","timer set for plowing");
         break;
     }
 }
@@ -120,8 +129,16 @@ void Alfalfa_landPage::on_pushButton_3_clicked()
 void Alfalfa_landPage::on_pushButton_4_clicked()
 {
     if(alfalfa_land->Get_building_status() != 2){
-        //qmessagebox --> "alfalfa land is not built yet
+        //qmessagebox --> "alfalfa land is not built yet"
         QMessageBox::critical(this,"NOT BUILT","alfalfa land is not built yet");
+    }
+    else if(alfalfa_land->Get_upgrade_timer() > 0){
+        //qmessagebox --> "alfalfa land is upgrading"
+        QMessageBox::critical(this,"UPGRADING","alfalfa land is upgrading");
+    }
+    else if((alfalfa_land->Get_cultivation_status() == 2)&&(alfalfa_land->Get_cultivation_status() == 3)){
+        //qmessagebox --> "alfalfa land is already cultivated"
+        QMessageBox::critical(this,"CULTIVATED","alfalfa land is already cultivated");
     }
     else if(alfalfa_land->Get_cultivation_status() == 1){
         //qmessagbox --> "alfalfa land is not plowed"
@@ -146,14 +163,18 @@ void Alfalfa_landPage::on_pushButton_5_clicked()
 {
     switch (alfalfa_land->Harvest()) {
     case 1:
+        //qmessagebox --> "alfalfa land is not built yet"
+        QMessageBox::critical(this,"NOT BUILT","alfalfa land is not built yet");
+        break;
+    case 2:
         //qmessagebox --> "no alfalfa to harvest"
         QMessageBox::critical(this,"NO ALFALFA","no alfalfa to harvest");
         break;
-    case 2:
+    case 3:
         //qmessagebox --> "not enough space in store"
         QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in store");
         break;
-    case 3:
+    case 4:
         //qmessagebox --> "harvested successfully"
         QMessageBox::information(this,"SUCCESS","harvested successfully");
         break;
