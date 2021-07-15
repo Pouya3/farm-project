@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QIcon>
+#include <QPixmap>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,5 +25,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    QIcon* icon;
+    QPixmap* pix;
 };
 #endif // MAINWINDOW_H
