@@ -11,8 +11,9 @@ WheatMarket::WheatMarket(User* _user, Silo* _silo, QWidget *parent) :
     user = _user;
     silo = _silo;
 
-    ui->label->setText(QString::number(silo->Get_used_storage()));
-    ui->label->setText(QString::number(silo->Get_total_storage() - silo->Get_used_storage()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 WheatMarket::~WheatMarket()
@@ -52,22 +53,32 @@ void WheatMarket::on_pushButton_clicked() // 1 --> buy              2 --> sell
         }                                                                                         //
     }                                                                                             //
 
-    if(ui->spinBox->text().toInt() != 0){ // buy                                                      //
-        if(user->Get_level() >= 2){                                                                   //
-            if(silo->Get_total_storage() - silo->Get_used_storage() < ui->spinBox->text().toInt()){   //
-                //qmessagebox --> "not enough space in silo"                                          //
-                QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in silo");            //
-            }                                                                                         //
-            else{                                                                                     //
-                silo->Add(1, ui->spinBox->text().toInt());                                            //
-                user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*1);                     // buy
-                user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);         //
-            }                                                                                         //
-        }                                                                                             //
-        else{                                                                                         //
-            //qmessagebox --> "you must reach level 2 to buy stuff"                                   //
-            QMessageBox::critical(this,"LEVEL","you must reach level 2 to buy stuff");                //
-        }                                                                                             //
-    }                                                                                                 //
+    if(ui->spinBox->text().toInt() != 0){ // buy                                                                   //
+        if(user->Get_level() >= 2){                                                                                //
+            if(user->Get_coin() < ui->spinBox->text().toInt()*3){                                                  //
+                //qmessagebox --> "not enough coins to buy this amount of wheat"                                   //
+                QMessageBox::critical(this,"NOT ENOUGH COINS","not enough coins to buy this amount of wheat");   //
+            }                                                                                                      //
+            else{                                                                                                  //
+                if(silo->Get_total_storage() - silo->Get_used_storage() < ui->spinBox->text().toInt()){            //
+                    //qmessagebox --> "not enough space in silo"                                                   //
+                    QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in silo");                     //
+                }                                                                                                  //
+                else{                                                                                              //
+                    silo->Add(1, ui->spinBox->text().toInt());                                                     // buy
+                    user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*1);                              //
+                    user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);                  //
+                }                                                                                                  //
+            }                                                                                                      //
+        }                                                                                                          //
+        else{                                                                                                      //
+            //qmessagebox --> "you must reach level 2 to buy stuff"                                                //
+            QMessageBox::critical(this,"LEVEL","you must reach level 2 to buy stuff");                             //
+        }                                                                                                          //
+    }                                                                                                              //
 }
 
+void WheatMarket::Set_values(){
+    ui->label->setText(QString::number(silo->Get_used_storage()));
+    ui->label_2->setText(QString::number(silo->Get_total_storage() - silo->Get_used_storage()));
+}

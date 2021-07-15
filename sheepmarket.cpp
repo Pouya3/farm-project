@@ -11,8 +11,9 @@ SheepMarket::SheepMarket(User* _user, Aghol* _aghol, QWidget *parent) :
     user = _user;
     aghol = _aghol;
 
-    ui->label->setText(QString::number(aghol->Get_used_storage()));
-    ui->label_2->setText(QString::number(aghol->Get_total_storage() - aghol->Get_used_storage()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 SheepMarket::~SheepMarket()
@@ -23,8 +24,8 @@ SheepMarket::~SheepMarket()
 void SheepMarket::on_pushButton_clicked()//1 -> buy                 2 -> sell
 {
     if(aghol->Get_building_status() != 2){
-        //qmessagebox --> "you must build livestock to buy or sell sheep"
-        QMessageBox::critical(this,"NOT BUILT","you must build livestock to buy or sell sheep");
+        //qmessagebox --> "you must build aghol to buy or sell sheep"
+        QMessageBox::critical(this,"NOT BUILT","you must build aghol to buy or sell sheep");
     }
     else{
         if((ui->spinBox->text().toInt() == 0)&&(ui->spinBox_2->text().toInt() == 0)){
@@ -52,16 +53,26 @@ void SheepMarket::on_pushButton_clicked()//1 -> buy                 2 -> sell
         }                                                                                                           //
 
         if(ui->spinBox->text().toInt() != 0){                                                                       //
-            if(aghol->Get_total_storage() - aghol->Get_used_storage() < ui->spinBox->text().toInt()){               //
-                //qmessagebox --> "not enough space in aghol"                                                       //
-                QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in aghol");                         //
+            if(user->Get_coin() < ui->spinBox->text().toInt()*80){                                                  //
+                //qmessagebox --> "not enough coins to buy this number of sheep"                                    //
+                QMessageBox::critical(this,"NOT ENOUGH COINS","not enough coins to buy this number of sheep");      //
             }                                                                                                       //
-            else{                                                                                                   // buy
-                aghol->Add(1, ui->spinBox->text().toInt());                                                         //
-                user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*80);                                  //
-                user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);                       //
+            else{                                                                                                   //
+                if(aghol->Get_total_storage() - aghol->Get_used_storage() < ui->spinBox->text().toInt()){           //
+                    //qmessagebox --> "not enough space in aghol"                                                   //
+                    QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in aghol");                     // buy
+                }                                                                                                   //
+                else{                                                                                               //
+                    aghol->Add(1, ui->spinBox->text().toInt());                                                     //
+                    user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*80);                              //
+                    user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);                   //
+                }                                                                                                   //
             }                                                                                                       //
         }                                                                                                           //
     }
 }
 
+void SheepMarket::Set_values(){
+    ui->label->setText(QString::number(aghol->Get_used_storage()));
+    ui->label_2->setText(QString::number(aghol->Get_total_storage() - aghol->Get_used_storage()));
+}

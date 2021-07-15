@@ -12,8 +12,9 @@ AlfalfaMarket::AlfalfaMarket(User* _user, Store* _store, QWidget *parent) :
     user = _user;
     store = _store;
 
-    ui->label->setText(QString::number(store->Get_object(3)));
-    ui->label_2->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 AlfalfaMarket::~AlfalfaMarket()
@@ -52,17 +53,28 @@ void AlfalfaMarket::on_pushButton_clicked()
             }                                                                                     //
         }                                                                                         //
 
-        if(ui->spinBox_2->text().toInt() != 0){ // buy                                                   //
-            if(store->Get_total_storage() - store->Get_used_storage() < ui->spinBox_2->text().toInt()){  //
-                //qmessagebox --> "not enough space in stor"                                             //
-                QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in stor");               //
-            }                                                                                            //
-            else{                                                                                        //
-                store->Add(3, ui->spinBox_2->text().toInt());                                            // buy
-                user->Set_coin(user->Get_coin() - ui->spinBox_2->text().toInt()*6);                      //
-                user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*2);          //
-            }                                                                                            //
-        }                                                                                                //
+        if(ui->spinBox_2->text().toInt() != 0){ // buy                                                              //
+            if(user->Get_coin() < ui->spinBox_2->text().toInt()*6){                                                 //
+                //qmessagebox --> "not enough coins to buy this amount of alfalfa"                                  //
+                QMessageBox::critical(this,"NOT ENOUGH COINS","not enough coins to buy this amount of alfalfa");    //
+            }                                                                                                       //
+            else                                                                                                    //
+            {                                                                                                       //
+                if(store->Get_total_storage() - store->Get_used_storage() < ui->spinBox_2->text().toInt()){         // buy
+                    //qmessagebox --> "not enough space in stor"                                                    //
+                    QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in stor");                      //
+                }                                                                                                   //
+                else{                                                                                               //
+                    store->Add(3, ui->spinBox_2->text().toInt());                                                   //
+                    user->Set_coin(user->Get_coin() - ui->spinBox_2->text().toInt()*6);                             //
+                    user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*2);                 //
+                }
+            }
+        }
     }
 }
 
+void AlfalfaMarket::Set_values(){
+    ui->label->setText(QString::number(store->Get_object(3)));
+    ui->label_2->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));
+}

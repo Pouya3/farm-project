@@ -11,8 +11,9 @@ WoolMarket::WoolMarket(User* _user, Store* _store, QWidget *parent) :
     user = _user;
     store = _store;
 
-    ui->label->setText(QString::number(store->Get_object(6)));
-    ui->label_2->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 WoolMarket::~WoolMarket()
@@ -45,3 +46,7 @@ void WoolMarket::on_pushButton_clicked()
     }
 }
 
+void WoolMarket::Set_values(){
+    ui->label->setText(QString::number(store->Get_object(6)));
+    ui->label_2->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));
+}

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "user.h"
 #include "silo.h"
+#include <QTimer>
 
 namespace Ui {
 class WheatMarket;
@@ -20,10 +21,13 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void Set_values();
+
 private:
     Ui::WheatMarket *ui;
     User* user;
     Silo* silo;
+    QTimer* refresh_timer;
 };
 
 #endif // WHEATMARKET_H

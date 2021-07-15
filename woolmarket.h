@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "user.h"
 #include "store.h"
+#include <QTimer>
 
 namespace Ui {
 class WoolMarket;
@@ -20,10 +21,13 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void Set_values();
+
 private:
     Ui::WoolMarket *ui;
     User* user;
     Store* store;
+    QTimer* refresh_timer;
 };
 
 #endif // WOOLMARKET_H

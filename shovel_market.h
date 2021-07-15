@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "store.h"
 #include "user.h"
+#include <QTimer>
 
 namespace Ui {
 class Shovel_market;
@@ -20,10 +21,13 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void Set_values();
+
 private:
     Ui::Shovel_market *ui;
     Store* store;
     User* user;
+    QTimer* refresh_timer;
 };
 
 #endif // SHOVEL_MARKET_H

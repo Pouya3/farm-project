@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "user.h"
 #include "aghol.h"
+#include <QTimer>
 
 namespace Ui {
 class SheepMarket;
@@ -20,10 +21,13 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void Set_values();
+
 private:
     Ui::SheepMarket *ui;
     Aghol* aghol;
     User* user;
+    QTimer* refresh_timer;
 };
 
 #endif // SHEEPMARKET_H

@@ -35,7 +35,6 @@ void MarketPage::on_pushButton_clicked()
 {
     NailMarket* n=new NailMarket(user, store);
     n->show();
-    this->close();
 }
 
 
@@ -43,7 +42,6 @@ void MarketPage::on_pushButton_2_clicked()
 {
     Shovel_market* s=new Shovel_market(user, store);
     s->show();
-    this->close();
 }
 
 
@@ -51,7 +49,6 @@ void MarketPage::on_pushButton_3_clicked()
 {
     SheepMarket* s=new SheepMarket(user, aghol);
     s->show();
-    this->close();
 }
 
 
@@ -59,7 +56,6 @@ void MarketPage::on_pushButton_4_clicked()
 {
     CowMarket* c=new CowMarket(user, livestock);
     c->show();
-    this->close();
 }
 
 
@@ -67,7 +63,6 @@ void MarketPage::on_pushButton_5_clicked()
 {
     ChickenMarket* c=new ChickenMarket(user, aviculture);
     c->show();
-    this->close();
 }
 
 
@@ -75,7 +70,6 @@ void MarketPage::on_pushButton_6_clicked()
 {
     AlfalfaMarket* a=new AlfalfaMarket(user, store);
     a->show();
-    this->close();
 }
 
 
@@ -83,7 +77,6 @@ void MarketPage::on_pushButton_7_clicked()
 {
     WheatMarket* w=new WheatMarket(user, silo);
     w->show();
-    this->close();
 }
 
 
@@ -91,7 +84,6 @@ void MarketPage::on_pushButton_8_clicked()
 {
     eggMarket* e=new eggMarket(user, store);
     e->show();
-    this->close();
 }
 
 
@@ -99,7 +91,6 @@ void MarketPage::on_pushButton_9_clicked()
 {
     MilkMarket* m=new MilkMarket(user, store);
     m->show();
-    this->close();
 }
 
 
@@ -107,6 +98,5 @@ void MarketPage::on_pushButton_10_clicked()
 {
     WoolMarket* w=new WoolMarket(user, store);
     w->show();
-    this->close();
 }
 

@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "aviculture.h"
 #include "user.h"
+#include <QTimer>
 
 
 namespace Ui {
@@ -21,10 +22,13 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void Set_values();
+
 private:
     Ui::ChickenMarket *ui;
     User* user;
     Aviculture* aviculture;
+    QTimer* refresh_timer;
 };
 
 #endif // CHICKENMARKET_H

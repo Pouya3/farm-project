@@ -11,8 +11,9 @@ CowMarket::CowMarket(User* _user, Livestock* _livestock, QWidget *parent) :
     user = _user;
     livestock = _livestock;
 
-    ui->label->setText(QString::number(livestock->Get_used_storage()));
-    ui->label_2->setText(QString::number(livestock->Get_total_storage()- livestock->Get_used_storage()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 CowMarket::~CowMarket()
@@ -52,16 +53,26 @@ void CowMarket::on_pushButton_clicked() // buy -> 1             sell -> 2
         }
 
         if(ui->spinBox->text().toInt() != 0){                                                                       //
-            if(livestock->Get_total_storage() - livestock->Get_used_storage() < ui->spinBox->text().toInt()){       //
-                //qmessagebox --> "not enough space in livestock"                                                   //
-                QMessageBox::critical(this,"NOT ENOUGH SAPCE","not enough space in livestock");                     //
+            if(user->Get_coin() < ui->spinBox->text().toInt()*70){                                                  //
+                //qmessagebox --> "not enough coins to buy this number of cows"                                     //
+                QMessageBox::critical(this,"NOT ENOUGH COINS","not enough coins to buy this number of cows");       //
             }                                                                                                       //
-            else{                                                                                                   // buy
-                livestock->Add(1, ui->spinBox->text().toInt());                                                     //
-                user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*70);                                  //
-                user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);                      //
+            else{                                                                                                   //
+                if(livestock->Get_total_storage() - livestock->Get_used_storage() < ui->spinBox->text().toInt()){   //
+                    //qmessagebox --> "not enough space in livestock"                                               //
+                    QMessageBox::critical(this,"NOT ENOUGH SAPCE","not enough space in livestock");                 // buy
+                }                                                                                                   //
+                else{                                                                                               //
+                    livestock->Add(1, ui->spinBox->text().toInt());                                                 //
+                    user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*70);                              //
+                    user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);                   //
+                }                                                                                                   //
             }                                                                                                       //
         }                                                                                                           //
     }
 }
 
+void CowMarket::Set_values(){
+    ui->label->setText(QString::number(livestock->Get_used_storage()));
+    ui->label_2->setText(QString::number(livestock->Get_total_storage()- livestock->Get_used_storage()));
+}

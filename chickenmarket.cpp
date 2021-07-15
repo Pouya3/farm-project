@@ -11,8 +11,9 @@ ChickenMarket::ChickenMarket(User* _user, Aviculture* _aviculture, QWidget *pare
     user = _user;
     aviculture = _aviculture;
 
-    ui->label_2->setText(QString::number(aviculture->Get_used_storage()));
-    ui->label->setText(QString::number(aviculture->Get_total_storage() - aviculture->Get_used_storage()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 ChickenMarket::~ChickenMarket()
@@ -57,17 +58,27 @@ void ChickenMarket::on_pushButton_clicked()
             }                                                                                                //
         }                                                                                                    //
 
-        if(ui->spinBox_2->text().toInt() != 0){                                                                     //
-            if(aviculture->Get_total_storage() - aviculture->Get_used_storage() < ui->spinBox_2->text().toInt()){   //
-                //qmessagebox --> "not enough space in aviculture"                                                  //
-                QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in aviculture");                    //
-            }                                                                                                       //
-            else{                                                                                                   // buy
-                aviculture->Add(1, ui->spinBox_2->text().toInt());                                                  //
-                user->Set_coin(user->Get_coin() - ui->spinBox_2->text().toInt()*20);                                //
-                user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*2);                     //
-            }                                                                                                       //
-        }
+        if(ui->spinBox_2->text().toInt() != 0){                                                                        //
+            if(user->Get_coin() < ui->spinBox_2->text().toInt()*20){                                                   //
+                //qmessagebox --> "not enough coins to buy this number of chickens"                                    //
+                QMessageBox::critical(this,"NOT ENOUGH COINS","not enough coins to buy this number of chickens");      //
+            }                                                                                                          //
+            else{                                                                                                      //
+                if(aviculture->Get_total_storage() - aviculture->Get_used_storage() < ui->spinBox_2->text().toInt()){  //
+                    //qmessagebox --> "not enough space in aviculture"                                                 //
+                    QMessageBox::critical(this,"NOT ENOUGH SPACE","not enough space in aviculture");                   // buy
+                }                                                                                                      //
+                else{                                                                                                  //
+                    aviculture->Add(1, ui->spinBox_2->text().toInt());                                                 //
+                    user->Set_coin(user->Get_coin() - ui->spinBox_2->text().toInt()*20);                               //
+                    user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*2);                    //
+                }                                                                                                      //
+            }                                                                                                          //
+        }                                                                                                              //
     }
 }
 
+void ChickenMarket::Set_values(){
+    ui->label_2->setText(QString::number(aviculture->Get_used_storage()));
+    ui->label->setText(QString::number(aviculture->Get_total_storage() - aviculture->Get_used_storage()));
+}

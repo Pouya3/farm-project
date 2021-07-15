@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include "store.h"
 #include "user.h"
+#include <QTimer>
 
 namespace Ui {
 class MilkMarket;
@@ -20,10 +21,13 @@ public:
 private slots:
     void on_pushButton_clicked();
 
+    void Set_values();
+
 private:
     Ui::MilkMarket *ui;
     Store* store;
     User* user;
+    QTimer* refresh_timer;
 };
 
 #endif // MILKMARKET_H
