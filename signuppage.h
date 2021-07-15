@@ -23,6 +23,8 @@ private slots:
 
 private:
     Ui::signupPage *ui;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // SIGNUPPAGE_H
