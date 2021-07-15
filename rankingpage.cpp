@@ -45,6 +45,8 @@ RankingPage::RankingPage(User* _user, QMultiMap<int, QString> _users_fot_ranking
     int level;
     int exp;
     int i;
+
+    ui->tableWidget->verticalHeader()->hide();//hide left headers!
     for(i = 0; i<users_for_ranking.size(); i++){
 
         exp = user_iter.key();
@@ -57,14 +59,18 @@ RankingPage::RankingPage(User* _user, QMultiMap<int, QString> _users_fot_ranking
         }
 
 
-        ui->tableWidget->setItem(i, 0, new QTableWidgetItem(QString::number(i+1)));
-        ui->tableWidget->setItem(i, 1, new QTableWidgetItem(user_iter.value()));
-        ui->tableWidget->setItem(i, 2, new QTableWidgetItem(QString::number(user_iter.key())));
-        ui->tableWidget->setItem(i, 3, new QTableWidgetItem(QString::number(level)));
+       ui->tableWidget->setItem(i, 0, new QTableWidgetItem(QString::number(i+1)));
+       ui->tableWidget->setItem(i, 1, new QTableWidgetItem(user_iter.value()));
+       ui->tableWidget->setItem(i, 2, new QTableWidgetItem(QString::number(user_iter.key())));
+       ui->tableWidget->setItem(i, 3, new QTableWidgetItem(QString::number(level)));
 
 
         if(user_iter.value() == user->Get_username()){
             // color the row;
+            ui->tableWidget->item(i,0)->setBackground(QBrush(QColor(250,187,61)));//color background my row
+            ui->tableWidget->item(i,1)->setBackground(QBrush(QColor(250,187,61)));//color background my row
+            ui->tableWidget->item(i,2)->setBackground(QBrush(QColor(250,187,61)));//color background my row
+            ui->tableWidget->item(i,3)->setBackground(QBrush(QColor(250,187,61)));//color background my row
         }
     }
 }

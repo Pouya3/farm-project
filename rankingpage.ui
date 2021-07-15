@@ -30,6 +30,12 @@
       <bold>true</bold>
      </font>
     </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(126, 255, 240);
+color: rgb(22, 117, 220);
+
+text-align:center;</string>
+    </property>
     <property name="autoScrollMargin">
      <number>5</number>
     </property>

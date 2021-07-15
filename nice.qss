@@ -26,6 +26,11 @@ QPushButton:hover{
 
 }
 
+QTableWidget QTableCornerButton::section {
+    background-color: red;
+    border: 1px solid green;
+}
+
 #LevelUp12{
 
 	background-image:url(../farm-project/level up12.jpg);
