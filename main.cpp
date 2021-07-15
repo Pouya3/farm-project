@@ -55,11 +55,8 @@ int main(int argc, char *argv[])
 
 
     QApplication a(argc, argv);
-<<<<<<< HEAD
-    StorePage w;
-=======
+
     MainWindow w;
->>>>>>> da9e3b4ced71c5c3bf75437819a34ae4737240a2
     QFile styleSheetFile("../farm-project/nice.qss");
     styleSheetFile.open(QFile::ReadOnly);
     QString styleSheet=QLatin1String(styleSheetFile.readAll());
