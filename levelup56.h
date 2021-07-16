@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::LevelUp56 *ui;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // LEVELUP56_H
