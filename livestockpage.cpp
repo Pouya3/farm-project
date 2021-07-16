@@ -167,6 +167,9 @@ void LivestockPage::Set_values(){
     else if((livestock->Get_feeding_status() == 0)&&(livestock->Get_used_storage() > 0)){
         ui->label_3->setText("Ready to feed");
     }
+    else if((livestock->Get_feeding_status() == 0)){
+        ui->label_3->setText("Empty");
+    }
     else if(livestock->Get_feeding_status() == 1){
         ui->label_3->setText("milk ready in " + QString::number(livestock->Get_feeding_timer()));
     }
