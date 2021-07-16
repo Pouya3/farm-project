@@ -8,6 +8,11 @@ AviculturePage::AviculturePage(Aviculture* _aviculture, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(900,600);
+    setWindowTitle("Aviculture");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     aviculture = _aviculture;
 
