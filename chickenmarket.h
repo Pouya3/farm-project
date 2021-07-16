@@ -29,6 +29,8 @@ private:
     User* user;
     Aviculture* aviculture;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // CHICKENMARKET_H
