@@ -45,6 +45,8 @@ private:
     QTimer *timer;
     QTimer *saving_tiemer;
     User * user;
+    QIcon* icon;
+    QPixmap* pix;
 
 };
 
