@@ -38,6 +38,8 @@ private:
     MainPage* mainpage;
     vector<pair<int, QString>> users_for_ranking;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // MENUPAGE_H
