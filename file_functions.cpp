@@ -82,7 +82,7 @@ bool Create_new_user_files(QString username, QString name, QString password, QSt
         store_obj["total_storage"] = 5;
         store_obj["used_storage"] = 2;
         store_obj["upgrade_timer"] = 0;
-        store_obj["shove"] = 0;
+        store_obj["shovel"] = 0;
         store_obj["nail"] = 1;
         store_obj["alfalfa"] = 1;
         store_obj["egg"] = 0;
@@ -452,7 +452,7 @@ void Save_user(User* user){
     store_obj["total_storage"] = user->store->Get_total_storage();
     store_obj["used_storage"] = user->store->Get_used_storage();
     store_obj["upgrade_timer"] = user->store->Get_upgrade_timer();
-    store_obj["shove"] = user->store->Get_object(1);
+    store_obj["shovel"] = user->store->Get_object(1);
     store_obj["nail"] = user->store->Get_object(2);
     store_obj["alfalfa"] = user->store->Get_object(3);
     store_obj["egg"] = user->store->Get_object(4);

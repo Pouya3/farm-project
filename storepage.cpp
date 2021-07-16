@@ -73,6 +73,6 @@ void StorePage::Set_values(){
         ui->toolButton->setText("--");
     }
     else {
-        ui->toolButton->setText("Upgrading..." + QString::number(store->Get_upgrade_timer()));
+        ui->toolButton->setText(QString::number(store->Get_upgrade_timer()));
     }
 }
