@@ -485,6 +485,7 @@ void Save_user(User* user){
     wheat_land_obj["cultivated_area"] = user->wheat_land->Get_cultivated_area();
     wheat_land_obj["cultivation_status"] = user->wheat_land->Get_cultivation_status();
     wheat_land_obj["ripening_timer"] = user->wheat_land->Get_ripening_timer();
+    wheat_land_obj["upgrade_timer"] = user->wheat_land->Get_upgrade_timer();
 
     QFile user_file(user->Get_username() + "//user.json");
     QFile wheat_land_file(user->Get_username() + "//wheat_land.json");
