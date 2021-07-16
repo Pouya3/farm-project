@@ -125,7 +125,7 @@ void User::Set_experience(int _experience){
 
         default:
             LevelUpKoli* levelUpkoli;
-            levelUpkoli = new LevelUpKoli;
+            levelUpkoli = new LevelUpKoli(level-1, level);
             levelUpkoli->show();
 
             break;

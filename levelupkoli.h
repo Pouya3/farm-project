@@ -12,7 +12,7 @@ class LevelUpKoli : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit LevelUpKoli(QWidget *parent = nullptr);
+    explicit LevelUpKoli(int, int, QWidget *parent = nullptr);
     ~LevelUpKoli();
 
 private:
