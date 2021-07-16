@@ -7,6 +7,11 @@ LevelUp12::LevelUp12(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(665,670);
+    setWindowTitle("Level up");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 }
 
 LevelUp12::~LevelUp12()

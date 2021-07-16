@@ -25,6 +25,8 @@ private:
     vector<pair<int, QString>> users_for_ranking;
     User* user;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 
 private slots:
     void Set_values();

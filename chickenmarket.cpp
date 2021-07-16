@@ -7,6 +7,11 @@ ChickenMarket::ChickenMarket(User* _user, Aviculture* _aviculture, QWidget *pare
 {
     ui->setupUi(this);
     setFixedSize(1000,570);
+    setWindowTitle("Chicken market");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     user = _user;
     aviculture = _aviculture;

@@ -33,6 +33,8 @@ private slots:
 private:
     Ui::AgholPage *ui;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // AGHOLPAGE_H

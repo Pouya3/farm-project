@@ -28,6 +28,8 @@ private:
     User* user;
     Store* store;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // ALFALFAMARKET_H

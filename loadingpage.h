@@ -21,6 +21,8 @@ private:
     Ui::LoadingPage *ui;
     User* user;
     QTimer* timer;
+    QIcon* icon;
+    QPixmap* pix;
 
 private slots:
     void close_this();

@@ -32,6 +32,8 @@ private slots:
 private:
     Ui::AviculturePage *ui;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // AVICULTUREPAGE_H

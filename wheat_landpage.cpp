@@ -8,6 +8,11 @@ Wheat_landPage::Wheat_landPage(Wheat_land* _wheat_land, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(1250,550);
+    setWindowTitle("Wheat land");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     wheat_land = _wheat_land;
 

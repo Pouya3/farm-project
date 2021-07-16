@@ -33,6 +33,8 @@ private slots:
 private:
     Ui::LivestockPage *ui;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // LIVESTOCKPAGE_H

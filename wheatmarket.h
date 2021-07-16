@@ -28,6 +28,8 @@ private:
     User* user;
     Silo* silo;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // WHEATMARKET_H

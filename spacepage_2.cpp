@@ -7,6 +7,11 @@ SpacePage_2::SpacePage_2(Wheat_land* _wheat_land, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(900,600);
+    setWindowTitle("Space");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     wheat_land = _wheat_land;
 }

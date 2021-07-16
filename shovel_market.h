@@ -28,6 +28,8 @@ private:
     Store* store;
     User* user;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // SHOVEL_MARKET_H
