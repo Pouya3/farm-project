@@ -7,6 +7,11 @@ CowMarket::CowMarket(User* _user, Livestock* _livestock, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(1000,570);
+    setWindowTitle("Cow market");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     user = _user;
     livestock = _livestock;
