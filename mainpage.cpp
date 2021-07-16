@@ -21,6 +21,12 @@ MainPage::MainPage(User* _user, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(1265,540);
+    setWindowTitle("Hay Night");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
+
     QMovie* movie=new QMovie("../farm-project/windmill.gif");
     QMovie* movie2=new QMovie("../farm-project/ch-3.gif");
     QMovie* movie3=new QMovie("../farm-project/dog1.gif");
