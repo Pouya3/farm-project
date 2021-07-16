@@ -7,6 +7,11 @@ WoolMarket::WoolMarket(User* _user, Store* _store, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(1000,460);
+    setWindowTitle("Wool market");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     user = _user;
     store = _store;
