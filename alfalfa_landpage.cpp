@@ -41,15 +41,15 @@ void Alfalfa_landPage::on_pushButton_clicked()
         break;
     case 3:
         //qmessagebox --> "not enough coins for building alfalfa land"
-        QMessageBox::critical(this,"COINS","not enough coins for building alfalfa land");
+        QMessageBox::critical(this,"COINS","not enough coins for building alfalfa land \n15 coins are needed");
         break;
     case 4:
         //qmessagebox --> "not enough shovels for building alfalfa land"
-        QMessageBox::critical(this,"SHOVELS","not enough shovels for building alfalfa land");
+        QMessageBox::critical(this,"SHOVELS","not enough shovels for building alfalfa land \n1 shovel is needed");
         break;
     case 5:
         //qmessagebox --> "not enough nails for building alfalfa land"
-        QMessageBox::critical(this,"NAILS","not enough nails for building alfalfa land");
+        QMessageBox::critical(this,"NAILS","not enough nails for building alfalfa land \n1 nail is needed");
         break;
     case 6:
         //qmessagebox --> "timer set for building alfalfa land"
@@ -72,11 +72,11 @@ void Alfalfa_landPage::on_pushButton_2_clicked()
         break;
     case 3:
         //qmessagebox --> "not enough shovels for upgrading"
-        QMessageBox::critical(this,"SHOVELS","not enough shovels for upgrading");
+        QMessageBox::critical(this,"SHOVELS","not enough shovels for upgrading \n2 shovels are needed for each unit of area");
         break;
     case 4:
         //qmessagebox --> "not enough coins for upgrading"
-        QMessageBox::critical(this,"COINS","not enough coins for upgrading");
+        QMessageBox::critical(this,"COINS","not enough coins for upgrading \n5 coins are needed for each unit of area");
         break;
     case 5:
         //qmessagebox --> "you cannot upgrade alfalfa land until you reach level 4"
@@ -122,7 +122,7 @@ void Alfalfa_landPage::on_pushButton_3_clicked()
         break;
     case 7:
         //qmessagebox --> "not enough coins for plowing"
-        QMessageBox::critical(this,"COINS","not enough coins for plowing");
+        QMessageBox::critical(this,"COINS","not enough coins for plowing \n5 coins are needed for each unit of area");
         break;
     case 8:
         //qmessagebox --> "timer set for plowing"

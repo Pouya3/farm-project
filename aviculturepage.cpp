@@ -39,11 +39,11 @@ void AviculturePage::on_pushButton_clicked()
         break;
     case 3:
         //qmessagebox --> "not enough coins for building"
-        QMessageBox::critical(this,"COINS","not enough coins for building");
+        QMessageBox::critical(this,"COINS","not enough coins for building \n10 coins are needed");
         break;
     case 4:
         //qmessagebox --> "not enough nails for building"
-        QMessageBox::critical(this,"NAILS","not enough nails for building");
+        QMessageBox::critical(this,"NAILS","not enough nails for building \n2nails are needed");
         break;
     case 5:
         //qmessageboc --> "timer set for building"
@@ -66,11 +66,11 @@ void AviculturePage::on_pushButton_2_clicked()
         break;
     case 3:
         //qmessagebox --> "not enough coins for upgrading"
-        QMessageBox::critical(this,"COINS","not enough coins for upgrading");
+        QMessageBox::critical(this,"COINS","not enough coins for upgrading \n10 coins are needed");
         break;
     case 4:
         //qmessagebox --> "not enough nails for upgrading"
-        QMessageBox::critical(this,"NAILS","not enough nails for upgrading");
+        QMessageBox::critical(this,"NAILS","not enough nails for upgrading \n1 nail is needed");
         break;
     case 5:
         QMessageBox::critical(this,"UPGEADING","aviculture is already in upgrading situation");

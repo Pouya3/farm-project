@@ -57,11 +57,11 @@ void Wheat_landPage::on_pushButton_3_clicked()
         break;
     case 3:
         //qmessagebox --> "not enough shovels for upgrading"
-        QMessageBox::critical(this,"SHOVEL","Not enough shovels for upgrading");
+        QMessageBox::critical(this,"SHOVEL","Not enough shovels for upgrading \n1 shovel is needed");
         break;
     case 4:
         //qmessagebox --> "not enough coins for upgrading"
-        QMessageBox::critical(this,"COIN","Not enough coins for upgrading");
+        QMessageBox::critical(this,"COIN","Not enough coins for upgrading \n5 coins are needed");
         break;
     case 5:
         //qmessagebox --> "you cannot upgrade wheat land until you reach level 2"
