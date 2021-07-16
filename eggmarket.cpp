@@ -23,25 +23,19 @@ eggMarket::~eggMarket()
 
 void eggMarket::on_pushButton_clicked()
 {
-    if(user->Get_level() < 3){
-        //qmessagebox --> "you must reach level 3 to sell egg"
-        QMessageBox::critical(this,"LEVEL","you must reach level 3 to sell egg");
+    if(ui->spinBox->text().toInt() == 0){
+        //qmessagebox --> "number of selling items is 0"
+        QMessageBox::critical(this,"0 VALUE","number of selling items is 0");
     }
     else{
-        if(ui->spinBox->text().toInt() == 0){
-            //qmessagebox --> "number of selling items is 0"
-            QMessageBox::critical(this,"0 VALUE","number of selling items is 0");
+        if(store->Get_object(4) < ui->spinBox->text().toUInt()){
+            //qmessagebox --> "not enough eggs to sell"
+            QMessageBox::critical(this,"NOT ENOUGH EGGS","not enough eggs to sell");
         }
         else{
-            if(store->Get_object(4) < ui->spinBox->text().toUInt()){
-                //qmessagebox --> "not enough eggs to sell"
-                QMessageBox::critical(this,"NOT ENOUGH EGGS","not enough eggs to sell");
-            }
-            else{
-                store->Delete(4, ui->spinBox->text().toInt());
-                user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*8);
-                user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*6);
-            }
+            store->Delete(4, ui->spinBox->text().toInt());
+            user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*8);
+            user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*6);
         }
     }
 }

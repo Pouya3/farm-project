@@ -37,7 +37,7 @@ void NailMarket::on_pushButton_clicked()
     }
 
     if(ui->spinBox_2->text().toInt() != 0){                                                     //
-        if(user->Get_level() >= 3){                                                             //
+        if(user->Get_level() >= 2){                                                             //
             if(store->Get_object(2) < ui->spinBox_2->text().toInt()){                           //
                 //qmessagbox --> "not enough nails to sell"                                     //
                 QMessageBox::critical(this,"NOT ENOUGH NAILS","not enough nails to sell");      //
@@ -49,8 +49,8 @@ void NailMarket::on_pushButton_clicked()
             }                                                                                   //
         }                                                                                       //
         else{                                                                                   //
-            //qmessagebox --> "you must reach level 3 to sell stuff"                            //
-            QMessageBox::critical(this,"LEVEL","you must reach level 3 to sell stuff");         //
+            //qmessagebox --> "you must reach level 2 to sell stuff"                            //
+            QMessageBox::critical(this,"LEVEL","you must reach level 2 to sell stuff");         //
         }                                                                                       //
     }                                                                                           //
 

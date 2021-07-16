@@ -36,7 +36,7 @@ void WheatMarket::on_pushButton_clicked() // 1 --> buy              2 --> sell
     }
 
     if(ui->spinBox_2->text().toInt() != 0){                                                       //
-        if(user->Get_level() >= 3){                                                               //
+        if(user->Get_level() >= 2){                                                               //
             if(silo->Get_used_storage() < ui->spinBox_2->text().toInt()){                         //
                 //qmessagbox --> "not enough wheats to sell"                                      //
             QMessageBox::critical(this,"NOT ENOUGH WHEATS","Not enough wheats to sell");          //
@@ -48,8 +48,8 @@ void WheatMarket::on_pushButton_clicked() // 1 --> buy              2 --> sell
             }                                                                                     //
         }                                                                                         //
         else{                                                                                     //
-            //qmessagebox --> "you must reach level 3 to sell stuff"                              //
-            QMessageBox::critical(this,"LEVEL","you must reach level 3 to sell stuff");           //
+            //qmessagebox --> "you must reach level 2 to sell stuff"                              //
+            QMessageBox::critical(this,"LEVEL","you must reach level 2 to sell stuff");           //
         }                                                                                         //
     }                                                                                             //
 

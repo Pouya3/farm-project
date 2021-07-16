@@ -40,23 +40,17 @@ void ChickenMarket::on_pushButton_clicked()
             return;
         }
 
-        if(ui->spinBox->text().toInt() != 0){                                                                //
-            if(user->Get_level() >= 3){                                                                      //
-                if(aviculture->Get_used_storage() < ui->spinBox->text().toInt()){                            //
-                    //qmessagebox --> "not enough chickens to sell"                                          //
-                    QMessageBox::critical(this,"NOT ENOUGH CHICKENS","not enough chickens to sell");         //
-                }                                                                                            //
-                else{                                                                                        //
-                    aviculture->Delete(1, ui->spinBox->text().toInt());                                      //
-                    user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*15);                       // sell
-                    user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*6);          //
-                }                                                                                            //
-            }                                                                                                //
-            else{                                                                                            //
-                //qmessagebox --> "you cannot sell anything until you reach level 3"                         //
-                QMessageBox::critical(this,"LEVEL","you cannot sell anything until you reach level 3");      //
-            }                                                                                                //
-        }                                                                                                    //
+        if(ui->spinBox->text().toInt() != 0){                                                            //                                                         //
+            if(aviculture->Get_used_storage() < ui->spinBox->text().toInt()){                            //
+                //qmessagebox --> "not enough chickens to sell"                                          //
+                QMessageBox::critical(this,"NOT ENOUGH CHICKENS","not enough chickens to sell");         //
+            }                                                                                            //
+            else{                                                                                        // sell
+                aviculture->Delete(1, ui->spinBox->text().toInt());                                      //
+                user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*15);                       //
+                user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*6);          //
+            }                                                                                            //                                                                                           //
+        }                                                                                                //
 
         if(ui->spinBox_2->text().toInt() != 0){                                                                        //
             if(user->Get_coin() < ui->spinBox_2->text().toInt()*20){                                                   //

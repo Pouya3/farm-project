@@ -36,7 +36,7 @@ void Shovel_market::on_pushButton_clicked()// 1 --> sell              2 --> buy
     }
 
     if(ui->spinBox->text().toInt() != 0){                                                         //
-        if(user->Get_level() >= 3){                                                               //
+        if(user->Get_level() >= 2){                                                               //
             if(store->Get_object(1) < ui->spinBox->text().toInt()){                               //
                 //qmessagbox --> "not enough shovels to sell"                                     //
                 QMessageBox::critical(this,"NOT ENOUGH SHOVELS","not enough shovels to sell");    //
@@ -48,8 +48,8 @@ void Shovel_market::on_pushButton_clicked()// 1 --> sell              2 --> buy
             }                                                                                     //
         }                                                                                         //
         else{                                                                                     //
-            //qmessagebox --> "you must reach level 3 to sell stuff"                              //
-            QMessageBox::critical(this,"LEVEL","you must reach level 3 to sell stuff");           //
+            //qmessagebox --> "you must reach level 2 to sell stuff"                              //
+            QMessageBox::critical(this,"LEVEL","you must reach level 2 to sell stuff");           //
         }                                                                                         //
     }                                                                                             //
 
