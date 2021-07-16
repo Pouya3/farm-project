@@ -8,6 +8,11 @@ StorePage::StorePage(Store* _store, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(1200,600);
+    setWindowTitle("Store");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     store = _store;
 
