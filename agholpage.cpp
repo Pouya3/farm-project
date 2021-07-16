@@ -7,6 +7,11 @@ AgholPage::AgholPage( Aghol* _aghol, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(900,600);
+    setWindowTitle("Aghol");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     aghol = _aghol;
 
