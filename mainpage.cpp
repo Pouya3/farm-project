@@ -11,6 +11,7 @@
 #include "menupage.h"
 #include "aviculturepage.h"
 #include "file_functions.h"
+#include <vector>
 
 #include <cmath>
 
@@ -106,6 +107,11 @@ void MainPage:: on_pushButton_mm_2_clicked()
     m->show();
 }
 void MainPage:: Time_function(){
+    vector<pair<int,int>> milk_vect;
+    vector<pair<int, int>>::iterator milk_iter;
+    milk_vect = user->store->Get_milk_info();
+    milk_iter = milk_vect.begin();
+
     user->Set_time(user->Get_time()+1);
     user->Set_experience(user->Get_experience()+1);
     if(user->aghol->Get_feeding_timer()>0){
@@ -180,6 +186,20 @@ void MainPage:: Time_function(){
             user->Set_experience(user->Get_experience()+(user->store->Get_level()*3));
             user->store->Set_level(user->store->Get_level()+1);
             user->store->Set_total_storage(ceil(user->store->Get_total_storage()*1.5));
+        }
+    }
+    while(milk_iter != milk_vect.end()){
+        (milk_iter->second)--;
+        if(milk_iter->second == 0){
+            user->store->Delete(5, milk_iter->first);
+
+            milk_vect.erase(milk_iter);
+            milk_iter = milk_vect.begin();
+        }
+        else {
+            user->store->Set_milk_info(milk_vect);
+
+            milk_iter++;
         }
     }
     if(user->silo->Get_upgrade_timer()>0){

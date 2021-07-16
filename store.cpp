@@ -125,6 +125,7 @@ bool Store::Delete(int object_type, int number){
         }
         else{ // enough milk
             milk-=number;
+            used_storage -= number;
 
             milk_iter=milk_info.begin();
             while(number>0){
@@ -134,11 +135,11 @@ bool Store::Delete(int object_type, int number){
                     milk_iter=milk_info.begin();
                 }
                 else { // enough milk in this vector node
-                    milk_iter->first-=number;
+                    milk_info.erase(milk_iter);
+                    Set_milk_info(milk_info);
                     number=0;
                 }
             }
-            used_storage -= number;
             return true;
         }
     }
