@@ -54,6 +54,16 @@ void CowMarket::on_pushButton_clicked() // buy -> 1             sell -> 2
                 livestock->Delete(1, ui->spinBox_2->text().toInt());                                                //
                 user->Set_coin(user->Get_coin() + ui->spinBox_2->text().toInt()*50);                                //
                 user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*6);                       //
+                                                                                                                    //
+                if(ui->spinBox_2->text().toInt() == 1){//                                                           //
+                    //qmessagebox --> "cow is sold successfully"                                                    //
+                    QMessageBox::information(this,"SUCCESSFUL TRADE", "1 cow is sold");                             //
+                }                                                                                                   //
+                else{                                                                                               //
+                    //qmessagebox --> "cow is sold successfully"                                                    //
+                    QMessageBox::information(this,"SUCCESSFUL TRADE",                                               //
+                    QString::number(ui->spinBox_2->text().toInt()) + " cows are sold");                             //
+                }                                                                                                   //
             }                                                                                                       //
         }
 
@@ -71,6 +81,16 @@ void CowMarket::on_pushButton_clicked() // buy -> 1             sell -> 2
                     livestock->Add(1, ui->spinBox->text().toInt());                                                 //
                     user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*70);                              //
                     user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);                   //
+                                                                                                                    //
+                    if(ui->spinBox->text().toInt() == 1){//                                                         //
+                        //qmessagebox --> "cow is bought successfully"                                              //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE", "1 cow is bought");                       //
+                    }                                                                                               //
+                    else{                                                                                           //
+                        //qmessagebox --> "cow is bought successfully"                                              //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE",                                           //
+                        QString::number(ui->spinBox_2->text().toInt()) + " cows are bought");                       //
+                    }                                                                                               //
                 }                                                                                                   //
             }                                                                                                       //
         }                                                                                                           //

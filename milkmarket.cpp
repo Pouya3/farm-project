@@ -46,6 +46,16 @@ void MilkMarket::on_pushButton_clicked()
                 store->Delete(5, ui->spinBox->text().toInt());
                 user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*12);
                 user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*6);
+
+                if(ui->spinBox->text().toInt() == 1){//
+                    //qmessagebox --> "milk is sold successfully"
+                    QMessageBox::information(this,"SUCCESSFUL TRADE", "1 milk is sold");
+                }
+                else{
+                    //qmessagebox --> "milk is sold successfully"
+                    QMessageBox::information(this,"SUCCESSFUL TRADE",
+                    QString::number(ui->spinBox->text().toInt()) + " milks are sold");
+                }
             }
         }
     }

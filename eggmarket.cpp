@@ -41,6 +41,16 @@ void eggMarket::on_pushButton_clicked()
             store->Delete(4, ui->spinBox->text().toInt());
             user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*8);
             user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*6);
+
+            if(ui->spinBox->text().toInt() == 1){//
+                //qmessagebox --> "egg is sold successfully"
+                QMessageBox::information(this,"SUCCESSFUL TRADE", "1 egg is sold");
+            }
+            else{
+                //qmessagebox --> "egg is sold successfully"
+                QMessageBox::information(this,"SUCCESSFUL TRADE",
+                QString::number(ui->spinBox->text().toInt()) + " eggs are sold");
+            }
         }
     }
 }
