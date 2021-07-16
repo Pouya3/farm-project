@@ -11,7 +11,6 @@ private:
     // 1 == locked but not built
     // 2 == built
 
-    int plowed_area;
     int building_status;
     int building_timer;
     int plowing_timer;
@@ -26,8 +25,6 @@ public:
     int Plow();
     int Build();
 
-    void Set_plowed_area(int);
-    int Get_plowed_area();
     void Set_building_status(int);
     int Get_building_status();
     void Set_building_timer(int);

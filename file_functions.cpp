@@ -50,7 +50,6 @@ bool Create_new_user_files(QString username, QString name, QString password, QSt
         alfalfa_land_obj["cultivation_status"] = 0;
         alfalfa_land_obj["ripening_timer"] = 0;
         alfalfa_land_obj["upgrade_timer"] = 0;
-        alfalfa_land_obj["plowed_area"] = 0;
         alfalfa_land_obj["building_status"] = 0;
         alfalfa_land_obj["building_timer"] = 0;
         alfalfa_land_obj["plowing_timer"] = 0;
@@ -284,7 +283,6 @@ int Login_user(QString username, QString password, User* user){
             user->alfalfa_land->Set_cultivation_status(alfalfa_land_obj.value("cultivation_status").toInt());
             user->alfalfa_land->Set_ripening_timer(alfalfa_land_obj.value("ripening_timer").toInt());
             user->alfalfa_land->Set_upgrade_timer(alfalfa_land_obj.value("upgrade_timer").toInt());
-            user->alfalfa_land->Set_plowed_area(alfalfa_land_obj.value("plowed_area").toInt());
             user->alfalfa_land->Set_building_status(alfalfa_land_obj.value("building_status").toInt());
             user->alfalfa_land->Set_building_timer(alfalfa_land_obj.value("building_timer").toInt());
             user->alfalfa_land->Set_plowing_timer(alfalfa_land_obj.value("plowing_timer").toInt());
@@ -417,8 +415,7 @@ void Save_user(User* user){
     alfalfa_land_obj["cultivated_area"] = user->alfalfa_land->Get_cultivated_area();
     alfalfa_land_obj["cultivation_status"] = user->alfalfa_land->Get_cultivation_status();
     alfalfa_land_obj["ripening_timer"] = user->alfalfa_land->Get_ripening_timer();
-    alfalfa_land_obj["plowed_area"] = user->alfalfa_land->Get_plowed_area();
-    alfalfa_land_obj["building_status"] = user->alfalfa_land->Get_building_status();
+    alfalfa_land_obj["upgrade_timer"] = user->alfalfa_land->Get_upgrade_timer();    alfalfa_land_obj["building_status"] = user->alfalfa_land->Get_building_status();
     alfalfa_land_obj["building_timer"] = user->alfalfa_land->Get_building_timer();
     alfalfa_land_obj["plowing_timer"] = user->alfalfa_land->Get_plowing_timer();
 

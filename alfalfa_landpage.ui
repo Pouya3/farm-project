@@ -165,9 +165,9 @@ background-color:red;
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>520</x>
+      <x>500</x>
       <y>440</y>
-      <width>151</width>
+      <width>171</width>
       <height>51</height>
      </rect>
     </property>

@@ -33,7 +33,7 @@ void Alfalfa_landPage::on_pushButton_clicked()
     switch(alfalfa_land->Build()){
     case 1:
         //qmessagebox --> "alflfa land is already built"
-        QMessageBox::critical(this,"BUILT","you cannot build alfalfa land until you reach level 3");
+        QMessageBox::critical(this,"BUILT","alfalfa land is already built");
         break;
     case 2:
         //qmessagebox --> "you cannot build alfalfa land until you reach level 3"
@@ -145,7 +145,7 @@ void Alfalfa_landPage::on_pushButton_4_clicked()
         //qmessagebox --> "alfalfa land is already cultivated"
         QMessageBox::critical(this,"CULTIVATED","alfalfa land is already cultivated");
     }
-    else if(alfalfa_land->Get_cultivation_status() == 1){
+    else if(/*(alfalfa_land->Get_cultivation_status() == 1)||(*/alfalfa_land->Get_cultivation_status() == 0){
         //qmessagbox --> "alfalfa land is not plowed"
         QMessageBox::critical(this,"NOT PLOWED","alfalfa land is not plowed");
     }
@@ -214,7 +214,7 @@ void Alfalfa_landPage::Set_values(){
         ui->label_3->setText("Upgrading..." + QString::number(alfalfa_land->Get_upgrade_timer()));
     }
     else if((alfalfa_land->Get_cultivation_status() == 0) && (alfalfa_land->Get_plowing_timer() == 0)){
-        ui->label_3->setText("Ready ro plow");
+        ui->label_3->setText("Ready to plow");
     }
     else if((alfalfa_land->Get_cultivation_status() == 0)&&(alfalfa_land->Get_plowing_timer() > 0)){
         ui->label_3->setText("Plowing..." + QString::number(alfalfa_land->Get_plowing_timer()));

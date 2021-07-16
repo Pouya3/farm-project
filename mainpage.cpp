@@ -225,7 +225,6 @@ void MainPage:: Time_function(){
         user->alfalfa_land->Set_ripening_timer(user->alfalfa_land->Get_ripening_timer()-1);
         if(user->alfalfa_land->Get_ripening_timer()==0){
             user->alfalfa_land->Set_cultivation_status(3);
-            user->alfalfa_land->Set_total_area(user->alfalfa_land->Get_total_area()*2);
           }
     }
     if(user->alfalfa_land->Get_upgrade_timer()>0){
@@ -257,7 +256,7 @@ void MainPage:: Time_function(){
         user->alfalfa_land->Set_plowing_timer(user->alfalfa_land->Get_plowing_timer()-1);
         if(user->alfalfa_land->Get_plowing_timer()==0){
             user->alfalfa_land->Set_cultivation_status(1);
-            user->Set_experience(user->Get_experience()+user->alfalfa_land->Get_plowed_area());
+            user->Set_experience(user->Get_experience()+user->alfalfa_land->Get_cultivated_area());
         }
     }
 
