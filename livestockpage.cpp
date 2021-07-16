@@ -38,15 +38,15 @@ void LivestockPage::on_pushButton_clicked()
         break;
     case 3:
         //qmessagebox --> "not enough coins for building livestock"
-        QMessageBox::critical(this,"COINS","not enough coins for building livestock");
+        QMessageBox::critical(this,"COINS","not enough coins for building livestock \n20 coins are needed");
         break;
     case 4:
         //qmessagebox --> "not enough nails for building livestock"
-        QMessageBox::critical(this,"NAILS","not enough nails for building livestock");
+        QMessageBox::critical(this,"NAILS","not enough nails for building livestock \n3 nails are needed");
         break;
     case 5:
         //qmessagebox --> "not enough shovels for building livestock"
-        QMessageBox::critical(this,"SHOVELS","not enough shovels for building livestock");
+        QMessageBox::critical(this,"SHOVELS","not enough shovels for building livestock \n1 shovel is needed");
         break;
     case 6:
         //qmessagebox --> "timer set for building"
@@ -74,11 +74,11 @@ void LivestockPage::on_pushButton_2_clicked()
         break;
     case 4:
         //qmessagebox --> "not enough coins for upgrading"
-        QMessageBox::critical(this,"COINS","not enough coins for upgrading");
+        QMessageBox::critical(this,"COINS","not enough coins for upgrading \n15 coins are needed");
         break;
     case 5:
         //qmessagebox --> "not enough nails for upgrading"
-        QMessageBox::critical(this,"NAILS","not enough nails for upgrading");
+        QMessageBox::critical(this,"NAILS","not enough nails for upgrading \n2 nails are needed");
         break;
     case 6:
         QMessageBox::critical(this,"UPGEADING","livestock is already in upgrading situation");
@@ -108,7 +108,7 @@ void LivestockPage::on_pushButton_3_clicked()
         break;
     case 4:
         //qmessagebox --> "not enough alfalfa for feeding cows"
-        QMessageBox::critical(this,"NOT ENOUGH ALFALFA","not enough alfalfa for feeding cows");
+        QMessageBox::critical(this,"NOT ENOUGH ALFALFA","not enough alfalfa for feeding cows \n2 alfalfas are needed for each cow");
         break;
     case 5:
         //qmessagbox --> "timer set for milk"

@@ -407,11 +407,10 @@ void Save_user(User* user){
     aghol_obj["total_storage"] = user->aghol->Get_total_storage();
     aghol_obj["used_storage"] = user->aghol->Get_used_storage();
     aghol_obj["upgrade_timer"] = user->aghol->Get_upgrade_timer();
-    aghol_obj["building_status"] = user->aghol->Get_feeding_status();
+    aghol_obj["building_status"] = user->aghol->Get_building_status();
     aghol_obj["feeding_status"] = user->aghol->Get_feeding_status();
     aghol_obj["feeding_timer"] = user->aghol->Get_feeding_timer();
     aghol_obj["building_timer"] = user->aghol->Get_building_timer();
-    aghol_obj["upgrade_timer"] = user->aghol->Get_upgrade_timer();
 
     alfalfa_land_obj["level"] = user->alfalfa_land->Get_level();
     alfalfa_land_obj["total_area"] = user->alfalfa_land->Get_total_area();
@@ -431,7 +430,6 @@ void Save_user(User* user){
     aviculture_obj["feeding_status"] = user->aviculture->Get_feeding_status();
     aviculture_obj["feeding_timer"] = user->aviculture->Get_feeding_timer();
     aviculture_obj["building_timer"] = user->aviculture->Get_building_timer();
-    aviculture_obj["upgrade_timer"] = user->aviculture->Get_upgrade_timer();
 
     livestock_obj["level"] = user->livestock->Get_level();
     livestock_obj["total_storage"] = user->livestock->Get_total_storage();
@@ -441,7 +439,6 @@ void Save_user(User* user){
     livestock_obj["feeding_status"] = user->livestock->Get_feeding_status();
     livestock_obj["feeding_timer"] = user->livestock->Get_feeding_timer();
     livestock_obj["building_timer"] = user->livestock->Get_building_timer();
-    livestock_obj["upgrade_timer"] = user->livestock->Get_upgrade_timer();
 
     silo_obj["level"] = user->silo->Get_level();
     silo_obj["total_storage"] = user->silo->Get_total_storage();
