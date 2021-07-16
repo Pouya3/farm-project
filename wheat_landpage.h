@@ -31,6 +31,8 @@ private:
     Wheat_land* wheat_land;
 
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // WHEAT_LANDPAGE_H
