@@ -11,7 +11,7 @@ int Aghol::Build(){
     // 5 == not enough shovels
     // 6 == timer set for building
     if(building_status != 2){ // not built
-        if(building_status == 1){ // unlocked
+        if(user->Get_level()>=6){ // unlocked
             if(user->Get_coin()>=50){ // enough coins
                 if(store->Get_object(2)>=4){ // enough nails
                     if(store->Get_object(1)>=2){ // enough shovels
