@@ -22,6 +22,8 @@ private slots:
 private:
     Ui::SpacePage *ui;
     Alfalfa_land* alfalfa_land;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // SPACEPAGE_H
