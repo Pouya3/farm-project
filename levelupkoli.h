@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::LevelUpKoli *ui;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // LEVELUPKOLI_H
