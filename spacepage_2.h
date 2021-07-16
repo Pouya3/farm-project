@@ -22,6 +22,8 @@ private slots:
 private:
     Ui::SpacePage_2 *ui;
     Wheat_land* wheat_land;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // SPACEPAGE_2_H
