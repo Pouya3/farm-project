@@ -153,7 +153,7 @@ void AviculturePage::Set_values(){
         ui->label_3->setText("Ready to feed");
     }
     else if((aviculture->Get_feeding_status() == 0)){
-        ui->label_3->setText("Empty building");
+        ui->label_3->setText("Empty");
     }
     else if(aviculture->Get_feeding_status() == 1){
         ui->label_3->setText("Eggs ready in " + QString::number(aviculture->Get_feeding_timer()));
