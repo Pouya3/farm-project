@@ -50,7 +50,7 @@ int Wheat_land::Cultivate(int area_to_cultivate) {
                     cultivation_status = 1;
                     user->Set_experience(user->Get_experience()+area_to_cultivate);
                     silo->Delete(1,area_to_cultivate);
-
+                    cultivated_area=area_to_cultivate;
                     cultivation_status = 1;
                     ripening_timer = 2;
                     return 5;
