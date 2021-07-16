@@ -17,6 +17,11 @@ MarketPage::MarketPage(User* _user, Store* _store, Aghol* _aghol, Livestock* _li
 {
     ui->setupUi(this);
     this->setFixedSize(970,685);
+    setWindowTitle("Market");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     user = _user;
     store = _store;
