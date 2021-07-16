@@ -176,6 +176,9 @@ void AgholPage::Set_values(){
     else if((aghol->Get_feeding_status() == 0)&&(aghol->Get_upgrade_timer() == 0)&&(aghol->Get_used_storage() > 0)){
         ui->label_3->setText("Ready to feed");
     }
+    else if((aghol->Get_feeding_status() == 0)){
+        ui->label_3->setText("Empty");
+    }
     else if((aghol->Get_feeding_status() == 1)&&(aghol->Get_upgrade_timer() == 0)){
         ui->label_3->setText("Wool ready in " + QString::number(aghol->Get_feeding_timer()));
     }
