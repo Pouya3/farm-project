@@ -35,6 +35,26 @@ QLabel{
 	
 	color:#f0c07d;
 
+}
+QMessageBox QPushButton{
+	padding:10px;
+	padding-left:40px;
+	padding-right:40px;
+
+}
+QMessageBox{
+	border-radius:12px;
+	background-color:#0b9e7c;
+	font-size:17px;
+	font-weight: bold;
+}
+QMessageBox QLabel{
+color:#d1a732;
+
+}
+QMenubar::item{
+background-color:red;
+
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">

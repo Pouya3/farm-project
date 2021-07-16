@@ -8,6 +8,7 @@ signupPage::signupPage(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(880,600);
+
 }
 
 signupPage::~signupPage()
@@ -33,7 +34,7 @@ void signupPage::on_pushButton_s_clicked()
                             }
                             else{
                                 ui->lineEdit_s_2->clear();
-                                ui->lineEdit_s_2->setPlaceholderText("username exists");
+                                ui->lineEdit_s_2->setPlaceholderText("*username exists*");
                             }
                         }
                         else{
