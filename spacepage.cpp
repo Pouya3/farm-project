@@ -8,6 +8,11 @@ SpacePage::SpacePage(Alfalfa_land* _alfalfa_land, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(900,600);
+    setWindowTitle("Space");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     alfalfa_land = _alfalfa_land;
 }
