@@ -153,9 +153,9 @@ background-color:red;
     <property name="geometry">
      <rect>
       <x>30</x>
-      <y>430</y>
+      <y>420</y>
       <width>141</width>
-      <height>41</height>
+      <height>61</height>
      </rect>
     </property>
     <property name="font">

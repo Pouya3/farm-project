@@ -180,7 +180,7 @@ void AgholPage::Set_values(){
         ui->label_3->setText("Empty");
     }
     else if((aghol->Get_feeding_status() == 1)&&(aghol->Get_upgrade_timer() == 0)){
-        ui->label_3->setText("Wool ready in " + QString::number(aghol->Get_feeding_timer()));
+        ui->label_3->setText("Wool ready\n in " + QString::number(aghol->Get_feeding_timer()));
     }
     else if((aghol->Get_feeding_status() == 2)&&(aghol->Get_upgrade_timer() == 0)){
         ui->label_3->setText("Wool is ready");
