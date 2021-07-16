@@ -10,6 +10,11 @@ MenuPage::MenuPage(User* _user, MainPage* _mainpage, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(830,550);
+    setWindowTitle("Option");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     user = _user;
     mainpage = _mainpage;
