@@ -7,6 +7,11 @@ WheatMarket::WheatMarket(User* _user, Silo* _silo, QWidget *parent) :
 {
     ui->setupUi(this);
     setFixedSize(1000,570);
+    setWindowTitle("Wheat market");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     user = _user;
     silo = _silo;
