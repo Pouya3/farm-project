@@ -54,6 +54,16 @@ void ChickenMarket::on_pushButton_clicked()
                 aviculture->Delete(1, ui->spinBox->text().toInt());                                      //
                 user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*15);                       //
                 user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*6);          //
+                                                                                                         //
+                if(ui->spinBox->text().toInt() == 1){//                                                  //
+                    //qmessagebox --> "chicken is sold successfully"                                     //
+                    QMessageBox::information(this,"SUCCESSFUL TRADE", "1 chicken is sold");              //
+                }                                                                                        //
+                else{                                                                                    //
+                    //qmessagebox --> "chicken is sold successfully"                                     //
+                    QMessageBox::information(this,"SUCCESSFUL TRADE",                                    //
+                    QString::number(ui->spinBox->text().toInt()) + " chickens are sold");                //
+                }                                                                                        //
             }                                                                                            //                                                                                           //
         }                                                                                                //
 
@@ -71,6 +81,16 @@ void ChickenMarket::on_pushButton_clicked()
                     aviculture->Add(1, ui->spinBox_2->text().toInt());                                                 //
                     user->Set_coin(user->Get_coin() - ui->spinBox_2->text().toInt()*20);                               //
                     user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*2);                    //
+                                                                                                                       //
+                    if(ui->spinBox_2->text().toInt() == 1){//                                                          //
+                        //qmessagebox --> "chicken is bought successfully"                                             //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE", "1 chicken is bought");                      //
+                    }                                                                                                  //
+                    else{                                                                                              //
+                        //qmessagebox --> "chicken is bought successfully"                                             //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE",                                              //
+                        QString::number(ui->spinBox_2->text().toInt()) + " chickens are bought");                      //
+                    }                                                                                                  //
                 }                                                                                                      //
             }                                                                                                          //
         }                                                                                                              //

@@ -46,6 +46,16 @@ void NailMarket::on_pushButton_clicked()
                 store->Delete(2, ui->spinBox_2->text().toInt());                                //
                 user->Set_coin(user->Get_coin() + ui->spinBox_2->text().toInt()*20);            // sell
                 user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*6); //
+                                                                                                //
+                if(ui->spinBox_2->text().toInt() == 1){//                                       //
+                    //qmessagebox --> "nail is sold successfully"                               //
+                    QMessageBox::information(this,"SUCCESSFUL TRADE", "1 nail is sold");        //
+                }                                                                               //
+                else{                                                                           //
+                    //qmessagebox --> "nail is sold successfully"                               //
+                    QMessageBox::information(this,"SUCCESSFUL TRADE",                           //
+                    QString::number(ui->spinBox_2->text().toInt()) + " nails are sold");        //
+                }                                                                               //
             }                                                                                   //
         }                                                                                       //
         else{                                                                                   //
@@ -69,6 +79,16 @@ void NailMarket::on_pushButton_clicked()
                     store->Add(2, ui->spinBox->text().toInt());                                                     //
                     user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*30);                              //
                     user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);                   //
+                                                                                                                    //
+                    if(ui->spinBox->text().toInt() == 1){//                                                         //
+                        //qmessagebox --> "nail is bought successfully"                                             //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE", "1 nail is bought");                      //
+                    }                                                                                               //
+                    else{                                                                                           //
+                        //qmessagebox --> "nail is bought successfully"                                             //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE",                                           //
+                        QString::number(ui->spinBox->text().toInt()) + " nails are bought");                        //
+                    }                                                                                               //
                 }                                                                                                   //
             }                                                                                                       //
         }                                                                                                           //
