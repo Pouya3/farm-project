@@ -293,6 +293,7 @@ void MainPage::closeEvent(QCloseEvent *event)  // show prompt when user wants to
         av->close();
         ag->close();
         ma->close();
+        exit(0);
         event->accept();
     }
 
