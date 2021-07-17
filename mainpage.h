@@ -7,6 +7,14 @@
 #include <QMessageBox>
 #include <QCloseEvent>
 #include <QMessageBox>
+#include "storepage.h"
+#include "livestockpage.h"
+#include "alfalfa_landpage.h"
+#include "wheat_landpage.h"
+#include "agholpage.h"
+#include "marketpage.h"
+#include "silopage.h"
+#include "aviculturepage.h"
 
 namespace Ui {
 class MainPage;
@@ -50,6 +58,15 @@ private:
     User * user;
     QIcon* icon;
     QPixmap* pix;
+    StorePage* st;
+    LivestockPage* li;
+    Alfalfa_landPage* al;
+    Wheat_landPage* wh;
+    SiloPage* si;
+    AviculturePage* av;
+    AgholPage* ag;
+    MarketPage* ma;
+
 
 };
 

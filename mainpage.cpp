@@ -39,8 +39,16 @@ MainPage::MainPage(User* _user, QWidget *parent) :
     movie3->start();
     movie4->start();
     user = _user;
+    st=new StorePage(user->store);
+    li=new LivestockPage(user->livestock);
+    al=new Alfalfa_landPage(user->alfalfa_land);
+    wh=new Wheat_landPage(user->wheat_land);
+    si=new SiloPage(user->silo);
+    av=new AviculturePage(user->aviculture);
+    ag=new AgholPage(user->aghol);
+    ma=new MarketPage(user, user->store, user->aghol, user->livestock, user->aviculture, user->silo);
 
-    user->Set_coin(50000);
+    //user->Set_coin(50000);
 
     timer=new QTimer (this);
     connect(timer,SIGNAL(timeout()),this,SLOT(Time_function()));
@@ -59,50 +67,50 @@ MainPage:: ~MainPage()
 
 void MainPage:: on_pushButton_a_clicked()
 {
-    StorePage* s=new StorePage(user->store);
-    s->show();
+   // StorePage* s=new StorePage(user->store);
+    st->show();
 }
 
 
 void MainPage:: on_pushButton_a_8_clicked()
 {
-    LivestockPage* l=new LivestockPage(user->livestock);
-    l->show();
+    //LivestockPage* li=new LivestockPage(user->livestock);
+    li->show();
 }
 
 
 void MainPage:: on_pushButton_a_5_clicked()
 {
-    Alfalfa_landPage* a=new Alfalfa_landPage(user->alfalfa_land);
-    a->show();
+    //Alfalfa_landPage* al=new Alfalfa_landPage(user->alfalfa_land);
+    al->show();
 }
 
 
 void MainPage:: on_pushButton_a_6_clicked()
 {
-    Wheat_landPage* w=new Wheat_landPage(user->wheat_land);
-    w->show();
+    //Wheat_landPage* wh=new Wheat_landPage(user->wheat_land);
+    wh->show();
 }
 
 
 void MainPage:: on_pushButton_a_7_clicked()
 {
-    SiloPage* s=new SiloPage(user->silo);
-    s->show();
+    //SiloPage* si=new SiloPage(user->silo);
+    si->show();
 }
 
 
 void MainPage::on_pushButton_a_4_clicked()
 {
-    AviculturePage* a=new AviculturePage(user->aviculture);
-    a->show();
+    //AviculturePage* av=new AviculturePage(user->aviculture);
+    av->show();
 }
 
 
 void MainPage:: on_pushButton_a_3_clicked()
 {
-    AgholPage* a=new AgholPage(user->aghol);
-    a->show();
+    //AgholPage* ag=new AgholPage(user->aghol);
+    ag->show();
 }
 
 
@@ -264,8 +272,8 @@ void MainPage:: Time_function(){
 
 void MainPage::on_pushButton_a_2_clicked()
 {
-    MarketPage* m=new MarketPage(user, user->store, user->aghol, user->livestock, user->aviculture, user->silo);
-    m->show();
+    //MarketPage* ma=new MarketPage(user, user->store, user->aghol, user->livestock, user->aviculture, user->silo);
+    ma->show();
 }
 
 void MainPage::Save_this_user(){
@@ -277,6 +285,14 @@ void MainPage::closeEvent(QCloseEvent *event)  // show prompt when user wants to
     event->ignore();
     if (QMessageBox::Yes == QMessageBox::question(this, "Close Confirmation", "Exit?", QMessageBox::Yes | QMessageBox::No))
     {
+        st->close();
+        li->close();
+        al->close();
+        wh->close();
+        si->close();
+        av->close();
+        ag->close();
+        ma->close();
         event->accept();
     }
 
