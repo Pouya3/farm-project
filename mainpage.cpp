@@ -5,6 +5,7 @@
 #include "alfalfa_landpage.h"
 #include "wheat_landpage.h"
 #include "agholpage.h"
+#include <QMovie>
 #include "marketpage.h"
 #include "silopage.h"
 #include "menupage.h"
@@ -19,7 +20,18 @@ MainPage::MainPage(User* _user, QWidget *parent) :
 {
     ui->setupUi(this);
     this->setFixedSize(1265,540);
-
+    QMovie* movie=new QMovie("../farm-project/windmill.gif");
+    QMovie* movie2=new QMovie("../farm-project/ch-3.gif");
+    QMovie* movie3=new QMovie("../farm-project/dog1.gif");
+    QMovie* movie4=new QMovie("../farm-project/hen.gif");
+    ui->label_3->setMovie(movie3);
+    ui->label->setMovie(movie);
+    ui->label_2->setMovie(movie2);
+    ui->label_4->setMovie(movie4);
+    movie->start();
+    movie2->start();
+    movie3->start();
+    movie4->start();
     user = _user;
 
     timer=new QTimer (this);
