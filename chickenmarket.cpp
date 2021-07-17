@@ -28,7 +28,7 @@ void ChickenMarket::on_pushButton_clicked()
         QMessageBox::critical(this,"AVICULTURE NOT BUILT","to buy or sell chickens you must build aviculture first");
     }
     else{
-        if((ui->spinBox->text().toInt() == 0)&&(ui->spinBox_2->text().toInt() != 0)){
+        if((ui->spinBox->text().toInt() == 0)&&(ui->spinBox_2->text().toInt() == 0)){
            //qmessagebox --> "number of buying and selling items is 0"
             QMessageBox::critical(this,"0 VALUE","number of buying and selling items is 0");
             return;

@@ -42,60 +42,71 @@ int Alfalfa_land::Upgrade()
 int Alfalfa_land::Plow()
 {
     // return values :
-    // 1 == you have to wait until alfalfa ripens and gets collected
-    // 2 == field is cultivated. you cannot plow
-    // 3 == not enough coins
-    // 4 == timer set for plowing
-    // 5 == alfalfa land is not built yet
-    if(upgrade_timer==0){
-        if(cultivation_status == 0) { // ready to plow
-            if(user->Get_coin()>=5*total_area){ // enough coins
-                  user->Set_coin(user->Get_coin()-(5*total_area));
+    // 1 == not built
+    // 2 == is upgrading
+    // 3 == is getting plowed
+    // 4 == is already plowed
+    // 5 == is cultivated
+    // 6 == is ripe (first harves)
+    // 7 == not enough coins
+    // 8 == timer set for plowing
 
-                  plowing_timer = 1;
+    if(building_status == 2){ // built
+        if(upgrade_timer == 0){
+            if(plowing_timer != 0){ // not getting plowed
+                if(cultivation_status != 1){ // not plowed
+                    if(cultivation_status != 2){ // not cultivated
+                        if(cultivation_status != 3){ // not ripe
+                            if(user->Get_coin() >= total_area*5){ // enough coins
+                                user->Set_coin(user->Get_coin()-(5*total_area));
+                                plowing_timer = 1;
 
-                  return 4;
+                                return 8;
+                            }
+                            return 7;
+                        }
+                        return 6;
+                    }
+                    return 5;
+                }
+                return 4;
             }
             return 3;
         }
-        else { // not ready to plow
-            if(building_status != 2){
-                return 5;
-            }
-            else{
-                if(cultivation_status == 1){ // already plowed
-                    return 1;
-                }
-                else { // field is cultivated. you cannot plow
-                    return 2;
-                }
-            }
-        }
+        return 2;
     }
-    return 6;
+    return 1;
 }
 
 int Alfalfa_land::Cultivate(int area_to_cultivate) {
     // return values :
     // 1 == alfalfland is not built yet
-    // 2 == not plowed
-    // 3 == not enough alfalfa
-    // 4 == timer set for ripening
+    // 2 == is upgrading
+    // 3 == is cultivated
+    // 4 == not plowed
+    // 5 == area selected is more than total area
+    // 6 == not enough alfalfa
+    // 7 == timer set for ripening
 
     if(building_status == 2){ // already built
-        if(cultivation_status == 1) { // plowed but not cultivated
-            if(store->Get_object(3) >= area_to_cultivate){ // enough alfalfa
-                if(upgrade_timer==0){
-                     cultivation_status = 2;
-                     plowed_area = 0;
-                     user->Set_experience(user->Get_experience()+area_to_cultivate*2);
-                     store->Delete(3,area_to_cultivate);
+        if(upgrade_timer == 0){ // not upgrading
+            if((cultivation_status != 2)&&(cultivation_status != 3)){ // not cultivated
+                if(cultivation_status == 1) { // plowed but not cultivated
+                    if(area_to_cultivate <= total_area){ // area selected to cultivate is smaller than total area
+                        if(store->Get_object(3) >= area_to_cultivate){ // enough alfalfa
+                            cultivation_status = 2;
+                            plowed_area = 0;
+                            user->Set_experience(user->Get_experience()+area_to_cultivate*2);
+                            store->Delete(3,area_to_cultivate);
 
-                     ripening_timer = 4;
-                     return 5;
+                            ripening_timer = 4;
+                            return 7;
+                        }
+                        return 6;
+                    }
+                    return 5;
                 }
-
-                 return 4;
+                return 4;
             }
             return 3;
         }
@@ -106,16 +117,20 @@ int Alfalfa_land::Cultivate(int area_to_cultivate) {
 
 int Alfalfa_land::Harvest(){
     // return values :
-    // 1 == nothing to harvest
-    // 2 == not enough space in store
-    // 3 == harvested successfully
-    if(cultivation_status == 3){ // ready to harvest
-        if(store->Get_total_storage() - store->Get_used_storage() >= cultivated_area*2){ // enough space in store
-            user->Set_experience(user->Get_experience()+cultivated_area*2);
-            store->Add(3, cultivated_area*2);
-            cultivated_area = 0;
-            cultivation_status = 0;
+    // 1 == is not built
+    // 2 == nothing to harvest
+    // 3 == not enough space in store
+    // 4 == harvested successfully
+    if (building_status == 2){ // is built
+        if(cultivation_status == 3){ // ready to harvest
+            if(store->Get_total_storage() - store->Get_used_storage() >= cultivated_area*2){ // enough space in store
+                user->Set_experience(user->Get_experience()+cultivated_area*2);
+                store->Add(3, cultivated_area*2);
+                cultivated_area = 0;
+                cultivation_status = 0;
 
+                return 4;
+            }
             return 3;
         }
         return 2;

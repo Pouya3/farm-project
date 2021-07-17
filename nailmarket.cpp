@@ -11,8 +11,9 @@ NailMarket::NailMarket(User* _user, Store* _store, QWidget *parent) :
     user = _user;
     store = _store;
 
-    ui->label_2->setText(QString::number(store->Get_object(2)));
-    ui->label->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));
+    refresh_timer = new QTimer(this);
+    refresh_timer->start(50);
+    connect(refresh_timer, SIGNAL(timeout()), this, SLOT(Set_values()));
 }
 
 NailMarket::~NailMarket()
@@ -78,3 +79,7 @@ void NailMarket::on_pushButton_clicked()
     }                                                                                                               //
 }
 
+void NailMarket::Set_values(){
+    ui->label_2->setText(QString::number(store->Get_object(2)));
+    ui->label->setText(QString::number(store->Get_total_storage() - store->Get_used_storage()));
+}
