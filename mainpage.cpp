@@ -40,7 +40,7 @@ MainPage::MainPage(User* _user, QWidget *parent) :
     movie4->start();
     user = _user;
 
-    //user->Set_coin(50000);
+    user->Set_coin(50000);
 
     timer=new QTimer (this);
     connect(timer,SIGNAL(timeout()),this,SLOT(Time_function()));
@@ -270,4 +270,14 @@ void MainPage::on_pushButton_a_2_clicked()
 
 void MainPage::Save_this_user(){
     Save_user(user);
+}
+
+void MainPage::closeEvent(QCloseEvent *event)  // show prompt when user wants to close app
+{
+    event->ignore();
+    if (QMessageBox::Yes == QMessageBox::question(this, "Close Confirmation", "Exit?", QMessageBox::Yes | QMessageBox::No))
+    {
+        event->accept();
+    }
+
 }

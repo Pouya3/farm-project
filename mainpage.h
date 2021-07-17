@@ -5,6 +5,8 @@
 #include <QTimer>
 #include "user.h"
 #include <QMessageBox>
+#include <QCloseEvent>
+#include <QMessageBox>
 
 namespace Ui {
 class MainPage;
@@ -39,6 +41,7 @@ private slots:
     void on_pushButton_a_2_clicked();
 
     void Save_this_user();
+    void closeEvent(QCloseEvent *event);
 
 private:
     Ui::MainPage *ui;
