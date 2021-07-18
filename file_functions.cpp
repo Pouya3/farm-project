@@ -330,9 +330,9 @@ int Login_user(QString username, QString password, User* user){
             user->store->Set_object(4, store_obj.value("egg").toInt());
             user->store->Set_object(5, store_obj.value("milk").toInt());
             user->store->Set_object(6, store_obj.value("wool").toInt());
-            vector<pair<int, int>> milk_info_vector;
+            std::vector<std::pair<int, int>> milk_info_vector;
             for(int i = 0; i < store_obj.value("milk_info_number_array").toArray().size(); i++){
-                milk_info_vector.push_back(pair<int, int>(store_obj.value("milk_info_number_array")[i].toInt(),store_obj.value("milk_info_timer_array")[i].toInt()));
+                milk_info_vector.push_back(std::pair<int, int>(store_obj.value("milk_info_number_array")[i].toInt(),store_obj.value("milk_info_timer_array")[i].toInt()));
             }
             user->store->Set_milk_info(milk_info_vector);
             store_file.close();
@@ -350,7 +350,7 @@ int Login_user(QString username, QString password, User* user){
     }
 }
 
-vector<pair<int, QString>> Get_users_for_ranking(){
+std::vector<std::pair<int, QString>> Get_users_for_ranking(){
     QFile all_users_file("all users.json");                                       //
     all_users_file.open(QIODevice::ReadOnly);                                     //
                                                                                   //
@@ -366,7 +366,7 @@ vector<pair<int, QString>> Get_users_for_ranking(){
 
 /////////////////////////////////////////////////////////
 
-    vector<pair<int, QString>> users_vector;
+    std::vector<std::pair<int, QString>> users_vector;
     int i;
     for(i=0; i<users_array.size(); i++){
         QFile user_file(users_array[i].toString() + "//user.json");
@@ -378,7 +378,7 @@ vector<pair<int, QString>> Get_users_for_ranking(){
 
         QJsonObject user_obj = user_doc.object();
 
-        users_vector.push_back(pair<int, QString>(user_obj["experience"].toInt(), user_obj["username"].toString()));
+        users_vector.push_back(std::pair<int, QString>(user_obj["experience"].toInt(), user_obj["username"].toString()));
 
         user_file.close();
     }
@@ -459,8 +459,8 @@ void Save_user(User* user){
     store_obj["milk"] = user->store->Get_object(5);
     store_obj["wool"] = user->store->Get_object(6);
     if(user->store->Get_milk_info().size() != 0){
-        vector<pair<int, int>>::iterator vector_iter;
-        vector<pair<int, int>> milk_vect;
+        std::vector<std::pair<int, int>>::iterator vector_iter;
+        std::vector<std::pair<int, int>> milk_vect;
         milk_vect = user->store->Get_milk_info();
         vector_iter = milk_vect.begin();
         do{

@@ -1,6 +1,7 @@
 #include "livestockpage.h"
 #include "ui_livestockpage.h"
 
+
 LivestockPage::LivestockPage(Livestock* _livestock, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::LivestockPage)

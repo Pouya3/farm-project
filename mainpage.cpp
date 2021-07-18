@@ -12,7 +12,6 @@
 #include "aviculturepage.h"
 #include "file_functions.h"
 #include <vector>
-
 #include <cmath>
 
 MainPage::MainPage(User* _user, QWidget *parent) :
@@ -107,8 +106,8 @@ void MainPage:: on_pushButton_mm_2_clicked()
     m->show();
 }
 void MainPage:: Time_function(){
-    vector<pair<int,int>> milk_vect;
-    vector<pair<int, int>>::iterator milk_iter;
+    std::vector<std::pair<int,int>> milk_vect;
+    std::vector<std::pair<int, int>>::iterator milk_iter;
     milk_vect = user->store->Get_milk_info();
     milk_iter = milk_vect.begin();
 

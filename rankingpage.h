@@ -6,7 +6,7 @@
 #include "user.h"
 #include <QTimer>
 #include <vector>
-using namespace std;
+
 
 namespace Ui {
 class RankingPage;
@@ -17,12 +17,12 @@ class RankingPage : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit RankingPage(User*, vector<pair<int, QString>>, QWidget *parent = nullptr);
+    explicit RankingPage(User*, std::vector<std::pair<int, QString>>, QWidget *parent = nullptr);
     ~RankingPage();
 
 private:
     Ui::RankingPage *ui;
-    vector<pair<int, QString>> users_for_ranking;
+    std::vector<std::pair<int, QString>> users_for_ranking;
     User* user;
     QTimer* refresh_timer;
 

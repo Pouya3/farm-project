@@ -51,8 +51,8 @@ void StorePage::on_pushButton_clicked()
 }
 
 void StorePage::Set_values(){
-    vector<pair<int, int>> milk_info_vect;
-    vector<pair<int, int>>::iterator milk_info_iter;
+    std::vector<std::pair<int, int>> milk_info_vect;
+    std::vector<std::pair<int, int>>::iterator milk_info_iter;
     milk_info_vect = store->Get_milk_info();
     milk_info_iter = milk_info_vect.begin();
 

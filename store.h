@@ -3,7 +3,7 @@
 #include "building.h"
 #include "user.h"
 #include <vector>
-using namespace std;
+
 
 class Aghol;
 class Alfalfa_land;
@@ -20,7 +20,7 @@ class Store : public Building
     int egg;
     int milk;
     int wool;
-    vector <pair<int, int>> milk_info;
+    std::vector <std::pair<int, int>> milk_info;
 
 public:
     User* user; // this -> user
@@ -38,8 +38,8 @@ public:
     bool Delete(int ,int);
     void Set_object(int, int);
     int Get_object(int);
-    void Set_milk_info(vector<pair<int, int>> _milk_info);
-    vector<pair<int, int>> Get_milk_info();
+    void Set_milk_info(std::vector<std::pair<int, int>> _milk_info);
+    std::vector<std::pair<int, int>> Get_milk_info();
 };
 
 #endif // STORE_H

@@ -52,7 +52,7 @@ void MenuPage::Set_values(){
 
     users_for_ranking = Get_users_for_ranking();
 
-    vector<pair<int, QString>>::iterator user_iter;
+    std::vector<std::pair<int, QString>>::iterator user_iter;
     user_iter = users_for_ranking.end();
     user_iter--;
     int i;

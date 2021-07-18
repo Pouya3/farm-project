@@ -24,7 +24,7 @@
 #include "user.h"
 #include "wheat_land.h"
 
-using namespace std;
+
 
 
 bool Create_new_user_files(QString username, QString name, QString password, QString email);
@@ -42,7 +42,7 @@ int Login_user(QString username, QString password, User* user);
 // 2 == user exists and correct password (succesfull login)
 
 
-vector<pair<int, QString>> Get_users_for_ranking();
+std::vector<std::pair<int, QString>> Get_users_for_ranking();
 void Save_user(User* user);
 
 #endif // FILE_FUNCTIONS_H

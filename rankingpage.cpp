@@ -1,7 +1,7 @@
 #include "rankingpage.h"
 #include "ui_rankingpage.h"
 
-RankingPage::RankingPage(User* _user, vector<pair<int, QString>> _users_fot_ranking, QWidget *parent) :
+RankingPage::RankingPage(User* _user, std::vector<std::pair<int, QString>> _users_fot_ranking, QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::RankingPage)
 {
@@ -24,7 +24,7 @@ RankingPage::~RankingPage()
 void RankingPage::Set_values(){
     ui->tableWidget->clear();
 
-    vector<pair<int, QString>>::iterator user_iter;
+    std::vector<std::pair<int, QString>>::iterator user_iter;
     user_iter = users_for_ranking.end();
     user_iter--;
 

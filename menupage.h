@@ -7,7 +7,7 @@
 #include <QMultiMap>
 #include <QTimer>
 #include <vector>
-using namespace std;
+
 
 namespace Ui {
 class MenuPage;
@@ -36,7 +36,7 @@ private:
     Ui::MenuPage *ui;
     User* user;
     MainPage* mainpage;
-    vector<pair<int, QString>> users_for_ranking;
+    std::vector<std::pair<int, QString>> users_for_ranking;
     QTimer* refresh_timer;
 };
 

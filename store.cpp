@@ -70,7 +70,7 @@ bool Store::Add(int object_type, int number){
 }
 
 bool Store::Delete(int object_type, int number){
-    vector<pair<int, int>>::iterator milk_iter;
+    std::vector<std::pair<int, int>>::iterator milk_iter;
 
     switch(object_type){
     case 1:
@@ -171,10 +171,10 @@ int Store::Get_object(int type){
     }
 }
 
-void Store::Set_milk_info(vector<pair<int, int>> _milk_info){
+void Store::Set_milk_info(std::vector<std::pair<int, int>> _milk_info){
     milk_info = _milk_info;
 }
 
-vector<pair<int, int>> Store::Get_milk_info(){
+std::vector<std::pair<int, int>> Store::Get_milk_info(){
     return milk_info;
 }
