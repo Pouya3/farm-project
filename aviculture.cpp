@@ -68,7 +68,7 @@ int Aviculture::Feed() {
 
         if(building_status == 2){ // already built
             if(used_storage != 0){ // aviculture is empty
-                if(feeding_status != 0){ // not fed and no egg to collect
+                if(feeding_status == 0){ // not fed and no egg to collect
                     if(upgrade_timer==0){
                         if(silo->Delete(0, used_storage)){ // enough wheat
                             user->Set_experience(user->Get_experience()+(1*used_storage));
@@ -122,6 +122,7 @@ int Aviculture::Collect() {
         else{
             if(store->Add(4,used_storage)){ // enough storage in store
                 user->Set_experience(user->Get_experience()+2);
+                feeding_status=0;
                 return 3;
             }
             return 2;

@@ -16,8 +16,8 @@ int Alfalfa_land::Upgrade()
 
     if(building_status == 2){ // alfalfa land is built
         if(cultivation_status == 0){ // zamin bikar
-            if(store->Get_object(1)>=2){ // enough shovels
-                if(user->Get_coin()>=5){ // enough coins
+            if(store->Get_object(1)>=2*total_area){ // enough shovels
+                if(user->Get_coin()>=5*total_area){ // enough coins
                     if(user->Get_level()>=4){ // not limit for upgrading duo to user's level
                         if(upgrade_timer==0){
                             store->Delete(1, 2);

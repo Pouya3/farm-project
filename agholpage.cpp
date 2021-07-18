@@ -45,15 +45,15 @@ void AgholPage::on_pushButton_clicked()
         break;
     case 3:
         //qmessagebox --> "not enough coins for building aghol"
-        QMessageBox::critical(this,"COIN","Not enough coins for building Aghol");
+        QMessageBox::critical(this,"COIN","Not enough coins for building Aghol \n50 coins are needed");
         break;
     case 4:
         //qmessagebox --> "not enough nails for building aghol"
-        QMessageBox::critical(this,"NAIL","Not enough nails for building Aghol");
+        QMessageBox::critical(this,"NAIL","Not enough nails for building Aghol \n4 nails are needed");
         break;
     case 5:
         //qmessagebox --> "not enough shovels for building aghol"
-        QMessageBox::critical(this,"SHOVEL","Not enough shovels for building Aghol");
+        QMessageBox::critical(this,"SHOVEL","Not enough shovels for building Aghol \n2 shovels are needed");
         break;
     case 6:
         //qmessagebox --> "timer set for building"
@@ -80,15 +80,15 @@ void AgholPage::on_pushButton_2_clicked()
         break;
     case 4:
         //qmessagebox --> "not enough coins for upgrading"
-        QMessageBox::critical(this,"COIN","Not enough coins for upgrading");
+        QMessageBox::critical(this,"COIN","Not enough coins for upgrading \n50 coins are needed");
         break;
     case 5:
         //qmessagebox --> "not enough nails for upgrading"
-        QMessageBox::critical(this,"NAIL","Not enough nails for upgrading");
+        QMessageBox::critical(this,"NAIL","Not enough nails for upgrading \n1 nail is needed");
         break;
     case 6:
         //qmessagebox --> "not enough shovels for upgrading"
-        QMessageBox::critical(this,"SHOVEL","Not enough shovels for upgrading");
+        QMessageBox::critical(this,"SHOVEL","Not enough shovels for upgrading \n3 shovels are needed");
         break;
     case 7:
         QMessageBox::critical(this,"UPGEADING","Aghol is already in upgrading situation");
@@ -144,7 +144,7 @@ void AgholPage::on_pushButton_4_clicked()
         break;
     case 3:
         //qmessagebox --> "not enough coins for shaving"
-        QMessageBox::critical(this,"COIN","Not enough coins for shaving");
+        QMessageBox::critical(this,"COIN","Not enough coins for shaving \n1 coin is needed for each sheep");
         break;
     case 4:
         //qmessagebox --> "not enough space in store for wools"
