@@ -35,7 +35,7 @@ void StorePage::on_pushButton_clicked()
         break;
     case 2:
         //qmessagebox --> "not enough shovels for upgrading"
-        QMessageBox::critical(this,"SHOVELS","not enough shovels for upgrading \n" + QString::number(store.Get_level() - 1) + " shovels are needed");
+        QMessageBox::critical(this,"SHOVELS","not enough shovels for upgrading \n" + QString::number(store->Get_level() - 1) + " shovels are needed");
         break;
     case 3:
         //qmessagebox --> "not enough coins for upgrading"
