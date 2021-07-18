@@ -40,11 +40,11 @@ MainPage::MainPage(User* _user, QWidget *parent) :
     movie4->start();
     user = _user;
 
-    //user->Set_coin(50000);
+    user->Set_coin(50000);
 
     timer=new QTimer (this);
     connect(timer,SIGNAL(timeout()),this,SLOT(Time_function()));
-    timer->start(300000);
+    timer->start(100);
 
     saving_tiemer = new QTimer(this);
     saving_tiemer->start(10);
@@ -233,6 +233,7 @@ void MainPage:: Time_function(){
         if(user->alfalfa_land->Get_upgrade_timer()==0){
             user->Set_experience(user->Get_experience()+3);
             user->alfalfa_land->Set_level(user->alfalfa_land->Get_level()+1);
+            user->alfalfa_land->Set_total_area(user->alfalfa_land->Get_total_area()*2);
         }
     }
     if(user->wheat_land->Get_upgrade_timer()>0){
@@ -248,6 +249,7 @@ void MainPage:: Time_function(){
         if(user->alfalfa_land->Get_building_timer()==0){
             user->alfalfa_land->Set_building_status(2);
             user->Set_experience(user->Get_experience()+6);
+            user->alfalfa_land->Set_total_area(4);
             user->alfalfa_land->Set_level(1);
         }
     }
