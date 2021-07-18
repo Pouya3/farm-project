@@ -51,6 +51,8 @@ private:
     Livestock* livestock;
     Aviculture* aviculture;
     Silo* silo;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // MARKETPAGE_H

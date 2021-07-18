@@ -35,6 +35,8 @@ private:
     Ui::Alfalfa_landPage *ui;
     Alfalfa_land* alfalfa_land;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // ALFALFA_LANDPAGE_H

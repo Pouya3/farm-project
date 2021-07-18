@@ -45,10 +45,20 @@ void SheepMarket::on_pushButton_clicked()//1 -> buy                 2 -> sell
                 //qmessagebox --> "not enough sheep to sell"                                                        //
                 QMessageBox::critical(this,"NOT ENOUGH SHEEP","not enough sheep to sell");                          //
             }                                                                                                       //
-            else{                                                                                                   // sell
-                aghol->Delete(1, ui->spinBox_2->text().toInt());                                                    //
-                user->Set_coin(user->Get_coin() + ui->spinBox_2->text().toInt()*70);                                //
+            else{                                                                                                   //
+                 aghol->Delete(1, ui->spinBox_2->text().toInt());                                                   //
+                 user->Set_coin(user->Get_coin() + ui->spinBox_2->text().toInt()*70);                               //
                  user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*6);                    //
+                                                                                                                    //
+                 if(ui->spinBox_2->text().toInt() == 1){//                                                          //
+                     //qmessagebox --> "sheep is sold successfully"                                                 // sell
+                     QMessageBox::information(this,"SUCCESSFUL TRADE", "1 sheep is sold");                          //
+                 }                                                                                                  //
+                 else{                                                                                              //
+                     //qmessagebox --> "sheep is sold successfully"                                                 //
+                     QMessageBox::information(this,"SUCCESSFUL TRADE",                                              //
+                     QString::number(ui->spinBox_2->text().toInt()) + " sheep are sold");                           //
+                 }                                                                                                  //
             }                                                                                                       //
         }                                                                                                           //
 
@@ -66,6 +76,16 @@ void SheepMarket::on_pushButton_clicked()//1 -> buy                 2 -> sell
                     aghol->Add(1, ui->spinBox->text().toInt());                                                     //
                     user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*80);                              //
                     user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);                   //
+                                                                                                                    //
+                    if(ui->spinBox->text().toInt() == 1){//                                                         //
+                        //qmessagebox --> "sheep is bought successfully"                                            //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE", "1 sheep is bought");                     //
+                    }                                                                                               //
+                    else{                                                                                           //
+                        //qmessagebox --> "sheep is bought successfully"                                            //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE",                                           //
+                        QString::number(ui->spinBox->text().toInt()) + " sheep are bought");                        //
+                    }                                                                                               //
                 }                                                                                                   //
             }                                                                                                       //
         }                                                                                                           //

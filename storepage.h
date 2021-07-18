@@ -24,6 +24,8 @@ private:
     Store* store;
 
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 
 private slots:
     void Set_values();

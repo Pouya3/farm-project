@@ -12,6 +12,12 @@ LoadingPage::LoadingPage(User* _user, QWidget *parent) :
 //    int a=0;
     ui->setupUi(this);
     this->setFixedSize(750,450);
+    setWindowTitle("Loading");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
+
     QMovie* movie=new QMovie("../farm-project/rr.gif");
     ui->label->setMovie(movie);
     movie->start();

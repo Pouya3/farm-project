@@ -45,6 +45,16 @@ void Shovel_market::on_pushButton_clicked()// 1 --> sell              2 --> buy
                 store->Delete(1, ui->spinBox->text().toInt());                                    //
                 user->Set_coin(user->Get_coin() + ui->spinBox->text().toInt()*30);                //
                 user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*6);   //
+                                                                                                  //
+                if(ui->spinBox->text().toInt() == 1){//                                           //
+                    //qmessagebox --> "shovel is sold successfully"                               //
+                    QMessageBox::information(this,"SUCCESSFUL TRADE", "1 shovel is sold");        //
+                }                                                                                 //
+                else{                                                                             //
+                    //qmessagebox --> "shovel is sold successfully"                               //
+                    QMessageBox::information(this,"SUCCESSFUL TRADE",                             //
+                    QString::number(ui->spinBox->text().toInt()) + " shovels are sold");          //
+                }                                                                                 //
             }                                                                                     //
         }                                                                                         //
         else{                                                                                     //
@@ -68,6 +78,16 @@ void Shovel_market::on_pushButton_clicked()// 1 --> sell              2 --> buy
                     store->Add(1, ui->spinBox_2->text().toInt());                                                     // buy
                     user->Set_coin(user->Get_coin() - ui->spinBox_2->text().toInt()*50);                              //
                     user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*2);                   //
+                                                                                                                      //
+                    if(ui->spinBox_2->text().toInt() == 1){//                                                         //
+                        //qmessagebox --> "shovel is bought successfully"                                             //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE", "1 shovel is bought");                      //
+                    }                                                                                                 //
+                    else{                                                                                             //
+                        //qmessagebox --> "shovel is bought successfully"                                             //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE",                                             //
+                        QString::number(ui->spinBox_2->text().toInt()) + " shovels are bought");                      //
+                    }                                                                                                 //
                 }                                                                                                     //
             }                                                                                                         //
         }                                                                                                             //

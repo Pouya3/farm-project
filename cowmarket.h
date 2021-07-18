@@ -28,6 +28,8 @@ private:
     User* user;
     Livestock* livestock;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // COWMARKET_H

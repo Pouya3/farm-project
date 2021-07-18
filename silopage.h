@@ -27,6 +27,8 @@ private slots:
 private:
     Ui::SiloPage *ui;
     QTimer* refresh_timer;
+    QIcon* icon;
+    QPixmap* pix;
 };
 
 #endif // SILOPAGE_H

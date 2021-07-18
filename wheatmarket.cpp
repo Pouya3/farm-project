@@ -7,6 +7,11 @@ WheatMarket::WheatMarket(User* _user, Silo* _silo, QWidget *parent) :
 {
     ui->setupUi(this);
     setFixedSize(1000,570);
+    setWindowTitle("Wheat market");
+
+    pix = new QPixmap(":/new/prefix1/img/logo.jpg");
+    icon = new QIcon(*pix);
+    this->setWindowIcon(*icon);
 
     user = _user;
     silo = _silo;
@@ -45,6 +50,16 @@ void WheatMarket::on_pushButton_clicked() // 1 --> buy              2 --> sell
                 silo->Delete(1, ui->spinBox_2->text().toInt());                                   //
                 user->Set_coin(user->Get_coin() + ui->spinBox_2->text().toInt()*2);               // sell
                 user->Set_experience(user->Get_experience() + ui->spinBox_2->text().toInt()*6);   //
+                                                                                                  //
+                if(ui->spinBox_2->text().toInt() == 1){//                                         //
+                    //qmessagebox --> "wheat is sold successfully"                                //
+                    QMessageBox::information(this,"SUCCESSFUL TRADE", "1 wheat is sold");         //
+                }                                                                                 //
+                else{                                                                             //
+                    //qmessagebox --> "wheat is sold successfully"                                //
+                    QMessageBox::information(this,"SUCCESSFUL TRADE",                             //
+                    QString::number(ui->spinBox_2->text().toInt()) + " wheats are sold");         //
+                }                                                                                 //
             }                                                                                     //
         }                                                                                         //
         else{                                                                                     //
@@ -57,7 +72,7 @@ void WheatMarket::on_pushButton_clicked() // 1 --> buy              2 --> sell
         if(user->Get_level() >= 2){                                                                                //
             if(user->Get_coin() < ui->spinBox->text().toInt()*3){                                                  //
                 //qmessagebox --> "not enough coins to buy this amount of wheat"                                   //
-                QMessageBox::critical(this,"NOT ENOUGH COINS","not enough coins to buy this amount of wheat");   //
+                QMessageBox::critical(this,"NOT ENOUGH COINS","not enough coins to buy this amount of wheat");     //
             }                                                                                                      //
             else{                                                                                                  //
                 if(silo->Get_total_storage() - silo->Get_used_storage() < ui->spinBox->text().toInt()){            //
@@ -68,6 +83,16 @@ void WheatMarket::on_pushButton_clicked() // 1 --> buy              2 --> sell
                     silo->Add(1, ui->spinBox->text().toInt());                                                     // buy
                     user->Set_coin(user->Get_coin() - ui->spinBox->text().toInt()*1);                              //
                     user->Set_experience(user->Get_experience() + ui->spinBox->text().toInt()*2);                  //
+                                                                                                                   //
+                    if(ui->spinBox->text().toInt() == 1){//                                                        //
+                        //qmessagebox --> "wheat is bought successfully"                                           //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE", "1 wheat is bought");                    //
+                    }                                                                                              //
+                    else{                                                                                          //
+                        //qmessagebox --> "wheat is bought successfully"                                           //
+                        QMessageBox::information(this,"SUCCESSFUL TRADE",                                          //
+                        QString::number(ui->spinBox->text().toInt()) + " wheats are bought");                      //
+                    }                                                                                              //
                 }                                                                                                  //
             }                                                                                                      //
         }                                                                                                          //
