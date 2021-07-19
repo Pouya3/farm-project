@@ -37,8 +37,10 @@
 #pragma comment(lib, "winmm.lib")
 void sound()
 {
+        PlaySound(TEXT("../farm-project/chicken.wav"), NULL, SND_FILENAME | SND_SYNC);
         PlaySound(TEXT("../farm-project/sound1.wav"), NULL, SND_FILENAME | SND_SYNC);
-
+        PlaySound(TEXT("../farm-project/sound1.wav"), NULL, SND_FILENAME | SND_SYNC);
+        PlaySound(TEXT("../farm-project/sound1.wav"), NULL, SND_FILENAME | SND_SYNC);
         //Sleep(1500);// The above code will take the wav file, play the sound, then continue on once it is finished.
 
 }
